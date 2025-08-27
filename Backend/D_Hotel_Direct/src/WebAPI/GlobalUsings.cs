@@ -1,0 +1,113 @@
+﻿global using Application.Common.Interfaces.Logging;
+global using Application.Common.Interfaces.Persistence.Base;
+global using Application.Common.Interfaces.Persistence.EFCore;
+global using Application.Common.Interfaces.Services.FileUpLoad;
+
+global using Application.Features.Auth.Commands.ChangePassword;
+global using Application.Features.Auth.Commands.Login;
+global using Application.Features.Auth.Services.Command.ChangePassword;
+global using Application.Features.Auth.Services.Command.ChangePassword.Factory;
+global using Application.Features.Auth.Services.Command.ChangePassword.Strategy;
+global using Application.Features.Auth.Services.Command.Login;
+global using Application.Features.Auth.Services.Command.Login.Factory;
+global using Application.Features.Auth.Services.Command.Login.Strategy;
+global using Application.Features.Auth.Services.Command.Logout;
+global using Application.Features.Auth.Services.Command.Logout.Factory;
+global using Application.Features.Auth.Services.Command.Logout.Strategy;
+global using Application.Features.Auth.Services.Command.Register;
+global using Application.Features.Auth.Services.Command.Register.Factory;
+global using Application.Features.Auth.Services.Command.Register.Strategy;
+global using Application.Features.Auth.Services.Command.TokenRefresh;
+global using Application.Features.Auth.Services.Command.UpdateProfile;
+global using Application.Features.Auth.Services.Command.UpdateProfile.Factory;
+global using Application.Features.Auth.Services.Command.UpdateProfile.Strategy;
+global using Application.Features.Auth.Services.Jwt;
+global using Application.Features.Auth.Services.Query.CurrentUser;
+global using Application.Features.Auth.Services.Query.GetAllUsers;
+
+global using Application.Features.Hotels.Interfaces.Services.Command.CreateHotel;
+global using Application.Features.Hotels.Interfaces.Services.Command.CreateHotelCategory;
+global using Application.Features.Hotels.Interfaces.Services.Command.DeleteHotel;
+global using Application.Features.Hotels.Interfaces.Services.Command.DeleteHotelCategory;
+global using Application.Features.Hotels.Interfaces.Services.Command.UpdateHotel;
+global using Application.Features.Hotels.Interfaces.Services.Command.UpdateHotelCategory;
+global using Application.Features.Hotels.Interfaces.Services.Query.GetAllHotelCategories;
+global using Application.Features.Hotels.Interfaces.Services.Query.GetAllHotels;
+global using Application.Features.Hotels.Interfaces.Services.Query.GetHotelById;
+global using Application.Features.Hotels.Interfaces.Services.Query.GetHotelCategoryById;
+global using Application.Features.Hotels.Repositories;
+global using Application.Features.Hotels.Services.Command.CreateHotel;
+global using Application.Features.Hotels.Services.Command.CreateHotelCategory;
+global using Application.Features.Hotels.Services.Command.DeleteHotel;
+global using Application.Features.Hotels.Services.Command.DeleteHotelCategory;
+global using Application.Features.Hotels.Services.Command.UpdateHotel;
+global using Application.Features.Hotels.Services.Command.UpdateHotelCategory;
+global using Application.Features.Hotels.Services.Query.GetAllHotelCategories;
+global using Application.Features.Hotels.Services.Query.GetAllHotels;
+global using Application.Features.Hotels.Services.Query.GetHotelById;
+global using Application.Features.Hotels.Services.Query.GetHotelCategoryById;
+global using Application.Features.Hotels.Services.Query.GetHotelsByCategoryId;
+
+global using Application.Features.Utilities.Interfaces.Services.Command.CreateUtility;
+global using Application.Features.Utilities.Interfaces.Services.Command.CreateUtilityItem;
+global using Application.Features.Utilities.Interfaces.Services.Command.DeleteUtility;
+global using Application.Features.Utilities.Interfaces.Services.Command.DeleteUtilityItem;
+global using Application.Features.Utilities.Interfaces.Services.Command.UpdateUtility;
+global using Application.Features.Utilities.Interfaces.Services.Command.UpdateUtilityItem;
+global using Application.Features.Utilities.Interfaces.Services.Query.GetAllUtilities;
+global using Application.Features.Utilities.Interfaces.Services.Query.GetUtilityByHotelId;
+global using Application.Features.Utilities.Interfaces.Services.Query.GetUtilityById;
+global using Application.Features.Utilities.Interfaces.Services.Query.GetUtilityByRoomId;
+global using Application.Features.Utilities.Interfaces.Services.Query.GetUtilityItemsByUtilityId;
+global using Application.Features.Utilities.Mappings;
+global using Application.Features.Utilities.Repositories;
+global using Application.Features.Utilities.Services.Command.CreateUtility;
+global using Application.Features.Utilities.Services.Command.CreateUtilityItem;
+global using Application.Features.Utilities.Services.Command.DeleteUtility;
+global using Application.Features.Utilities.Services.Command.DeleteUtilityItem;
+global using Application.Features.Utilities.Services.Command.UpdateUtility;
+global using Application.Features.Utilities.Services.Command.UpdateUtilityItem;
+global using Application.Features.Utilities.Services.Query.GetAllUtilities;
+global using Application.Features.Utilities.Services.Query.GetUtilityByHotelId;
+global using Application.Features.Utilities.Services.Query.GetUtilityById;
+global using Application.Features.Utilities.Services.Query.GetUtilityByRoomId;
+global using Application.Features.Utilities.Services.Query.GetUtilityItemsByUtilityId;
+
+global using FluentValidation;
+
+global using Infrastructure.Auth.Models;
+global using Infrastructure.Auth.Options;
+global using Infrastructure.Auth.Services.Command.ChangePassword;
+global using Infrastructure.Auth.Services.Command.ChangePassword.Strategy;
+global using Infrastructure.Auth.Services.Command.Logout;
+global using Infrastructure.Auth.Services.Command.Logout.Strategy;
+global using Infrastructure.Auth.Services.Command.Register;
+global using Infrastructure.Auth.Services.Command.Register.Strategy;
+global using Infrastructure.Auth.Services.Command.TokenRefresh.Decorators;
+global using Infrastructure.Auth.Services.Command.UpdateProfile;
+global using Infrastructure.Auth.Services.Command.UpdateProfile.Factory;
+global using Infrastructure.Auth.Services.Command.UpdateProfile.Strategy;
+global using Infrastructure.Auth.Services.Query;
+global using Infrastructure.Auth.Services.Query.CurrentUser;
+global using Infrastructure.Auth.Services.Query.GetAllUsers;
+
+global using Infrastructure.Common.Logging;
+global using Infrastructure.Common.Persistence.Base;
+global using Infrastructure.Configurations;
+global using Infrastructure.Data;
+global using Infrastructure.Data.Seeds;
+global using Infrastructure.Hotels.Repositories;
+global using Infrastructure.Services.FileUpLoad;
+global using Infrastructure.Utilities.Repositories;
+
+global using MediatR;
+
+global using Microsoft.AspNetCore.Authentication.JwtBearer;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.IdentityModel.Tokens;
+
+global using System.Text;
+global using System.Text.Json.Serialization;
+
+global using WebAPI.Middleware;
