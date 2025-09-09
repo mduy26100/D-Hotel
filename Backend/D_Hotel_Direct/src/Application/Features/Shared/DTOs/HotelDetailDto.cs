@@ -2,7 +2,7 @@
 using Application.Features.Places.DTOs;
 using Application.Features.Utilities.DTOs;
 
-namespace Application.Cross.DTOs
+namespace Application.Features.Shared.DTOs
 {
     public class HotelDetailDto
     {

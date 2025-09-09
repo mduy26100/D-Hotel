@@ -13,3 +13,4 @@ C:\Users\Admin\Documents\D_Hotel_Direct\Backend\D_Hotel_Direct\src\Application\o
 C:\Users\Admin\Documents\D_Hotel_Direct\Backend\D_Hotel_Direct\src\Application\obj\Debug\net8.0\refint\Application.dll
 C:\Users\Admin\Documents\D_Hotel_Direct\Backend\D_Hotel_Direct\src\Application\obj\Debug\net8.0\Application.pdb
 C:\Users\Admin\Documents\D_Hotel_Direct\Backend\D_Hotel_Direct\src\Application\obj\Debug\net8.0\ref\Application.dll
+C:\Users\Admin\Documents\D_Hotel_Direct\Backend\D_Hotel_Direct\src\Application\obj\Debug\net8.0\Application.sourcelink.json

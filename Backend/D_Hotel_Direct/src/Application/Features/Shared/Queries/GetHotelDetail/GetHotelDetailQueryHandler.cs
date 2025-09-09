@@ -1,13 +1,13 @@
-﻿using Application.Cross.DTOs;
-using Application.Features.Hotels.DTOs;
+﻿using Application.Features.Hotels.DTOs;
 using Application.Features.Hotels.Repositories;
 using Application.Features.Places.DTOs;
 using Application.Features.Places.Repositories;
+using Application.Features.Shared.DTOs;
 using Application.Features.Utilities.DTOs;
 using Application.Features.Utilities.Repositories;
 using MediatR;
 
-namespace Application.Cross.Queries.GetHotelDetail
+namespace Application.Features.Shared.Queries.GetHotelDetail
 {
     public class GetHotelDetailQueryHandler : IRequestHandler<GetHotelDetailQuery, HotelDetailDto?>
     {

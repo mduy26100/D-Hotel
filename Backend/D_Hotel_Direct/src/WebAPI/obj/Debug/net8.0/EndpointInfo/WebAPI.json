@@ -5,41 +5,10 @@
     "version": "1.0"
   },
   "paths": {
-    "/api/Auth/login": {
+    "/api/Account/token-refresh": {
       "post": {
         "tags": [
-          "Auth"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginCommand"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginCommand"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/LoginCommand"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Auth/token-refresh": {
-      "post": {
-        "tags": [
-          "Auth"
+          "Account"
         ],
         "requestBody": {
           "content": {
@@ -67,10 +36,10 @@
         }
       }
     },
-    "/api/Auth/logout": {
+    "/api/Account/logout": {
       "post": {
         "tags": [
-          "Auth"
+          "Account"
         ],
         "requestBody": {
           "content": {
@@ -98,41 +67,10 @@
         }
       }
     },
-    "/api/Auth/register": {
+    "/api/Account/change-password": {
       "post": {
         "tags": [
-          "Auth"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegisterCommand"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegisterCommand"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/RegisterCommand"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
-    "/api/Auth/change-password": {
-      "post": {
-        "tags": [
-          "Auth"
+          "Account"
         ],
         "requestBody": {
           "content": {
@@ -160,10 +98,10 @@
         }
       }
     },
-    "/api/Auth/update-profile": {
+    "/api/Account/update-profile": {
       "put": {
         "tags": [
-          "Auth"
+          "Account"
         ],
         "requestBody": {
           "content": {
@@ -223,10 +161,10 @@
         }
       }
     },
-    "/api/Auth/current-user": {
+    "/api/Account/current-user": {
       "get": {
         "tags": [
-          "Auth"
+          "Account"
         ],
         "responses": {
           "200": {
@@ -235,11 +173,61 @@
         }
       }
     },
-    "/api/Auth/all-users": {
-      "get": {
+    "/api/Auth/login": {
+      "post": {
         "tags": [
           "Auth"
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/register": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterCommand"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -1014,6 +1002,18 @@
               "format": "int32"
             }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Users/all-users": {
+      "get": {
+        "tags": [
+          "Users"
         ],
         "responses": {
           "200": {

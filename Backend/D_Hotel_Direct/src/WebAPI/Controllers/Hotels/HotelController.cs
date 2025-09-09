@@ -1,16 +1,11 @@
-﻿using Application.Cross.Queries.GetHotelDetail;
-using Application.Features.Hotels.Commands.CreateHotel;
-using Application.Features.Hotels.Commands.CreateHotelCategory;
+﻿using Application.Features.Hotels.Commands.CreateHotel;
 using Application.Features.Hotels.Commands.DeleteHotel;
-using Application.Features.Hotels.Commands.DeleteHotelCategory;
 using Application.Features.Hotels.Commands.UpdateHotel;
-using Application.Features.Hotels.Commands.UpdateHotelCategory;
 using Application.Features.Hotels.DTOs;
-using Application.Features.Hotels.Queries.GetAllHotelCategories;
 using Application.Features.Hotels.Queries.GetAllHotels;
 using Application.Features.Hotels.Queries.GetHotelById;
-using Application.Features.Hotels.Queries.GetHotelCategoryById;
 using Application.Features.Hotels.Queries.GetHotelsByCategoryId;
+using Application.Features.Shared.Queries.GetHotelDetail;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers.Hotels

@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Cross\Commands\" />
+    <Folder Include="Features\Shared\Commands\" />
   </ItemGroup>
 
 </Project>
