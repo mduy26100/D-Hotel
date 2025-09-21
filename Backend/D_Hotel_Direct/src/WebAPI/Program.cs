@@ -1,5 +1,7 @@
 ﻿using Application.Common.Interfaces.Shared;
+using Application.Features.Hotels.Interfaces.Services.Query.GetHotelDetail;
 using Application.Features.Hotels.Mappings;
+using Application.Features.Hotels.Services.Query.GetHotelDetail;
 using Application.Features.Places.Interfaces.Services.Command.CreateHotelLocation;
 using Application.Features.Places.Interfaces.Services.Command.CreateLocation;
 using Application.Features.Places.Interfaces.Services.Command.DeleteHotelLocation;
@@ -267,6 +269,9 @@ builder.Services.AddScoped<IGetAllHotelsService, GetAllHotelsService>();
 
 //GetHotel By Id
 builder.Services.AddScoped<IGetHotelByIdService, GetHotelByIdService>();
+
+//Get Hotel Detail By Id
+builder.Services.AddScoped<IGetHotelDetailService, GetHotelDetailService>();
 
 //Get Hotels By Category Id
 builder.Services.AddScoped<IGetHotelsByCategoryIdService, GetHotelsByCategoryIdService>();

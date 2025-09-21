@@ -1,15 +1,14 @@
 ﻿using Application.Features.Hotels.DTOs;
+using Application.Features.Hotels.Interfaces.Services.Query.GetHotelDetail;
 using Application.Features.Hotels.Repositories;
 using Application.Features.Places.DTOs;
 using Application.Features.Places.Repositories;
-using Application.Features.Shared.DTOs;
 using Application.Features.Utilities.DTOs;
 using Application.Features.Utilities.Repositories;
-using MediatR;
 
-namespace Application.Features.Shared.Queries.GetHotelDetail
+namespace Application.Features.Hotels.Services.Query.GetHotelDetail
 {
-    public class GetHotelDetailQueryHandler : IRequestHandler<GetHotelDetailQuery, HotelDetailDto?>
+    public class GetHotelDetailService : IGetHotelDetailService
     {
         private readonly IHotelRepository _hotelRepository;
         private readonly IHotelUtilityRepository _hotelUtilityRepository;
@@ -19,7 +18,7 @@ namespace Application.Features.Shared.Queries.GetHotelDetail
         private readonly IHotelLocationsRepository _hotelLocationsRepository;
         private readonly ILocationsRepository _locationsRepository;
 
-        public GetHotelDetailQueryHandler(
+        public GetHotelDetailService(
             IHotelRepository hotelRepository,
             IHotelUtilityRepository hotelUtilityRepository,
             IHotelCategoryRepository hotelCategoryRepository,
@@ -37,17 +36,15 @@ namespace Application.Features.Shared.Queries.GetHotelDetail
             _locationsRepository = locationsRepository;
         }
 
-        public async Task<HotelDetailDto?> Handle(GetHotelDetailQuery request, CancellationToken cancellationToken)
+        public async Task<HotelDetailDto?> GetHotelDetailAsync(int hotelId, CancellationToken cancellationToken)
         {
-            var hotel = await _hotelRepository.GetByIdAsync(request.Id, cancellationToken);
+            var hotel = await _hotelRepository.GetByIdAsync(hotelId, cancellationToken);
             if (hotel == null)
                 return null;
 
-            // Category
             var category = await _hotelCategoryRepository.GetByIdAsync(hotel.CategoryId, cancellationToken);
 
-            // Utilities
-            var hotelUtilities = await _hotelUtilityRepository.GetByHotelIdAsync(request.Id, cancellationToken);
+            var hotelUtilities = await _hotelUtilityRepository.GetByHotelIdAsync(hotelId, cancellationToken);
             var utilityIds = hotelUtilities.Select(hu => hu.UtilityId).Distinct().ToList();
 
             var utilities = await _utilityRepository.GetManyByIdsAsync(utilityIds, cancellationToken);
@@ -64,7 +61,6 @@ namespace Application.Features.Shared.Queries.GetHotelDetail
                 UtilityItems = groupedItems.TryGetValue(utility.Id, out var items) ? items : new List<string>()
             }).ToList();
 
-            // Location (1 hotel chỉ có 1 location)
             LocationsDto? locationDto = null;
             var hotelLocationMapping = await _hotelLocationsRepository.GetByHotelIdAsync(hotel.Id, cancellationToken);
             if (hotelLocationMapping != null)
@@ -81,7 +77,6 @@ namespace Application.Features.Shared.Queries.GetHotelDetail
                 }
             }
 
-            // Final DTO
             return new HotelDetailDto
             {
                 Id = hotel.Id,

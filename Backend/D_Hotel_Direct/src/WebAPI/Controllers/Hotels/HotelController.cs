@@ -4,8 +4,8 @@ using Application.Features.Hotels.Commands.UpdateHotel;
 using Application.Features.Hotels.DTOs;
 using Application.Features.Hotels.Queries.GetAllHotels;
 using Application.Features.Hotels.Queries.GetHotelById;
+using Application.Features.Hotels.Queries.GetHotelDetail;
 using Application.Features.Hotels.Queries.GetHotelsByCategoryId;
-using Application.Features.Shared.Queries.GetHotelDetail;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers.Hotels
