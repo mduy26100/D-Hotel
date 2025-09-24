@@ -1,4 +1,6 @@
-﻿using Application.Common.Interfaces.Shared;
+﻿using Application.Common.Interfaces.Persistence.Caching;
+using Application.Common.Interfaces.Services.User;
+using Application.Common.Interfaces.Shared;
 using Application.Features.Hotels.Interfaces.Services.Query.GetHotelDetail;
 using Application.Features.Hotels.Mappings;
 using Application.Features.Hotels.Services.Query.GetHotelDetail;
@@ -33,7 +35,9 @@ using Application.Features.Utilities.Services.Command.CreateHotelUtility;
 using Application.Features.Utilities.Services.Command.DeleteHotelUtility;
 using Application.Features.Utilities.Services.Command.UpdateHotelUtility;
 using Infrastructure.Common.Shared;
+using Infrastructure.Data.Caching;
 using Infrastructure.Places.Repositories;
+using Infrastructure.Services.User;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,6 +48,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<ApplicationDbContext>());
+
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    var redisConfig = builder.Configuration.GetValue<string>("Redis:ConnectionString");
+    options.Configuration = redisConfig;
+});
 
 //Add Identity services
 builder.Services.AddIdentity<ApplicationUser, ApplicationRole>()
@@ -116,6 +126,8 @@ builder.Services.AddSwaggerGen();
 
 
 //DI
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ICacheService, RedisCacheService>();
 //Auth
 //ChangePassword
 builder.Services.AddScoped<IChangePasswordStrategyFactory, ChangePasswordStrategyFactory>();

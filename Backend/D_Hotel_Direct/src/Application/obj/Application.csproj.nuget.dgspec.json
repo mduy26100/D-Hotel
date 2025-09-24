@@ -58,10 +58,6 @@
               "target": "Package",
               "version": "[15.0.1, )"
             },
-            "CloudinaryDotNet": {
-              "target": "Package",
-              "version": "[1.27.6, )"
-            },
             "FluentValidation": {
               "target": "Package",
               "version": "[12.0.0, )"
