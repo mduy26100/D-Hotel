@@ -34,6 +34,7 @@ namespace Infrastructure.Data
             // Hotels
             builder.ApplyConfiguration(new HotelConfiguration());
             builder.ApplyConfiguration(new HotelCategoryConfiguration());
+            builder.ApplyConfiguration(new HotelStaffConfiguration());
 
             // Purposes
             builder.ApplyConfiguration(new HotelTravelPurposeConfiguration());
@@ -72,6 +73,7 @@ namespace Infrastructure.Data
         //Hotels
         public DbSet<Hotel> Hotels { get; set; }
         public DbSet<HotelCategory> HotelCategories { get; set; }
+        public DbSet<HotelStaff> HotelStaffs { get; set; }
 
         //Purposes
         public DbSet<HotelTravelPurpose> HotelTravelPurposes { get; set; }
