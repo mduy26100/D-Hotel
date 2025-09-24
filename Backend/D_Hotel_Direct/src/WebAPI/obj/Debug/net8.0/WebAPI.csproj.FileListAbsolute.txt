@@ -164,4 +164,3 @@ C:\Users\Admin\Documents\D_Hotel_Direct\Backend\D_Hotel_Direct\src\WebAPI\bin\De
 C:\Users\Admin\Documents\D_Hotel_Direct\Backend\D_Hotel_Direct\src\WebAPI\bin\Debug\net8.0\CloudinaryDotNet.dll
 C:\Users\Admin\Documents\D_Hotel_Direct\Backend\D_Hotel_Direct\src\WebAPI\bin\Debug\net8.0\Newtonsoft.Json.dll
 C:\Users\Admin\Documents\D_Hotel_Direct\Backend\D_Hotel_Direct\src\WebAPI\obj\Debug\net8.0\WebAPI.sourcelink.json
-C:\Users\Admin\Documents\D_Hotel_Direct\Backend\D_Hotel_Direct\src\WebAPI\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

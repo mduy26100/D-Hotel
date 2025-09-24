@@ -1,10 +1,12 @@
 ﻿using Application.Common.Interfaces.Persistence.EFCore;
 using Application.Common.Interfaces.Services.FileUpLoad;
+using Application.Common.Interfaces.Services.User;
 using Application.Common.Models;
 using Application.Features.Hotels.DTOs;
 using Application.Features.Hotels.Interfaces.Services.Command.CreateHotel;
 using Application.Features.Hotels.Repositories;
 using AutoMapper;
+using Domain.Consts;
 using Domain.Models.Hotels;
 
 namespace Application.Features.Hotels.Services.Command.CreateHotel
@@ -15,21 +17,36 @@ namespace Application.Features.Hotels.Services.Command.CreateHotel
         private readonly IFileUploadService _fileUploadService;
         private readonly IApplicationDbContext _context;
         private readonly IMapper _mapper;
+        private readonly IUserService _userService;
 
         public CreateHotelService(
             IHotelRepository hotelRepository,
             IFileUploadService fileUploadService,
             IApplicationDbContext context,
-            IMapper mapper)
+            IMapper mapper,
+            IUserService userService)
         {
             _hotelRepository = hotelRepository;
             _fileUploadService = fileUploadService;
             _context = context;
             _mapper = mapper;
+            _userService = userService;
         }
 
         public async Task<HotelDto> CreateAsync(UpsertHotelRequest request, CancellationToken cancellationToken = default)
         {
+            bool userExists = await _userService.UserExistsAsync(request.HotelManagerId);
+            if (!userExists)
+            {
+                throw new Exception("User does not exist.");
+            }
+
+            var roles = await _userService.GetUserRolesAsync(request.HotelManagerId);
+            if (!roles.Contains(Roles.HotelManager))
+            {
+                throw new Exception("User does not have permission to create hotel.");
+            }
+
             string imgUrl = string.Empty;
             if (request.ImgContent != null && !string.IsNullOrWhiteSpace(request.ImgFileName))
             {
