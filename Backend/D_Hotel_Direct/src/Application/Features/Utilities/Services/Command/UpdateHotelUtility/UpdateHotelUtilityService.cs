@@ -21,7 +21,7 @@ namespace Application.Features.Utilities.Services.Command.UpdateHotelUtility
         public async Task UpdateAsync(HotelUtilityDto request, CancellationToken cancellationToken = default)
         {
             // 1. Xoá toàn bộ utility cũ
-            var existingUtilities = await _hotelUtilityRepository.GetByHotelIdAsync(request.HotelId, cancellationToken);
+            var existingUtilities = await _hotelUtilityRepository.FindAsync(h => h.HotelId == request.HotelId, cancellationToken);
             foreach (var utility in existingUtilities)
             {
                 _hotelUtilityRepository.Remove(utility);

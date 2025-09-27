@@ -19,7 +19,7 @@ namespace Application.Features.Utilities.Services.Query.GetUtilityByRoomId
 
         public async Task<IEnumerable<RoomUtilityDto>> GetByIdAsync(int roomId, CancellationToken cancellationToken = default)
         {
-            var roomUtilityItems = await _roomUtilityItemRepository.GetByRoomIdAsync(roomId, cancellationToken);
+            var roomUtilityItems = await _roomUtilityItemRepository.FindAsync(h => h.RoomId == roomId, cancellationToken);
             return _mapper.Map<IEnumerable<RoomUtilityDto>>(roomUtilityItems);
         }
     }

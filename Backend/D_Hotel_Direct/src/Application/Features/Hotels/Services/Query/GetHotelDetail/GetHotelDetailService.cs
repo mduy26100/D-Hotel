@@ -44,7 +44,7 @@ namespace Application.Features.Hotels.Services.Query.GetHotelDetail
 
             var category = await _hotelCategoryRepository.GetByIdAsync(hotel.CategoryId, cancellationToken);
 
-            var hotelUtilities = await _hotelUtilityRepository.GetByHotelIdAsync(hotelId, cancellationToken);
+            var hotelUtilities = await _hotelUtilityRepository.FindAsync(h => h.HotelId == hotelId, cancellationToken);
             var utilityIds = hotelUtilities.Select(hu => hu.UtilityId).Distinct().ToList();
 
             var utilities = await _utilityRepository.GetManyByIdsAsync(utilityIds, cancellationToken);

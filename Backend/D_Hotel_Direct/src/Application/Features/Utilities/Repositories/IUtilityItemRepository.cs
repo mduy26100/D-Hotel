@@ -5,7 +5,6 @@ namespace Application.Features.Utilities.Repositories
 {
     public interface IUtilityItemRepository : IRepository<UtilityItem>
     {
-        Task<IEnumerable<UtilityItem>> GetByUtilityIdAsync(int utilityId, CancellationToken cancellationToken = default);
         Task<IEnumerable<UtilityItem>> GetByUtilityIdListAsync(IEnumerable<int> utilityIds, CancellationToken cancellationToken = default);
     }
 }

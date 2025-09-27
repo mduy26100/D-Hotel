@@ -19,7 +19,7 @@ namespace Application.Features.Utilities.Services.Query.GetUtilityItemsByUtility
 
         public async Task<IEnumerable<UtilityItemDto>> GetByUtilityIdAsync(int utilityId, CancellationToken cancellationToken = default)
         {
-            var utilityItems = await _utilityItemRepository.GetByUtilityIdAsync(utilityId, cancellationToken);
+            var utilityItems = await _utilityItemRepository.FindAsync(h => h.UtilityId == utilityId, cancellationToken);
             return _mapper.Map<IEnumerable<UtilityItemDto>>(utilityItems);
         }
     }

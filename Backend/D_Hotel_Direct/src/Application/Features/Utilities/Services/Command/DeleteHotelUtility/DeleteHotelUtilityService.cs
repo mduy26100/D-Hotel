@@ -19,7 +19,7 @@ namespace Application.Features.Utilities.Services.Command.DeleteHotelUtility
 
         public async Task DeleteAsync(HotelUtilityDto request, CancellationToken cancellationToken = default)
         {
-            var existingUtilities = await _hotelUtilityRepository.GetByHotelIdAsync(request.HotelId, cancellationToken);
+            var existingUtilities = await _hotelUtilityRepository.FindAsync( h => h.HotelId == request.HotelId, cancellationToken);
 
             foreach (var utility in existingUtilities.Where(u => request.UtilityIds.Contains(u.UtilityId)))
             {

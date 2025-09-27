@@ -19,7 +19,7 @@ namespace Application.Features.Utilities.Services.Query.GetUtilityByHotelId
 
         public Task<IEnumerable<HotelUtilityDto>> GetByIdAsync(int hotelId, CancellationToken cancellationToken = default)
         {
-            var hotelUtilityItems = _hotelUtilityItemRepository.GetByHotelIdAsync(hotelId, cancellationToken);
+            var hotelUtilityItems = _hotelUtilityItemRepository.FindAsync(h => h.HotelId == hotelId, cancellationToken);
             return _mapper.Map<Task<IEnumerable<HotelUtilityDto>>>(hotelUtilityItems);
         }
     }
