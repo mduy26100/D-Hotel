@@ -17,13 +17,5 @@ namespace Infrastructure.Places.Repositories
                 .AsNoTracking()
                 .FirstOrDefaultAsync(location => location.HotelId == hotelId, cancellationToken);
         }
-
-        public async Task<IEnumerable<HotelLocations>> GetByLocationIdAsync(int locationId, CancellationToken cancellationToken = default)
-        {
-            return await _dbSet
-                .AsNoTracking()
-                .Where(location => location.LocationId == locationId)
-                .ToListAsync(cancellationToken);
-        }
     }
 }

@@ -62,7 +62,7 @@ namespace Application.Features.Hotels.Services.Query.GetHotelDetail
             }).ToList();
 
             LocationsDto? locationDto = null;
-            var hotelLocationMapping = await _hotelLocationsRepository.GetByHotelIdAsync(hotel.Id, cancellationToken);
+            var hotelLocationMapping = await _hotelLocationsRepository.FindOneAsync(h => h.HotelId == hotel.Id, cancellationToken);
             if (hotelLocationMapping != null)
             {
                 var loc = await _locationsRepository.GetByIdAsync(hotelLocationMapping.LocationId, cancellationToken);

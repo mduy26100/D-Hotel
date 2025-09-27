@@ -49,5 +49,10 @@ namespace Infrastructure.Common.Persistence.Base
         {
             return await _dbSet.AnyAsync(predicate, cancellationToken);
         }
+
+        public virtual async Task<T?> FindOneAsync(Expression<Func<T, bool>> predicate, CancellationToken cancellationToken = default)
+        {
+            return await _dbSet.AsNoTracking().FirstOrDefaultAsync(predicate, cancellationToken);
+        }
     }
 }

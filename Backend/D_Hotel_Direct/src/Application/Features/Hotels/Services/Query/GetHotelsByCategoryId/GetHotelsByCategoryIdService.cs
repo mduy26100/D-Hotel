@@ -19,7 +19,7 @@ namespace Application.Features.Hotels.Services.Query.GetHotelsByCategoryId
 
         public async Task<IEnumerable<HotelDto>> GetHotelsByCategoryIdAsync(int categoryId, CancellationToken cancellationToken = default)
         {
-            var hotels = await _hotelRepository.GetByCategoryIdAsync(categoryId, cancellationToken);
+            var hotels = await _hotelRepository.FindAsync(h => h.CategoryId == categoryId, cancellationToken);
             return _mapper.Map<IEnumerable<HotelDto>>(hotels);
         }
     }

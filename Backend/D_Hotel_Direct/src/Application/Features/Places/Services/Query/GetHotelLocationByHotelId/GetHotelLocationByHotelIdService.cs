@@ -19,7 +19,7 @@ namespace Application.Features.Places.Services.Query.GetHotelLocationByHotelId
 
         public async Task<HotelLocationsDto> GetByHotelIdAsync(int hotelId, CancellationToken cancellationToken = default)
         {
-            var entity = await _hotelLocationsRepository.GetByHotelIdAsync(hotelId, cancellationToken);
+            var entity = await _hotelLocationsRepository.FindOneAsync(h => h.HotelId == hotelId, cancellationToken);
             return _mapper.Map<HotelLocationsDto>(entity);
         }
     }
