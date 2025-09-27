@@ -19,7 +19,7 @@ namespace Application.Features.Hotels.Services.Query.GetHotelStaffsByHotelId
 
         public async Task<IEnumerable<HotelStaffDto>> GetByHotelIdAsync(int hotelId, CancellationToken cancellationToken)
         {
-            var hotelStaffs = await _hotelStaffRepository.GetStaffsByHotelIdAsync(hotelId, cancellationToken);
+            var hotelStaffs = await _hotelStaffRepository.FindAsync(h => h.HotelId == hotelId, cancellationToken);
             return _mapper.Map<IEnumerable<HotelStaffDto>>(hotelStaffs);
         }
     }

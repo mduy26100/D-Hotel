@@ -9,12 +9,5 @@ namespace Infrastructure.Hotels.Repositories
         public HotelStaffRepository(ApplicationDbContext context) : base(context)
         {
         }
-
-        public async Task<IEnumerable<HotelStaff>> GetStaffsByHotelIdAsync(int hotelId, CancellationToken cancellationToken)
-        {
-            return await _context.HotelStaffs
-                .Where(h => h.HotelId == hotelId)
-                .ToListAsync(cancellationToken);
-        }
     }
 }
