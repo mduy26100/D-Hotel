@@ -1,9 +1,21 @@
 ﻿using Application.Common.Interfaces.Persistence.Caching;
 using Application.Common.Interfaces.Services.User;
 using Application.Common.Interfaces.Shared;
+using Application.Features.Hotels.Interfaces.Services.Command.CreateHotelStaff;
+using Application.Features.Hotels.Interfaces.Services.Command.DeleteHotelStaff;
+using Application.Features.Hotels.Interfaces.Services.Command.UpdateHotelStaff;
+using Application.Features.Hotels.Interfaces.Services.Query.GetAllHotelStaffs;
 using Application.Features.Hotels.Interfaces.Services.Query.GetHotelDetail;
+using Application.Features.Hotels.Interfaces.Services.Query.GetHotelStaffById;
+using Application.Features.Hotels.Interfaces.Services.Query.GetHotelStaffsByHotelId;
 using Application.Features.Hotels.Mappings;
+using Application.Features.Hotels.Services.Command.CreateHotelStaff;
+using Application.Features.Hotels.Services.Command.DeleteHotelStaff;
+using Application.Features.Hotels.Services.Command.UpdateHotelStaff;
+using Application.Features.Hotels.Services.Query.GetAllHotelStaffs;
 using Application.Features.Hotels.Services.Query.GetHotelDetail;
+using Application.Features.Hotels.Services.Query.GetHotelStaffById;
+using Application.Features.Hotels.Services.Query.GetHotelStaffsByHotelId;
 using Application.Features.Places.Interfaces.Services.Command.CreateHotelLocation;
 using Application.Features.Places.Interfaces.Services.Command.CreateLocation;
 using Application.Features.Places.Interfaces.Services.Command.DeleteHotelLocation;
@@ -257,6 +269,7 @@ builder.Services.AddScoped<IGetHotelLocationByLocationIdService, GetHotelLocatio
 //Repositories
 builder.Services.AddScoped<IHotelRepository, HotelRepository>();
 builder.Services.AddScoped<IHotelCategoryRepository, HotelCategoryRepository>();
+builder.Services.AddScoped<IHotelStaffRepository, HotelStaffRepository>();
 
 //Create Hotel
 builder.Services.AddScoped<ICreateHotelService, CreateHotelService>();
@@ -293,6 +306,24 @@ builder.Services.AddScoped<IGetAllHotelCategoriesService, GetAllHotelCategoriesS
 
 //Get All Hotel Category By Id
 builder.Services.AddScoped<IGetHotelCategoryByIdService, GetHotelCategoryByIdService>();
+
+//Create Hotel Staff
+builder.Services.AddScoped<ICreateHotelStaffService, CreateHotelStaffService>();
+
+//Update Hotel Staff
+builder.Services.AddScoped<IUpdateHotelStaffService, UpdateHotelStaffService>();
+
+//Delete HotelStaff
+builder.Services.AddScoped<IDeleteHotelStaffService, DeleteHotelStaffService>();
+
+//Get All Hotel Staffs
+builder.Services.AddScoped<IGetAllHotelStaffsService, GetAllHotelStaffsService>();
+
+//Get Hotel Staffs By HotelId
+builder.Services.AddScoped<IGetHotelStaffsByHotelIdService, GetHotelStaffsByHotelIdService>();
+
+//Get Hotel Staff By Id
+builder.Services.AddScoped<IGetHotelStaffByIdService, GetHotelStaffByIdService>();
 
 //JWT Token
 builder.Services.AddScoped<IJwtTokenGenerator, JwtTokenGenerator>();
