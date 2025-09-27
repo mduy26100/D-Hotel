@@ -3,240 +3,80 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\utilities\\repositories\\utilityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\utilities\\repositories\\utilityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\queries\\gethotelstaffsbyhotelid\\gethotelstaffsbyhotelidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\queries\\gethotelstaffsbyhotelid\\gethotelstaffsbyhotelidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\utilities\\repositories\\utilityitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\utilities\\repositories\\utilityitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\queries\\gethotelstaffsbyhotelid\\gethotelstaffsbyhotelidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\queries\\gethotelstaffsbyhotelid\\gethotelstaffsbyhotelidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\utilities\\services\\query\\getutilitybyid\\getutilitybyidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\utilities\\services\\query\\getutilitybyid\\getutilitybyidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\queries\\gethotelstaffbyid\\gethotelstaffbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\queries\\gethotelstaffbyid\\gethotelstaffbyidqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\utilities\\repositories\\iutilityitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\utilities\\repositories\\iutilityitemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\queries\\gethotelstaffbyid\\gethotelstaffbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\queries\\gethotelstaffbyid\\gethotelstaffbyidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\utilities\\services\\query\\getutilityitemsbyutilityid\\getutilityitemsbyutilityidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\utilities\\services\\query\\getutilityitemsbyutilityid\\getutilityitemsbyutilityidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\queries\\getallhotelstaffs\\getallhotelstaffsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\queries\\getallhotelstaffs\\getallhotelstaffsqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\utilities\\repositories\\roomutilityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\utilities\\repositories\\roomutilityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\queries\\getallhotelstaffs\\getallhotelstaffsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\queries\\getallhotelstaffs\\getallhotelstaffsquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\utilities\\repositories\\iroomutilityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\utilities\\repositories\\iroomutilityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\commands\\updatehotelstaff\\updatehotelstaffcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\commands\\updatehotelstaff\\updatehotelstaffcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\utilities\\services\\query\\getutilitybyroomid\\getutilitybyroomidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\utilities\\services\\query\\getutilitybyroomid\\getutilitybyroomidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\commands\\updatehotelstaff\\updatehotelstaffcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\commands\\updatehotelstaff\\updatehotelstaffcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\utilities\\repositories\\ihotelutilityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\utilities\\repositories\\ihotelutilityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\commands\\deletehotelstaff\\deletehotelstaffcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\commands\\deletehotelstaff\\deletehotelstaffcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\utilities\\repositories\\hotelutilityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\utilities\\repositories\\hotelutilityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\commands\\deletehotelstaff\\deletehotelstaffcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\commands\\deletehotelstaff\\deletehotelstaffcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\utilities\\services\\query\\getutilitybyhotelid\\getutilitybyhotelidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\utilities\\services\\query\\getutilitybyhotelid\\getutilitybyhotelidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\commands\\createhotelstaff\\createhotelstaffcommandvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\commands\\createhotelstaff\\createhotelstaffcommandvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\utilities\\services\\command\\updatehotelutility\\updatehotelutilityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\utilities\\services\\command\\updatehotelutility\\updatehotelutilityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\commands\\createhotelcategory\\createhotelcategorycommandvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\commands\\createhotelcategory\\createhotelcategorycommandvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\utilities\\services\\command\\deletehotelutility\\deletehotelutilityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\utilities\\services\\command\\deletehotelutility\\deletehotelutilityservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\commands\\createhotelstaff\\createhotelstaffcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\commands\\createhotelstaff\\createhotelstaffcommandhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\services\\query\\gethoteldetail\\gethoteldetailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\services\\query\\gethoteldetail\\gethoteldetailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\commands\\createhotelstaff\\createhotelstaffcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\commands\\createhotelstaff\\createhotelstaffcommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\places\\services\\query\\gethotellocationbyhotelid\\gethotellocationbyhotelidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\places\\services\\query\\gethotellocationbyhotelid\\gethotellocationbyhotelidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\queries\\gethotelstaffsbyhotelid\\gethotelstaffsbyhotelidqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\queries\\gethotelstaffsbyhotelid\\gethotelstaffsbyhotelidqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\places\\services\\query\\gethotellocationbylocationid\\gethotellocationbylocationidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\places\\services\\query\\gethotellocationbylocationid\\gethotellocationbylocationidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\queries\\gethotelstaffbyid\\gethotelstaffbyidqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\queries\\gethotelstaffbyid\\gethotelstaffbyidqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\places\\repositories\\hotellocationsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\places\\repositories\\hotellocationsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\queries\\getallhotelstaffs\\getallhotelstaffsqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\queries\\getallhotelstaffs\\getallhotelstaffsqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\places\\repositories\\ihotellocationsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\places\\repositories\\ihotellocationsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\commands\\updatehotelstaff\\updatehotelstaffcommandvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\commands\\updatehotelstaff\\updatehotelstaffcommandvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\common\\interfaces\\persistence\\base\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\common\\interfaces\\persistence\\base\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\hotels\\repositories\\hotelstaffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\hotels\\repositories\\hotelstaffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\hotels\\repositories\\hotelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\hotels\\repositories\\hotelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\common\\persistence\\base\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\common\\persistence\\base\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\repositories\\ihotelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\repositories\\ihotelrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\services\\query\\gethotelsbycategoryid\\gethotelsbycategoryidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\services\\query\\gethotelsbycategoryid\\gethotelsbycategoryidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\services\\query\\gethotelstaffsbyhotelid\\gethotelstaffsbyhotelidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\services\\query\\gethotelstaffsbyhotelid\\gethotelstaffsbyhotelidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\repositories\\ihotelstaffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\repositories\\ihotelstaffrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\services\\query\\gethotelstaffbyid\\gethotelstaffbyidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\services\\query\\gethotelstaffbyid\\gethotelstaffbyidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\services\\query\\getallhotelstaffs\\getallhotelstaffsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\services\\query\\getallhotelstaffs\\getallhotelstaffsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\services\\command\\createhotelstaff\\createhotelstaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\services\\command\\createhotelstaff\\createhotelstaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\services\\command\\createhotel\\createhotelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\services\\command\\createhotel\\createhotelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7498B6AD-92C4-4881-80B9-F19142DB3E24}|src\\WebAPI\\WebAPI.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\webapi\\controllers\\hotels\\hotelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7498B6AD-92C4-4881-80B9-F19142DB3E24}|src\\WebAPI\\WebAPI.csproj|solutionrelative:src\\webapi\\controllers\\hotels\\hotelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\services\\user\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\services\\user\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7498B6AD-92C4-4881-80B9-F19142DB3E24}|src\\WebAPI\\WebAPI.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7498B6AD-92C4-4881-80B9-F19142DB3E24}|src\\WebAPI\\WebAPI.csproj|solutionrelative:src\\webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\interfaces\\services\\query\\getallhotelstaffs\\igetallhotelstaffsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\interfaces\\services\\query\\getallhotelstaffs\\igetallhotelstaffsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\services\\command\\updatehotelstaff\\updatehotelstaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\services\\command\\updatehotelstaff\\updatehotelstaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\services\\command\\deletehotelstaff\\deletehotelstaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\services\\command\\deletehotelstaff\\deletehotelstaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\services\\command\\deletehotelcategory\\deletehotelcategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\services\\command\\deletehotelcategory\\deletehotelcategoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\interfaces\\services\\query\\gethotelstaffsbyhotelid\\igethotelstaffsbyhotelidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\interfaces\\services\\query\\gethotelstaffsbyhotelid\\igethotelstaffsbyhotelidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\mappings\\hotelmappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\mappings\\hotelmappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\interfaces\\services\\query\\gethotelstaffbyid\\igethotelstaffbyidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\interfaces\\services\\query\\gethotelstaffbyid\\igethotelstaffbyidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\interfaces\\services\\command\\updatehotelstaff\\iupdatehotelstaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\interfaces\\services\\command\\updatehotelstaff\\iupdatehotelstaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\interfaces\\services\\command\\deletehotelstaff\\ideletehotelstaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\interfaces\\services\\command\\deletehotelstaff\\ideletehotelstaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\interfaces\\services\\command\\createhotelstaff\\icreatehotelstaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\interfaces\\services\\command\\createhotelstaff\\icreatehotelstaffservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\dtos\\hotelstaffdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\dtos\\hotelstaffdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F53DC263-979E-48E9-8979-112DFE088FF2}|src\\Domain\\Domain.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\domain\\models\\hotels\\hotelstaff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F53DC263-979E-48E9-8979-112DFE088FF2}|src\\Domain\\Domain.csproj|solutionrelative:src\\domain\\models\\hotels\\hotelstaff.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\common\\interfaces\\services\\user\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\common\\interfaces\\services\\user\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\data\\configurations\\hotels\\hotelstaffconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\data\\configurations\\hotels\\hotelstaffconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\data\\migrations\\20250924084242_addhotelstafftable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\data\\migrations\\20250924084242_addhotelstafftable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7498B6AD-92C4-4881-80B9-F19142DB3E24}|src\\WebAPI\\WebAPI.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{7498B6AD-92C4-4881-80B9-F19142DB3E24}|src\\WebAPI\\WebAPI.csproj|solutionrelative:src\\webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\data\\caching\\rediscacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\data\\caching\\rediscacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\common\\interfaces\\persistence\\caching\\icacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\common\\interfaces\\persistence\\caching\\icacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\auth\\services\\command\\login\\strategy\\emailpasswordloginstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\auth\\services\\command\\login\\strategy\\emailpasswordloginstrategy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\auth\\services\\command\\login\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\auth\\services\\command\\login\\loginservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\queries\\gethoteldetail\\gethoteldetailqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\queries\\gethoteldetail\\gethoteldetailqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\queries\\gethoteldetail\\gethoteldetailquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\queries\\gethoteldetail\\gethoteldetailquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\interfaces\\services\\query\\gethoteldetail\\igethoteldetailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\interfaces\\services\\query\\gethoteldetail\\igethoteldetailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\dtos\\hoteldetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\dtos\\hoteldetaildto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7498B6AD-92C4-4881-80B9-F19142DB3E24}|src\\WebAPI\\WebAPI.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\webapi\\controllers\\auth\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7498B6AD-92C4-4881-80B9-F19142DB3E24}|src\\WebAPI\\WebAPI.csproj|solutionrelative:src\\webapi\\controllers\\auth\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\commands\\deletehotelstaff\\deletehotelstaffcommandvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\commands\\deletehotelstaff\\deletehotelstaffcommandvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -246,716 +86,254 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UtilityRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Utilities\\Repositories\\UtilityRepository.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Utilities\\Repositories\\UtilityRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Utilities\\Repositories\\UtilityRepository.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Utilities\\Repositories\\UtilityRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA5AAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "GetHotelStaffByIdQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQuery.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQuery.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQuery.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:25:35.994Z",
+              "WhenOpened": "2025-09-27T09:32:20.712Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "GetUtilityByIdService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Utilities\\Services\\Query\\GetUtilityById\\GetUtilityByIdService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Utilities\\Services\\Query\\GetUtilityById\\GetUtilityByIdService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Utilities\\Services\\Query\\GetUtilityById\\GetUtilityByIdService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Utilities\\Services\\Query\\GetUtilityById\\GetUtilityByIdService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAUwBEAAAAJAAAAAAAAAA==",
+              "Title": "GetHotelStaffByIdQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQueryHandler.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQueryHandler.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQueryHandler.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQueryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:25:42.427Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IUtilityItemRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Utilities\\Repositories\\IUtilityItemRepository.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Utilities\\Repositories\\IUtilityItemRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Utilities\\Repositories\\IUtilityItemRepository.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Utilities\\Repositories\\IUtilityItemRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:25:11.311Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GetUtilityItemsByUtilityIdService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Utilities\\Services\\Query\\GetUtilityItemsByUtilityId\\GetUtilityItemsByUtilityIdService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Utilities\\Services\\Query\\GetUtilityItemsByUtilityId\\GetUtilityItemsByUtilityIdService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Utilities\\Services\\Query\\GetUtilityItemsByUtilityId\\GetUtilityItemsByUtilityIdService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Utilities\\Services\\Query\\GetUtilityItemsByUtilityId\\GetUtilityItemsByUtilityIdService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAUwAcAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:24:41.281Z"
+              "WhenOpened": "2025-09-27T09:32:27.679Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UtilityItemRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Utilities\\Repositories\\UtilityItemRepository.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Utilities\\Repositories\\UtilityItemRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Utilities\\Repositories\\UtilityItemRepository.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Utilities\\Repositories\\UtilityItemRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABYAAAAAAAAAA==",
+              "Title": "GetHotelStaffsByHotelIdQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQuery.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQuery.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQuery.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:23:52.413Z"
+              "WhenOpened": "2025-09-27T09:32:42.035Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "IRoomUtilityRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Utilities\\Repositories\\IRoomUtilityRepository.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Utilities\\Repositories\\IRoomUtilityRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Utilities\\Repositories\\IRoomUtilityRepository.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Utilities\\Repositories\\IRoomUtilityRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "GetHotelStaffsByHotelIdQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQueryHandler.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQueryHandler.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQueryHandler.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQueryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:23:55.987Z"
+              "WhenOpened": "2025-09-27T09:32:45.358Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GetUtilityByRoomIdService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Utilities\\Services\\Query\\GetUtilityByRoomId\\GetUtilityByRoomIdService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Utilities\\Services\\Query\\GetUtilityByRoomId\\GetUtilityByRoomIdService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Utilities\\Services\\Query\\GetUtilityByRoomId\\GetUtilityByRoomIdService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Utilities\\Services\\Query\\GetUtilityByRoomId\\GetUtilityByRoomIdService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAUwAcAAAAqAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "GetAllHotelStaffsQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQueryHandler.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQueryHandler.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQueryHandler.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQueryHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:23:29Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IHotelUtilityRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Utilities\\Repositories\\IHotelUtilityRepository.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Utilities\\Repositories\\IHotelUtilityRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Utilities\\Repositories\\IHotelUtilityRepository.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Utilities\\Repositories\\IHotelUtilityRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:23:17.843Z"
+              "WhenOpened": "2025-09-27T09:32:07.96Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "RoomUtilityRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Utilities\\Repositories\\RoomUtilityRepository.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Utilities\\Repositories\\RoomUtilityRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Utilities\\Repositories\\RoomUtilityRepository.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Utilities\\Repositories\\RoomUtilityRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABWAAAAAAAAAA==",
+              "Title": "GetAllHotelStaffsQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQuery.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQuery.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQuery.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:23:01.094Z"
+              "WhenOpened": "2025-09-27T09:32:05.015Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GetUtilityByHotelIdService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Utilities\\Services\\Query\\GetUtilityByHotelId\\GetUtilityByHotelIdService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Utilities\\Services\\Query\\GetUtilityByHotelId\\GetUtilityByHotelIdService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Utilities\\Services\\Query\\GetUtilityByHotelId\\GetUtilityByHotelIdService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Utilities\\Services\\Query\\GetUtilityByHotelId\\GetUtilityByHotelIdService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAUwAcAAAArAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "UpdateHotelStaffCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommandHandler.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommandHandler.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:22:32.708Z"
+              "WhenOpened": "2025-09-27T09:31:29.67Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "UpdateHotelUtilityService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Utilities\\Services\\Command\\UpdateHotelUtility\\UpdateHotelUtilityService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Utilities\\Services\\Command\\UpdateHotelUtility\\UpdateHotelUtilityService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Utilities\\Services\\Command\\UpdateHotelUtility\\UpdateHotelUtilityService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Utilities\\Services\\Command\\UpdateHotelUtility\\UpdateHotelUtilityService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAAoAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "UpdateHotelStaffCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommand.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommand.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommand.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:21:57.958Z"
+              "WhenOpened": "2025-09-27T09:31:26.02Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "DeleteHotelUtilityService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Utilities\\Services\\Command\\DeleteHotelUtility\\DeleteHotelUtilityService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Utilities\\Services\\Command\\DeleteHotelUtility\\DeleteHotelUtilityService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Utilities\\Services\\Command\\DeleteHotelUtility\\DeleteHotelUtilityService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Utilities\\Services\\Command\\DeleteHotelUtility\\DeleteHotelUtilityService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAABLAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "DeleteHotelStaffCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommandHandler.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommandHandler.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:20:50.304Z"
+              "WhenOpened": "2025-09-27T09:31:09.171Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "HotelUtilityRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Utilities\\Repositories\\HotelUtilityRepository.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Utilities\\Repositories\\HotelUtilityRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Utilities\\Repositories\\HotelUtilityRepository.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Utilities\\Repositories\\HotelUtilityRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABbAAAAAAAAAA==",
+              "Title": "DeleteHotelStaffCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommand.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommand.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommand.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:19:17.425Z"
+              "WhenOpened": "2025-09-27T09:31:01.289Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "IHotelLocationsRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Places\\Repositories\\IHotelLocationsRepository.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Places\\Repositories\\IHotelLocationsRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Places\\Repositories\\IHotelLocationsRepository.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Places\\Repositories\\IHotelLocationsRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABsAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "CreateHotelStaffCommandValidator.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommandValidator.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommandValidator.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommandValidator.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommandValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:13:17.973Z"
+              "WhenOpened": "2025-09-27T09:30:49.118Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "HotelLocationsRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Places\\Repositories\\HotelLocationsRepository.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Places\\Repositories\\HotelLocationsRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Places\\Repositories\\HotelLocationsRepository.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Places\\Repositories\\HotelLocationsRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA8AAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "CreateHotelCategoryCommandValidator.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\CreateHotelCategory\\CreateHotelCategoryCommandValidator.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\CreateHotelCategory\\CreateHotelCategoryCommandValidator.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\CreateHotelCategory\\CreateHotelCategoryCommandValidator.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Commands\\CreateHotelCategory\\CreateHotelCategoryCommandValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:11:39.724Z"
+              "WhenOpened": "2025-09-27T09:37:36.171Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "GetHotelLocationByLocationIdService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Places\\Services\\Query\\GetHotelLocationByLocationId\\GetHotelLocationByLocationIdService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Places\\Services\\Query\\GetHotelLocationByLocationId\\GetHotelLocationByLocationIdService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Places\\Services\\Query\\GetHotelLocationByLocationId\\GetHotelLocationByLocationIdService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Places\\Services\\Query\\GetHotelLocationByLocationId\\GetHotelLocationByLocationIdService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAUwBUAAABEAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "CreateHotelStaffCommandHandler.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommandHandler.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommandHandler.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommandHandler.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommandHandler.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABTAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:11:54.847Z"
+              "WhenOpened": "2025-09-27T09:30:42.925Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "GetHotelDetailService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Services\\Query\\GetHotelDetail\\GetHotelDetailService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Services\\Query\\GetHotelDetail\\GetHotelDetailService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Services\\Query\\GetHotelDetail\\GetHotelDetailService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Services\\Query\\GetHotelDetail\\GetHotelDetailService.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAIwC4AAABiAAAAAAAAAA==",
+              "Title": "CreateHotelStaffCommand.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommand.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommand.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommand.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-21T08:30:49.874Z"
+              "WhenOpened": "2025-09-27T09:30:38.796Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "GetHotelLocationByHotelIdService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Places\\Services\\Query\\GetHotelLocationByHotelId\\GetHotelLocationByHotelIdService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Places\\Services\\Query\\GetHotelLocationByHotelId\\GetHotelLocationByHotelIdService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Places\\Services\\Query\\GetHotelLocationByHotelId\\GetHotelLocationByHotelIdService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Places\\Services\\Query\\GetHotelLocationByHotelId\\GetHotelLocationByHotelIdService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAUwAcAAAAxAAAAAAAAAA==",
+              "Title": "GetHotelStaffsByHotelIdQueryValidator.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQueryValidator.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQueryValidator.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQueryValidator.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQueryValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:13:33.172Z"
+              "WhenOpened": "2025-09-27T09:32:57.024Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Common\\Persistence\\Base\\Repository.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Common\\Persistence\\Base\\Repository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Common\\Persistence\\Base\\Repository.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Common\\Persistence\\Base\\Repository.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowDgAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 15,
+              "Title": "GetHotelStaffByIdQueryValidator.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQueryValidator.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQueryValidator.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQueryValidator.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQueryValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:10:38.546Z"
+              "WhenOpened": "2025-09-27T09:32:31.891Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GetAllHotelStaffsQueryValidator.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQueryValidator.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQueryValidator.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQueryValidator.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQueryValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T09:32:11.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UpdateHotelStaffCommandValidator.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommandValidator.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommandValidator.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommandValidator.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommandValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T09:31:33.276Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Common\\Interfaces\\Persistence\\Base\\IRepository.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Common\\Interfaces\\Persistence\\Base\\IRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Common\\Interfaces\\Persistence\\Base\\IRepository.cs",
-              "RelativeToolTip": "src\\Application\\Common\\Interfaces\\Persistence\\Base\\IRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:09:24.55Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "IHotelRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Repositories\\IHotelRepository.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Repositories\\IHotelRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Repositories\\IHotelRepository.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Repositories\\IHotelRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:07:45.569Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "HotelRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Hotels\\Repositories\\HotelRepository.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Hotels\\Repositories\\HotelRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Hotels\\Repositories\\HotelRepository.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Hotels\\Repositories\\HotelRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:06:54.679Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "GetHotelsByCategoryIdService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Services\\Query\\GetHotelsByCategoryId\\GetHotelsByCategoryIdService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Services\\Query\\GetHotelsByCategoryId\\GetHotelsByCategoryIdService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Services\\Query\\GetHotelsByCategoryId\\GetHotelsByCategoryIdService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Services\\Query\\GetHotelsByCategoryId\\GetHotelsByCategoryIdService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAUwBUAAABZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:07:18.564Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "HotelStaffRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Hotels\\Repositories\\HotelStaffRepository.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Hotels\\Repositories\\HotelStaffRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Hotels\\Repositories\\HotelStaffRepository.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Hotels\\Repositories\\HotelStaffRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T02:14:45.926Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "GetAllHotelStaffsService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Services\\Query\\GetAllHotelStaffs\\GetAllHotelStaffsService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Services\\Query\\GetAllHotelStaffs\\GetAllHotelStaffsService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Services\\Query\\GetAllHotelStaffs\\GetAllHotelStaffsService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Services\\Query\\GetAllHotelStaffs\\GetAllHotelStaffsService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T03:01:11.732Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "GetHotelStaffByIdService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Services\\Query\\GetHotelStaffById\\GetHotelStaffByIdService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Services\\Query\\GetHotelStaffById\\GetHotelStaffByIdService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Services\\Query\\GetHotelStaffById\\GetHotelStaffByIdService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Services\\Query\\GetHotelStaffById\\GetHotelStaffByIdService.cs",
+              "Title": "DeleteHotelStaffCommandValidator.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommandValidator.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommandValidator.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommandValidator.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommandValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T03:01:18.545Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "GetHotelStaffsByHotelIdService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Services\\Query\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Services\\Query\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Services\\Query\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Services\\Query\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T03:01:28.151Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "IHotelStaffRepository.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Repositories\\IHotelStaffRepository.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Repositories\\IHotelStaffRepository.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Repositories\\IHotelStaffRepository.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Repositories\\IHotelStaffRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T02:12:16.309Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "CreateHotelStaffService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Services\\Command\\CreateHotelStaff\\CreateHotelStaffService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Services\\Command\\CreateHotelStaff\\CreateHotelStaffService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Services\\Command\\CreateHotelStaff\\CreateHotelStaffService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Services\\Command\\CreateHotelStaff\\CreateHotelStaffService.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwCIAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T02:30:56.415Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "HotelController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\Controllers\\Hotels\\HotelController.cs",
-              "RelativeDocumentMoniker": "src\\WebAPI\\Controllers\\Hotels\\HotelController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\Controllers\\Hotels\\HotelController.cs",
-              "RelativeToolTip": "src\\WebAPI\\Controllers\\Hotels\\HotelController.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAgwGYAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-21T08:35:02.24Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Services\\User\\UserService.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Services\\User\\UserService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Services\\User\\UserService.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Services\\User\\UserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T02:35:38.871Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "CreateHotelService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Services\\Command\\CreateHotel\\CreateHotelService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Services\\Command\\CreateHotel\\CreateHotelService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Services\\Command\\CreateHotel\\CreateHotelService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Services\\Command\\CreateHotel\\CreateHotelService.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAAACUAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T02:44:06.647Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\Program.cs",
-              "RelativeDocumentMoniker": "src\\WebAPI\\Program.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\Program.cs",
-              "RelativeToolTip": "src\\WebAPI\\Program.cs",
-              "ViewState": "AgIAAC8BAAAAAAAAAAAMwEMBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-21T08:35:13.891Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "IGetAllHotelStaffsService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Interfaces\\Services\\Query\\GetAllHotelStaffs\\IGetAllHotelStaffsService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Interfaces\\Services\\Query\\GetAllHotelStaffs\\IGetAllHotelStaffsService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Interfaces\\Services\\Query\\GetAllHotelStaffs\\IGetAllHotelStaffsService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Interfaces\\Services\\Query\\GetAllHotelStaffs\\IGetAllHotelStaffsService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAABYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T02:25:26.999Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "UpdateHotelStaffService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Services\\Command\\UpdateHotelStaff\\UpdateHotelStaffService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Services\\Command\\UpdateHotelStaff\\UpdateHotelStaffService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Services\\Command\\UpdateHotelStaff\\UpdateHotelStaffService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Services\\Command\\UpdateHotelStaff\\UpdateHotelStaffService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T02:31:26.362Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "DeleteHotelStaffService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Services\\Command\\DeleteHotelStaff\\DeleteHotelStaffService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Services\\Command\\DeleteHotelStaff\\DeleteHotelStaffService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Services\\Command\\DeleteHotelStaff\\DeleteHotelStaffService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Services\\Command\\DeleteHotelStaff\\DeleteHotelStaffService.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAwB0AAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T02:31:04.719Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "DeleteHotelCategoryService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Services\\Command\\DeleteHotelCategory\\DeleteHotelCategoryService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Services\\Command\\DeleteHotelCategory\\DeleteHotelCategoryService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Services\\Command\\DeleteHotelCategory\\DeleteHotelCategoryService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Services\\Command\\DeleteHotelCategory\\DeleteHotelCategoryService.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T03:06:46.674Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "IGetHotelStaffsByHotelIdService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Interfaces\\Services\\Query\\GetHotelStaffsByHotelId\\IGetHotelStaffsByHotelIdService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Interfaces\\Services\\Query\\GetHotelStaffsByHotelId\\IGetHotelStaffsByHotelIdService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Interfaces\\Services\\Query\\GetHotelStaffsByHotelId\\IGetHotelStaffsByHotelIdService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Interfaces\\Services\\Query\\GetHotelStaffsByHotelId\\IGetHotelStaffsByHotelIdService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAABOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T02:26:10.058Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "HotelMappingProfile.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Mappings\\HotelMappingProfile.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Mappings\\HotelMappingProfile.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Mappings\\HotelMappingProfile.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Mappings\\HotelMappingProfile.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T02:29:05.062Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "IGetHotelStaffByIdService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Interfaces\\Services\\Query\\GetHotelStaffById\\IGetHotelStaffByIdService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Interfaces\\Services\\Query\\GetHotelStaffById\\IGetHotelStaffByIdService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Interfaces\\Services\\Query\\GetHotelStaffById\\IGetHotelStaffByIdService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Interfaces\\Services\\Query\\GetHotelStaffById\\IGetHotelStaffByIdService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T02:27:04.18Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "IUpdateHotelStaffService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Interfaces\\Services\\Command\\UpdateHotelStaff\\IUpdateHotelStaffService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Interfaces\\Services\\Command\\UpdateHotelStaff\\IUpdateHotelStaffService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Interfaces\\Services\\Command\\UpdateHotelStaff\\IUpdateHotelStaffService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Interfaces\\Services\\Command\\UpdateHotelStaff\\IUpdateHotelStaffService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T02:24:49.672Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "IDeleteHotelStaffService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Interfaces\\Services\\Command\\DeleteHotelStaff\\IDeleteHotelStaffService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Interfaces\\Services\\Command\\DeleteHotelStaff\\IDeleteHotelStaffService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Interfaces\\Services\\Command\\DeleteHotelStaff\\IDeleteHotelStaffService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Interfaces\\Services\\Command\\DeleteHotelStaff\\IDeleteHotelStaffService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABRAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T02:23:54.185Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "HotelStaffDto.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\DTOs\\HotelStaffDto.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\DTOs\\HotelStaffDto.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\DTOs\\HotelStaffDto.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\DTOs\\HotelStaffDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T02:22:35.263Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "ICreateHotelStaffService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Interfaces\\Services\\Command\\CreateHotelStaff\\ICreateHotelStaffService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Interfaces\\Services\\Command\\CreateHotelStaff\\ICreateHotelStaffService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Interfaces\\Services\\Command\\CreateHotelStaff\\ICreateHotelStaffService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Interfaces\\Services\\Command\\CreateHotelStaff\\ICreateHotelStaffService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T02:22:09.027Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "HotelStaffConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Data\\Configurations\\Hotels\\HotelStaffConfiguration.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Data\\Configurations\\Hotels\\HotelStaffConfiguration.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Data\\Configurations\\Hotels\\HotelStaffConfiguration.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Data\\Configurations\\Hotels\\HotelStaffConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T08:39:12.341Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "HotelStaff.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Domain\\Models\\Hotels\\HotelStaff.cs",
-              "RelativeDocumentMoniker": "src\\Domain\\Models\\Hotels\\HotelStaff.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Domain\\Models\\Hotels\\HotelStaff.cs",
-              "RelativeToolTip": "src\\Domain\\Models\\Hotels\\HotelStaff.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T08:35:20.517Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T08:36:39.949Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\appsettings.json",
-              "RelativeDocumentMoniker": "src\\WebAPI\\appsettings.json",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\appsettings.json",
-              "RelativeToolTip": "src\\WebAPI\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-24T08:10:12.291Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "RedisCacheService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Data\\Caching\\RedisCacheService.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Data\\Caching\\RedisCacheService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Data\\Caching\\RedisCacheService.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Data\\Caching\\RedisCacheService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T03:13:35.809Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "IUserService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Common\\Interfaces\\Services\\User\\IUserService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Common\\Interfaces\\Services\\User\\IUserService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Common\\Interfaces\\Services\\User\\IUserService.cs",
-              "RelativeToolTip": "src\\Application\\Common\\Interfaces\\Services\\User\\IUserService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T02:32:19.703Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "20250924084242_AddHotelStaffTable.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Data\\Migrations\\20250924084242_AddHotelStaffTable.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Data\\Migrations\\20250924084242_AddHotelStaffTable.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Data\\Migrations\\20250924084242_AddHotelStaffTable.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Data\\Migrations\\20250924084242_AddHotelStaffTable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T08:42:42.574Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "ICacheService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Common\\Interfaces\\Persistence\\Caching\\ICacheService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Common\\Interfaces\\Persistence\\Caching\\ICacheService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Common\\Interfaces\\Persistence\\Caching\\ICacheService.cs",
-              "RelativeToolTip": "src\\Application\\Common\\Interfaces\\Persistence\\Caching\\ICacheService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T03:13:01.963Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 52,
-              "Title": "EmailPasswordLoginStrategy.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Auth\\Services\\Command\\Login\\Strategy\\EmailPasswordLoginStrategy.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Auth\\Services\\Command\\Login\\Strategy\\EmailPasswordLoginStrategy.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Auth\\Services\\Command\\Login\\Strategy\\EmailPasswordLoginStrategy.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Auth\\Services\\Command\\Login\\Strategy\\EmailPasswordLoginStrategy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T09:10:07.476Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "LoginService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Auth\\Services\\Command\\Login\\LoginService.cs",
-              "RelativeDocumentMoniker": "src\\Infrastructure\\Auth\\Services\\Command\\Login\\LoginService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Auth\\Services\\Command\\Login\\LoginService.cs",
-              "RelativeToolTip": "src\\Infrastructure\\Auth\\Services\\Command\\Login\\LoginService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAowBEAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T09:09:49.602Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 56,
-              "Title": "IGetHotelDetailService.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Interfaces\\Services\\Query\\GetHotelDetail\\IGetHotelDetailService.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Interfaces\\Services\\Query\\GetHotelDetail\\IGetHotelDetailService.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Interfaces\\Services\\Query\\GetHotelDetail\\IGetHotelDetailService.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Interfaces\\Services\\Query\\GetHotelDetail\\IGetHotelDetailService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-21T08:30:07.005Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 57,
-              "Title": "HotelDetailDto.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\DTOs\\HotelDetailDto.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\DTOs\\HotelDetailDto.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\DTOs\\HotelDetailDto.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\DTOs\\HotelDetailDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-21T08:24:41.658Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 54,
-              "Title": "GetHotelDetailQueryHandler.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelDetail\\GetHotelDetailQueryHandler.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelDetail\\GetHotelDetailQueryHandler.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelDetail\\GetHotelDetailQueryHandler.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Queries\\GetHotelDetail\\GetHotelDetailQueryHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-21T08:24:11.941Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
-              "Title": "GetHotelDetailQuery.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelDetail\\GetHotelDetailQuery.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelDetail\\GetHotelDetailQuery.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelDetail\\GetHotelDetailQuery.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Queries\\GetHotelDetail\\GetHotelDetailQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-21T08:23:43.113Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 58,
-              "Title": "AccountController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\Controllers\\Auth\\AccountController.cs",
-              "RelativeDocumentMoniker": "src\\WebAPI\\Controllers\\Auth\\AccountController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\Controllers\\Auth\\AccountController.cs",
-              "RelativeToolTip": "src\\WebAPI\\Controllers\\Auth\\AccountController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAADwvyIAAABIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-18T08:44:07.028Z"
+              "WhenOpened": "2025-09-27T09:31:12.712Z",
+              "EditorCaption": ""
             }
           ]
         }
