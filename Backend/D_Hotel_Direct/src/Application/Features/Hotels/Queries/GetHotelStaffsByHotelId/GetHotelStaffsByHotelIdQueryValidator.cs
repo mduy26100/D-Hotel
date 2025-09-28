@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using FluentValidation;
 
 namespace Application.Features.Hotels.Queries.GetHotelStaffsByHotelId
 {
-    internal class GetHotelStaffsByHotelIdQueryValidator
+    public class GetHotelStaffsByHotelIdQueryValidator : AbstractValidator<GetHotelStaffsByHotelIdQuery>
     {
+        public GetHotelStaffsByHotelIdQueryValidator()
+        {
+            RuleFor(x => x.hotelId)
+                .GreaterThan(0).WithMessage("HotelId must be greater than 0.");
+        }
     }
 }
