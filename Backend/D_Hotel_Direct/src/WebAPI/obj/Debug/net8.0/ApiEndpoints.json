@@ -471,6 +471,96 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebAPI.Controllers.Hotels.HotelStaffController",
+    "Method": "CreateHotelStaff",
+    "RelativePath": "api/HotelStaff/create-hotel-staff",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Features.Hotels.Commands.CreateHotelStaff.CreateHotelStaffCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Hotels.HotelStaffController",
+    "Method": "DeleteHotelStaff",
+    "RelativePath": "api/HotelStaff/delete-hotel-staff",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Features.Hotels.Commands.DeleteHotelStaff.DeleteHotelStaffCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Hotels.HotelStaffController",
+    "Method": "GetAllHotelStaffs",
+    "RelativePath": "api/HotelStaff/get-all-hotel-staffs",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Hotels.HotelStaffController",
+    "Method": "GetHotelStaffById",
+    "RelativePath": "api/HotelStaff/get-hotel-staff-by-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Hotels.HotelStaffController",
+    "Method": "GetHotelStaffsByHotelId",
+    "RelativePath": "api/HotelStaff/get-hotel-staffs-by-hotel-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Hotels.HotelStaffController",
+    "Method": "UpdateHotelStaff",
+    "RelativePath": "api/HotelStaff/update-hotel-staff",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Features.Hotels.Commands.UpdateHotelStaff.UpdateHotelStaffCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebAPI.Controllers.Utilities.HotelUtilityController",
     "Method": "Create",
     "RelativePath": "api/HotelUtility/create-utilities-to-hotel",

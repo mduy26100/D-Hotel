@@ -780,6 +780,157 @@
         }
       }
     },
+    "/api/HotelStaff/create-hotel-staff": {
+      "post": {
+        "tags": [
+          "HotelStaff"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateHotelStaffCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateHotelStaffCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateHotelStaffCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HotelStaff/update-hotel-staff": {
+      "put": {
+        "tags": [
+          "HotelStaff"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateHotelStaffCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateHotelStaffCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateHotelStaffCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HotelStaff/delete-hotel-staff": {
+      "delete": {
+        "tags": [
+          "HotelStaff"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteHotelStaffCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteHotelStaffCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteHotelStaffCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HotelStaff/get-all-hotel-staffs": {
+      "get": {
+        "tags": [
+          "HotelStaff"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HotelStaff/get-hotel-staff-by-id/{id}": {
+      "get": {
+        "tags": [
+          "HotelStaff"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HotelStaff/get-hotel-staffs-by-hotel-id/{id}": {
+      "get": {
+        "tags": [
+          "HotelStaff"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/HotelUtility/create-utilities-to-hotel": {
       "post": {
         "tags": [
@@ -1403,6 +1554,15 @@
         },
         "additionalProperties": false
       },
+      "CreateHotelStaffCommand": {
+        "type": "object",
+        "properties": {
+          "hotelStaffDto": {
+            "$ref": "#/components/schemas/HotelStaffDto"
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateUtilityItemCommand": {
         "type": "object",
         "properties": {
@@ -1426,6 +1586,15 @@
         "properties": {
           "dto": {
             "$ref": "#/components/schemas/HotelDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteHotelStaffCommand": {
+        "type": "object",
+        "properties": {
+          "hotelStaffDto": {
+            "$ref": "#/components/schemas/HotelStaffDto"
           }
         },
         "additionalProperties": false
@@ -1521,6 +1690,27 @@
           "locationId": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "HotelStaffDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "hotelId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isActive": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -1679,6 +1869,15 @@
         "properties": {
           "dto": {
             "$ref": "#/components/schemas/HotelLocationsDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateHotelStaffCommand": {
+        "type": "object",
+        "properties": {
+          "hotelStaffDto": {
+            "$ref": "#/components/schemas/HotelStaffDto"
           }
         },
         "additionalProperties": false

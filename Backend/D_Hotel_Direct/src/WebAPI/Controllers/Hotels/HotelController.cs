@@ -6,12 +6,14 @@ using Application.Features.Hotels.Queries.GetAllHotels;
 using Application.Features.Hotels.Queries.GetHotelById;
 using Application.Features.Hotels.Queries.GetHotelDetail;
 using Application.Features.Hotels.Queries.GetHotelsByCategoryId;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers.Hotels
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class HotelController : ControllerBase
     {
         private readonly IMediator _mediator;
