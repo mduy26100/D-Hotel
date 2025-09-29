@@ -13,7 +13,6 @@ namespace WebAPI.Controllers.Hotels
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class HotelController : ControllerBase
     {
         private readonly IMediator _mediator;
