@@ -18,4 +18,29 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.16" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Purposes\Commands\HotelTravelPurpose\CreateHotelTravelPurpose\" />
+    <Folder Include="Features\Purposes\Commands\HotelTravelPurpose\DeleteHotelTravelPurpose\" />
+    <Folder Include="Features\Purposes\Commands\HotelTravelPurpose\UpdateHotelTravelPurpose\" />
+    <Folder Include="Features\Purposes\Commands\RoomPurpose\CreateRoomPurpose\" />
+    <Folder Include="Features\Purposes\Commands\RoomPurpose\DeleteRoomPurpose\" />
+    <Folder Include="Features\Purposes\Commands\RoomPurpose\UpdateRoomPurpose\" />
+    <Folder Include="Features\Purposes\Commands\RoomTypePurpose\CreateRoomTypePurpose\" />
+    <Folder Include="Features\Purposes\Commands\RoomTypePurpose\DeleteRoomTypePurpose\" />
+    <Folder Include="Features\Purposes\Commands\RoomTypePurpose\UpdateRoomTypePurpose\" />
+    <Folder Include="Features\Purposes\Commands\TravelPurpose\CreateTravelPurpose\" />
+    <Folder Include="Features\Purposes\Commands\TravelPurpose\DeleteTravelPurpose\" />
+    <Folder Include="Features\Purposes\Commands\TravelPurpose\UpdateTravelPurpose\" />
+    <Folder Include="Features\Purposes\Queries\HotelTravelPurpose\GetAllHotelTravelPurposes\" />
+    <Folder Include="Features\Purposes\Queries\HotelTravelPurpose\GetHotelsByTravelPurposeId\" />
+    <Folder Include="Features\Purposes\Queries\HotelTravelPurpose\GetTravelPurposeByHotelId\" />
+    <Folder Include="Features\Purposes\Queries\RoomPurpose\GetAllRoomPurposes\" />
+    <Folder Include="Features\Purposes\Queries\RoomPurpose\GetRoomPurposeById\" />
+    <Folder Include="Features\Purposes\Queries\RoomTypePurpose\GetAllRoomTypePurposes\" />
+    <Folder Include="Features\Purposes\Queries\RoomTypePurpose\GetRoomPurposeByRoomId\" />
+    <Folder Include="Features\Purposes\Queries\RoomTypePurpose\GetRoomsByRoomPurposeId\" />
+    <Folder Include="Features\Purposes\Queries\TravelPurpose\GetAllTravelPurposes\" />
+    <Folder Include="Features\Purposes\Queries\TravelPurpose\GetTravelPurposeById\" />
+  </ItemGroup>
+
 </Project>

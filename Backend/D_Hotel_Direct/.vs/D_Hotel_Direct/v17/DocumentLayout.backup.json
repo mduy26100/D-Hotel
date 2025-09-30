@@ -3,16 +3,256 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\query\\roomtypepurpose\\getroomsbyroompurposeid\\igetroomsbyroompurposeidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\query\\roomtypepurpose\\getroomsbyroompurposeid\\igetroomsbyroompurposeidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\query\\roomtypepurpose\\getroomsbyroompurposeid\\getroomsbyroompurposeidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\query\\roomtypepurpose\\getroomsbyroompurposeid\\getroomsbyroompurposeidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\purposes\\repositories\\travelpurposerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\purposes\\repositories\\travelpurposerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\purposes\\repositories\\roomtypepurposerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\purposes\\repositories\\roomtypepurposerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\purposes\\repositories\\roompurposerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\purposes\\repositories\\roompurposerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\purposes\\repositories\\hoteltravelpurposerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\purposes\\repositories\\hoteltravelpurposerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7498B6AD-92C4-4881-80B9-F19142DB3E24}|src\\WebAPI\\WebAPI.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\webapi\\dependencyinjection\\infrastructure\\mappingserviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7498B6AD-92C4-4881-80B9-F19142DB3E24}|src\\WebAPI\\WebAPI.csproj|solutionrelative:src\\webapi\\dependencyinjection\\infrastructure\\mappingserviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\query\\roomtypepurpose\\getroompurposebyroomid\\getroompurposebyroomidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\query\\roomtypepurpose\\getroompurposebyroomid\\getroompurposebyroomidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\query\\roomtypepurpose\\getallroomtypepurposes\\getallroomtypepurposesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\query\\roomtypepurpose\\getallroomtypepurposes\\getallroomtypepurposesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\query\\roomtypepurpose\\getroompurposebyroomid\\igetroompurposebyroomidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\query\\roomtypepurpose\\getroompurposebyroomid\\igetroompurposebyroomidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\query\\roomtypepurpose\\getallroomtypepurposes\\igetallroomtypepurposesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\query\\roomtypepurpose\\getallroomtypepurposes\\igetallroomtypepurposesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\query\\travelpurpose\\gettravelpurposebyid\\gettravelpurposebyidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\query\\travelpurpose\\gettravelpurposebyid\\gettravelpurposebyidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\query\\travelpurpose\\getalltravelpurposes\\getalltravelpurposesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\query\\travelpurpose\\getalltravelpurposes\\getalltravelpurposesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\query\\travelpurpose\\gettravelpurposebyid\\igettravelpurposebyidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\query\\travelpurpose\\gettravelpurposebyid\\igettravelpurposebyidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\repositories\\itravelpurposerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\repositories\\itravelpurposerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\query\\travelpurpose\\getalltravelpurposes\\igetalltravelpurposesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\query\\travelpurpose\\getalltravelpurposes\\igetalltravelpurposesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\query\\roompurpose\\getroompurposebyid\\getroompurposebyidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\query\\roompurpose\\getroompurposebyid\\getroompurposebyidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\query\\roompurpose\\getallroompurposes\\getallroompurposesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\query\\roompurpose\\getallroompurposes\\getallroompurposesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\query\\roompurpose\\getroompurposebyid\\igetroompurposebyidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\query\\roompurpose\\getroompurposebyid\\igetroompurposebyidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\query\\roompurpose\\getallroompurposes\\igetallroompurposesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\query\\roompurpose\\getallroompurposes\\igetallroompurposesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\query\\hoteltravelpurpose\\gethotelsbytravelpurposeid\\igethotelsbytravelpurposeidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\query\\hoteltravelpurpose\\gethotelsbytravelpurposeid\\igethotelsbytravelpurposeidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\query\\hoteltravelpurpose\\gettravelpurposebyhotelid\\igettravelpurposebyhotelidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\query\\hoteltravelpurpose\\gettravelpurposebyhotelid\\igettravelpurposebyhotelidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\query\\hoteltravelpurpose\\getallhoteltravelpurposes\\igetallhoteltravelpurposesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\query\\hoteltravelpurpose\\getallhoteltravelpurposes\\igetallhoteltravelpurposesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\query\\hoteltravelpurpose\\gettravelpurposebyhotelid\\gettravelpurposebyhotelidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\query\\hoteltravelpurpose\\gettravelpurposebyhotelid\\gettravelpurposebyhotelidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\query\\hoteltravelpurpose\\getallhoteltravelpurposes\\getallhoteltravelpurposesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\query\\hoteltravelpurpose\\getallhoteltravelpurposes\\getallhoteltravelpurposesservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\query\\hoteltravelpurpose\\gethotelsbytravelpurposeid\\gethotelsbytravelpurposeidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\query\\hoteltravelpurpose\\gethotelsbytravelpurposeid\\gethotelsbytravelpurposeidservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F53DC263-979E-48E9-8979-112DFE088FF2}|src\\Domain\\Domain.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\domain\\models\\purposes\\travelpurpose.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F53DC263-979E-48E9-8979-112DFE088FF2}|src\\Domain\\Domain.csproj|solutionrelative:src\\domain\\models\\purposes\\travelpurpose.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\command\\hoteltravelpurpose\\createhoteltravelpurpose\\createhoteltravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\command\\hoteltravelpurpose\\createhoteltravelpurpose\\createhoteltravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\command\\travelpurpose\\updatetravelpurpose\\updatetravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\command\\travelpurpose\\updatetravelpurpose\\updatetravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\command\\travelpurpose\\updatetravelpurpose\\iupdatetravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\command\\travelpurpose\\updatetravelpurpose\\iupdatetravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\command\\travelpurpose\\deletetravelpurpose\\deletetravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\command\\travelpurpose\\deletetravelpurpose\\deletetravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\command\\travelpurpose\\createtravelpurpose\\createtravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\command\\travelpurpose\\createtravelpurpose\\createtravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\command\\travelpurpose\\deletetravelpurpose\\ideletetravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\command\\travelpurpose\\deletetravelpurpose\\ideletetravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\command\\travelpurpose\\createtravelpurpose\\icreatetravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\command\\travelpurpose\\createtravelpurpose\\icreatetravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\command\\roomtypepurpose\\updateroomtypepurpose\\updateroomtypepurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\command\\roomtypepurpose\\updateroomtypepurpose\\updateroomtypepurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\command\\roomtypepurpose\\deleteroomtypepurpose\\deleteroomtypepurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\command\\roomtypepurpose\\deleteroomtypepurpose\\deleteroomtypepurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\command\\roomtypepurpose\\updateroomtypepurpose\\iupdateroomtypepurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\command\\roomtypepurpose\\updateroomtypepurpose\\iupdateroomtypepurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\command\\roomtypepurpose\\createroomtypepurpose\\createroomtypepurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\command\\roomtypepurpose\\createroomtypepurpose\\createroomtypepurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\command\\roomtypepurpose\\deleteroomtypepurpose\\ideleteroomtypepurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\command\\roomtypepurpose\\deleteroomtypepurpose\\ideleteroomtypepurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\command\\roomtypepurpose\\createroomtypepurpose\\icreateroomtypepurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\command\\roomtypepurpose\\createroomtypepurpose\\icreateroomtypepurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\command\\roompurpose\\updateroompurpose\\updateroompurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\command\\roompurpose\\updateroompurpose\\updateroompurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\repositories\\iroompurposerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\repositories\\iroompurposerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\command\\roompurpose\\deleteroompurpose\\deleteroompurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\command\\roompurpose\\deleteroompurpose\\deleteroompurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\command\\hoteltravelpurpose\\updatehoteltravelpurpose\\updatehoteltravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\command\\hoteltravelpurpose\\updatehoteltravelpurpose\\updatehoteltravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\command\\roompurpose\\updateroompurpose\\iupdateroompurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\command\\roompurpose\\updateroompurpose\\iupdateroompurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\command\\roompurpose\\createroompurpose\\createroompurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\command\\roompurpose\\createroompurpose\\createroompurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\command\\roompurpose\\deleteroompurpose\\ideleteroompurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\command\\roompurpose\\deleteroompurpose\\ideleteroompurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\command\\roompurpose\\createroompurpose\\icreateroompurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\command\\roompurpose\\createroompurpose\\icreateroompurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\command\\hoteltravelpurpose\\createhoteltravelpurpose\\icreatehoteltravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\command\\hoteltravelpurpose\\createhoteltravelpurpose\\icreatehoteltravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\command\\hoteltravelpurpose\\deletehoteltravelpurpose\\ideletehoteltravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\command\\hoteltravelpurpose\\deletehoteltravelpurpose\\ideletehoteltravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\interfaces\\services\\command\\hoteltravelpurpose\\updatehoteltravelpurpose\\iupdatehoteltravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\interfaces\\services\\command\\hoteltravelpurpose\\updatehoteltravelpurpose\\iupdatehoteltravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\services\\command\\hoteltravelpurpose\\deletehoteltravelpurpose\\deletehoteltravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\services\\command\\hoteltravelpurpose\\deletehoteltravelpurpose\\deletehoteltravelpurposeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\mappings\\purposemappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\mappings\\purposemappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\dtos\\travelpurposedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\dtos\\travelpurposedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\dtos\\roomtypepurposedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\dtos\\roomtypepurposedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\repositories\\iroomtypepurposerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\repositories\\iroomtypepurposerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\dtos\\roompurposedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\dtos\\roompurposedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\dtos\\hoteltravelpurposedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\dtos\\hoteltravelpurposedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\purposes\\repositories\\ihoteltravelpurposerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\purposes\\repositories\\ihoteltravelpurposerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\infrastructure.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\queries\\gethotelstaffbyid\\gethotelstaffbyidqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\queries\\gethotelstaffbyid\\gethotelstaffbyidqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7498B6AD-92C4-4881-80B9-F19142DB3E24}|src\\WebAPI\\WebAPI.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\webapi\\controllers\\hotels\\hotelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7498B6AD-92C4-4881-80B9-F19142DB3E24}|src\\WebAPI\\WebAPI.csproj|solutionrelative:src\\webapi\\controllers\\hotels\\hotelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\queries\\gethotelstaffsbyhotelid\\gethotelstaffsbyhotelidqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\queries\\gethotelstaffsbyhotelid\\gethotelstaffsbyhotelidqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\queries\\gethotelstaffbyid\\gethotelstaffbyidqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\hotels\\queries\\gethotelstaffbyid\\gethotelstaffbyidqueryvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\hotels\\queries\\gethotelstaffsbyhotelid\\gethotelstaffsbyhotelidquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -65,10 +305,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7498B6AD-92C4-4881-80B9-F19142DB3E24}|src\\WebAPI\\WebAPI.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\webapi\\dependencyinjection\\shared\\sharedserviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7498B6AD-92C4-4881-80B9-F19142DB3E24}|src\\WebAPI\\WebAPI.csproj|solutionrelative:src\\webapi\\dependencyinjection\\shared\\sharedserviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7498B6AD-92C4-4881-80B9-F19142DB3E24}|src\\WebAPI\\WebAPI.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\webapi\\dependencyinjection\\infrastructure\\mappingserviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7498B6AD-92C4-4881-80B9-F19142DB3E24}|src\\WebAPI\\WebAPI.csproj|solutionrelative:src\\webapi\\dependencyinjection\\infrastructure\\mappingserviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7498B6AD-92C4-4881-80B9-F19142DB3E24}|src\\WebAPI\\WebAPI.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\webapi\\dependencyinjection\\infrastructure\\fileuploadserviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -142,23 +378,739 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GetHotelStaffByIdQuery.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQuery.cs",
-              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQuery.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQuery.cs",
-              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQuery.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "IGetRoomsByRoomPurposeIdService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomTypePurpose\\GetRoomsByRoomPurposeId\\IGetRoomsByRoomPurposeIdService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomTypePurpose\\GetRoomsByRoomPurposeId\\IGetRoomsByRoomPurposeIdService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomTypePurpose\\GetRoomsByRoomPurposeId\\IGetRoomsByRoomPurposeIdService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomTypePurpose\\GetRoomsByRoomPurposeId\\IGetRoomsByRoomPurposeIdService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:32:20.712Z"
+              "WhenOpened": "2025-09-30T10:07:24.966Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "GetRoomsByRoomPurposeIdService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\RoomTypePurpose\\GetRoomsByRoomPurposeId\\GetRoomsByRoomPurposeIdService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Query\\RoomTypePurpose\\GetRoomsByRoomPurposeId\\GetRoomsByRoomPurposeIdService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\RoomTypePurpose\\GetRoomsByRoomPurposeId\\GetRoomsByRoomPurposeIdService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Query\\RoomTypePurpose\\GetRoomsByRoomPurposeId\\GetRoomsByRoomPurposeIdService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T10:07:03.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MappingServiceRegistration.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Infrastructure\\MappingServiceRegistration.cs",
+              "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Infrastructure\\MappingServiceRegistration.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Infrastructure\\MappingServiceRegistration.cs",
+              "RelativeToolTip": "src\\WebAPI\\DependencyInjection\\Infrastructure\\MappingServiceRegistration.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-28T02:30:07.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HotelTravelPurposeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Purposes\\Repositories\\HotelTravelPurposeRepository.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Purposes\\Repositories\\HotelTravelPurposeRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Purposes\\Repositories\\HotelTravelPurposeRepository.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Purposes\\Repositories\\HotelTravelPurposeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T14:32:27.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RoomPurposeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Purposes\\Repositories\\RoomPurposeRepository.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Purposes\\Repositories\\RoomPurposeRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Purposes\\Repositories\\RoomPurposeRepository.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Purposes\\Repositories\\RoomPurposeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T14:32:42.786Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RoomTypePurposeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Purposes\\Repositories\\RoomTypePurposeRepository.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Purposes\\Repositories\\RoomTypePurposeRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Purposes\\Repositories\\RoomTypePurposeRepository.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Purposes\\Repositories\\RoomTypePurposeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T14:32:50.682Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TravelPurposeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Purposes\\Repositories\\TravelPurposeRepository.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Purposes\\Repositories\\TravelPurposeRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Purposes\\Repositories\\TravelPurposeRepository.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Purposes\\Repositories\\TravelPurposeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T14:32:58.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GetRoomPurposeByRoomIdService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\RoomTypePurpose\\GetRoomPurposeByRoomId\\GetRoomPurposeByRoomIdService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Query\\RoomTypePurpose\\GetRoomPurposeByRoomId\\GetRoomPurposeByRoomIdService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\RoomTypePurpose\\GetRoomPurposeByRoomId\\GetRoomPurposeByRoomIdService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Query\\RoomTypePurpose\\GetRoomPurposeByRoomId\\GetRoomPurposeByRoomIdService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:58:38.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GetAllRoomTypePurposesService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\RoomTypePurpose\\GetAllRoomTypePurposes\\GetAllRoomTypePurposesService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Query\\RoomTypePurpose\\GetAllRoomTypePurposes\\GetAllRoomTypePurposesService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\RoomTypePurpose\\GetAllRoomTypePurposes\\GetAllRoomTypePurposesService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Query\\RoomTypePurpose\\GetAllRoomTypePurposes\\GetAllRoomTypePurposesService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:55:29.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IGetAllRoomTypePurposesService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomTypePurpose\\GetAllRoomTypePurposes\\IGetAllRoomTypePurposesService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomTypePurpose\\GetAllRoomTypePurposes\\IGetAllRoomTypePurposesService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomTypePurpose\\GetAllRoomTypePurposes\\IGetAllRoomTypePurposesService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomTypePurpose\\GetAllRoomTypePurposes\\IGetAllRoomTypePurposesService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:55:39.68Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IGetRoomPurposeByRoomIdService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomTypePurpose\\GetRoomPurposeByRoomId\\IGetRoomPurposeByRoomIdService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomTypePurpose\\GetRoomPurposeByRoomId\\IGetRoomPurposeByRoomIdService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomTypePurpose\\GetRoomPurposeByRoomId\\IGetRoomPurposeByRoomIdService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomTypePurpose\\GetRoomPurposeByRoomId\\IGetRoomPurposeByRoomIdService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:58:45.939Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IGetTravelPurposeByIdService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\TravelPurpose\\GetTravelPurposeById\\IGetTravelPurposeByIdService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\TravelPurpose\\GetTravelPurposeById\\IGetTravelPurposeByIdService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\TravelPurpose\\GetTravelPurposeById\\IGetTravelPurposeByIdService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\TravelPurpose\\GetTravelPurposeById\\IGetTravelPurposeByIdService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:53:36.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GetTravelPurposeByIdService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\TravelPurpose\\GetTravelPurposeById\\GetTravelPurposeByIdService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Query\\TravelPurpose\\GetTravelPurposeById\\GetTravelPurposeByIdService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\TravelPurpose\\GetTravelPurposeById\\GetTravelPurposeByIdService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Query\\TravelPurpose\\GetTravelPurposeById\\GetTravelPurposeByIdService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:53:27.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IGetAllTravelPurposesService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\TravelPurpose\\GetAllTravelPurposes\\IGetAllTravelPurposesService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\TravelPurpose\\GetAllTravelPurposes\\IGetAllTravelPurposesService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\TravelPurpose\\GetAllTravelPurposes\\IGetAllTravelPurposesService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\TravelPurpose\\GetAllTravelPurposes\\IGetAllTravelPurposesService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:50:54.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GetAllTravelPurposesService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\TravelPurpose\\GetAllTravelPurposes\\GetAllTravelPurposesService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Query\\TravelPurpose\\GetAllTravelPurposes\\GetAllTravelPurposesService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\TravelPurpose\\GetAllTravelPurposes\\GetAllTravelPurposesService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Query\\TravelPurpose\\GetAllTravelPurposes\\GetAllTravelPurposesService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:50:43.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "GetRoomPurposeByIdService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\RoomPurpose\\GetRoomPurposeById\\GetRoomPurposeByIdService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Query\\RoomPurpose\\GetRoomPurposeById\\GetRoomPurposeByIdService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\RoomPurpose\\GetRoomPurposeById\\GetRoomPurposeByIdService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Query\\RoomPurpose\\GetRoomPurposeById\\GetRoomPurposeByIdService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:48:37.026Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ITravelPurposeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Repositories\\ITravelPurposeRepository.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Repositories\\ITravelPurposeRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Repositories\\ITravelPurposeRepository.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Repositories\\ITravelPurposeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T14:27:44.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IGetRoomPurposeByIdService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomPurpose\\GetRoomPurposeById\\IGetRoomPurposeByIdService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomPurpose\\GetRoomPurposeById\\IGetRoomPurposeByIdService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomPurpose\\GetRoomPurposeById\\IGetRoomPurposeByIdService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomPurpose\\GetRoomPurposeById\\IGetRoomPurposeByIdService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:48:55.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "IGetAllRoomPurposesService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomPurpose\\GetAllRoomPurposes\\IGetAllRoomPurposesService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomPurpose\\GetAllRoomPurposes\\IGetAllRoomPurposesService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomPurpose\\GetAllRoomPurposes\\IGetAllRoomPurposesService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomPurpose\\GetAllRoomPurposes\\IGetAllRoomPurposesService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:45:18.726Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "GetAllRoomPurposesService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\RoomPurpose\\GetAllRoomPurposes\\GetAllRoomPurposesService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Query\\RoomPurpose\\GetAllRoomPurposes\\GetAllRoomPurposesService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\RoomPurpose\\GetAllRoomPurposes\\GetAllRoomPurposesService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Query\\RoomPurpose\\GetAllRoomPurposes\\GetAllRoomPurposesService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:45:07.403Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "IGetHotelsByTravelPurposeIdService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\HotelTravelPurpose\\GetHotelsByTravelPurposeId\\IGetHotelsByTravelPurposeIdService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\HotelTravelPurpose\\GetHotelsByTravelPurposeId\\IGetHotelsByTravelPurposeIdService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\HotelTravelPurpose\\GetHotelsByTravelPurposeId\\IGetHotelsByTravelPurposeIdService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\HotelTravelPurpose\\GetHotelsByTravelPurposeId\\IGetHotelsByTravelPurposeIdService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAACIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:26:19.763Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IGetTravelPurposeByHotelIdService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\HotelTravelPurpose\\GetTravelPurposeByHotelId\\IGetTravelPurposeByHotelIdService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\HotelTravelPurpose\\GetTravelPurposeByHotelId\\IGetTravelPurposeByHotelIdService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\HotelTravelPurpose\\GetTravelPurposeByHotelId\\IGetTravelPurposeByHotelIdService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\HotelTravelPurpose\\GetTravelPurposeByHotelId\\IGetTravelPurposeByHotelIdService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:40:32.763Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IGetAllHotelTravelPurposesService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\HotelTravelPurpose\\GetAllHotelTravelPurposes\\IGetAllHotelTravelPurposesService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\HotelTravelPurpose\\GetAllHotelTravelPurposes\\IGetAllHotelTravelPurposesService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\HotelTravelPurpose\\GetAllHotelTravelPurposes\\IGetAllHotelTravelPurposesService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\HotelTravelPurpose\\GetAllHotelTravelPurposes\\IGetAllHotelTravelPurposesService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:22:14.805Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "GetTravelPurposeByHotelIdService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\HotelTravelPurpose\\GetTravelPurposeByHotelId\\GetTravelPurposeByHotelIdService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Query\\HotelTravelPurpose\\GetTravelPurposeByHotelId\\GetTravelPurposeByHotelIdService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\HotelTravelPurpose\\GetTravelPurposeByHotelId\\GetTravelPurposeByHotelIdService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Query\\HotelTravelPurpose\\GetTravelPurposeByHotelId\\GetTravelPurposeByHotelIdService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:40:26.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "GetHotelsByTravelPurposeIdService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\HotelTravelPurpose\\GetHotelsByTravelPurposeId\\GetHotelsByTravelPurposeIdService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Query\\HotelTravelPurpose\\GetHotelsByTravelPurposeId\\GetHotelsByTravelPurposeIdService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\HotelTravelPurpose\\GetHotelsByTravelPurposeId\\GetHotelsByTravelPurposeIdService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Query\\HotelTravelPurpose\\GetHotelsByTravelPurposeId\\GetHotelsByTravelPurposeIdService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:26:11.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "GetAllHotelTravelPurposesService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\HotelTravelPurpose\\GetAllHotelTravelPurposes\\GetAllHotelTravelPurposesService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Query\\HotelTravelPurpose\\GetAllHotelTravelPurposes\\GetAllHotelTravelPurposesService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\HotelTravelPurpose\\GetAllHotelTravelPurposes\\GetAllHotelTravelPurposesService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Query\\HotelTravelPurpose\\GetAllHotelTravelPurposes\\GetAllHotelTravelPurposesService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:22:02.118Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "TravelPurpose.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Domain\\Models\\Purposes\\TravelPurpose.cs",
+              "RelativeDocumentMoniker": "src\\Domain\\Models\\Purposes\\TravelPurpose.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Domain\\Models\\Purposes\\TravelPurpose.cs",
+              "RelativeToolTip": "src\\Domain\\Models\\Purposes\\TravelPurpose.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T14:25:18.459Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "UpdateTravelPurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\TravelPurpose\\UpdateTravelPurpose\\UpdateTravelPurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\TravelPurpose\\UpdateTravelPurpose\\UpdateTravelPurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\TravelPurpose\\UpdateTravelPurpose\\UpdateTravelPurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Command\\TravelPurpose\\UpdateTravelPurpose\\UpdateTravelPurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:15:17.371Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "CreateHotelTravelPurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\HotelTravelPurpose\\CreateHotelTravelPurpose\\CreateHotelTravelPurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\HotelTravelPurpose\\CreateHotelTravelPurpose\\CreateHotelTravelPurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\HotelTravelPurpose\\CreateHotelTravelPurpose\\CreateHotelTravelPurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Command\\HotelTravelPurpose\\CreateHotelTravelPurpose\\CreateHotelTravelPurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T15:05:18.83Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "CreateTravelPurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\TravelPurpose\\CreateTravelPurpose\\CreateTravelPurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\TravelPurpose\\CreateTravelPurpose\\CreateTravelPurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\TravelPurpose\\CreateTravelPurpose\\CreateTravelPurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Command\\TravelPurpose\\CreateTravelPurpose\\CreateTravelPurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:12:03.469Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "DeleteTravelPurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\TravelPurpose\\DeleteTravelPurpose\\DeleteTravelPurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\TravelPurpose\\DeleteTravelPurpose\\DeleteTravelPurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\TravelPurpose\\DeleteTravelPurpose\\DeleteTravelPurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Command\\TravelPurpose\\DeleteTravelPurpose\\DeleteTravelPurposeService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:14:45.569Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "IUpdateTravelPurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\TravelPurpose\\UpdateTravelPurpose\\IUpdateTravelPurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\TravelPurpose\\UpdateTravelPurpose\\IUpdateTravelPurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\TravelPurpose\\UpdateTravelPurpose\\IUpdateTravelPurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\TravelPurpose\\UpdateTravelPurpose\\IUpdateTravelPurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:15:07.787Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "IDeleteTravelPurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\TravelPurpose\\DeleteTravelPurpose\\IDeleteTravelPurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\TravelPurpose\\DeleteTravelPurpose\\IDeleteTravelPurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\TravelPurpose\\DeleteTravelPurpose\\IDeleteTravelPurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\TravelPurpose\\DeleteTravelPurpose\\IDeleteTravelPurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:14:55.799Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "ICreateTravelPurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\TravelPurpose\\CreateTravelPurpose\\ICreateTravelPurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\TravelPurpose\\CreateTravelPurpose\\ICreateTravelPurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\TravelPurpose\\CreateTravelPurpose\\ICreateTravelPurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\TravelPurpose\\CreateTravelPurpose\\ICreateTravelPurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAB4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:11:19.032Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "IUpdateRoomTypePurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomTypePurpose\\UpdateRoomTypePurpose\\IUpdateRoomTypePurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomTypePurpose\\UpdateRoomTypePurpose\\IUpdateRoomTypePurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomTypePurpose\\UpdateRoomTypePurpose\\IUpdateRoomTypePurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomTypePurpose\\UpdateRoomTypePurpose\\IUpdateRoomTypePurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:08:28.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "UpdateRoomTypePurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\RoomTypePurpose\\UpdateRoomTypePurpose\\UpdateRoomTypePurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\RoomTypePurpose\\UpdateRoomTypePurpose\\UpdateRoomTypePurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\RoomTypePurpose\\UpdateRoomTypePurpose\\UpdateRoomTypePurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Command\\RoomTypePurpose\\UpdateRoomTypePurpose\\UpdateRoomTypePurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:08:24.278Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "IDeleteRoomTypePurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomTypePurpose\\DeleteRoomTypePurpose\\IDeleteRoomTypePurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomTypePurpose\\DeleteRoomTypePurpose\\IDeleteRoomTypePurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomTypePurpose\\DeleteRoomTypePurpose\\IDeleteRoomTypePurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomTypePurpose\\DeleteRoomTypePurpose\\IDeleteRoomTypePurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:05:36.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "DeleteRoomTypePurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\RoomTypePurpose\\DeleteRoomTypePurpose\\DeleteRoomTypePurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\RoomTypePurpose\\DeleteRoomTypePurpose\\DeleteRoomTypePurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\RoomTypePurpose\\DeleteRoomTypePurpose\\DeleteRoomTypePurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Command\\RoomTypePurpose\\DeleteRoomTypePurpose\\DeleteRoomTypePurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:05:16.57Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "ICreateRoomTypePurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomTypePurpose\\CreateRoomTypePurpose\\ICreateRoomTypePurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomTypePurpose\\CreateRoomTypePurpose\\ICreateRoomTypePurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomTypePurpose\\CreateRoomTypePurpose\\ICreateRoomTypePurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomTypePurpose\\CreateRoomTypePurpose\\ICreateRoomTypePurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:01:35.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "CreateRoomTypePurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\RoomTypePurpose\\CreateRoomTypePurpose\\CreateRoomTypePurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\RoomTypePurpose\\CreateRoomTypePurpose\\CreateRoomTypePurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\RoomTypePurpose\\CreateRoomTypePurpose\\CreateRoomTypePurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Command\\RoomTypePurpose\\CreateRoomTypePurpose\\CreateRoomTypePurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T09:01:09.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "UpdateRoomPurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\RoomPurpose\\UpdateRoomPurpose\\UpdateRoomPurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\RoomPurpose\\UpdateRoomPurpose\\UpdateRoomPurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\RoomPurpose\\UpdateRoomPurpose\\UpdateRoomPurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Command\\RoomPurpose\\UpdateRoomPurpose\\UpdateRoomPurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T08:58:11.432Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "UpdateHotelTravelPurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\HotelTravelPurpose\\UpdateHotelTravelPurpose\\UpdateHotelTravelPurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\HotelTravelPurpose\\UpdateHotelTravelPurpose\\UpdateHotelTravelPurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\HotelTravelPurpose\\UpdateHotelTravelPurpose\\UpdateHotelTravelPurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Command\\HotelTravelPurpose\\UpdateHotelTravelPurpose\\UpdateHotelTravelPurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T08:31:57.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "DeleteRoomPurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\RoomPurpose\\DeleteRoomPurpose\\DeleteRoomPurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\RoomPurpose\\DeleteRoomPurpose\\DeleteRoomPurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\RoomPurpose\\DeleteRoomPurpose\\DeleteRoomPurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Command\\RoomPurpose\\DeleteRoomPurpose\\DeleteRoomPurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T08:53:47.868Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "IRoomPurposeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Repositories\\IRoomPurposeRepository.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Repositories\\IRoomPurposeRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Repositories\\IRoomPurposeRepository.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Repositories\\IRoomPurposeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T14:27:20.7Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "IUpdateRoomPurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomPurpose\\UpdateRoomPurpose\\IUpdateRoomPurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomPurpose\\UpdateRoomPurpose\\IUpdateRoomPurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomPurpose\\UpdateRoomPurpose\\IUpdateRoomPurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomPurpose\\UpdateRoomPurpose\\IUpdateRoomPurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T08:58:17.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "IDeleteRoomPurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomPurpose\\DeleteRoomPurpose\\IDeleteRoomPurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomPurpose\\DeleteRoomPurpose\\IDeleteRoomPurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomPurpose\\DeleteRoomPurpose\\IDeleteRoomPurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomPurpose\\DeleteRoomPurpose\\IDeleteRoomPurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T08:53:52.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "ICreateRoomPurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomPurpose\\CreateRoomPurpose\\ICreateRoomPurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomPurpose\\CreateRoomPurpose\\ICreateRoomPurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomPurpose\\CreateRoomPurpose\\ICreateRoomPurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomPurpose\\CreateRoomPurpose\\ICreateRoomPurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAB1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T08:48:27.66Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "CreateRoomPurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\RoomPurpose\\CreateRoomPurpose\\CreateRoomPurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\RoomPurpose\\CreateRoomPurpose\\CreateRoomPurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\RoomPurpose\\CreateRoomPurpose\\CreateRoomPurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Command\\RoomPurpose\\CreateRoomPurpose\\CreateRoomPurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T08:48:22.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "ICreateHotelTravelPurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\HotelTravelPurpose\\CreateHotelTravelPurpose\\ICreateHotelTravelPurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\HotelTravelPurpose\\CreateHotelTravelPurpose\\ICreateHotelTravelPurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\HotelTravelPurpose\\CreateHotelTravelPurpose\\ICreateHotelTravelPurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\HotelTravelPurpose\\CreateHotelTravelPurpose\\ICreateHotelTravelPurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAACHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T15:05:43.46Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "IDeleteHotelTravelPurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\HotelTravelPurpose\\DeleteHotelTravelPurpose\\IDeleteHotelTravelPurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\HotelTravelPurpose\\DeleteHotelTravelPurpose\\IDeleteHotelTravelPurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\HotelTravelPurpose\\DeleteHotelTravelPurpose\\IDeleteHotelTravelPurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\HotelTravelPurpose\\DeleteHotelTravelPurpose\\IDeleteHotelTravelPurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T15:14:07.475Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "IUpdateHotelTravelPurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\HotelTravelPurpose\\UpdateHotelTravelPurpose\\IUpdateHotelTravelPurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\HotelTravelPurpose\\UpdateHotelTravelPurpose\\IUpdateHotelTravelPurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\HotelTravelPurpose\\UpdateHotelTravelPurpose\\IUpdateHotelTravelPurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\HotelTravelPurpose\\UpdateHotelTravelPurpose\\IUpdateHotelTravelPurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAABzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T08:32:24.813Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "DeleteHotelTravelPurposeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\HotelTravelPurpose\\DeleteHotelTravelPurpose\\DeleteHotelTravelPurposeService.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\HotelTravelPurpose\\DeleteHotelTravelPurpose\\DeleteHotelTravelPurposeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\HotelTravelPurpose\\DeleteHotelTravelPurpose\\DeleteHotelTravelPurposeService.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Services\\Command\\HotelTravelPurpose\\DeleteHotelTravelPurpose\\DeleteHotelTravelPurposeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAACAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T15:15:04.383Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "PurposeMappingProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Mappings\\PurposeMappingProfile.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Mappings\\PurposeMappingProfile.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Mappings\\PurposeMappingProfile.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Mappings\\PurposeMappingProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T14:57:36.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "RoomTypePurposeDto.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\DTOs\\RoomTypePurposeDto.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\DTOs\\RoomTypePurposeDto.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\DTOs\\RoomTypePurposeDto.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\DTOs\\RoomTypePurposeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T14:58:51.663Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "TravelPurposeDto.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\DTOs\\TravelPurposeDto.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\DTOs\\TravelPurposeDto.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\DTOs\\TravelPurposeDto.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\DTOs\\TravelPurposeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T14:58:57.836Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "IRoomTypePurposeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Repositories\\IRoomTypePurposeRepository.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Repositories\\IRoomTypePurposeRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Repositories\\IRoomTypePurposeRepository.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Repositories\\IRoomTypePurposeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T14:27:34.891Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "RoomPurposeDto.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\DTOs\\RoomPurposeDto.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\DTOs\\RoomPurposeDto.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\DTOs\\RoomPurposeDto.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\DTOs\\RoomPurposeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T14:58:43.452Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "HotelTravelPurposeDto.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\DTOs\\HotelTravelPurposeDto.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\DTOs\\HotelTravelPurposeDto.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\DTOs\\HotelTravelPurposeDto.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\DTOs\\HotelTravelPurposeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T14:58:35.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "IHotelTravelPurposeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Repositories\\IHotelTravelPurposeRepository.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Repositories\\IHotelTravelPurposeRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Repositories\\IHotelTravelPurposeRepository.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Purposes\\Repositories\\IHotelTravelPurposeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-29T14:27:08.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "Infrastructure.csproj",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Infrastructure.csproj",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Infrastructure.csproj",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Infrastructure.csproj",
+              "RelativeToolTip": "src\\Infrastructure\\Infrastructure.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-29T14:30:55.352Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
               "Title": "GetHotelStaffsByHotelIdQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQueryValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQueryValidator.cs",
@@ -166,12 +1118,11 @@
               "RelativeToolTip": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQueryValidator.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T09:32:57.024Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-27T09:32:57.024Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 63,
               "Title": "GetHotelStaffsByHotelIdQuery.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQuery.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQuery.cs",
@@ -183,7 +1134,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 65,
               "Title": "GetAllHotelStaffsQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQueryValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQueryValidator.cs",
@@ -195,20 +1146,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 61,
               "Title": "HotelController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\Controllers\\Hotels\\HotelController.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\Controllers\\Hotels\\HotelController.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\Controllers\\Hotels\\HotelController.cs*",
-              "RelativeToolTip": "src\\WebAPI\\Controllers\\Hotels\\HotelController.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\Controllers\\Hotels\\HotelController.cs",
+              "RelativeToolTip": "src\\WebAPI\\Controllers\\Hotels\\HotelController.cs",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAowJ8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-28T02:43:25.199Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-28T02:43:25.199Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 60,
               "Title": "GetHotelStaffByIdQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQueryValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQueryValidator.cs",
@@ -220,7 +1170,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 64,
+              "Title": "GetHotelStaffByIdQuery.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQuery.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQuery.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQuery.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQuery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T09:32:20.712Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
               "Title": "UpdateHotelStaffCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommandValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommandValidator.cs",
@@ -232,7 +1194,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 67,
               "Title": "UpdateHotelStaffCommand.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommand.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommand.cs",
@@ -244,7 +1206,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 68,
               "Title": "CreateHotelStaffCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommandValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommandValidator.cs",
@@ -256,7 +1218,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 69,
               "Title": "DeleteHotelStaffCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommandValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommandValidator.cs",
@@ -268,7 +1230,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 70,
               "Title": "DeleteHotelStaffCommand.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommand.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommand.cs",
@@ -280,7 +1242,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 71,
               "Title": "CreateHotelStaffCommand.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommand.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommand.cs",
@@ -292,7 +1254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 72,
               "Title": "CreateHotelStaffCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommandHandler.cs",
@@ -304,7 +1266,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 73,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\Program.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\Program.cs",
@@ -316,7 +1278,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 74,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\DependencyInjection.cs",
@@ -328,7 +1290,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 75,
               "Title": "SharedServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Shared\\SharedServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Shared\\SharedServiceRegistration.cs",
@@ -340,19 +1302,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "MappingServiceRegistration.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Infrastructure\\MappingServiceRegistration.cs",
-              "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Infrastructure\\MappingServiceRegistration.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Infrastructure\\MappingServiceRegistration.cs",
-              "RelativeToolTip": "src\\WebAPI\\DependencyInjection\\Infrastructure\\MappingServiceRegistration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-28T02:30:07.088Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 76,
               "Title": "FileUploadServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Infrastructure\\FileUploadServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Infrastructure\\FileUploadServiceRegistration.cs",
@@ -364,7 +1314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 77,
               "Title": "DatabaseServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Infrastructure\\DatabaseServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Infrastructure\\DatabaseServiceRegistration.cs",
@@ -376,7 +1326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 78,
               "Title": "CacheServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Infrastructure\\CacheServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Infrastructure\\CacheServiceRegistration.cs",
@@ -388,7 +1338,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 79,
               "Title": "HotelServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Features\\HotelServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Features\\HotelServiceRegistration.cs",
@@ -400,7 +1350,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 80,
               "Title": "CorsServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Common\\CorsServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Common\\CorsServiceRegistration.cs",
@@ -412,7 +1362,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 81,
               "Title": "AuthServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Auth\\AuthServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Auth\\AuthServiceRegistration.cs",
@@ -424,7 +1374,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 83,
               "Title": "PlacesServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Features\\PlacesServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Features\\PlacesServiceRegistration.cs",
@@ -436,7 +1386,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 82,
               "Title": "UtilityServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Features\\UtilityServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Features\\UtilityServiceRegistration.cs",
@@ -448,7 +1398,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 84,
               "Title": "HotelStaffController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\Controllers\\Hotels\\HotelStaffController.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\Controllers\\Hotels\\HotelStaffController.cs",
@@ -460,7 +1410,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 86,
               "Title": "GetHotelStaffByIdQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQueryHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQueryHandler.cs",
@@ -472,7 +1422,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 85,
               "Title": "GetHotelStaffsByHotelIdQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQueryHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQueryHandler.cs",
@@ -484,7 +1434,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 87,
               "Title": "GetAllHotelStaffsQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQueryHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQueryHandler.cs",
@@ -496,7 +1446,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 88,
               "Title": "GetAllHotelStaffsQuery.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQuery.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQuery.cs",
@@ -508,7 +1458,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 89,
               "Title": "UpdateHotelStaffCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommandHandler.cs",
@@ -520,7 +1470,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 90,
               "Title": "DeleteHotelStaffCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommandHandler.cs",
@@ -532,7 +1482,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 91,
               "Title": "CreateHotelCategoryCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\CreateHotelCategory\\CreateHotelCategoryCommandValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\CreateHotelCategory\\CreateHotelCategoryCommandValidator.cs",
