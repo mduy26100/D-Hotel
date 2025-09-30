@@ -931,6 +931,168 @@
         }
       }
     },
+    "/api/HotelTravelPurpose/create-hotel-travel-purpose": {
+      "post": {
+        "tags": [
+          "HotelTravelPurpose"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateHotelTravelPurposeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateHotelTravelPurposeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateHotelTravelPurposeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HotelTravelPurpose/delete-hotel-travel-purpose": {
+      "delete": {
+        "tags": [
+          "HotelTravelPurpose"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteHotelTravelPurposeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteHotelTravelPurposeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteHotelTravelPurposeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HotelTravelPurpose/update-hotel-travel-purpose/{id}": {
+      "put": {
+        "tags": [
+          "HotelTravelPurpose"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateHotelTravelPurposeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateHotelTravelPurposeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateHotelTravelPurposeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HotelTravelPurpose/get-all-hotel-travel-purpose": {
+      "get": {
+        "tags": [
+          "HotelTravelPurpose"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HotelTravelPurpose/get-hotels-by-travel-purpose-id/{id}": {
+      "get": {
+        "tags": [
+          "HotelTravelPurpose"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/HotelTravelPurpose/get-travel-purpose-by-hotel-id/{id}": {
+      "get": {
+        "tags": [
+          "HotelTravelPurpose"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/HotelUtility/create-utilities-to-hotel": {
       "post": {
         "tags": [
@@ -1148,6 +1310,430 @@
           {
             "name": "id",
             "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/RoomPurpose/create-room-purpose": {
+      "post": {
+        "tags": [
+          "RoomPurpose"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoomPurposeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoomPurposeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoomPurposeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/RoomPurpose/delete-room-purpose": {
+      "delete": {
+        "tags": [
+          "RoomPurpose"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRoomPurposeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRoomPurposeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRoomPurposeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/RoomPurpose/update-room-purpose/{id}": {
+      "put": {
+        "tags": [
+          "RoomPurpose"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRoomPurposeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRoomPurposeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRoomPurposeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/RoomPurpose/get-all-room-purposes": {
+      "get": {
+        "tags": [
+          "RoomPurpose"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/RoomPurpose/get-room-purpose-by/{id}": {
+      "get": {
+        "tags": [
+          "RoomPurpose"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/RoomTypePurpose/create-room-type-purpose": {
+      "post": {
+        "tags": [
+          "RoomTypePurpose"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoomTypePurposeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoomTypePurposeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoomTypePurposeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/RoomTypePurpose/delete-room-type-purpose": {
+      "delete": {
+        "tags": [
+          "RoomTypePurpose"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRoomTypePurposeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRoomTypePurposeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRoomTypePurposeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/RoomTypePurpose/update-room-type-purpose/{id}": {
+      "post": {
+        "tags": [
+          "RoomTypePurpose"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRoomTypePurposeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRoomTypePurposeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRoomTypePurposeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/RoomTypePurpose/get-all-room-type-purposes": {
+      "get": {
+        "tags": [
+          "RoomTypePurpose"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/RoomTypePurpose/get-room-type-purpose-by-room-id/{id}": {
+      "get": {
+        "tags": [
+          "RoomTypePurpose"
+        ],
+        "parameters": [
+          {
+            "name": "roomId",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TravelPurpose/create-travel-purpose": {
+      "post": {
+        "tags": [
+          "TravelPurpose"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTravelPurposeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTravelPurposeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTravelPurposeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TravelPurpose/delete-travel-purpose": {
+      "delete": {
+        "tags": [
+          "TravelPurpose"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteTravelPurposeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteTravelPurposeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteTravelPurposeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TravelPurpose/update-travel-purpose/{id}": {
+      "put": {
+        "tags": [
+          "TravelPurpose"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTravelPurposeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTravelPurposeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTravelPurposeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TravelPurpose/get-all-travel-purposes": {
+      "get": {
+        "tags": [
+          "TravelPurpose"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TravelPurpose/get-travel-purpose-by/{id}": {
+      "get": {
+        "tags": [
+          "TravelPurpose"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
@@ -1563,6 +2149,42 @@
         },
         "additionalProperties": false
       },
+      "CreateHotelTravelPurposeCommand": {
+        "type": "object",
+        "properties": {
+          "hotelTravelPurposeDto": {
+            "$ref": "#/components/schemas/HotelTravelPurposeDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateRoomPurposeCommand": {
+        "type": "object",
+        "properties": {
+          "roomPurposeDto": {
+            "$ref": "#/components/schemas/RoomPurposeDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateRoomTypePurposeCommand": {
+        "type": "object",
+        "properties": {
+          "roomTypePurposeDto": {
+            "$ref": "#/components/schemas/RoomTypePurposeDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateTravelPurposeCommand": {
+        "type": "object",
+        "properties": {
+          "travelPurpose": {
+            "$ref": "#/components/schemas/TravelPurposeDto"
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateUtilityItemCommand": {
         "type": "object",
         "properties": {
@@ -1599,11 +2221,47 @@
         },
         "additionalProperties": false
       },
+      "DeleteHotelTravelPurposeCommand": {
+        "type": "object",
+        "properties": {
+          "hotelTravelPurposeDto": {
+            "$ref": "#/components/schemas/HotelTravelPurposeDto"
+          }
+        },
+        "additionalProperties": false
+      },
       "DeleteLocationCommand": {
         "type": "object",
         "properties": {
           "dto": {
             "$ref": "#/components/schemas/LocationsDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteRoomPurposeCommand": {
+        "type": "object",
+        "properties": {
+          "roomPurposeDto": {
+            "$ref": "#/components/schemas/RoomPurposeDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteRoomTypePurposeCommand": {
+        "type": "object",
+        "properties": {
+          "roomTypePurposeDto": {
+            "$ref": "#/components/schemas/RoomTypePurposeDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteTravelPurposeCommand": {
+        "type": "object",
+        "properties": {
+          "travelPurpose": {
+            "$ref": "#/components/schemas/TravelPurposeDto"
           }
         },
         "additionalProperties": false
@@ -1711,6 +2369,20 @@
           },
           "isActive": {
             "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "HotelTravelPurposeDto": {
+        "type": "object",
+        "properties": {
+          "hotelId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "travelPurposeId": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
@@ -1845,10 +2517,58 @@
         },
         "additionalProperties": false
       },
+      "RoomPurposeDto": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RoomTypePurposeDto": {
+        "type": "object",
+        "properties": {
+          "roomId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "roomPurposeId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "TokenRefreshCommand": {
         "type": "object",
         "properties": {
           "refreshToken": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TravelPurposeDto": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
             "type": "string",
             "nullable": true
           }
@@ -1878,6 +2598,42 @@
         "properties": {
           "hotelStaffDto": {
             "$ref": "#/components/schemas/HotelStaffDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateHotelTravelPurposeCommand": {
+        "type": "object",
+        "properties": {
+          "hotelTravelPurposeDto": {
+            "$ref": "#/components/schemas/HotelTravelPurposeDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateRoomPurposeCommand": {
+        "type": "object",
+        "properties": {
+          "roomPurpose": {
+            "$ref": "#/components/schemas/RoomPurposeDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateRoomTypePurposeCommand": {
+        "type": "object",
+        "properties": {
+          "roomTypePurposeDto": {
+            "$ref": "#/components/schemas/RoomTypePurposeDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateTravelPurposeCommand": {
+        "type": "object",
+        "properties": {
+          "travelPurpose": {
+            "$ref": "#/components/schemas/TravelPurposeDto"
           }
         },
         "additionalProperties": false

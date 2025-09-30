@@ -24,6 +24,7 @@ namespace WebAPI.DependencyInjection
             services.AddHotelServices();
             services.AddUtilityServices();
             services.AddPlaceServices();
+            services.AddPurposeService();
 
             //Shared
             services.AddSharedServices();

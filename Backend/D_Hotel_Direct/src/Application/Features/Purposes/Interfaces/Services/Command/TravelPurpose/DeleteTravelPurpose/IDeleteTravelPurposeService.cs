@@ -2,7 +2,7 @@
 
 namespace Application.Features.Purposes.Interfaces.Services.Command.TravelPurpose.DeleteTravelPurpose
 {
-    internal interface IDeleteTravelPurposeService
+    public interface IDeleteTravelPurposeService
     {
         Task DeleteAsync(TravelPurposeDto travelPurposeDto, CancellationToken cancellationToken = default);
     }

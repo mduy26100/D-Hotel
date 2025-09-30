@@ -1,11 +1,11 @@
 ﻿using Application.Features.Purposes.DTOs;
-using Application.Features.Purposes.Interfaces.Services.Query.RoomPurpose.GetRoomPurposeById;
+using Application.Features.Purposes.Interfaces.Services.Query.RoomTypePurpose.GetRoomPurposeByRoomId;
 using Application.Features.Purposes.Repositories;
 using AutoMapper;
 
 namespace Application.Features.Purposes.Services.Query.RoomTypePurpose.GetRoomPurposeByRoomId
 {
-    public class GetRoomPurposeByRoomIdService : IGetRoomPurposeByIdService
+    public class GetRoomPurposeByRoomIdService : IGetRoomPurposeByRoomIdService
     {
         private readonly IRoomTypePurposeRepository _roomTypePurposeRepository;
         private readonly IMapper _mapper;
@@ -17,10 +17,10 @@ namespace Application.Features.Purposes.Services.Query.RoomTypePurpose.GetRoomPu
             _mapper = mapper;
         }
 
-        public async Task<RoomPurposeDto> GetByIdAsync(int id, CancellationToken cancellationToken = default)
+        public async Task<RoomTypePurposeDto> GetRoomPurposeByRoomId(int roomId, CancellationToken cancellationToken = default)
         {
-            var entity = await _roomTypePurposeRepository.GetByIdAsync(id, cancellationToken);
-            return _mapper.Map<RoomPurposeDto>(entity);
+            var entity = await _roomTypePurposeRepository.GetByIdAsync(roomId, cancellationToken);
+            return _mapper.Map<RoomTypePurposeDto>(entity);
         }
     }
 }

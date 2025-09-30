@@ -4,6 +4,6 @@ namespace Application.Features.Purposes.Interfaces.Services.Query.HotelTravelPur
 {
     public interface IGetTravelPurposeByHotelIdService
     {
-        Task<TravelPurposeDto> GetTravelPurposeByHotelIdAsync(int hotelId, CancellationToken cancellationToken = default);
+        Task<HotelTravelPurposeDto> GetTravelPurposeByHotelIdAsync(int hotelId, CancellationToken cancellationToken = default);
     }
 }

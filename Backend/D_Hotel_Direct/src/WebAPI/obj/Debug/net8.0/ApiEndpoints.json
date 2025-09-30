@@ -561,6 +561,101 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebAPI.Controllers.Purposes.HotelTravelPurposeController",
+    "Method": "CreateHotelTravelPurpose",
+    "RelativePath": "api/HotelTravelPurpose/create-hotel-travel-purpose",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Features.Purposes.Commands.HotelTravelPurpose.CreateHotelTravelPurpose.CreateHotelTravelPurposeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Purposes.HotelTravelPurposeController",
+    "Method": "DeleteHotelTravelPurpose",
+    "RelativePath": "api/HotelTravelPurpose/delete-hotel-travel-purpose",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Features.Purposes.Commands.HotelTravelPurpose.DeleteHotelTravelPurpose.DeleteHotelTravelPurposeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Purposes.HotelTravelPurposeController",
+    "Method": "GetAllHotelTravelPurpose",
+    "RelativePath": "api/HotelTravelPurpose/get-all-hotel-travel-purpose",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Purposes.HotelTravelPurposeController",
+    "Method": "GetHotelsByTravelPurposeId",
+    "RelativePath": "api/HotelTravelPurpose/get-hotels-by-travel-purpose-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Purposes.HotelTravelPurposeController",
+    "Method": "GetTravelPurposeByHotelId",
+    "RelativePath": "api/HotelTravelPurpose/get-travel-purpose-by-hotel-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Purposes.HotelTravelPurposeController",
+    "Method": "UpdateHotelTravelPurpose",
+    "RelativePath": "api/HotelTravelPurpose/update-hotel-travel-purpose/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "Application.Features.Purposes.Commands.HotelTravelPurpose.UpdateHotelTravelPurpose.UpdateHotelTravelPurposeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebAPI.Controllers.Utilities.HotelUtilityController",
     "Method": "Create",
     "RelativePath": "api/HotelUtility/create-utilities-to-hotel",
@@ -708,6 +803,248 @@
         "Name": "image",
         "Type": "Microsoft.AspNetCore.Http.IFormFile",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Purposes.RoomPurposeController",
+    "Method": "CreateRoomPurpose",
+    "RelativePath": "api/RoomPurpose/create-room-purpose",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Features.Purposes.Commands.RoomPurpose.CreateRoomPurpose.CreateRoomPurposeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Purposes.RoomPurposeController",
+    "Method": "DeleteRoomPurpose",
+    "RelativePath": "api/RoomPurpose/delete-room-purpose",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Features.Purposes.Commands.RoomPurpose.DeleteRoomPurpose.DeleteRoomPurposeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Purposes.RoomPurposeController",
+    "Method": "GetAllRoomPurposes",
+    "RelativePath": "api/RoomPurpose/get-all-room-purposes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Purposes.RoomPurposeController",
+    "Method": "GetRoomPurposeById",
+    "RelativePath": "api/RoomPurpose/get-room-purpose-by/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Purposes.RoomPurposeController",
+    "Method": "UpdateRoomPurpose",
+    "RelativePath": "api/RoomPurpose/update-room-purpose/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "Application.Features.Purposes.Commands.RoomPurpose.UpdateRoomPurpose.UpdateRoomPurposeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Purposes.RoomTypePurposeController",
+    "Method": "CreateRoomTypePurpose",
+    "RelativePath": "api/RoomTypePurpose/create-room-type-purpose",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Features.Purposes.Commands.RoomTypePurpose.CreateRoomTypePurpose.CreateRoomTypePurposeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Purposes.RoomTypePurposeController",
+    "Method": "DeleteRoomTypePurpose",
+    "RelativePath": "api/RoomTypePurpose/delete-room-type-purpose",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Features.Purposes.Commands.RoomTypePurpose.DeleteRoomTypePurpose.DeleteRoomTypePurposeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Purposes.RoomTypePurposeController",
+    "Method": "GetAllRoomTypePurposes",
+    "RelativePath": "api/RoomTypePurpose/get-all-room-type-purposes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Purposes.RoomTypePurposeController",
+    "Method": "GetRoomTypePurposeByRoomId",
+    "RelativePath": "api/RoomTypePurpose/get-room-type-purpose-by-room-id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Purposes.RoomTypePurposeController",
+    "Method": "UpdateRoomTypePurpose",
+    "RelativePath": "api/RoomTypePurpose/update-room-type-purpose/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "Application.Features.Purposes.Commands.RoomTypePurpose.UpdateRoomTypePurpose.UpdateRoomTypePurposeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Purposes.TravelPurposeController",
+    "Method": "CreateTravelPurpose",
+    "RelativePath": "api/TravelPurpose/create-travel-purpose",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Features.Purposes.Commands.TravelPurpose.CreateTravelPurpose.CreateTravelPurposeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Purposes.TravelPurposeController",
+    "Method": "DeleteTravelPurpose",
+    "RelativePath": "api/TravelPurpose/delete-travel-purpose",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Features.Purposes.Commands.TravelPurpose.DeleteTravelPurpose.DeleteTravelPurposeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Purposes.TravelPurposeController",
+    "Method": "GetAllTravelPurposes",
+    "RelativePath": "api/TravelPurpose/get-all-travel-purposes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Purposes.TravelPurposeController",
+    "Method": "GetTravelPurposeById",
+    "RelativePath": "api/TravelPurpose/get-travel-purpose-by/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Purposes.TravelPurposeController",
+    "Method": "UpdateTravelPurpose",
+    "RelativePath": "api/TravelPurpose/update-travel-purpose/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "Application.Features.Purposes.Commands.TravelPurpose.UpdateTravelPurpose.UpdateTravelPurposeCommand",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []
