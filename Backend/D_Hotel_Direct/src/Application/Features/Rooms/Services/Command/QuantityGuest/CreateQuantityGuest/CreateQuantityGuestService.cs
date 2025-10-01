@@ -25,7 +25,6 @@ namespace Application.Features.Rooms.Services.Command.QuantityGuest.CreateQuanti
         {
             var entity = _mapper.Map<QuantityGuestEntity>(dto);
             await _quantityGuestRepository.AddAsync(entity, cancellationToken);
-            await _context.SaveChangesAsync(cancellationToken);
             return _mapper.Map<QuantityGuestDto>(entity);
         }
     }

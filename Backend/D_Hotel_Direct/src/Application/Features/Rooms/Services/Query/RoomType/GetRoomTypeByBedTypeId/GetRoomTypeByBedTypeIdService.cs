@@ -5,7 +5,7 @@ using AutoMapper;
 
 namespace Application.Features.Rooms.Services.Query.RoomType.GetRoomTypeByBedTypeId
 {
-    internal class GetRoomTypeByBedTypeIdService : IGetRoomTypeByBedTypeIdService
+    public class GetRoomTypeByBedTypeIdService : IGetRoomTypeByBedTypeIdService
     {
         private readonly IRoomTypeRepository _roomTypeRepository;
         private readonly IMapper _mapper;

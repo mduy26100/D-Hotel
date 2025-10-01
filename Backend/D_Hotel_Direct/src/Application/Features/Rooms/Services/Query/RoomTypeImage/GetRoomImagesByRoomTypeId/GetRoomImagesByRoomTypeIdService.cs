@@ -5,7 +5,7 @@ using AutoMapper;
 
 namespace Application.Features.Rooms.Services.Query.RoomTypeImage.GetRoomImagesByRoomTypeId
 {
-    internal class GetRoomImagesByRoomTypeIdService : IGetRoomImagesByRoomTypeIdService
+    public class GetRoomImagesByRoomTypeIdService : IGetRoomImagesByRoomTypeIdService
     {
         private readonly IRoomTypeImageRepository _roomTypeImageRepository;
         private readonly IMapper _mapper;

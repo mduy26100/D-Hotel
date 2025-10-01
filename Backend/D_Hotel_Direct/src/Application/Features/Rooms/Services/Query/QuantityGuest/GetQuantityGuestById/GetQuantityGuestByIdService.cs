@@ -5,7 +5,7 @@ using AutoMapper;
 
 namespace Application.Features.Rooms.Services.Query.QuantityGuest.GetQuantityGuestById
 {
-    internal class GetQuantityGuestByIdService : IGetQuantityGuestByIdService
+    public class GetQuantityGuestByIdService : IGetQuantityGuestByIdService
     {
         private readonly IQuantityGuestRepository _quantityGuestRepository;
         private readonly IMapper _mapper;
