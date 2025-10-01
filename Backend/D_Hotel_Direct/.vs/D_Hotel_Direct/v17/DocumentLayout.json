@@ -3,6 +3,62 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\rooms\\dtos\\upsertroomtypeimagerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\rooms\\dtos\\upsertroomtypeimagerequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\rooms\\dtos\\roomtypeimagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\rooms\\dtos\\roomtypeimagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\rooms\\dtos\\roomtypedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\rooms\\dtos\\roomtypedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\rooms\\dtos\\quantityguestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\rooms\\dtos\\quantityguestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\rooms\\dtos\\bedtypedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\rooms\\dtos\\bedtypedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F53DC263-979E-48E9-8979-112DFE088FF2}|src\\Domain\\Domain.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\domain\\models\\rooms\\bedtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F53DC263-979E-48E9-8979-112DFE088FF2}|src\\Domain\\Domain.csproj|solutionrelative:src\\domain\\models\\rooms\\bedtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\rooms\\repositories\\ibedtyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\rooms\\repositories\\ibedtyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\rooms\\repositories\\roomtyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\rooms\\repositories\\roomtyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\rooms\\repositories\\roomtypeimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\rooms\\repositories\\roomtypeimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\rooms\\repositories\\iroomtypeimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\rooms\\repositories\\iroomtypeimagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\rooms\\repositories\\quantityguestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\rooms\\repositories\\quantityguestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\infrastructure\\rooms\\repositories\\bedtyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F9D9777-D288-402D-8998-8F122B464C4E}|src\\Infrastructure\\Infrastructure.csproj|solutionrelative:src\\infrastructure\\rooms\\repositories\\bedtyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\rooms\\repositories\\iquantityguestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\rooms\\repositories\\iquantityguestrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\features\\rooms\\repositories\\iroomtyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\features\\rooms\\repositories\\iroomtyperepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\application\\common\\behaviors\\validationbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5E190257-B433-47C3-90B7-22DB9FCA2E62}|src\\Application\\Application.csproj|solutionrelative:src\\application\\common\\behaviors\\validationbehavior.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +69,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{7498B6AD-92C4-4881-80B9-F19142DB3E24}|src\\WebAPI\\WebAPI.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\webapi\\dependencyinjection\\shared\\sharedserviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7498B6AD-92C4-4881-80B9-F19142DB3E24}|src\\WebAPI\\WebAPI.csproj|solutionrelative:src\\webapi\\dependencyinjection\\shared\\sharedserviceregistration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F53DC263-979E-48E9-8979-112DFE088FF2}|src\\Domain\\Domain.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\domain\\models\\rooms\\bedtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F53DC263-979E-48E9-8979-112DFE088FF2}|src\\Domain\\Domain.csproj|solutionrelative:src\\domain\\models\\rooms\\bedtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7498B6AD-92C4-4881-80B9-F19142DB3E24}|src\\WebAPI\\WebAPI.csproj|c:\\users\\admin\\documents\\d_hotel_direct\\backend\\d_hotel_direct\\src\\webapi\\dependencyinjection\\dependencyinjection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -667,6 +719,188 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UpsertRoomTypeImageRequest.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Rooms\\DTOs\\UpsertRoomTypeImageRequest.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Rooms\\DTOs\\UpsertRoomTypeImageRequest.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Rooms\\DTOs\\UpsertRoomTypeImageRequest.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Rooms\\DTOs\\UpsertRoomTypeImageRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T09:43:05.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RoomTypeImageDto.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Rooms\\DTOs\\RoomTypeImageDto.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Rooms\\DTOs\\RoomTypeImageDto.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Rooms\\DTOs\\RoomTypeImageDto.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Rooms\\DTOs\\RoomTypeImageDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T09:42:22.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RoomTypeDto.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Rooms\\DTOs\\RoomTypeDto.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Rooms\\DTOs\\RoomTypeDto.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Rooms\\DTOs\\RoomTypeDto.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Rooms\\DTOs\\RoomTypeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T09:42:07.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "QuantityGuestDto.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Rooms\\DTOs\\QuantityGuestDto.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Rooms\\DTOs\\QuantityGuestDto.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Rooms\\DTOs\\QuantityGuestDto.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Rooms\\DTOs\\QuantityGuestDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T09:42:00.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BedTypeDto.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Rooms\\DTOs\\BedTypeDto.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Rooms\\DTOs\\BedTypeDto.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Rooms\\DTOs\\BedTypeDto.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Rooms\\DTOs\\BedTypeDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T09:41:52.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RoomTypeImageRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Rooms\\Repositories\\RoomTypeImageRepository.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Rooms\\Repositories\\RoomTypeImageRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Rooms\\Repositories\\RoomTypeImageRepository.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Rooms\\Repositories\\RoomTypeImageRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T09:36:00.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RoomTypeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Rooms\\Repositories\\RoomTypeRepository.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Rooms\\Repositories\\RoomTypeRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Rooms\\Repositories\\RoomTypeRepository.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Rooms\\Repositories\\RoomTypeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T09:35:51.024Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BedType.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Domain\\Models\\Rooms\\BedType.cs",
+              "RelativeDocumentMoniker": "src\\Domain\\Models\\Rooms\\BedType.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Domain\\Models\\Rooms\\BedType.cs",
+              "RelativeToolTip": "src\\Domain\\Models\\Rooms\\BedType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T09:20:03.433Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "QuantityGuestRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Rooms\\Repositories\\QuantityGuestRepository.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Rooms\\Repositories\\QuantityGuestRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Rooms\\Repositories\\QuantityGuestRepository.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Rooms\\Repositories\\QuantityGuestRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T09:35:43.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BedTypeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Rooms\\Repositories\\BedTypeRepository.cs",
+              "RelativeDocumentMoniker": "src\\Infrastructure\\Rooms\\Repositories\\BedTypeRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Rooms\\Repositories\\BedTypeRepository.cs",
+              "RelativeToolTip": "src\\Infrastructure\\Rooms\\Repositories\\BedTypeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T09:35:32.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IRoomTypeImageRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Rooms\\Repositories\\IRoomTypeImageRepository.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Rooms\\Repositories\\IRoomTypeImageRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Rooms\\Repositories\\IRoomTypeImageRepository.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Rooms\\Repositories\\IRoomTypeImageRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T09:32:29.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IBedTypeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Rooms\\Repositories\\IBedTypeRepository.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Rooms\\Repositories\\IBedTypeRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Rooms\\Repositories\\IBedTypeRepository.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Rooms\\Repositories\\IBedTypeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T09:32:01.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IQuantityGuestRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Rooms\\Repositories\\IQuantityGuestRepository.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Rooms\\Repositories\\IQuantityGuestRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Rooms\\Repositories\\IQuantityGuestRepository.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Rooms\\Repositories\\IQuantityGuestRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T09:32:09.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IRoomTypeRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Rooms\\Repositories\\IRoomTypeRepository.cs",
+              "RelativeDocumentMoniker": "src\\Application\\Features\\Rooms\\Repositories\\IRoomTypeRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Rooms\\Repositories\\IRoomTypeRepository.cs",
+              "RelativeToolTip": "src\\Application\\Features\\Rooms\\Repositories\\IRoomTypeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-01T09:32:18.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "ValidationBehavior.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Common\\Behaviors\\ValidationBehavior.cs",
               "RelativeDocumentMoniker": "src\\Application\\Common\\Behaviors\\ValidationBehavior.cs",
@@ -679,7 +913,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 15,
               "Title": "GlobalUsing.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\GlobalUsing.cs",
               "RelativeDocumentMoniker": "src\\Application\\GlobalUsing.cs",
@@ -687,25 +921,11 @@
               "RelativeToolTip": "src\\Application\\GlobalUsing.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T09:21:59.044Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-01T09:21:59.044Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BedType.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Domain\\Models\\Rooms\\BedType.cs",
-              "RelativeDocumentMoniker": "src\\Domain\\Models\\Rooms\\BedType.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Domain\\Models\\Rooms\\BedType.cs",
-              "RelativeToolTip": "src\\Domain\\Models\\Rooms\\BedType.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-01T09:20:03.433Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 22,
               "Title": "RoomPurposeController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\Controllers\\Purposes\\RoomPurposeController.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\Controllers\\Purposes\\RoomPurposeController.cs",
@@ -717,7 +937,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 21,
               "Title": "RoomTypePurposeController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\Controllers\\Purposes\\RoomTypePurposeController.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\Controllers\\Purposes\\RoomTypePurposeController.cs",
@@ -729,7 +949,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 18,
               "Title": "PurposeServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Features\\PurposeServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Features\\PurposeServiceRegistration.cs",
@@ -741,7 +961,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 17,
               "Title": "DependencyInjection.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\DependencyInjection.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\DependencyInjection.cs",
@@ -749,12 +969,11 @@
               "RelativeToolTip": "src\\WebAPI\\DependencyInjection\\DependencyInjection.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAAAAgAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-28T02:05:45.039Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-28T02:05:45.039Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 16,
               "Title": "SharedServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Shared\\SharedServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Shared\\SharedServiceRegistration.cs",
@@ -762,12 +981,11 @@
               "RelativeToolTip": "src\\WebAPI\\DependencyInjection\\Shared\\SharedServiceRegistration.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-28T02:22:52.903Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-28T02:22:52.903Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 19,
               "Title": "PlacesServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Features\\PlacesServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Features\\PlacesServiceRegistration.cs",
@@ -779,7 +997,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 23,
               "Title": "HotelTravelPurposeController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\Controllers\\Purposes\\HotelTravelPurposeController.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\Controllers\\Purposes\\HotelTravelPurposeController.cs",
@@ -791,7 +1009,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 20,
               "Title": "TravelPurposeController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\Controllers\\Purposes\\TravelPurposeController.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\Controllers\\Purposes\\TravelPurposeController.cs",
@@ -803,7 +1021,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 24,
               "Title": "HotelServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Features\\HotelServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Features\\HotelServiceRegistration.cs",
@@ -815,7 +1033,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 25,
               "Title": "GetRoomPurposeByRoomIdService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\RoomTypePurpose\\GetRoomPurposeByRoomId\\GetRoomPurposeByRoomIdService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Query\\RoomTypePurpose\\GetRoomPurposeByRoomId\\GetRoomPurposeByRoomIdService.cs",
@@ -827,7 +1045,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 26,
               "Title": "UpdateRoomPurposeHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\RoomPurpose\\UpdateRoomPurpose\\UpdateRoomPurposeHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\RoomPurpose\\UpdateRoomPurpose\\UpdateRoomPurposeHandler.cs",
@@ -839,7 +1057,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 27,
               "Title": "UpdateRoomPurposeCommand.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\RoomPurpose\\UpdateRoomPurpose\\UpdateRoomPurposeCommand.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\RoomPurpose\\UpdateRoomPurpose\\UpdateRoomPurposeCommand.cs",
@@ -851,7 +1069,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 28,
               "Title": "GetTravelPurposeByIdHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\TravelPurpose\\GetTravelPurposeById\\GetTravelPurposeByIdHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\TravelPurpose\\GetTravelPurposeById\\GetTravelPurposeByIdHandler.cs",
@@ -863,7 +1081,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 31,
               "Title": "GetAllTravelPurposesQuery.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\TravelPurpose\\GetAllTravelPurposes\\GetAllTravelPurposesQuery.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\TravelPurpose\\GetAllTravelPurposes\\GetAllTravelPurposesQuery.cs",
@@ -875,7 +1093,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 30,
               "Title": "GetAllTravelPurposesHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\TravelPurpose\\GetAllTravelPurposes\\GetAllTravelPurposesHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\TravelPurpose\\GetAllTravelPurposes\\GetAllTravelPurposesHandler.cs",
@@ -887,7 +1105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 29,
               "Title": "GetTravelPurposeByIdQuery.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\TravelPurpose\\GetTravelPurposeById\\GetTravelPurposeByIdQuery.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\TravelPurpose\\GetTravelPurposeById\\GetTravelPurposeByIdQuery.cs",
@@ -899,7 +1117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 32,
               "Title": "GetTravelPurposeByIdValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\TravelPurpose\\GetTravelPurposeById\\GetTravelPurposeByIdValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\TravelPurpose\\GetTravelPurposeById\\GetTravelPurposeByIdValidator.cs",
@@ -911,7 +1129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 33,
               "Title": "GetAllTravelPurposesValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\TravelPurpose\\GetAllTravelPurposes\\GetAllTravelPurposesValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\TravelPurpose\\GetAllTravelPurposes\\GetAllTravelPurposesValidator.cs",
@@ -923,7 +1141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 37,
               "Title": "GetRoomPurposeByRoomIdQuery.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\RoomTypePurpose\\GetRoomPurposeByRoomId\\GetRoomPurposeByRoomIdQuery.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\RoomTypePurpose\\GetRoomPurposeByRoomId\\GetRoomPurposeByRoomIdQuery.cs",
@@ -935,7 +1153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 35,
               "Title": "GetAllRoomTypePurposesQuery.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\RoomTypePurpose\\GetAllRoomTypePurposes\\GetAllRoomTypePurposesQuery.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\RoomTypePurpose\\GetAllRoomTypePurposes\\GetAllRoomTypePurposesQuery.cs",
@@ -947,7 +1165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 34,
               "Title": "GetAllRoomTypePurposesHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\RoomTypePurpose\\GetAllRoomTypePurposes\\GetAllRoomTypePurposesHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\RoomTypePurpose\\GetAllRoomTypePurposes\\GetAllRoomTypePurposesHandler.cs",
@@ -959,7 +1177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 36,
               "Title": "GetRoomPurposeByRoomIdHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\RoomTypePurpose\\GetRoomPurposeByRoomId\\GetRoomPurposeByRoomIdHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\RoomTypePurpose\\GetRoomPurposeByRoomId\\GetRoomPurposeByRoomIdHandler.cs",
@@ -971,7 +1189,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 38,
               "Title": "GetRoomPurposeByRoomIdValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\RoomTypePurpose\\GetRoomPurposeByRoomId\\GetRoomPurposeByRoomIdValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\RoomTypePurpose\\GetRoomPurposeByRoomId\\GetRoomPurposeByRoomIdValidator.cs",
@@ -983,7 +1201,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 39,
               "Title": "GetAllRoomTypePurposesValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\RoomTypePurpose\\GetAllRoomTypePurposes\\GetAllRoomTypePurposesValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\RoomTypePurpose\\GetAllRoomTypePurposes\\GetAllRoomTypePurposesValidator.cs",
@@ -995,7 +1213,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 40,
               "Title": "GetRoomPurposeByIdHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\RoomPurpose\\GetRoomPurposeById\\GetRoomPurposeByIdHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\RoomPurpose\\GetRoomPurposeById\\GetRoomPurposeByIdHandler.cs",
@@ -1007,7 +1225,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 43,
               "Title": "GetAllRoomPurposesQuery.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\RoomPurpose\\GetAllRoomPurposes\\GetAllRoomPurposesQuery.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\RoomPurpose\\GetAllRoomPurposes\\GetAllRoomPurposesQuery.cs",
@@ -1019,7 +1237,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 42,
               "Title": "GetAllRoomPurposesHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\RoomPurpose\\GetAllRoomPurposes\\GetAllRoomPurposesHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\RoomPurpose\\GetAllRoomPurposes\\GetAllRoomPurposesHandler.cs",
@@ -1031,7 +1249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 41,
               "Title": "GetRoomPurposeByIdQuery.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\RoomPurpose\\GetRoomPurposeById\\GetRoomPurposeByIdQuery.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\RoomPurpose\\GetRoomPurposeById\\GetRoomPurposeByIdQuery.cs",
@@ -1043,7 +1261,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 44,
               "Title": "GetRoomPurposeByIdValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\RoomPurpose\\GetRoomPurposeById\\GetRoomPurposeByIdValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\RoomPurpose\\GetRoomPurposeById\\GetRoomPurposeByIdValidator.cs",
@@ -1055,7 +1273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 45,
               "Title": "GetAllRoomPurposesValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\RoomPurpose\\GetAllRoomPurposes\\GetAllRoomPurposesValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\RoomPurpose\\GetAllRoomPurposes\\GetAllRoomPurposesValidator.cs",
@@ -1067,7 +1285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 46,
               "Title": "GetTravelPurposeByHotelIdHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\HotelTravelPurpose\\GetTravelPurposeByHotelId\\GetTravelPurposeByHotelIdHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\HotelTravelPurpose\\GetTravelPurposeByHotelId\\GetTravelPurposeByHotelIdHandler.cs",
@@ -1079,7 +1297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 47,
               "Title": "GetTravelPurposeByHotelIdQuery.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\HotelTravelPurpose\\GetTravelPurposeByHotelId\\GetTravelPurposeByHotelIdQuery.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\HotelTravelPurpose\\GetTravelPurposeByHotelId\\GetTravelPurposeByHotelIdQuery.cs",
@@ -1091,7 +1309,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 49,
               "Title": "IGetTravelPurposeByHotelIdService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\HotelTravelPurpose\\GetTravelPurposeByHotelId\\IGetTravelPurposeByHotelIdService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\HotelTravelPurpose\\GetTravelPurposeByHotelId\\IGetTravelPurposeByHotelIdService.cs",
@@ -1103,7 +1321,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 48,
               "Title": "GetTravelPurposeByHotelIdService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\HotelTravelPurpose\\GetTravelPurposeByHotelId\\GetTravelPurposeByHotelIdService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Query\\HotelTravelPurpose\\GetTravelPurposeByHotelId\\GetTravelPurposeByHotelIdService.cs",
@@ -1115,7 +1333,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 50,
               "Title": "TravelPurposeDto.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\DTOs\\TravelPurposeDto.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\DTOs\\TravelPurposeDto.cs",
@@ -1127,7 +1345,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 51,
               "Title": "GetTravelPurposeByHotelIdValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\HotelTravelPurpose\\GetTravelPurposeByHotelId\\GetTravelPurposeByHotelIdValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\HotelTravelPurpose\\GetTravelPurposeByHotelId\\GetTravelPurposeByHotelIdValidator.cs",
@@ -1139,7 +1357,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 55,
               "Title": "GetHotelsByTravelPurposeIdValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\HotelTravelPurpose\\GetHotelsByTravelPurposeId\\GetHotelsByTravelPurposeIdValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\HotelTravelPurpose\\GetHotelsByTravelPurposeId\\GetHotelsByTravelPurposeIdValidator.cs",
@@ -1151,7 +1369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 52,
               "Title": "GetHotelsByTravelPurposeIdHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\HotelTravelPurpose\\GetHotelsByTravelPurposeId\\GetHotelsByTravelPurposeIdHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\HotelTravelPurpose\\GetHotelsByTravelPurposeId\\GetHotelsByTravelPurposeIdHandler.cs",
@@ -1163,7 +1381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 53,
               "Title": "GetHotelsByTravelPurposeIdQuery.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\HotelTravelPurpose\\GetHotelsByTravelPurposeId\\GetHotelsByTravelPurposeIdQuery.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\HotelTravelPurpose\\GetHotelsByTravelPurposeId\\GetHotelsByTravelPurposeIdQuery.cs",
@@ -1175,7 +1393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 54,
               "Title": "IGetHotelsByTravelPurposeIdService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\HotelTravelPurpose\\GetHotelsByTravelPurposeId\\IGetHotelsByTravelPurposeIdService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\HotelTravelPurpose\\GetHotelsByTravelPurposeId\\IGetHotelsByTravelPurposeIdService.cs",
@@ -1187,7 +1405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 56,
               "Title": "GetAllHotelTravelPurposesQuery.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\HotelTravelPurpose\\GetAllHotelTravelPurposes\\GetAllHotelTravelPurposesQuery.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\HotelTravelPurpose\\GetAllHotelTravelPurposes\\GetAllHotelTravelPurposesQuery.cs",
@@ -1199,7 +1417,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 59,
               "Title": "UpdateTravelPurposeHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\TravelPurpose\\UpdateTravelPurpose\\UpdateTravelPurposeHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\TravelPurpose\\UpdateTravelPurpose\\UpdateTravelPurposeHandler.cs",
@@ -1211,7 +1429,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 58,
               "Title": "UpdateTravelPurposeCommand.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\TravelPurpose\\UpdateTravelPurpose\\UpdateTravelPurposeCommand.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\TravelPurpose\\UpdateTravelPurpose\\UpdateTravelPurposeCommand.cs",
@@ -1223,7 +1441,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 57,
               "Title": "GetAllHotelTravelPurposesHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\HotelTravelPurpose\\GetAllHotelTravelPurposes\\GetAllHotelTravelPurposesHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\HotelTravelPurpose\\GetAllHotelTravelPurposes\\GetAllHotelTravelPurposesHandler.cs",
@@ -1235,7 +1453,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 60,
               "Title": "GetAllHotelTravelPurposesValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Queries\\HotelTravelPurpose\\GetAllHotelTravelPurposes\\GetAllHotelTravelPurposesValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Queries\\HotelTravelPurpose\\GetAllHotelTravelPurposes\\GetAllHotelTravelPurposesValidator.cs",
@@ -1247,7 +1465,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 61,
               "Title": "DeleteTravelPurposeHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\TravelPurpose\\DeleteTravelPurpose\\DeleteTravelPurposeHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\TravelPurpose\\DeleteTravelPurpose\\DeleteTravelPurposeHandler.cs",
@@ -1259,7 +1477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 62,
               "Title": "IDeleteTravelPurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\TravelPurpose\\DeleteTravelPurpose\\IDeleteTravelPurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\TravelPurpose\\DeleteTravelPurpose\\IDeleteTravelPurposeService.cs",
@@ -1271,7 +1489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 63,
               "Title": "DeleteTravelPurposeValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\TravelPurpose\\DeleteTravelPurpose\\DeleteTravelPurposeValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\TravelPurpose\\DeleteTravelPurpose\\DeleteTravelPurposeValidator.cs",
@@ -1283,7 +1501,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 64,
               "Title": "DeleteTravelPurposeCommand.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\TravelPurpose\\DeleteTravelPurpose\\DeleteTravelPurposeCommand.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\TravelPurpose\\DeleteTravelPurpose\\DeleteTravelPurposeCommand.cs",
@@ -1295,7 +1513,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 65,
               "Title": "CreateTravelPurposeHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\TravelPurpose\\CreateTravelPurpose\\CreateTravelPurposeHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\TravelPurpose\\CreateTravelPurpose\\CreateTravelPurposeHandler.cs",
@@ -1307,7 +1525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 66,
               "Title": "CreateTravelPurposeCommand.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\TravelPurpose\\CreateTravelPurpose\\CreateTravelPurposeCommand.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\TravelPurpose\\CreateTravelPurpose\\CreateTravelPurposeCommand.cs",
@@ -1319,7 +1537,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 67,
               "Title": "UpdateTravelPurposeValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\TravelPurpose\\UpdateTravelPurpose\\UpdateTravelPurposeValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\TravelPurpose\\UpdateTravelPurpose\\UpdateTravelPurposeValidator.cs",
@@ -1331,7 +1549,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 68,
               "Title": "CreateTravelPurposeValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\TravelPurpose\\CreateTravelPurpose\\CreateTravelPurposeValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\TravelPurpose\\CreateTravelPurpose\\CreateTravelPurposeValidator.cs",
@@ -1343,7 +1561,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 71,
               "Title": "DeleteRoomTypePurposeHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\RoomTypePurpose\\DeleteRoomTypePurpose\\DeleteRoomTypePurposeHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\RoomTypePurpose\\DeleteRoomTypePurpose\\DeleteRoomTypePurposeHandler.cs",
@@ -1355,7 +1573,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 72,
               "Title": "IDeleteRoomTypePurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomTypePurpose\\DeleteRoomTypePurpose\\IDeleteRoomTypePurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomTypePurpose\\DeleteRoomTypePurpose\\IDeleteRoomTypePurposeService.cs",
@@ -1367,7 +1585,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 70,
               "Title": "UpdateRoomTypePurposeCommand.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\RoomTypePurpose\\UpdateRoomTypePurpose\\UpdateRoomTypePurposeCommand.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\RoomTypePurpose\\UpdateRoomTypePurpose\\UpdateRoomTypePurposeCommand.cs",
@@ -1379,7 +1597,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 69,
               "Title": "UpdateRoomTypePurposeHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\RoomTypePurpose\\UpdateRoomTypePurpose\\UpdateRoomTypePurposeHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\RoomTypePurpose\\UpdateRoomTypePurpose\\UpdateRoomTypePurposeHandler.cs",
@@ -1391,7 +1609,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 73,
               "Title": "DeleteRoomTypePurposeCommand.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\RoomTypePurpose\\DeleteRoomTypePurpose\\DeleteRoomTypePurposeCommand.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\RoomTypePurpose\\DeleteRoomTypePurpose\\DeleteRoomTypePurposeCommand.cs",
@@ -1403,7 +1621,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 74,
               "Title": "CreateRoomTypePurposeHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\RoomTypePurpose\\CreateRoomTypePurpose\\CreateRoomTypePurposeHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\RoomTypePurpose\\CreateRoomTypePurpose\\CreateRoomTypePurposeHandler.cs",
@@ -1415,7 +1633,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 75,
               "Title": "ICreateRoomTypePurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomTypePurpose\\CreateRoomTypePurpose\\ICreateRoomTypePurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomTypePurpose\\CreateRoomTypePurpose\\ICreateRoomTypePurposeService.cs",
@@ -1427,7 +1645,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 76,
               "Title": "CreateRoomTypePurposeCommand.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\RoomTypePurpose\\CreateRoomTypePurpose\\CreateRoomTypePurposeCommand.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\RoomTypePurpose\\CreateRoomTypePurpose\\CreateRoomTypePurposeCommand.cs",
@@ -1439,7 +1657,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 77,
               "Title": "UpdateRoomTypePurposeValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\RoomTypePurpose\\UpdateRoomTypePurpose\\UpdateRoomTypePurposeValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\RoomTypePurpose\\UpdateRoomTypePurpose\\UpdateRoomTypePurposeValidator.cs",
@@ -1451,7 +1669,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 78,
               "Title": "DeleteRoomTypePurposeValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\RoomTypePurpose\\DeleteRoomTypePurpose\\DeleteRoomTypePurposeValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\RoomTypePurpose\\DeleteRoomTypePurpose\\DeleteRoomTypePurposeValidator.cs",
@@ -1463,7 +1681,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 79,
               "Title": "CreateRoomTypePurposeValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\RoomTypePurpose\\CreateRoomTypePurpose\\CreateRoomTypePurposeValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\RoomTypePurpose\\CreateRoomTypePurpose\\CreateRoomTypePurposeValidator.cs",
@@ -1475,7 +1693,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 80,
               "Title": "DeleteRoomPurposeHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\RoomPurpose\\DeleteRoomPurpose\\DeleteRoomPurposeHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\RoomPurpose\\DeleteRoomPurpose\\DeleteRoomPurposeHandler.cs",
@@ -1487,7 +1705,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 81,
               "Title": "IDeleteRoomPurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomPurpose\\DeleteRoomPurpose\\IDeleteRoomPurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomPurpose\\DeleteRoomPurpose\\IDeleteRoomPurposeService.cs",
@@ -1499,7 +1717,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 82,
               "Title": "DeleteRoomPurposeCommand.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\RoomPurpose\\DeleteRoomPurpose\\DeleteRoomPurposeCommand.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\RoomPurpose\\DeleteRoomPurpose\\DeleteRoomPurposeCommand.cs",
@@ -1511,7 +1729,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 83,
               "Title": "CreateRoomPurposeHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\RoomPurpose\\CreateRoomPurpose\\CreateRoomPurposeHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\RoomPurpose\\CreateRoomPurpose\\CreateRoomPurposeHandler.cs",
@@ -1523,7 +1741,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 84,
               "Title": "CreateRoomPurposeCommand.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\RoomPurpose\\CreateRoomPurpose\\CreateRoomPurposeCommand.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\RoomPurpose\\CreateRoomPurpose\\CreateRoomPurposeCommand.cs",
@@ -1535,7 +1753,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 85,
               "Title": "UpdateRoomPurposeValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\RoomPurpose\\UpdateRoomPurpose\\UpdateRoomPurposeValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\RoomPurpose\\UpdateRoomPurpose\\UpdateRoomPurposeValidator.cs",
@@ -1547,7 +1765,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 86,
               "Title": "DeleteRoomPurposeValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\RoomPurpose\\DeleteRoomPurpose\\DeleteRoomPurposeValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\RoomPurpose\\DeleteRoomPurpose\\DeleteRoomPurposeValidator.cs",
@@ -1559,7 +1777,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
+              "DocumentIndex": 87,
               "Title": "CreateRoomPurposeValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\RoomPurpose\\CreateRoomPurpose\\CreateRoomPurposeValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\RoomPurpose\\CreateRoomPurpose\\CreateRoomPurposeValidator.cs",
@@ -1571,7 +1789,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 90,
               "Title": "DeleteHotelTravelPurposeHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\HotelTravelPurpose\\DeleteHotelTravelPurpose\\DeleteHotelTravelPurposeHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\HotelTravelPurpose\\DeleteHotelTravelPurpose\\DeleteHotelTravelPurposeHandler.cs",
@@ -1583,7 +1801,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 91,
               "Title": "IDeleteHotelTravelPurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\HotelTravelPurpose\\DeleteHotelTravelPurpose\\IDeleteHotelTravelPurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\HotelTravelPurpose\\DeleteHotelTravelPurpose\\IDeleteHotelTravelPurposeService.cs",
@@ -1595,7 +1813,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 88,
               "Title": "UpdateHotelTravelPurposeHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\HotelTravelPurpose\\UpdateHotelTravelPurpose\\UpdateHotelTravelPurposeHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\HotelTravelPurpose\\UpdateHotelTravelPurpose\\UpdateHotelTravelPurposeHandler.cs",
@@ -1607,7 +1825,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 89,
               "Title": "UpdateHotelTravelPurposeCommand.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\HotelTravelPurpose\\UpdateHotelTravelPurpose\\UpdateHotelTravelPurposeCommand.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\HotelTravelPurpose\\UpdateHotelTravelPurpose\\UpdateHotelTravelPurposeCommand.cs",
@@ -1619,7 +1837,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 92,
               "Title": "HotelTravelPurposeDto.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\DTOs\\HotelTravelPurposeDto.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\DTOs\\HotelTravelPurposeDto.cs",
@@ -1631,7 +1849,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 93,
               "Title": "DeleteHotelTravelPurposeCommand.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\HotelTravelPurpose\\DeleteHotelTravelPurpose\\DeleteHotelTravelPurposeCommand.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\HotelTravelPurpose\\DeleteHotelTravelPurpose\\DeleteHotelTravelPurposeCommand.cs",
@@ -1643,7 +1861,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 94,
               "Title": "CreateHotelTravelPurposeValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\HotelTravelPurpose\\CreateHotelTravelPurpose\\CreateHotelTravelPurposeValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\HotelTravelPurpose\\CreateHotelTravelPurpose\\CreateHotelTravelPurposeValidator.cs",
@@ -1655,7 +1873,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 95,
               "Title": "CreateHotelTravelPurposeHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\HotelTravelPurpose\\CreateHotelTravelPurpose\\CreateHotelTravelPurposeHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\HotelTravelPurpose\\CreateHotelTravelPurpose\\CreateHotelTravelPurposeHandler.cs",
@@ -1667,7 +1885,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 83,
+              "DocumentIndex": 96,
               "Title": "CreateHotelTravelPurposeCommand.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\HotelTravelPurpose\\CreateHotelTravelPurpose\\CreateHotelTravelPurposeCommand.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\HotelTravelPurpose\\CreateHotelTravelPurpose\\CreateHotelTravelPurposeCommand.cs",
@@ -1679,7 +1897,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 84,
+              "DocumentIndex": 97,
               "Title": "UpdateHotelTravelPurposeValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\HotelTravelPurpose\\UpdateHotelTravelPurpose\\UpdateHotelTravelPurposeValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\HotelTravelPurpose\\UpdateHotelTravelPurpose\\UpdateHotelTravelPurposeValidator.cs",
@@ -1691,7 +1909,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 85,
+              "DocumentIndex": 98,
               "Title": "DeleteHotelTravelPurposeValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Commands\\HotelTravelPurpose\\DeleteHotelTravelPurpose\\DeleteHotelTravelPurposeValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Commands\\HotelTravelPurpose\\DeleteHotelTravelPurpose\\DeleteHotelTravelPurposeValidator.cs",
@@ -1703,7 +1921,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 87,
+              "DocumentIndex": 100,
               "Title": "IGetRoomsByRoomPurposeIdService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomTypePurpose\\GetRoomsByRoomPurposeId\\IGetRoomsByRoomPurposeIdService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomTypePurpose\\GetRoomsByRoomPurposeId\\IGetRoomsByRoomPurposeIdService.cs",
@@ -1715,7 +1933,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 88,
+              "DocumentIndex": 101,
               "Title": "GetRoomsByRoomPurposeIdService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\RoomTypePurpose\\GetRoomsByRoomPurposeId\\GetRoomsByRoomPurposeIdService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Query\\RoomTypePurpose\\GetRoomsByRoomPurposeId\\GetRoomsByRoomPurposeIdService.cs",
@@ -1727,7 +1945,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 86,
+              "DocumentIndex": 99,
               "Title": "MappingServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Infrastructure\\MappingServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Infrastructure\\MappingServiceRegistration.cs",
@@ -1739,7 +1957,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 92,
+              "DocumentIndex": 105,
               "Title": "HotelTravelPurposeRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Purposes\\Repositories\\HotelTravelPurposeRepository.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Purposes\\Repositories\\HotelTravelPurposeRepository.cs",
@@ -1751,7 +1969,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 91,
+              "DocumentIndex": 104,
               "Title": "RoomPurposeRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Purposes\\Repositories\\RoomPurposeRepository.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Purposes\\Repositories\\RoomPurposeRepository.cs",
@@ -1763,7 +1981,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 90,
+              "DocumentIndex": 103,
               "Title": "RoomTypePurposeRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Purposes\\Repositories\\RoomTypePurposeRepository.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Purposes\\Repositories\\RoomTypePurposeRepository.cs",
@@ -1775,7 +1993,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 89,
+              "DocumentIndex": 102,
               "Title": "TravelPurposeRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Purposes\\Repositories\\TravelPurposeRepository.cs",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Purposes\\Repositories\\TravelPurposeRepository.cs",
@@ -1787,7 +2005,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 93,
+              "DocumentIndex": 106,
               "Title": "GetAllRoomTypePurposesService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\RoomTypePurpose\\GetAllRoomTypePurposes\\GetAllRoomTypePurposesService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Query\\RoomTypePurpose\\GetAllRoomTypePurposes\\GetAllRoomTypePurposesService.cs",
@@ -1799,7 +2017,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 95,
+              "DocumentIndex": 108,
               "Title": "IGetAllRoomTypePurposesService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomTypePurpose\\GetAllRoomTypePurposes\\IGetAllRoomTypePurposesService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomTypePurpose\\GetAllRoomTypePurposes\\IGetAllRoomTypePurposesService.cs",
@@ -1811,7 +2029,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 94,
+              "DocumentIndex": 107,
               "Title": "IGetRoomPurposeByRoomIdService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomTypePurpose\\GetRoomPurposeByRoomId\\IGetRoomPurposeByRoomIdService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomTypePurpose\\GetRoomPurposeByRoomId\\IGetRoomPurposeByRoomIdService.cs",
@@ -1823,7 +2041,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 98,
+              "DocumentIndex": 111,
               "Title": "IGetTravelPurposeByIdService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\TravelPurpose\\GetTravelPurposeById\\IGetTravelPurposeByIdService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\TravelPurpose\\GetTravelPurposeById\\IGetTravelPurposeByIdService.cs",
@@ -1835,7 +2053,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 96,
+              "DocumentIndex": 109,
               "Title": "GetTravelPurposeByIdService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\TravelPurpose\\GetTravelPurposeById\\GetTravelPurposeByIdService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Query\\TravelPurpose\\GetTravelPurposeById\\GetTravelPurposeByIdService.cs",
@@ -1847,7 +2065,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 100,
+              "DocumentIndex": 113,
               "Title": "IGetAllTravelPurposesService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\TravelPurpose\\GetAllTravelPurposes\\IGetAllTravelPurposesService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\TravelPurpose\\GetAllTravelPurposes\\IGetAllTravelPurposesService.cs",
@@ -1859,7 +2077,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 97,
+              "DocumentIndex": 110,
               "Title": "GetAllTravelPurposesService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\TravelPurpose\\GetAllTravelPurposes\\GetAllTravelPurposesService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Query\\TravelPurpose\\GetAllTravelPurposes\\GetAllTravelPurposesService.cs",
@@ -1871,7 +2089,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 101,
+              "DocumentIndex": 114,
               "Title": "GetRoomPurposeByIdService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\RoomPurpose\\GetRoomPurposeById\\GetRoomPurposeByIdService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Query\\RoomPurpose\\GetRoomPurposeById\\GetRoomPurposeByIdService.cs",
@@ -1883,7 +2101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 99,
+              "DocumentIndex": 112,
               "Title": "ITravelPurposeRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Repositories\\ITravelPurposeRepository.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Repositories\\ITravelPurposeRepository.cs",
@@ -1895,7 +2113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 103,
+              "DocumentIndex": 116,
               "Title": "IGetRoomPurposeByIdService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomPurpose\\GetRoomPurposeById\\IGetRoomPurposeByIdService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomPurpose\\GetRoomPurposeById\\IGetRoomPurposeByIdService.cs",
@@ -1907,7 +2125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 104,
+              "DocumentIndex": 117,
               "Title": "IGetAllRoomPurposesService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomPurpose\\GetAllRoomPurposes\\IGetAllRoomPurposesService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\RoomPurpose\\GetAllRoomPurposes\\IGetAllRoomPurposesService.cs",
@@ -1919,7 +2137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 102,
+              "DocumentIndex": 115,
               "Title": "GetAllRoomPurposesService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\RoomPurpose\\GetAllRoomPurposes\\GetAllRoomPurposesService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Query\\RoomPurpose\\GetAllRoomPurposes\\GetAllRoomPurposesService.cs",
@@ -1931,7 +2149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 105,
+              "DocumentIndex": 118,
               "Title": "IGetAllHotelTravelPurposesService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\HotelTravelPurpose\\GetAllHotelTravelPurposes\\IGetAllHotelTravelPurposesService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Query\\HotelTravelPurpose\\GetAllHotelTravelPurposes\\IGetAllHotelTravelPurposesService.cs",
@@ -1943,7 +2161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 107,
+              "DocumentIndex": 120,
               "Title": "GetHotelsByTravelPurposeIdService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\HotelTravelPurpose\\GetHotelsByTravelPurposeId\\GetHotelsByTravelPurposeIdService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Query\\HotelTravelPurpose\\GetHotelsByTravelPurposeId\\GetHotelsByTravelPurposeIdService.cs",
@@ -1955,7 +2173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 106,
+              "DocumentIndex": 119,
               "Title": "GetAllHotelTravelPurposesService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Query\\HotelTravelPurpose\\GetAllHotelTravelPurposes\\GetAllHotelTravelPurposesService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Query\\HotelTravelPurpose\\GetAllHotelTravelPurposes\\GetAllHotelTravelPurposesService.cs",
@@ -1967,7 +2185,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 108,
+              "DocumentIndex": 121,
               "Title": "TravelPurpose.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Domain\\Models\\Purposes\\TravelPurpose.cs",
               "RelativeDocumentMoniker": "src\\Domain\\Models\\Purposes\\TravelPurpose.cs",
@@ -1979,7 +2197,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 110,
+              "DocumentIndex": 123,
               "Title": "UpdateTravelPurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\TravelPurpose\\UpdateTravelPurpose\\UpdateTravelPurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\TravelPurpose\\UpdateTravelPurpose\\UpdateTravelPurposeService.cs",
@@ -1991,7 +2209,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 109,
+              "DocumentIndex": 122,
               "Title": "CreateHotelTravelPurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\HotelTravelPurpose\\CreateHotelTravelPurpose\\CreateHotelTravelPurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\HotelTravelPurpose\\CreateHotelTravelPurpose\\CreateHotelTravelPurposeService.cs",
@@ -2003,7 +2221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 113,
+              "DocumentIndex": 126,
               "Title": "CreateTravelPurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\TravelPurpose\\CreateTravelPurpose\\CreateTravelPurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\TravelPurpose\\CreateTravelPurpose\\CreateTravelPurposeService.cs",
@@ -2015,7 +2233,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 112,
+              "DocumentIndex": 125,
               "Title": "DeleteTravelPurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\TravelPurpose\\DeleteTravelPurpose\\DeleteTravelPurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\TravelPurpose\\DeleteTravelPurpose\\DeleteTravelPurposeService.cs",
@@ -2027,7 +2245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 111,
+              "DocumentIndex": 124,
               "Title": "IUpdateTravelPurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\TravelPurpose\\UpdateTravelPurpose\\IUpdateTravelPurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\TravelPurpose\\UpdateTravelPurpose\\IUpdateTravelPurposeService.cs",
@@ -2039,7 +2257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 114,
+              "DocumentIndex": 127,
               "Title": "ICreateTravelPurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\TravelPurpose\\CreateTravelPurpose\\ICreateTravelPurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\TravelPurpose\\CreateTravelPurpose\\ICreateTravelPurposeService.cs",
@@ -2051,7 +2269,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 117,
+              "DocumentIndex": 130,
               "Title": "IUpdateRoomTypePurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomTypePurpose\\UpdateRoomTypePurpose\\IUpdateRoomTypePurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomTypePurpose\\UpdateRoomTypePurpose\\IUpdateRoomTypePurposeService.cs",
@@ -2063,7 +2281,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 115,
+              "DocumentIndex": 128,
               "Title": "UpdateRoomTypePurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\RoomTypePurpose\\UpdateRoomTypePurpose\\UpdateRoomTypePurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\RoomTypePurpose\\UpdateRoomTypePurpose\\UpdateRoomTypePurposeService.cs",
@@ -2075,7 +2293,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 116,
+              "DocumentIndex": 129,
               "Title": "DeleteRoomTypePurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\RoomTypePurpose\\DeleteRoomTypePurpose\\DeleteRoomTypePurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\RoomTypePurpose\\DeleteRoomTypePurpose\\DeleteRoomTypePurposeService.cs",
@@ -2087,7 +2305,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 118,
+              "DocumentIndex": 131,
               "Title": "CreateRoomTypePurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\RoomTypePurpose\\CreateRoomTypePurpose\\CreateRoomTypePurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\RoomTypePurpose\\CreateRoomTypePurpose\\CreateRoomTypePurposeService.cs",
@@ -2099,7 +2317,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 119,
+              "DocumentIndex": 132,
               "Title": "UpdateRoomPurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\RoomPurpose\\UpdateRoomPurpose\\UpdateRoomPurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\RoomPurpose\\UpdateRoomPurpose\\UpdateRoomPurposeService.cs",
@@ -2111,7 +2329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 122,
+              "DocumentIndex": 135,
               "Title": "UpdateHotelTravelPurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\HotelTravelPurpose\\UpdateHotelTravelPurpose\\UpdateHotelTravelPurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\HotelTravelPurpose\\UpdateHotelTravelPurpose\\UpdateHotelTravelPurposeService.cs",
@@ -2123,7 +2341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 121,
+              "DocumentIndex": 134,
               "Title": "DeleteRoomPurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\RoomPurpose\\DeleteRoomPurpose\\DeleteRoomPurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\RoomPurpose\\DeleteRoomPurpose\\DeleteRoomPurposeService.cs",
@@ -2135,7 +2353,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 120,
+              "DocumentIndex": 133,
               "Title": "IRoomPurposeRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Repositories\\IRoomPurposeRepository.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Repositories\\IRoomPurposeRepository.cs",
@@ -2147,7 +2365,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 123,
+              "DocumentIndex": 136,
               "Title": "IUpdateRoomPurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomPurpose\\UpdateRoomPurpose\\IUpdateRoomPurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomPurpose\\UpdateRoomPurpose\\IUpdateRoomPurposeService.cs",
@@ -2159,7 +2377,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 125,
+              "DocumentIndex": 138,
               "Title": "ICreateRoomPurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomPurpose\\CreateRoomPurpose\\ICreateRoomPurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\RoomPurpose\\CreateRoomPurpose\\ICreateRoomPurposeService.cs",
@@ -2171,7 +2389,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 124,
+              "DocumentIndex": 137,
               "Title": "CreateRoomPurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\RoomPurpose\\CreateRoomPurpose\\CreateRoomPurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\RoomPurpose\\CreateRoomPurpose\\CreateRoomPurposeService.cs",
@@ -2183,7 +2401,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 126,
+              "DocumentIndex": 139,
               "Title": "ICreateHotelTravelPurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\HotelTravelPurpose\\CreateHotelTravelPurpose\\ICreateHotelTravelPurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\HotelTravelPurpose\\CreateHotelTravelPurpose\\ICreateHotelTravelPurposeService.cs",
@@ -2195,7 +2413,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 127,
+              "DocumentIndex": 140,
               "Title": "IUpdateHotelTravelPurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\HotelTravelPurpose\\UpdateHotelTravelPurpose\\IUpdateHotelTravelPurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Interfaces\\Services\\Command\\HotelTravelPurpose\\UpdateHotelTravelPurpose\\IUpdateHotelTravelPurposeService.cs",
@@ -2207,7 +2425,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 128,
+              "DocumentIndex": 141,
               "Title": "DeleteHotelTravelPurposeService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Services\\Command\\HotelTravelPurpose\\DeleteHotelTravelPurpose\\DeleteHotelTravelPurposeService.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Services\\Command\\HotelTravelPurpose\\DeleteHotelTravelPurpose\\DeleteHotelTravelPurposeService.cs",
@@ -2219,7 +2437,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 129,
+              "DocumentIndex": 142,
               "Title": "PurposeMappingProfile.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Mappings\\PurposeMappingProfile.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Mappings\\PurposeMappingProfile.cs",
@@ -2231,7 +2449,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 130,
+              "DocumentIndex": 143,
               "Title": "RoomTypePurposeDto.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\DTOs\\RoomTypePurposeDto.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\DTOs\\RoomTypePurposeDto.cs",
@@ -2243,7 +2461,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 131,
+              "DocumentIndex": 144,
               "Title": "IRoomTypePurposeRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Repositories\\IRoomTypePurposeRepository.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Repositories\\IRoomTypePurposeRepository.cs",
@@ -2255,7 +2473,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 132,
+              "DocumentIndex": 145,
               "Title": "RoomPurposeDto.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\DTOs\\RoomPurposeDto.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\DTOs\\RoomPurposeDto.cs",
@@ -2267,7 +2485,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 133,
+              "DocumentIndex": 146,
               "Title": "IHotelTravelPurposeRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Purposes\\Repositories\\IHotelTravelPurposeRepository.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Purposes\\Repositories\\IHotelTravelPurposeRepository.cs",
@@ -2279,7 +2497,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 134,
+              "DocumentIndex": 147,
               "Title": "Infrastructure.csproj",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Infrastructure\\Infrastructure.csproj",
               "RelativeDocumentMoniker": "src\\Infrastructure\\Infrastructure.csproj",
@@ -2291,7 +2509,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 137,
+              "DocumentIndex": 150,
               "Title": "GetHotelStaffsByHotelIdQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQueryValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQueryValidator.cs",
@@ -2303,7 +2521,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 138,
+              "DocumentIndex": 151,
               "Title": "GetHotelStaffsByHotelIdQuery.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQuery.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQuery.cs",
@@ -2315,7 +2533,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 140,
+              "DocumentIndex": 153,
               "Title": "GetAllHotelStaffsQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQueryValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQueryValidator.cs",
@@ -2327,7 +2545,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 136,
+              "DocumentIndex": 149,
               "Title": "HotelController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\Controllers\\Hotels\\HotelController.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\Controllers\\Hotels\\HotelController.cs",
@@ -2339,7 +2557,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 135,
+              "DocumentIndex": 148,
               "Title": "GetHotelStaffByIdQueryValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQueryValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQueryValidator.cs",
@@ -2351,7 +2569,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 139,
+              "DocumentIndex": 152,
               "Title": "GetHotelStaffByIdQuery.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQuery.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQuery.cs",
@@ -2363,7 +2581,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 141,
+              "DocumentIndex": 154,
               "Title": "UpdateHotelStaffCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommandValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommandValidator.cs",
@@ -2375,7 +2593,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 142,
+              "DocumentIndex": 155,
               "Title": "UpdateHotelStaffCommand.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommand.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommand.cs",
@@ -2387,7 +2605,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 143,
+              "DocumentIndex": 156,
               "Title": "CreateHotelStaffCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommandValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommandValidator.cs",
@@ -2399,7 +2617,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 144,
+              "DocumentIndex": 157,
               "Title": "DeleteHotelStaffCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommandValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommandValidator.cs",
@@ -2411,7 +2629,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 145,
+              "DocumentIndex": 158,
               "Title": "DeleteHotelStaffCommand.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommand.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommand.cs",
@@ -2423,7 +2641,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 146,
+              "DocumentIndex": 159,
               "Title": "CreateHotelStaffCommand.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommand.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommand.cs",
@@ -2435,7 +2653,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 147,
+              "DocumentIndex": 160,
               "Title": "CreateHotelStaffCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\CreateHotelStaff\\CreateHotelStaffCommandHandler.cs",
@@ -2447,7 +2665,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 148,
+              "DocumentIndex": 161,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\Program.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\Program.cs",
@@ -2459,7 +2677,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 149,
+              "DocumentIndex": 162,
               "Title": "FileUploadServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Infrastructure\\FileUploadServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Infrastructure\\FileUploadServiceRegistration.cs",
@@ -2471,7 +2689,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 150,
+              "DocumentIndex": 163,
               "Title": "DatabaseServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Infrastructure\\DatabaseServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Infrastructure\\DatabaseServiceRegistration.cs",
@@ -2483,7 +2701,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 151,
+              "DocumentIndex": 164,
               "Title": "CacheServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Infrastructure\\CacheServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Infrastructure\\CacheServiceRegistration.cs",
@@ -2495,7 +2713,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 152,
+              "DocumentIndex": 165,
               "Title": "CorsServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Common\\CorsServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Common\\CorsServiceRegistration.cs",
@@ -2507,7 +2725,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 153,
+              "DocumentIndex": 166,
               "Title": "AuthServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Auth\\AuthServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Auth\\AuthServiceRegistration.cs",
@@ -2519,7 +2737,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 154,
+              "DocumentIndex": 167,
               "Title": "UtilityServiceRegistration.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\DependencyInjection\\Features\\UtilityServiceRegistration.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\DependencyInjection\\Features\\UtilityServiceRegistration.cs",
@@ -2531,7 +2749,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 155,
+              "DocumentIndex": 168,
               "Title": "HotelStaffController.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\WebAPI\\Controllers\\Hotels\\HotelStaffController.cs",
               "RelativeDocumentMoniker": "src\\WebAPI\\Controllers\\Hotels\\HotelStaffController.cs",
@@ -2543,7 +2761,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 157,
+              "DocumentIndex": 170,
               "Title": "GetHotelStaffByIdQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQueryHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffById\\GetHotelStaffByIdQueryHandler.cs",
@@ -2555,7 +2773,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 156,
+              "DocumentIndex": 169,
               "Title": "GetHotelStaffsByHotelIdQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQueryHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetHotelStaffsByHotelId\\GetHotelStaffsByHotelIdQueryHandler.cs",
@@ -2567,7 +2785,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 158,
+              "DocumentIndex": 171,
               "Title": "GetAllHotelStaffsQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQueryHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQueryHandler.cs",
@@ -2579,7 +2797,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 159,
+              "DocumentIndex": 172,
               "Title": "GetAllHotelStaffsQuery.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQuery.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Queries\\GetAllHotelStaffs\\GetAllHotelStaffsQuery.cs",
@@ -2591,7 +2809,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 160,
+              "DocumentIndex": 173,
               "Title": "UpdateHotelStaffCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\UpdateHotelStaff\\UpdateHotelStaffCommandHandler.cs",
@@ -2603,7 +2821,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 161,
+              "DocumentIndex": 174,
               "Title": "DeleteHotelStaffCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommandHandler.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\DeleteHotelStaff\\DeleteHotelStaffCommandHandler.cs",
@@ -2615,7 +2833,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 162,
+              "DocumentIndex": 175,
               "Title": "CreateHotelCategoryCommandValidator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\D_Hotel_Direct\\Backend\\D_Hotel_Direct\\src\\Application\\Features\\Hotels\\Commands\\CreateHotelCategory\\CreateHotelCategoryCommandValidator.cs",
               "RelativeDocumentMoniker": "src\\Application\\Features\\Hotels\\Commands\\CreateHotelCategory\\CreateHotelCategoryCommandValidator.cs",

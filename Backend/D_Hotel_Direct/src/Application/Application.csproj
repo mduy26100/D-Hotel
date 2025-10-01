@@ -19,8 +19,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Rooms\" />
     <Folder Include="Features\Purposes\Queries\RoomTypePurpose\GetRoomsByRoomPurposeId\" />
+    <Folder Include="Features\Rooms\Commands\" />
+    <Folder Include="Features\Rooms\Interfaces\" />
+    <Folder Include="Features\Rooms\Mappings\" />
+    <Folder Include="Features\Rooms\Services\" />
+    <Folder Include="Features\Rooms\Queries\" />
   </ItemGroup>
 
 </Project>
