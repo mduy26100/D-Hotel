@@ -2,6 +2,7 @@
 global using Application.Common.Interfaces.Persistence.Base;
 global using Application.Common.Interfaces.Persistence.EFCore;
 global using Application.Common.Interfaces.Services.FileUpLoad;
+global using Application.Common.Behaviors;
 
 global using Application.Features.Auth.Commands.ChangePassword;
 global using Application.Features.Auth.Commands.Login;

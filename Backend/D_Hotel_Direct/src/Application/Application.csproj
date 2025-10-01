@@ -20,27 +20,6 @@
 
   <ItemGroup>
     <Folder Include="Features\Purposes\Queries\RoomTypePurpose\GetRoomsByRoomPurposeId\" />
-    <Folder Include="Features\Rooms\Commands\BedType\CreateBedType\" />
-    <Folder Include="Features\Rooms\Commands\BedType\DeleteBedType\" />
-    <Folder Include="Features\Rooms\Commands\BedType\UpdateBedType\" />
-    <Folder Include="Features\Rooms\Commands\QuantityGuest\CreateQuantityGuest\" />
-    <Folder Include="Features\Rooms\Commands\QuantityGuest\DeleteQuantityGuest\" />
-    <Folder Include="Features\Rooms\Commands\QuantityGuest\UpdateQuantityGuest\" />
-    <Folder Include="Features\Rooms\Commands\RoomTypeImage\CreateRoomTypeImage\" />
-    <Folder Include="Features\Rooms\Commands\RoomTypeImage\DeleteRoomTypeImage\" />
-    <Folder Include="Features\Rooms\Commands\RoomTypeImage\UpdateRoomTypeImage\" />
-    <Folder Include="Features\Rooms\Commands\RoomType\CreateRoomType\" />
-    <Folder Include="Features\Rooms\Commands\RoomType\DeleteRoomType\" />
-    <Folder Include="Features\Rooms\Commands\RoomType\UpdateRoomType\" />
-    <Folder Include="Features\Rooms\Queries\BedType\GetAllBedTypes\" />
-    <Folder Include="Features\Rooms\Queries\BedType\GetBedTypeById\" />
-    <Folder Include="Features\Rooms\Queries\QuantityGuest\GetAllQuantityGuests\" />
-    <Folder Include="Features\Rooms\Queries\QuantityGuest\GetQuantityGuestById\" />
-    <Folder Include="Features\Rooms\Queries\RoomTypeImage\GetRoomImagesByRoomTypeId\" />
-    <Folder Include="Features\Rooms\Queries\RoomType\GetAllRoomTypes\" />
-    <Folder Include="Features\Rooms\Queries\RoomType\GetRoomTypeByBedTypeId\" />
-    <Folder Include="Features\Rooms\Queries\RoomType\GetRoomTypeById\" />
-    <Folder Include="Features\Rooms\Queries\RoomType\GetRoomTypeByQuantityGuestId\" />
   </ItemGroup>
 
 </Project>
