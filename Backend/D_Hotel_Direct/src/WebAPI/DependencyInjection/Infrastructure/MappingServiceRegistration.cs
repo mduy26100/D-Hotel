@@ -1,6 +1,7 @@
 ﻿using Application.Features.Hotels.Mappings;
 using Application.Features.Places.Mappings;
 using Application.Features.Purposes.Mappings;
+using Application.Features.Rooms.Mappings;
 
 namespace WebAPI.DependencyInjection.Infrastructure
 {
@@ -14,6 +15,7 @@ namespace WebAPI.DependencyInjection.Infrastructure
                 cfg.AddProfile<HotelMappingProfile>();
                 cfg.AddProfile<PlaceMappingProfile>();
                 cfg.AddProfile<PurposeMappingProfile>();
+                cfg.AddProfile<RoomMappingProfile>();
             });
 
             return services;

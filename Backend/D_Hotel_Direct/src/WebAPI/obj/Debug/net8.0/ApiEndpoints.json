@@ -131,6 +131,101 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebAPI.Controllers.Rooms.BedTypesController",
+    "Method": "Create",
+    "RelativePath": "api/BedTypes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Features.Rooms.Commands.BedType.CreateBedType.CreateBedTypeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Rooms.BedTypesController",
+    "Method": "Delete",
+    "RelativePath": "api/BedTypes",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Features.Rooms.Commands.BedType.DeleteBedType.DeleteBedTypeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Rooms.BedTypesController",
+    "Method": "GetAll",
+    "RelativePath": "api/BedTypes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Rooms.RoomTypesController",
+    "Method": "GetByBedTypeId",
+    "RelativePath": "api/bedtypes/{bedTypeId}/roomtypes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bedTypeId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Rooms.BedTypesController",
+    "Method": "Update",
+    "RelativePath": "api/BedTypes/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "Application.Features.Rooms.Commands.BedType.UpdateBedType.UpdateBedTypeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Rooms.BedTypesController",
+    "Method": "GetById",
+    "RelativePath": "api/BedTypes/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebAPI.Controllers.Hotels.HotelController",
     "Method": "CreateHotel",
     "RelativePath": "api/Hotel/create-hotel",
@@ -808,6 +903,101 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "WebAPI.Controllers.Rooms.QuantityGuestsController",
+    "Method": "Create",
+    "RelativePath": "api/QuantityGuests",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Features.Rooms.Commands.QuantityGuest.CreateQuantityGuest.CreateQuantityGuestCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Rooms.QuantityGuestsController",
+    "Method": "Delete",
+    "RelativePath": "api/QuantityGuests",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Features.Rooms.Commands.QuantityGuest.DeleteQuantityGuest.DeleteQuantityGuestCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Rooms.QuantityGuestsController",
+    "Method": "GetAll",
+    "RelativePath": "api/QuantityGuests",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Rooms.QuantityGuestsController",
+    "Method": "Update",
+    "RelativePath": "api/QuantityGuests/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "Application.Features.Rooms.Commands.QuantityGuest.UpdateQuantityGuest.UpdateQuantityGuestCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Rooms.QuantityGuestsController",
+    "Method": "GetById",
+    "RelativePath": "api/QuantityGuests/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Rooms.RoomTypesController",
+    "Method": "GetByQuantityGuestId",
+    "RelativePath": "api/quantityguests/{quantityGuestId}/roomtypes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "quantityGuestId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "WebAPI.Controllers.Purposes.RoomPurposeController",
     "Method": "CreateRoomPurpose",
     "RelativePath": "api/RoomPurpose/create-room-purpose",
@@ -881,6 +1071,75 @@
       {
         "Name": "command",
         "Type": "Application.Features.Purposes.Commands.RoomPurpose.UpdateRoomPurpose.UpdateRoomPurposeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Rooms.RoomTypeImagesController",
+    "Method": "Create",
+    "RelativePath": "api/RoomTypeImages",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Features.Rooms.Commands.RoomTypeImage.CreateRoomTypeImage.CreateRoomTypeImageCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Rooms.RoomTypeImagesController",
+    "Method": "Delete",
+    "RelativePath": "api/RoomTypeImages",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Features.Rooms.Commands.RoomTypeImage.DeleteRoomTypeImage.DeleteRoomTypeImageCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Rooms.RoomTypeImagesController",
+    "Method": "Update",
+    "RelativePath": "api/RoomTypeImages/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "Application.Features.Rooms.Commands.RoomTypeImage.UpdateRoomTypeImage.UpdateRoomTypeImageCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Rooms.RoomTypeImagesController",
+    "Method": "GetByRoomTypeId",
+    "RelativePath": "api/RoomTypeImages/roomtypes/{roomTypeId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "roomTypeId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -965,6 +1224,85 @@
       {
         "Name": "command",
         "Type": "Application.Features.Purposes.Commands.RoomTypePurpose.UpdateRoomTypePurpose.UpdateRoomTypePurposeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Rooms.RoomTypesController",
+    "Method": "Create",
+    "RelativePath": "api/RoomTypes",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Features.Rooms.Commands.RoomType.CreateRoomType.CreateRoomTypeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Rooms.RoomTypesController",
+    "Method": "Delete",
+    "RelativePath": "api/RoomTypes",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "command",
+        "Type": "Application.Features.Rooms.Commands.RoomType.DeleteRoomType.DeleteRoomTypeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Rooms.RoomTypesController",
+    "Method": "GetAll",
+    "RelativePath": "api/RoomTypes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Rooms.RoomTypesController",
+    "Method": "Update",
+    "RelativePath": "api/RoomTypes/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "command",
+        "Type": "Application.Features.Rooms.Commands.RoomType.UpdateRoomType.UpdateRoomTypeCommand",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "WebAPI.Controllers.Rooms.RoomTypesController",
+    "Method": "GetById",
+    "RelativePath": "api/RoomTypes/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

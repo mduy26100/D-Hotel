@@ -235,6 +235,139 @@
         }
       }
     },
+    "/api/BedTypes": {
+      "post": {
+        "tags": [
+          "BedTypes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBedTypeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBedTypeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBedTypeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "BedTypes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteBedTypeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteBedTypeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteBedTypeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "BedTypes"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/BedTypes/{id}": {
+      "put": {
+        "tags": [
+          "BedTypes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBedTypeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBedTypeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBedTypeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "BedTypes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Hotel/create-hotel": {
       "post": {
         "tags": [
@@ -1323,6 +1456,139 @@
         }
       }
     },
+    "/api/QuantityGuests": {
+      "post": {
+        "tags": [
+          "QuantityGuests"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateQuantityGuestCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateQuantityGuestCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateQuantityGuestCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "QuantityGuests"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteQuantityGuestCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteQuantityGuestCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteQuantityGuestCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "QuantityGuests"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/QuantityGuests/{id}": {
+      "put": {
+        "tags": [
+          "QuantityGuests"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateQuantityGuestCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateQuantityGuestCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateQuantityGuestCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "QuantityGuests"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/RoomPurpose/create-room-purpose": {
       "post": {
         "tags": [
@@ -1447,6 +1713,131 @@
         "parameters": [
           {
             "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/RoomTypeImages": {
+      "post": {
+        "tags": [
+          "RoomTypeImages"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoomTypeImageCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoomTypeImageCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoomTypeImageCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "RoomTypeImages"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRoomTypeImageCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRoomTypeImageCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRoomTypeImageCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/RoomTypeImages/{id}": {
+      "put": {
+        "tags": [
+          "RoomTypeImages"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRoomTypeImageCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRoomTypeImageCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRoomTypeImageCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/RoomTypeImages/roomtypes/{roomTypeId}": {
+      "get": {
+        "tags": [
+          "RoomTypeImages"
+        ],
+        "parameters": [
+          {
+            "name": "roomTypeId",
             "in": "path",
             "required": true,
             "schema": {
@@ -1598,6 +1989,185 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/RoomTypes": {
+      "post": {
+        "tags": [
+          "RoomTypes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoomTypeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoomTypeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateRoomTypeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "RoomTypes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRoomTypeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRoomTypeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeleteRoomTypeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "RoomTypes"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/RoomTypes/{id}": {
+      "put": {
+        "tags": [
+          "RoomTypes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRoomTypeCommand"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRoomTypeCommand"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateRoomTypeCommand"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "RoomTypes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/bedtypes/{bedTypeId}/roomtypes": {
+      "get": {
+        "tags": [
+          "RoomTypes"
+        ],
+        "parameters": [
+          {
+            "name": "bedTypeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/quantityguests/{quantityGuestId}/roomtypes": {
+      "get": {
+        "tags": [
+          "RoomTypes"
+        ],
+        "parameters": [
+          {
+            "name": "quantityGuestId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
             }
           }
         ],
@@ -2084,6 +2654,23 @@
   },
   "components": {
     "schemas": {
+      "BedTypeDto": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "ChangePasswordCommand": {
         "type": "object",
         "properties": {
@@ -2122,6 +2709,15 @@
         ],
         "type": "string"
       },
+      "CreateBedTypeCommand": {
+        "type": "object",
+        "properties": {
+          "dto": {
+            "$ref": "#/components/schemas/BedTypeDto"
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateHotelCategoryCommand": {
         "type": "object",
         "properties": {
@@ -2158,11 +2754,38 @@
         },
         "additionalProperties": false
       },
+      "CreateQuantityGuestCommand": {
+        "type": "object",
+        "properties": {
+          "dto": {
+            "$ref": "#/components/schemas/QuantityGuestDto"
+          }
+        },
+        "additionalProperties": false
+      },
       "CreateRoomPurposeCommand": {
         "type": "object",
         "properties": {
           "roomPurposeDto": {
             "$ref": "#/components/schemas/RoomPurposeDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateRoomTypeCommand": {
+        "type": "object",
+        "properties": {
+          "dto": {
+            "$ref": "#/components/schemas/RoomTypeDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateRoomTypeImageCommand": {
+        "type": "object",
+        "properties": {
+          "requestUpsert": {
+            "$ref": "#/components/schemas/UpsertRoomTypeImageRequest"
           }
         },
         "additionalProperties": false
@@ -2190,6 +2813,15 @@
         "properties": {
           "dto": {
             "$ref": "#/components/schemas/UtilityItemDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteBedTypeCommand": {
+        "type": "object",
+        "properties": {
+          "dto": {
+            "$ref": "#/components/schemas/BedTypeDto"
           }
         },
         "additionalProperties": false
@@ -2239,11 +2871,38 @@
         },
         "additionalProperties": false
       },
+      "DeleteQuantityGuestCommand": {
+        "type": "object",
+        "properties": {
+          "dto": {
+            "$ref": "#/components/schemas/QuantityGuestDto"
+          }
+        },
+        "additionalProperties": false
+      },
       "DeleteRoomPurposeCommand": {
         "type": "object",
         "properties": {
           "roomPurposeDto": {
             "$ref": "#/components/schemas/RoomPurposeDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteRoomTypeCommand": {
+        "type": "object",
+        "properties": {
+          "dto": {
+            "$ref": "#/components/schemas/RoomTypeDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeleteRoomTypeImageCommand": {
+        "type": "object",
+        "properties": {
+          "dto": {
+            "$ref": "#/components/schemas/RoomTypeImageDto"
           }
         },
         "additionalProperties": false
@@ -2452,6 +3111,23 @@
         },
         "additionalProperties": false
       },
+      "QuantityGuestDto": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "RegisterCommand": {
         "type": "object",
         "properties": {
@@ -2534,6 +3210,77 @@
         },
         "additionalProperties": false
       },
+      "RoomTypeDto": {
+        "required": [
+          "area",
+          "description",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "hotelId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "number",
+            "format": "double"
+          },
+          "area": {
+            "type": "string",
+            "nullable": true
+          },
+          "quantityGuestId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "bedTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isActive": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RoomTypeImageDto": {
+        "required": [
+          "imgUrl"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "roomTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "imgUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "RoomTypePurposeDto": {
         "type": "object",
         "properties": {
@@ -2575,6 +3322,15 @@
         },
         "additionalProperties": false
       },
+      "UpdateBedTypeCommand": {
+        "type": "object",
+        "properties": {
+          "dto": {
+            "$ref": "#/components/schemas/BedTypeDto"
+          }
+        },
+        "additionalProperties": false
+      },
       "UpdateHotelCategoryCommand": {
         "type": "object",
         "properties": {
@@ -2611,11 +3367,38 @@
         },
         "additionalProperties": false
       },
+      "UpdateQuantityGuestCommand": {
+        "type": "object",
+        "properties": {
+          "dto": {
+            "$ref": "#/components/schemas/QuantityGuestDto"
+          }
+        },
+        "additionalProperties": false
+      },
       "UpdateRoomPurposeCommand": {
         "type": "object",
         "properties": {
           "roomPurpose": {
             "$ref": "#/components/schemas/RoomPurposeDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateRoomTypeCommand": {
+        "type": "object",
+        "properties": {
+          "dto": {
+            "$ref": "#/components/schemas/RoomTypeDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateRoomTypeImageCommand": {
+        "type": "object",
+        "properties": {
+          "requestUpsert": {
+            "$ref": "#/components/schemas/UpsertRoomTypeImageRequest"
           }
         },
         "additionalProperties": false
@@ -2643,6 +3426,41 @@
         "properties": {
           "dto": {
             "$ref": "#/components/schemas/UtilityItemDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpsertRoomTypeImageRequest": {
+        "required": [
+          "imgUrl"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "roomTypeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "imgUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "imgContent": {
+            "type": "string",
+            "format": "binary",
+            "nullable": true
+          },
+          "imgFileName": {
+            "type": "string",
+            "nullable": true
+          },
+          "imgContentType": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
