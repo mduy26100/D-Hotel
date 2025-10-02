@@ -1,0 +1,7 @@
+# Visual Studio temporary / build files
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.vs
