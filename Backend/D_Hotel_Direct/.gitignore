@@ -1,0 +1,65 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+bin/
+obj/
+out/
+
+# Rider
+.idea/
+
+# ReSharper
+_ReSharper*/
+*.DotSettings.user
+
+# Visual Studio Code
+.vscode/
+
+# NuGet
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+*.psmdcp
+
+# Dotnet
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Others
+*.pdb
+*.cache
+*.log
+*.dbmdl
+*.jfm
+*.userprefs
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# Ignore publish output
+publish/
+
+# Ignore Node.js for any frontend project inside solution
+node_modules/
+dist/
+build/
+
+# Optional: ignore local config files
+appsettings.Development.json
