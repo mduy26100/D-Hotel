@@ -1,8 +1,12 @@
 import { SettingsIcon, User, Bell, Lock, Globe } from "lucide-react"
 import Button from "../components/Button"
 import Input from "../components/Input"
+import { useOutletContext } from "react-router-dom";
 
 export default function Settings() {
+  const { user } = useOutletContext();
+
+  if (!user) return <p>Loading...</p>;
   return (
     <div className="space-y-6">
       {/* Page Header */}
@@ -52,8 +56,8 @@ export default function Settings() {
             <div className="space-y-4">
               <div className="flex items-center gap-4 mb-6">
                 <img
-                  src="/diverse-user-avatars.png"
-                  alt="Profile"
+                  src={user.avatarUrl || "/placeholder.svg"}
+                  alt={user.firstName}
                   className="w-20 h-20 rounded-full object-cover border-4 border-gray-100"
                 />
                 <div>
@@ -65,12 +69,12 @@ export default function Settings() {
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Input label="First Name" defaultValue="John" />
-                <Input label="Last Name" defaultValue="Doe" />
+                <Input label="First Name" defaultValue={user.firstName} />
+                <Input label="Last Name" defaultValue={user.lastName} />
               </div>
 
-              <Input label="Email" type="email" defaultValue="john@example.com" />
-              <Input label="Phone" type="tel" defaultValue="+1 234 567 8900" />
+              <Input label="Email" type="email" defaultValue={user.email} />
+              <Input label="Phone" type="tel" defaultValue="12345678" />
 
               <div className="pt-4">
                 <Button>Save Changes</Button>

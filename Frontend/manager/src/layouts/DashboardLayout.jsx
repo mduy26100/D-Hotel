@@ -40,7 +40,7 @@ const DashboardLayout = () => {
 
       <main className="lg:ml-64 md:ml-20 pt-16 min-h-screen">
         <div className="p-4 lg:p-6">
-          <Outlet />
+          <Outlet context={{ user }}/>
         </div>
       </main>
     </div>
