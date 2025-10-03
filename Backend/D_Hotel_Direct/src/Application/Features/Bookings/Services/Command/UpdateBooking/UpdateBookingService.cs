@@ -1,4 +1,5 @@
 ﻿using Application.Features.Bookings.DTOs;
+using Application.Features.Bookings.Interfaces.Services.Command.UpdateBooking;
 using Application.Features.Bookings.Repositories;
 using AutoMapper;
 using BookingDetailEntity = Domain.Models.Bookings.BookingDetail;
@@ -6,7 +7,7 @@ using InvoiceEntity = Domain.Models.Bookings.Invoice;
 
 namespace Application.Features.Bookings.Services.Command.UpdateBooking
 {
-    public class UpdateBookingService
+    public class UpdateBookingService : IUpdateBookingService
     {
         private readonly IBookingRepository _bookingRepository;
         private readonly IBookingDetailRepository _bookingDetailRepository;
