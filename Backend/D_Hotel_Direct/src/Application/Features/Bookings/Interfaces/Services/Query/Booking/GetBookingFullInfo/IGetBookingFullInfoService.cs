@@ -4,6 +4,6 @@ namespace Application.Features.Bookings.Interfaces.Services.Query.Booking.GetBoo
 {
     public interface IGetBookingFullInfoService
     {
-        Task<BookingInfoDto> GetFullInfoAsync(int bookingId, CancellationToken cancellationToken = default);
+        Task<BookingAggregateDto> GetFullInfoAsync(int bookingId, CancellationToken cancellationToken = default);
     }
 }

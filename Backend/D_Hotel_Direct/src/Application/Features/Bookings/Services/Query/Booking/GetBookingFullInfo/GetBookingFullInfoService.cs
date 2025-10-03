@@ -23,7 +23,7 @@ namespace Application.Features.Bookings.Services.Query.Booking.GetBookingFullInf
             _mapper = mapper;
         }
 
-        public async Task<BookingInfoDto> GetFullInfoAsync(int bookingId, CancellationToken cancellationToken = default)
+        public async Task<BookingAggregateDto> GetFullInfoAsync(int bookingId, CancellationToken cancellationToken = default)
         {
             var booking = await _bookingRepository.GetByIdAsync(bookingId, cancellationToken);
 
@@ -31,7 +31,7 @@ namespace Application.Features.Bookings.Services.Query.Booking.GetBookingFullInf
 
             var invoice = await _invoiceRepository.FindOneAsync(h => h.BookingId == bookingId, cancellationToken);
 
-            return new BookingInfoDto
+            return new BookingAggregateDto
             {
                 Booking = _mapper.Map<BookingDto>(booking),
                 Details = _mapper.Map<IEnumerable<BookingDetailDto>>(bookingDetails),

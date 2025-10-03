@@ -22,9 +22,6 @@
     <Folder Include="Features\Bookings\Commands\CreateBooking\" />
     <Folder Include="Features\Bookings\Commands\DeleteBooking\" />
     <Folder Include="Features\Bookings\Commands\UpdateBooking\" />
-    <Folder Include="Features\Bookings\Interfaces\Services\Command\CreateBooking\" />
-    <Folder Include="Features\Bookings\Interfaces\Services\Command\DeleteBooking\" />
-    <Folder Include="Features\Bookings\Interfaces\Services\Command\UpdateBooking\" />
     <Folder Include="Features\Bookings\Queries\BookingDetail\GetBookingDetailsById\" />
     <Folder Include="Features\Bookings\Queries\BookingDetail\GetBookingDetailsByBookingId\" />
     <Folder Include="Features\Bookings\Queries\Booking\GetAllBookings\" />
@@ -35,9 +32,6 @@
     <Folder Include="Features\Bookings\Queries\Invoice\GetAllInvoices\" />
     <Folder Include="Features\Bookings\Queries\Invoice\GetInvoiceByBookingId\" />
     <Folder Include="Features\Bookings\Queries\Invoice\GetInvoiceById\" />
-    <Folder Include="Features\Bookings\Services\Command\CreateBooking\" />
-    <Folder Include="Features\Bookings\Services\Command\DeleteBooking\" />
-    <Folder Include="Features\Bookings\Services\Command\UpdateBooking\" />
     <Folder Include="Features\Purposes\Queries\RoomTypePurpose\GetRoomsByRoomPurposeId\" />
   </ItemGroup>
 

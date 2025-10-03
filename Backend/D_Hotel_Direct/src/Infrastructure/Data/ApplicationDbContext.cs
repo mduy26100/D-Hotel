@@ -1,6 +1,7 @@
 ﻿using Application.Common.Interfaces.Persistence.EFCore;
 using Domain.Models.Places;
 using Infrastructure.Data.Configurations.Places;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 
 namespace Infrastructure.Data
 {
@@ -57,6 +58,8 @@ namespace Infrastructure.Data
             builder.Entity<ApplicationUser>().ToTable("AppUsers");
             builder.Entity<ApplicationRole>().ToTable("AppRoles");
         }
+
+        public new DatabaseFacade Database => base.Database;
 
         //Auth
         public DbSet<RefreshToken> RefreshTokens { get; set; }
