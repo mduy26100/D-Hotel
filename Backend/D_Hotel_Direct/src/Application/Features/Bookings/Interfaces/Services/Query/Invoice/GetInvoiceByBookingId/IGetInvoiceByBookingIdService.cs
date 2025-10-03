@@ -4,6 +4,6 @@ namespace Application.Features.Bookings.Interfaces.Services.Query.Invoice.GetInv
 {
     public interface IGetInvoiceByBookingIdService
     {
-        Task<InvoiceDto> GeByBookingId(int bookingId, CancellationToken cancellationToken = default);
+        Task<InvoiceDto> GetByBookingId(int bookingId, CancellationToken cancellationToken = default);
     }
 }

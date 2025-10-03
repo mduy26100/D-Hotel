@@ -1,6 +1,4 @@
-﻿using Domain.Models.Bookings;
-
-namespace Application.Features.Bookings.DTOs
+﻿namespace Application.Features.Bookings.DTOs
 {
     public class BookingInfoDto
     {
