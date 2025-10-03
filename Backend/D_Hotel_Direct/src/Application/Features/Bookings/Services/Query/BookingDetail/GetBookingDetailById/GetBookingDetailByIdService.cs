@@ -1,16 +1,16 @@
 ﻿using Application.Features.Bookings.DTOs;
-using Application.Features.Bookings.Interfaces.Services.Query.BookingDetail.GetBookingDetailsById;
+using Application.Features.Bookings.Interfaces.Services.Query.BookingDetail.GetBookingDetailById;
 using Application.Features.Bookings.Repositories;
 using AutoMapper;
 
-namespace Application.Features.Bookings.Services.Query.BookingDetail.GetBookingDetailsById
+namespace Application.Features.Bookings.Services.Query.BookingDetail.GetBookingDetailById
 {
-    public class GetBookingDetailsByIdService : IGetBookingDetailsByIdService
+    public class GetBookingDetailByIdService : IGetBookingDetailByIdService
     {
         private readonly IBookingDetailRepository _bookingDetailRepository;
         private readonly IMapper _mapper;
 
-        public GetBookingDetailsByIdService(IBookingDetailRepository bookingDetailRepository
+        public GetBookingDetailByIdService(IBookingDetailRepository bookingDetailRepository
             , IMapper mapper)
         {
             _bookingDetailRepository = bookingDetailRepository;

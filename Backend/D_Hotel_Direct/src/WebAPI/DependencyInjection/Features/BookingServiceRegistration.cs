@@ -6,8 +6,8 @@ using Application.Features.Bookings.Interfaces.Services.Query.Booking.GetBooking
 using Application.Features.Bookings.Interfaces.Services.Query.Booking.GetBookingFullInfo;
 using Application.Features.Bookings.Interfaces.Services.Query.Booking.GetBookingsByDateRange;
 using Application.Features.Bookings.Interfaces.Services.Query.Booking.GetBookingsByUserId;
+using Application.Features.Bookings.Interfaces.Services.Query.BookingDetail.GetBookingDetailById;
 using Application.Features.Bookings.Interfaces.Services.Query.BookingDetail.GetBookingDetailsByBookingId;
-using Application.Features.Bookings.Interfaces.Services.Query.BookingDetail.GetBookingDetailsById;
 using Application.Features.Bookings.Interfaces.Services.Query.Invoice.GetAllInvoices;
 using Application.Features.Bookings.Interfaces.Services.Query.Invoice.GetInvoiceByBookingId;
 using Application.Features.Bookings.Interfaces.Services.Query.Invoice.GetInvoiceById;
@@ -20,8 +20,8 @@ using Application.Features.Bookings.Services.Query.Booking.GetBookingById;
 using Application.Features.Bookings.Services.Query.Booking.GetBookingFullInfo;
 using Application.Features.Bookings.Services.Query.Booking.GetBookingsByDateRange;
 using Application.Features.Bookings.Services.Query.Booking.GetBookingsByUserId;
+using Application.Features.Bookings.Services.Query.BookingDetail.GetBookingDetailById;
 using Application.Features.Bookings.Services.Query.BookingDetail.GetBookingDetailsByBookingId;
-using Application.Features.Bookings.Services.Query.BookingDetail.GetBookingDetailsById;
 using Application.Features.Bookings.Services.Query.Invoice.GetAllInvoices;
 using Application.Features.Bookings.Services.Query.Invoice.GetInvoiceByBookingId;
 using Application.Features.Bookings.Services.Query.Invoice.GetInvoiceById;
@@ -51,7 +51,7 @@ namespace WebAPI.DependencyInjection.Features
 
             //Booking Details
             services.AddScoped<IGetBookingDetailsByBookingIdService, GetBookingDetailsByBookingIdService>();
-            services.AddScoped<IGetBookingDetailsByIdService, GetBookingDetailsByIdService>();
+            services.AddScoped<IGetBookingDetailByIdService, GetBookingDetailByIdService>();
 
             //Invoice
             services.AddScoped<IGetAllInvoicesService, GetAllInvoicesService>();

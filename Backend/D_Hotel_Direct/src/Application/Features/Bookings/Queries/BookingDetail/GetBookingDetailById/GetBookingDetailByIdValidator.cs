@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Features.Bookings.Queries.BookingDetail.GetBookingDetailsById
+namespace Application.Features.Bookings.Queries.BookingDetail.GetBookingDetailById
 {
-    internal class GetBookingDetailsByIdValidator
+    internal class GetBookingDetailByIdValidator
     {
     }
 }
