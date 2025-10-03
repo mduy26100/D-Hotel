@@ -19,19 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Bookings\Commands\CreateBooking\" />
-    <Folder Include="Features\Bookings\Commands\DeleteBooking\" />
-    <Folder Include="Features\Bookings\Commands\UpdateBooking\" />
-    <Folder Include="Features\Bookings\Queries\BookingDetail\GetBookingDetailsById\" />
-    <Folder Include="Features\Bookings\Queries\BookingDetail\GetBookingDetailsByBookingId\" />
-    <Folder Include="Features\Bookings\Queries\Booking\GetAllBookings\" />
-    <Folder Include="Features\Bookings\Queries\Booking\GetBookingById\" />
-    <Folder Include="Features\Bookings\Queries\Booking\GetBookingsByUserId\" />
-    <Folder Include="Features\Bookings\Queries\Booking\GetBookingFullInfo\" />
-    <Folder Include="Features\Bookings\Queries\Booking\GetBookingsByDateRange\" />
-    <Folder Include="Features\Bookings\Queries\Invoice\GetAllInvoices\" />
-    <Folder Include="Features\Bookings\Queries\Invoice\GetInvoiceByBookingId\" />
-    <Folder Include="Features\Bookings\Queries\Invoice\GetInvoiceById\" />
     <Folder Include="Features\Purposes\Queries\RoomTypePurpose\GetRoomsByRoomPurposeId\" />
   </ItemGroup>
 
