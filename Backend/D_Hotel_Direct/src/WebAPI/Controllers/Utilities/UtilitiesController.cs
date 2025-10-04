@@ -10,18 +10,18 @@ namespace WebAPI.Controllers.Utilities
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UtilityController : ControllerBase
+    public class UtilitiesController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public UtilityController(IMediator mediator)
+        public UtilitiesController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
-        [HttpPost("create-utility")]
+        [HttpPost]
         [Consumes("multipart/form-data")]
-        public async Task<IActionResult> CreateUtility([FromForm] string name, IFormFile? image, CancellationToken cancellationToken)
+        public async Task<IActionResult> Create([FromForm] string name, IFormFile? image, CancellationToken cancellationToken)
         {
             Stream? imageStream = null;
             if (image != null)
@@ -41,9 +41,9 @@ namespace WebAPI.Controllers.Utilities
             return Ok(result);
         }
 
-        [HttpPut("update-utility/{id}")]
+        [HttpPut("{id:int}")]
         [Consumes("multipart/form-data")]
-        public async Task<IActionResult> UpdateUtility(int id, [FromForm] string name, IFormFile? image, CancellationToken cancellationToken)
+        public async Task<IActionResult> Update(int id, [FromForm] string name, IFormFile? image, CancellationToken cancellationToken)
         {
             Stream? imageStream = null;
             if (image != null)
@@ -69,8 +69,8 @@ namespace WebAPI.Controllers.Utilities
             return NoContent();
         }
 
-        [HttpDelete("delete-utility")]
-        public async Task<IActionResult> DeleteUtility(DeleteUtilityCommand command, CancellationToken cancellationToken)
+        [HttpDelete]
+        public async Task<IActionResult> Delete(DeleteUtilityCommand command, CancellationToken cancellationToken)
         {
             if (command.Dto == null || command.Dto.Id <= 0)
             {
@@ -80,16 +80,16 @@ namespace WebAPI.Controllers.Utilities
             return NoContent();
         }
 
-        [HttpGet("get-all-utilities")]
-        public async Task<IActionResult> GetAllUtilities(CancellationToken cancellationToken)
+        [HttpGet]
+        public async Task<IActionResult> GetAllAsync(CancellationToken cancellationToken)
         {
             var query = new GetAllUtilitiesQuery();
             var result = await _mediator.Send(query, cancellationToken);
             return Ok(result);
         }
 
-        [HttpGet("get-utility-by-id")]
-        public async Task<IActionResult> GetUtilityById([FromQuery] int id, CancellationToken cancellationToken)
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetByIdAsync(int id, CancellationToken cancellationToken)
         {
             if (id <= 0)
             {

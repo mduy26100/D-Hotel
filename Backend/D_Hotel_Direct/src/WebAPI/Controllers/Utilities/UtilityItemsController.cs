@@ -10,17 +10,17 @@ namespace WebAPI.Controllers.Utilities
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UtilityItemController : ControllerBase
+    public class UtilityItemsController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public UtilityItemController(IMediator mediator)
+        public UtilityItemsController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
-        [HttpPost("create-utility-item")]
-        public async Task<IActionResult> CreateUtilityItem([FromBody] CreateUtilityItemCommand command, CancellationToken cancellationToken)
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] CreateUtilityItemCommand command, CancellationToken cancellationToken)
         {
             if (command.Dto == null || command.Dto.UtilityId <= 0)
             {
@@ -30,7 +30,7 @@ namespace WebAPI.Controllers.Utilities
             return Ok(result);
         }
 
-        [HttpPut("update-utility-item/{id}")]
+        [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdateUtilityItem(int id, [FromBody] UpdateUtilityItemCommand command, CancellationToken cancellationToken)
         {
             if (command.Dto == null || command.Dto.Id != id || command.Dto.UtilityId <= 0)
@@ -41,7 +41,7 @@ namespace WebAPI.Controllers.Utilities
             return NoContent();
         }
 
-        [HttpDelete("delete-utility-item")]
+        [HttpDelete]
         public async Task<IActionResult> DeleteUtilityItem(DeleteUtilityItemCommand command, CancellationToken cancellationToken)
         {
             if (command.Dto == null || command.Dto.Id <= 0)
@@ -52,37 +52,40 @@ namespace WebAPI.Controllers.Utilities
             return NoContent();
         }
 
-        [HttpGet("get-utility-items-by-utility-id")]
-        public async Task<IActionResult> GetUtilityItemsByUtilityId([FromQuery] int utilityId, CancellationToken cancellationToken)
+        [HttpGet("utilities/{utilityId:int}")]
+        public async Task<IActionResult> GetByUtilityId(int utilityId, CancellationToken cancellationToken)
         {
             if (utilityId <= 0)
             {
                 return BadRequest("Invalid utility ID.");
             }
+
             var query = new GetUtilityItemsByUtilityIdQuery(utilityId);
             var result = await _mediator.Send(query, cancellationToken);
             return Ok(result);
         }
 
-        [HttpGet("get-utility-items-by-hotel-id")]
-        public async Task<IActionResult> GetUtilityItemsByHotelId([FromQuery] int hotelId, CancellationToken cancellationToken)
+        [HttpGet("hotels/{hotelId:int}")]
+        public async Task<IActionResult> GetByHotelId(int hotelId, CancellationToken cancellationToken)
         {
             if (hotelId <= 0)
             {
                 return BadRequest("Invalid hotel ID.");
             }
+
             var query = new GetUtilityByHotelIdQuery(hotelId);
             var result = await _mediator.Send(query, cancellationToken);
             return Ok(result);
         }
 
-        [HttpGet("get-utility-items-by-room-id")]
-        public async Task<IActionResult> GetUtilityItemsByRoomId([FromQuery] int roomId, CancellationToken cancellationToken)
+        [HttpGet("rooms/{roomId:int}")]
+        public async Task<IActionResult> GetByRoomId(int roomId, CancellationToken cancellationToken)
         {
             if (roomId <= 0)
             {
                 return BadRequest("Invalid room ID.");
             }
+
             var query = new GetUtilityByRoomIdQuery(roomId);
             var result = await _mediator.Send(query, cancellationToken);
             return Ok(result);
