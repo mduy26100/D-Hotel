@@ -2,7 +2,7 @@ import { apiConfig } from "./config"
 
 export const loginAPI = async (email, password) => {
   try {
-    const response = await fetch(`${apiConfig.baseURL}/Auth/login`, {
+    const response = await fetch(`${apiConfig.baseURL}/Authentication/login`, {
       method: "POST",
       headers: apiConfig.headers,
       body: JSON.stringify({

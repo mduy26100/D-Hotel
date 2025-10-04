@@ -2,7 +2,7 @@ import { apiConfig, getAuthHeaders } from "./config"
 
 export const getCurrentUser = async () => {
   try {
-    const response = await fetch(`${apiConfig.baseURL}/Account/current-user`, {
+    const response = await fetch(`${apiConfig.baseURL}/Account`, {
       method: "GET",
       headers: getAuthHeaders(),
     })

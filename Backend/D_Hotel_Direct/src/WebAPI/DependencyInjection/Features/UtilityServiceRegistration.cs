@@ -1,8 +1,14 @@
 ﻿using Application.Features.Utilities.Interfaces.Services.Command.CreateHotelUtility;
 using Application.Features.Utilities.Interfaces.Services.Command.DeleteHotelUtility;
+using Application.Features.Utilities.Interfaces.Services.Command.RoomUtitlity.CreateRoomUtility;
+using Application.Features.Utilities.Interfaces.Services.Command.RoomUtitlity.DeleteRoomUtility;
+using Application.Features.Utilities.Interfaces.Services.Command.RoomUtitlity.UpdateRoomUtility;
 using Application.Features.Utilities.Interfaces.Services.Command.UpdateHotelUtility;
 using Application.Features.Utilities.Services.Command.CreateHotelUtility;
 using Application.Features.Utilities.Services.Command.DeleteHotelUtility;
+using Application.Features.Utilities.Services.Command.RoomUtitlity.CreateRoomUtility;
+using Application.Features.Utilities.Services.Command.RoomUtitlity.DeleteRoomUtility;
+using Application.Features.Utilities.Services.Command.RoomUtitlity.UpdateRoomUtility;
 using Application.Features.Utilities.Services.Command.UpdateHotelUtility;
 
 namespace WebAPI.DependencyInjection.Features
@@ -59,6 +65,11 @@ namespace WebAPI.DependencyInjection.Features
 
             //Delete Hotel Utility
             services.AddScoped<IDeleteHotelUtilityService, DeleteHotelUtilityService>();
+
+            //RoomUtility
+            services.AddScoped<ICreateRoomUtilityService, CreateRoomUtilityService>();
+            services.AddScoped<IDeleteRoomUtilityService, DeleteRoomUtilityService>();
+            services.AddScoped<IUpdateRoomUtilityService, UpdateRoomUtilityService>();
 
             return services;
         }
