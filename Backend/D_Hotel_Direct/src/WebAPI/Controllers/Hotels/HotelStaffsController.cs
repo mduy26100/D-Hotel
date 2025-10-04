@@ -10,46 +10,49 @@ namespace WebAPI.Controllers.Hotels
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class HotelStaffController : ControllerBase
+    public class HotelStaffsController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public HotelStaffController(IMediator mediator)
+        public HotelStaffsController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
-        [HttpPost("create-hotel-staff")]
-        public async Task<IActionResult> CreateHotelStaff([FromBody] CreateHotelStaffCommand command, CancellationToken cancellationToken)
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] CreateHotelStaffCommand command, CancellationToken cancellationToken)
         {
             var result = await _mediator.Send(command, cancellationToken);
             return Ok(result);
         }
 
-        [HttpPut("update-hotel-staff")]
-        public async Task<IActionResult> UpdateHotelStaff([FromBody] UpdateHotelStaffCommand command, CancellationToken cancellationToken)
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> Update(int id, [FromBody] UpdateHotelStaffCommand command, CancellationToken cancellationToken)
+        {
+            if (id != command.hotelStaffDto.Id)
+                return BadRequest("Id in route and body do not match.");
+
+            var result = await _mediator.Send(command, cancellationToken);
+            return Ok(result);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete([FromBody] DeleteHotelStaffCommand command, CancellationToken cancellationToken)
         {
             var result = await _mediator.Send(command, cancellationToken);
             return Ok(result);
         }
 
-        [HttpDelete("delete-hotel-staff")]
-        public async Task<IActionResult> DeleteHotelStaff([FromBody] DeleteHotelStaffCommand command, CancellationToken cancellationToken)
-        {
-            var result = await _mediator.Send(command, cancellationToken);
-            return Ok(result);
-        }
-
-        [HttpGet("get-all-hotel-staffs")]
-        public async Task<IActionResult> GetAllHotelStaffs(CancellationToken cancellationToken)
+        [HttpGet]
+        public async Task<IActionResult> GetAllAsync(CancellationToken cancellationToken)
         {
             var query = new GetAllHotelStaffsQuery();
             var result = await _mediator.Send(query, cancellationToken);
             return Ok(result);
         }
 
-        [HttpGet("get-hotel-staff-by-id/{id}")]
-        public async Task<IActionResult> GetHotelStaffById(int id, CancellationToken cancellationToken)
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetByIdAsync(int id, CancellationToken cancellationToken)
         {
             if (id <= 0)
             {
@@ -61,15 +64,13 @@ namespace WebAPI.Controllers.Hotels
             return Ok(result);
         }
 
-        [HttpGet("get-hotel-staffs-by-hotel-id/{id}")]
-        public async Task<IActionResult> GetHotelStaffsByHotelId(int id, CancellationToken cancellationToken)
+        [HttpGet("{hotelId:int}/staffs")]
+        public async Task<IActionResult> GetHotelStaffsAsync(int hotelId, CancellationToken cancellationToken)
         {
-            if (id <= 0)
-            {
+            if (hotelId <= 0)
                 return BadRequest("Invalid hotel ID.");
-            }
 
-            var query = new GetHotelStaffsByHotelIdQuery(id);
+            var query = new GetHotelStaffsByHotelIdQuery(hotelId);
             var result = await _mediator.Send(query, cancellationToken);
             return Ok(result);
         }

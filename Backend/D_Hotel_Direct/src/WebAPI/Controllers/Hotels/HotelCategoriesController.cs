@@ -9,25 +9,36 @@ namespace WebAPI.Controllers.Hotels
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class HotelCategoryController : ControllerBase
+    public class HotelCategoriesController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public HotelCategoryController(IMediator mediator)
+        public HotelCategoriesController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
-        [HttpPost("create-hotel-category")]
-        public async Task<IActionResult> CreateHotelCategory([FromBody] CreateHotelCategoryCommand command, CancellationToken cancellationToken)
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] CreateHotelCategoryCommand command, CancellationToken cancellationToken)
         {
             var result = await _mediator.Send(command, cancellationToken);
             //return CreatedAtAction(nameof(GetHotelById), new { id = result.Id }, result);
             return Ok(result);
         }
 
-        [HttpPut("update-hotel-category")]
-        public async Task<IActionResult> UpdateHotelCategory([FromBody] UpdateHotelCategoryCommand command, CancellationToken cancellationToken)
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> Update(int id, [FromBody] UpdateHotelCategoryCommand command, CancellationToken cancellationToken)
+        {
+            if (command.Dto == null || command.Dto.Id <= 0 || id != command.Dto.Id)
+            {
+                return BadRequest("Invalid hotel category ID.");
+            }
+            await _mediator.Send(command, cancellationToken);
+            return NoContent();
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> Delete([FromBody] DeleteHotelCategoryCommand command, CancellationToken cancellationToken)
         {
             if (command.Dto == null || command.Dto.Id <= 0)
             {
@@ -37,27 +48,16 @@ namespace WebAPI.Controllers.Hotels
             return NoContent();
         }
 
-        [HttpDelete("delete-hotel-category/{id}")]
-        public async Task<IActionResult> DeleteHotelCategory(DeleteHotelCategoryCommand command, CancellationToken cancellationToken)
-        {
-            if (command.Dto == null || command.Dto.Id <= 0)
-            {
-                return BadRequest("Invalid hotel category ID.");
-            }
-            await _mediator.Send(command, cancellationToken);
-            return NoContent();
-        }
-
-        [HttpGet("get-all-hotel-categories")]
-        public async Task<IActionResult> GetAllHotelCategories(CancellationToken cancellationToken)
+        [HttpGet]
+        public async Task<IActionResult> GetAllAsync(CancellationToken cancellationToken)
         {
             var query = new GetAllHotelCategoriesQuery();
             var result = await _mediator.Send(query, cancellationToken);
             return Ok(result);
         }
 
-        [HttpGet("get-hotel-category-by-id/{id}")]
-        public async Task<IActionResult> GetHotelCategoryById(int id, CancellationToken cancellationToken)
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetByIdAsync(int id, CancellationToken cancellationToken)
         {
             if (id <= 0)
             {

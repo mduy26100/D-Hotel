@@ -13,18 +13,18 @@ namespace WebAPI.Controllers.Hotels
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class HotelController : ControllerBase
+    public class HotelsController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public HotelController(IMediator mediator)
+        public HotelsController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
-        [HttpPost("create-hotel")]
+        [HttpPost]
         [Consumes("multipart/form-data")]
-        public async Task<IActionResult> CreateHotel(
+        public async Task<IActionResult> Create(
             [FromForm] string name,
             [FromForm] int categoryId,
             [FromForm] Guid hotelManagerId,
@@ -57,9 +57,9 @@ namespace WebAPI.Controllers.Hotels
             return Ok(result);
         }
 
-        [HttpPut("update-hotel")]
+        [HttpPut("{id:int}")]
         [Consumes("multipart/form-data")]
-        public async Task<IActionResult> UpdateHotel(
+        public async Task<IActionResult> Update(
             [FromForm] int id,
             [FromForm] string name,
             [FromForm] int categoryId,
@@ -98,15 +98,8 @@ namespace WebAPI.Controllers.Hotels
             return NoContent();
         }
 
-        [HttpGet("hoteldetails/{id}")]
-        public async Task<IActionResult> GetHotelDetail(int id)
-        {
-            var result = await _mediator.Send(new GetHotelDetailQuery(id));
-            return result == null ? NotFound() : Ok(result);
-        }
-
-        [HttpDelete("delete-hotel/{id}")]
-        public async Task<IActionResult> DeleteHotel(DeleteHotelCommand command, CancellationToken cancellationToken)
+        [HttpDelete]
+        public async Task<IActionResult> Delete(DeleteHotelCommand command, CancellationToken cancellationToken)
         {
             if (command.Dto == null || command.Dto.Id <= 0)
             {
@@ -115,44 +108,48 @@ namespace WebAPI.Controllers.Hotels
             await _mediator.Send(command, cancellationToken);
             return NoContent();
         }
-
-        [HttpGet("get-all-hotels")]
-        public async Task<IActionResult> GetAllHotels(CancellationToken cancellationToken)
+        [HttpGet]
+        public async Task<IActionResult> GetAllAsync(CancellationToken cancellationToken)
         {
             var query = new GetAllHotelsQuery();
             var result = await _mediator.Send(query, cancellationToken);
             return Ok(result);
         }
 
-        [HttpGet("get-hotel-by-id/{id}")]
-        public async Task<IActionResult> GetHotelById(int id, CancellationToken cancellationToken)
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetByIdAsync(int id, CancellationToken cancellationToken)
         {
             if (id <= 0)
-            {
                 return BadRequest("Invalid hotel ID.");
-            }
+
             var query = new GetHotelByIdQuery(id);
             var result = await _mediator.Send(query, cancellationToken);
+
             if (result == null)
-            {
                 return NotFound("Hotel not found.");
-            }
+
             return Ok(result);
         }
 
-        [HttpGet("get-hotels-by-categoryid/{categoryId}")]
-        public async Task<IActionResult> GetHotelsByCategoryId(int categoryId, CancellationToken cancellationToken)
+        [HttpGet("{id:int}/details")]
+        public async Task<IActionResult> GetDetailsAsync(int id, CancellationToken cancellationToken)
+        {
+            var result = await _mediator.Send(new GetHotelDetailQuery(id), cancellationToken);
+            return result == null ? NotFound() : Ok(result);
+        }
+
+        [HttpGet("category/{categoryId:int}")]
+        public async Task<IActionResult> GetByCategoryAsync(int categoryId, CancellationToken cancellationToken)
         {
             if (categoryId <= 0)
-            {
                 return BadRequest("Invalid category ID.");
-            }
+
             var query = new GetHotelsByCategoryIdQuery(categoryId);
             var result = await _mediator.Send(query, cancellationToken);
+
             if (result == null || !result.Any())
-            {
                 return NotFound("No hotels found for the specified category.");
-            }
+
             return Ok(result);
         }
     }
