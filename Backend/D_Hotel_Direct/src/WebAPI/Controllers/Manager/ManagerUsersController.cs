@@ -3,22 +3,22 @@ using Domain.Consts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebAPI.Controllers.Auth.Admin
+namespace WebAPI.Controllers.Manager
 {
     [Route("api/[controller]")]
     [ApiController]
     [Authorize(Roles = Roles.Manager)]
-    public class UsersController : ControllerBase
+    public class ManagerUsersController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public UsersController(IMediator mediator)
+        public ManagerUsersController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
-        [HttpGet("all-users")]
-        public async Task<IActionResult> GetAllUsers(CancellationToken cancellationToken)
+        [HttpGet]
+        public async Task<IActionResult> GetAll(CancellationToken cancellationToken)
         {
             var query = new GetAllUsersQuery();
             var allUsers = await _mediator.Send(query, cancellationToken);

@@ -20,36 +20,14 @@ namespace WebAPI.Controllers.Auth
             _mediator = mediator;
         }
 
-        [HttpPost("token-refresh")]
-        public async Task<IActionResult> TokenRefresh([FromBody] TokenRefreshCommand command, CancellationToken cancellationToken)
+        [HttpGet]
+        public async Task<IActionResult> GetCurrentUser(CancellationToken cancellationToken)
         {
-            var result = await _mediator.Send(command, cancellationToken);
-            if (result == null)
-            {
-                return Unauthorized("Invalid or expired refresh token.");
-            }
-            return Ok(result);
+            var user = await _mediator.Send(new CurrentUserQuery(), cancellationToken);
+            return user == null ? NotFound("User not found.") : Ok(user);
         }
 
-        [HttpPost("logout")]
-        public async Task<IActionResult> Logout([FromBody] LogoutCommand command, CancellationToken cancellationToken)
-        {
-            var result = await _mediator.Send(command, cancellationToken);
-            return Ok(new { message = "Logout successful" });
-        }
-
-        [HttpPost("change-password")]
-        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordCommand command, CancellationToken cancellationToken)
-        {
-            if (command == null || command.Dto == null)
-            {
-                return BadRequest("Invalid change password request.");
-            }
-            var result = await _mediator.Send(command, cancellationToken);
-            return Ok(new { message = "Password changed successfully" });
-        }
-
-        [HttpPut("update-profile")]
+        [HttpPut("profile")]
         [Consumes("multipart/form-data")]
         public async Task<IActionResult> UpdateProfile(
             [FromForm] Guid id,
@@ -60,46 +38,39 @@ namespace WebAPI.Controllers.Auth
             IFormFile? avatarImage,
             CancellationToken cancellationToken = default)
         {
-            try
+            var dto = new UpdateProfileDto
             {
-                Stream? imageStream = avatarImage?.OpenReadStream();
+                Id = id,
+                FirstName = firstName,
+                LastName = lastName,
+                PhoneNumber = phoneNumber,
+                Role = role,
+                AvatarImageContent = avatarImage?.OpenReadStream(),
+                AvatarImageFileName = avatarImage?.FileName,
+                AvatarImageContentType = avatarImage?.ContentType
+            };
 
-                var dto = new UpdateProfileDto
-                {
-                    Id = id,
-                    FirstName = firstName,
-                    LastName = lastName,
-                    PhoneNumber = phoneNumber,
-                    Role = role,
-                    AvatarImageContent = imageStream,
-                    AvatarImageFileName = avatarImage?.FileName,
-                    AvatarImageContentType = avatarImage?.ContentType
-                };
+            var command = new UpdateProfileCommand(dto);
+            await _mediator.Send(command, cancellationToken);
 
-                var command = new UpdateProfileCommand(dto);
-                await _mediator.Send(command, cancellationToken);
-
-                return Ok(new { message = "Profile updated successfully" });
-            }
-            catch (InvalidOperationException ex)
-            {
-                return BadRequest(new { message = ex.Message });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, new { message = "An unexpected error occurred", detail = ex.Message });
-            }
+            return Ok(new { message = "Profile updated successfully" });
         }
 
-        [HttpGet("current-user")]
-        public async Task<IActionResult> GetCurrentUser(CancellationToken cancellationToken)
+        [HttpPut("password")]
+        public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordCommand command, CancellationToken cancellationToken)
         {
-            var user = await _mediator.Send(new CurrentUserQuery(), cancellationToken);
-            if (user == null)
-            {
-                return NotFound("User not found.");
-            }
-            return Ok(user);
+            if (command?.Dto == null)
+                return BadRequest("Invalid change password request.");
+
+            await _mediator.Send(command, cancellationToken);
+            return Ok(new { message = "Password changed successfully" });
+        }
+
+        [HttpPost("logout")]
+        public async Task<IActionResult> Logout([FromBody] LogoutCommand command, CancellationToken cancellationToken)
+        {
+            await _mediator.Send(command, cancellationToken);
+            return Ok(new { message = "Logout successful" });
         }
     }
 }
