@@ -87,18 +87,6 @@ const Navbar = ({ onMenuClick, user }) => {
                     onClick={() => navigate("/settings")}
                     className={`w-full flex items-center gap-3 px-4 py-2 text-sm ${active ? "bg-gray-100" : ""}`}
                   >
-                    <UserIcon className="w-5 h-5 text-gray-500" />
-                    Profile
-                  </button>
-                )}
-              </Menu.Item>
-
-              <Menu.Item>
-                {({ active }) => (
-                  <button
-                    onClick={() => navigate("/settings")}
-                    className={`w-full flex items-center gap-3 px-4 py-2 text-sm ${active ? "bg-gray-100" : ""}`}
-                  >
                     <Cog6ToothIcon className="w-5 h-5 text-gray-500" />
                     Settings
                   </button>

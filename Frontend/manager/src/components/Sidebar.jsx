@@ -29,9 +29,6 @@ const Sidebar = ({ isOpen, onClose, user }) => {
 
   const menuItems = [
     { name: "Dashboard", path: "/dashboard", icon: HomeIcon },
-    { name: "Booking Management", path: "/bookings", icon: CalendarDaysIcon },
-    { name: "Room Management", path: "/rooms", icon: BuildingOfficeIcon },
-    { name: "Customers", path: "/customers", icon: UsersIcon },
     {
       name: "Hotels",
       icon: BuildingOfficeIcon,
@@ -99,7 +96,6 @@ const Sidebar = ({ isOpen, onClose, user }) => {
     { name: "Reports", path: "/reports", icon: ChartBarIcon, comingSoon: true },
     { name: "Analytics", path: "/analytics", icon: ChartPieIcon, comingSoon: true },
     { name: "Chat", path: "/chat", icon: ChatBubbleLeftRightIcon, comingSoon: true },
-    { name: "Settings", path: "/settings", icon: Cog6ToothIcon },
   ]
 
   return (

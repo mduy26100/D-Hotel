@@ -3,10 +3,6 @@ import PrivateRoute from "./PrivateRoute"
 import DashboardLayout from "../layouts/DashboardLayout"
 import Login from "../pages/Login"
 import Dashboard from "../pages/Dashboard"
-import Bookings from "../pages/Bookings"
-import Rooms from "../pages/Rooms"
-import Customers from "../pages/Customers"
-import Reports from "../pages/Reports"
 import Settings from "../pages/Settings"
 
 import Hotels from "../pages/Hotels/Hotels"
@@ -55,10 +51,6 @@ export default function AppRoutes() {
       >
         <Route index element={<Navigate to="/dashboard" replace />} />
         <Route path="dashboard" element={<Dashboard />} />
-        <Route path="bookings" element={<Bookings />} />
-        <Route path="rooms" element={<Rooms />} />
-        <Route path="customers" element={<Customers />} />
-        <Route path="reports" element={<Reports />} />
         <Route path="settings" element={<Settings />} />
 
         <Route path="hotels" element={<Hotels />} />
