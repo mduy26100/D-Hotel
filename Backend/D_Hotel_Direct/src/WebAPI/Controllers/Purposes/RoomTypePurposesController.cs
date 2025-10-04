@@ -9,47 +9,50 @@ namespace WebAPI.Controllers.Purposes
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class RoomTypePurposeController : ControllerBase
+    public class RoomTypePurposesController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public RoomTypePurposeController(IMediator mediator)
+        public RoomTypePurposesController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
-        [HttpPost("create-room-type-purpose")]
-        public async Task<IActionResult> CreateRoomTypePurpose([FromBody] CreateRoomTypePurposeCommand command, CancellationToken cancellationToken)
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] CreateRoomTypePurposeCommand command, CancellationToken cancellationToken)
         {
             var result = await _mediator.Send(command, cancellationToken);
             return Ok(result);
         }
 
-        [HttpDelete("delete-room-type-purpose")]
-        public async Task<IActionResult> DeleteRoomTypePurpose([FromBody] DeleteRoomTypePurposeCommand command, CancellationToken cancellationToken)
+        [HttpDelete]
+        public async Task<IActionResult> Delete([FromBody] DeleteRoomTypePurposeCommand command, CancellationToken cancellationToken)
         {
             var result = await _mediator.Send(command, cancellationToken);
             return Ok(result);
         }
 
-        [HttpPost("update-room-type-purpose/{id}")]
-        public async Task<IActionResult> UpdateRoomTypePurpose(int id, [FromBody] UpdateRoomTypePurposeCommand command, CancellationToken cancellationToken)
+        [HttpPost("{id:int}")]
+        public async Task<IActionResult> Update(int id, [FromBody] UpdateRoomTypePurposeCommand command, CancellationToken cancellationToken)
         {
             var result = await _mediator.Send(command, cancellationToken);
             return Ok(result);
         }
 
-        [HttpGet("get-all-room-type-purposes")]
-        public async Task<IActionResult> GetAllRoomTypePurposes(CancellationToken cancellationToken)
+        [HttpGet]
+        public async Task<IActionResult> GetAllAsync(CancellationToken cancellationToken)
         {
             var query = new GetAllRoomTypePurposesQuery();
             var result = await _mediator.Send(query, cancellationToken);
             return Ok(result);
         }
 
-        [HttpGet("get-room-type-purpose-by-room-id/{id}")]
-        public async Task<IActionResult> GetRoomTypePurposeByRoomId(int roomId, CancellationToken cancellationToken)
+        [HttpGet("{roomId:int}/typepurpose")]
+        public async Task<IActionResult> GetRoomTypePurposeAsync(int roomId, CancellationToken cancellationToken)
         {
+            if (roomId <= 0)
+                return BadRequest("Invalid room ID.");
+
             var query = new GetRoomPurposeByRoomIdQuery(roomId);
             var result = await _mediator.Send(query, cancellationToken);
             return Ok(result);

@@ -9,46 +9,46 @@ namespace WebAPI.Controllers.Purposes
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TravelPurposeController : ControllerBase
+    public class TravelPurposesController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public TravelPurposeController(IMediator mediator)
+        public TravelPurposesController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
-        [HttpPost("create-travel-purpose")]
-        public async Task<IActionResult> CreateTravelPurpose([FromBody] CreateTravelPurposeCommand command, CancellationToken cancellationToken)
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] CreateTravelPurposeCommand command, CancellationToken cancellationToken)
         {
             var result = await _mediator.Send(command, cancellationToken);
             return Ok(result);
         }
 
-        [HttpDelete("delete-travel-purpose")]
-        public async Task<IActionResult> DeleteTravelPurpose([FromBody] DeleteTravelPurposeCommand command, CancellationToken cancellationToken)
+        [HttpDelete]
+        public async Task<IActionResult> Delete([FromBody] DeleteTravelPurposeCommand command, CancellationToken cancellationToken)
         {
             var result = await _mediator.Send(command, cancellationToken);
             return Ok(result);
         }
 
-        [HttpPut("update-travel-purpose/{id}")]
-        public async Task<IActionResult> UpdateTravelPurpose(int id, [FromBody] UpdateTravelPurposeCommand command, CancellationToken cancellationToken)
+        [HttpPut("{id:int}")]
+        public async Task<IActionResult> Update(int id, [FromBody] UpdateTravelPurposeCommand command, CancellationToken cancellationToken)
         {
             var result = await _mediator.Send(command, cancellationToken);
             return Ok(result);
         }
 
-        [HttpGet("get-all-travel-purposes")]
-        public async Task<IActionResult> GetAllTravelPurposes(CancellationToken cancellationToken)
+        [HttpGet]
+        public async Task<IActionResult> GetAllAsync(CancellationToken cancellationToken)
         {
             var query = new GetAllTravelPurposesQuery();
             var result = await _mediator.Send(query, cancellationToken);
             return Ok(result);
         }
 
-        [HttpGet("get-travel-purpose-by/{id}")]
-        public async Task<IActionResult> GetTravelPurposeById(int id, CancellationToken cancellationToken)
+        [HttpGet("{id:int}")]
+        public async Task<IActionResult> GetByIdAsync(int id, CancellationToken cancellationToken)
         {
             var query = new GetTravelPurposeByIdQuery(id);
             var result = await _mediator.Send(query, cancellationToken);

@@ -10,56 +10,62 @@ namespace WebAPI.Controllers.Purposes
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class HotelTravelPurposeController : ControllerBase
+    public class HotelTravelPurposesController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public HotelTravelPurposeController(IMediator mediator)
+        public HotelTravelPurposesController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
-        [HttpPost("create-hotel-travel-purpose")]
-        public async Task<IActionResult> CreateHotelTravelPurpose([FromBody] CreateHotelTravelPurposeCommand command, CancellationToken cancellationToken)
+        [HttpPost]
+        public async Task<IActionResult> Create([FromBody] CreateHotelTravelPurposeCommand command, CancellationToken cancellationToken)
         {
             var result = await _mediator.Send(command, cancellationToken);
             return Ok(result);
         }
 
-        [HttpDelete("delete-hotel-travel-purpose")]
-        public async Task<IActionResult> DeleteHotelTravelPurpose([FromBody] DeleteHotelTravelPurposeCommand command, CancellationToken cancellationToken)
+        [HttpDelete]
+        public async Task<IActionResult> Delete([FromBody] DeleteHotelTravelPurposeCommand command, CancellationToken cancellationToken)
         {
             var result = await _mediator.Send(command, cancellationToken);
             return Ok(result);
         }
 
-        [HttpPut("update-hotel-travel-purpose/{id}")]
+        [HttpPut("{id:int}")]
         public async Task<IActionResult> UpdateHotelTravelPurpose(int id, [FromBody] UpdateHotelTravelPurposeCommand command, CancellationToken cancellationToken)
         {
             var result = await _mediator.Send(command, cancellationToken);
             return Ok(result);
         }
 
-        [HttpGet("get-all-hotel-travel-purpose")]
-        public async Task<IActionResult> GetAllHotelTravelPurpose(CancellationToken cancellationToken)
+        [HttpGet]
+        public async Task<IActionResult> GetAllAsync(CancellationToken cancellationToken)
         {
             var query = new GetAllHotelTravelPurposesQuery();
             var result = await _mediator.Send(query, cancellationToken);
             return Ok(result);
         }
 
-        [HttpGet("get-hotels-by-travel-purpose-id/{id}")]
-        public async Task<IActionResult> GetHotelsByTravelPurposeId(int id, CancellationToken cancellationToken)
+        [HttpGet("travelpurposes/{travelPurposeId:int}/hotels")]
+        public async Task<IActionResult> GetHotelsByTravelPurposeIdAsync(int travelPurposeId, CancellationToken cancellationToken)
         {
-            var query = new GetHotelsByTravelPurposeIdQuery(id);
+            if (travelPurposeId <= 0)
+                return BadRequest("Invalid travel purpose ID.");
+
+            var query = new GetHotelsByTravelPurposeIdQuery(travelPurposeId);
             var result = await _mediator.Send(query, cancellationToken);
             return Ok(result);
         }
 
-        [HttpGet("get-travel-purpose-by-hotel-id/{id}")]
-        public async Task<IActionResult> GetTravelPurposeByHotelId(int id, CancellationToken cancellationToken)
+        [HttpGet("hotels/{hotelId:int}/travelpurpose")]
+        public async Task<IActionResult> GetTravelPurposeByHotelIdAsync(int hotelId, CancellationToken cancellationToken)
         {
-            var query = new GetTravelPurposeByHotelIdQuery(id);
+            if (hotelId <= 0)
+                return BadRequest("Invalid hotel ID.");
+
+            var query = new GetTravelPurposeByHotelIdQuery(hotelId);
             var result = await _mediator.Send(query, cancellationToken);
             return Ok(result);
         }
