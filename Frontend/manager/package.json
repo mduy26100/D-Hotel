@@ -9,8 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons": "5.3.7",
     "@headlessui/react": "2.2.9",
     "@heroicons/react": "2.2.0",
+    "antd": "5.18.1",
+    "axios": "1.7.2",
     "jwt-decode": "4.0.0",
     "lucide-react": "0.544.0",
     "react": "18.3.1",
