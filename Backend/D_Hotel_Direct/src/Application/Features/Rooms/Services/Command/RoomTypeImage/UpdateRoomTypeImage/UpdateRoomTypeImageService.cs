@@ -28,7 +28,12 @@ namespace Application.Features.Rooms.Services.Command.RoomTypeImage.UpdateRoomTy
 
         public async Task UpdateAsync(UpsertRoomTypeImageRequest request, CancellationToken cancellationToken = default)
         {
-            var roomTypeImage = await _roomTypeImageRepository.GetByIdAsync(request.Id!.Value, cancellationToken);
+            if (request.Id == null)
+            {
+                throw new ArgumentNullException(nameof(request.Id), "RoomTypeImage Id cannot be null when updating.");
+            }
+
+            var roomTypeImage = await _roomTypeImageRepository.GetByIdAsync(request.Id.Value, cancellationToken);
 
             if (roomTypeImage == null)
             {
@@ -47,7 +52,6 @@ namespace Application.Features.Rooms.Services.Command.RoomTypeImage.UpdateRoomTy
             }
 
             roomTypeImage.RoomTypeId = request.RoomTypeId;
-            roomTypeImage.ImgUrl = request.ImgUrl;
 
             _roomTypeImageRepository.Update(roomTypeImage);
 

@@ -1,6 +1,7 @@
 ﻿using Application.Features.Rooms.Commands.RoomTypeImage.CreateRoomTypeImage;
 using Application.Features.Rooms.Commands.RoomTypeImage.DeleteRoomTypeImage;
 using Application.Features.Rooms.Commands.RoomTypeImage.UpdateRoomTypeImage;
+using Application.Features.Rooms.DTOs;
 using Application.Features.Rooms.Queries.RoomTypeImage.GetRoomImagesByRoomTypeId;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,21 +20,53 @@ namespace WebAPI.Controllers.Rooms
 
         // POST: api/roomtypeimages
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] CreateRoomTypeImageCommand command, CancellationToken cancellationToken)
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> Create([FromForm] int roomTypeId, IFormFile image, CancellationToken cancellationToken)
         {
+            Stream? imageStream = null;
+            if (image != null)
+            {
+                imageStream = image.OpenReadStream();
+            }
+
+            var command = new CreateRoomTypeImageCommand(
+                    roomTypeId,
+                    imageStream,
+                    image?.FileName,
+                    image?.ContentType
+                );
+
             var result = await _mediator.Send(command, cancellationToken);
-            return CreatedAtAction(nameof(GetByRoomTypeId), new { roomTypeId = result.RoomTypeId }, result);
+
+            return Ok(result);
         }
 
         // PUT: api/roomtypeimages/{id}
         [HttpPut("{id:int}")]
-        public async Task<IActionResult> Update(int id, [FromBody] UpdateRoomTypeImageCommand command, CancellationToken cancellationToken)
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> Update(
+            int id,
+            [FromForm] int roomTypeId,
+            IFormFile? image,
+            CancellationToken cancellationToken)
         {
-            if (id != command.requestUpsert.Id)
-                return BadRequest("Id in route and body do not match.");
+            Stream? imageStream = null;
+            if (image != null)
+            {
+                imageStream = image.OpenReadStream();
+            }
+
+            var command = new UpdateRoomTypeImageCommand(
+                    id,
+                    roomTypeId,
+                    imageStream,
+                    image?.FileName,
+                    image?.ContentType
+                );
 
             var result = await _mediator.Send(command, cancellationToken);
-            return Ok(result);
+
+            return NoContent();
         }
 
         // DELETE: api/roomtypeimages

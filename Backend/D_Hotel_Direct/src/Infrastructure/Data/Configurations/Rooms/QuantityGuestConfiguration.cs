@@ -8,6 +8,9 @@
 
             builder.HasKey(q => q.Id);
 
+            builder.Property(q => q.Id)
+                .ValueGeneratedOnAdd();
+
             builder.Property(q => q.Name)
                 .IsRequired()
                 .HasMaxLength(64);

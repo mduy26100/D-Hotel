@@ -19,7 +19,7 @@ namespace Application.Features.Utilities.Services.Query.GetUtilityById
 
         public async Task<UtilityDto?> GetByIdAsync(int id, CancellationToken cancellationToken = default)
         {
-            var utility = await _utilityRepository.GetWithItemsByIdAsync(id, cancellationToken);
+            var utility = await _utilityRepository.GetByIdAsync(id, cancellationToken);
             return _mapper.Map<UtilityDto>(utility);
         }
     }

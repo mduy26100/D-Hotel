@@ -17,10 +17,10 @@ namespace Application.Features.Utilities.Services.Query.GetUtilityByHotelId
             _mapper = mapper;
         }
 
-        public Task<IEnumerable<HotelUtilityDto>> GetByIdAsync(int hotelId, CancellationToken cancellationToken = default)
+        public async Task<IEnumerable<HotelUtilityDto>> GetByIdAsync(int hotelId, CancellationToken cancellationToken = default)
         {
-            var hotelUtilityItems = _hotelUtilityItemRepository.FindAsync(h => h.HotelId == hotelId, cancellationToken);
-            return _mapper.Map<Task<IEnumerable<HotelUtilityDto>>>(hotelUtilityItems);
+            var hotelUtilityItems = await _hotelUtilityItemRepository.FindAsync(h => h.HotelId == hotelId, cancellationToken);
+            return _mapper.Map<IEnumerable<HotelUtilityDto>>(hotelUtilityItems);
         }
     }
 }

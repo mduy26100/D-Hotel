@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Application.Features.Rooms.Commands.RoomTypeImage.CreateRoomTypeImage
 {
-    public record CreateRoomTypeImageCommand(UpsertRoomTypeImageRequest requestUpsert) : IRequest<RoomTypeImageDto>
+    public record CreateRoomTypeImageCommand(int roomTypeId, Stream? ImageContent, string? ImageFileName, string? ImageContentType) : IRequest<RoomTypeImageDto>
     {
     }
 }

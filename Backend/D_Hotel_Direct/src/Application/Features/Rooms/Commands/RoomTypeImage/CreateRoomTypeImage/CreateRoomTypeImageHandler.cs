@@ -15,8 +15,25 @@ namespace Application.Features.Rooms.Commands.RoomTypeImage.CreateRoomTypeImage
 
         public async Task<RoomTypeImageDto> Handle(CreateRoomTypeImageCommand request, CancellationToken cancellationToken)
         {
-            var result = await _createRoomTypeImageService.CreateAsync(request.requestUpsert, cancellationToken);
-            return result;
+            try
+            {
+                var roomTypeImageRequest = new UpsertRoomTypeImageRequest
+                {
+                    RoomTypeId = request.roomTypeId,
+                    ImgContent = request.ImageContent,
+                    ImgFileName = request.ImageFileName,
+                    ImgContentType = request.ImageContentType
+                };
+
+                var result = await _createRoomTypeImageService.CreateAsync(roomTypeImageRequest, cancellationToken);
+
+                return result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

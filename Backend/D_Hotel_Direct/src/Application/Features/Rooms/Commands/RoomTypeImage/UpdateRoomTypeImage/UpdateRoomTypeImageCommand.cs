@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Application.Features.Rooms.Commands.RoomTypeImage.UpdateRoomTypeImage
 {
-    public record UpdateRoomTypeImageCommand(UpsertRoomTypeImageRequest requestUpsert) : IRequest
+    public record UpdateRoomTypeImageCommand(int id, int roomTypeId, Stream? ImageContent, string? ImageFileName, string? ImageContentType) : IRequest
     {
     }
 }
