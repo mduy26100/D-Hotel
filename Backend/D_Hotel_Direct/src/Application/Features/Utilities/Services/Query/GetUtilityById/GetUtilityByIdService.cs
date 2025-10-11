@@ -8,19 +8,36 @@ namespace Application.Features.Utilities.Services.Query.GetUtilityById
     public class GetUtilityByIdService : IGetUtilityByIdService
     {
         private readonly IUtilityRepository _utilityRepository;
+        private readonly IUtilityItemRepository _utilityItemRepository;
         private readonly IMapper _mapper;
 
         public GetUtilityByIdService(IUtilityRepository utilityRepository
+            , IUtilityItemRepository utilityItemRepository
             , IMapper mapper)
         {
             _utilityRepository = utilityRepository;
+            _utilityItemRepository = utilityItemRepository;
             _mapper = mapper;
         }
 
         public async Task<UtilityDto?> GetByIdAsync(int id, CancellationToken cancellationToken = default)
         {
             var utility = await _utilityRepository.GetByIdAsync(id, cancellationToken);
-            return _mapper.Map<UtilityDto>(utility);
+
+            if (utility == null)
+            {
+                return null;
+            }
+
+            var utilityItems = await _utilityItemRepository.FindAsync(h => h.UtilityId == utility.Id, cancellationToken);
+
+            var utilityDtos = _mapper.Map<UtilityDto>(utility);
+
+            utilityDtos.UtilityItems = utilityItems
+                .Select(item => item.Name)
+                .ToList();
+
+            return utilityDtos;
         }
     }
 }
