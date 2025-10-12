@@ -44,23 +44,38 @@ namespace Application.Features.Hotels.Services.Query.GetHotelDetail
 
             var category = await _hotelCategoryRepository.GetByIdAsync(hotel.CategoryId, cancellationToken);
 
+            // 🔹 Lấy danh sách utility của khách sạn
             var hotelUtilities = await _hotelUtilityRepository.FindAsync(h => h.HotelId == hotelId, cancellationToken);
             var utilityIds = hotelUtilities.Select(hu => hu.UtilityId).Distinct().ToList();
 
             var utilities = await _utilityRepository.GetManyByIdsAsync(utilityIds, cancellationToken);
             var utilityItems = await _utilityItemRepository.GetByUtilityIdListAsync(utilityIds, cancellationToken);
 
-            var groupedItems = utilityItems.GroupBy(ui => ui.UtilityId)
-                                           .ToDictionary(g => g.Key, g => g.Select(ui => ui.Name).ToList());
+            // 🔹 Nhóm lại theo UtilityId, giờ map sang UtilityItemDto thay vì string
+            var groupedItems = utilityItems
+                .GroupBy(ui => ui.UtilityId)
+                .ToDictionary(
+                    g => g.Key,
+                    g => g.Select(ui => new UtilityItemDto
+                    {
+                        Id = ui.Id,
+                        UtilityId = ui.UtilityId,
+                        Name = ui.Name
+                    }).ToList()
+                );
 
+            // 🔹 Tạo danh sách UtilityDto hoàn chỉnh
             var utilityDtos = utilities.Select(utility => new UtilityDto
             {
                 Id = utility.Id,
                 Name = utility.Name,
                 IconUrl = utility.IconUrl,
-                UtilityItems = groupedItems.TryGetValue(utility.Id, out var items) ? items : new List<string>()
+                UtilityItems = groupedItems.TryGetValue(utility.Id, out var items)
+                    ? items
+                    : new List<UtilityItemDto>()
             }).ToList();
 
+            // 🔹 Lấy location
             LocationsDto? locationDto = null;
             var hotelLocationMapping = await _hotelLocationsRepository.FindOneAsync(h => h.HotelId == hotel.Id, cancellationToken);
             if (hotelLocationMapping != null)
@@ -77,6 +92,7 @@ namespace Application.Features.Hotels.Services.Query.GetHotelDetail
                 }
             }
 
+            // 🔹 Trả về DTO cuối cùng
             return new HotelDetailDto
             {
                 Id = hotel.Id,

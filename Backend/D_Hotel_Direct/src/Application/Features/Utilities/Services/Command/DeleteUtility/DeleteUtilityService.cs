@@ -1,5 +1,4 @@
-﻿using Application.Common.Interfaces.Persistence.EFCore;
-using Application.Features.Utilities.DTOs;
+﻿using Application.Features.Utilities.DTOs;
 using Application.Features.Utilities.Interfaces.Services.Command.DeleteUtility;
 using Application.Features.Utilities.Repositories;
 using AutoMapper;

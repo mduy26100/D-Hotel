@@ -56,7 +56,7 @@ namespace Application.Features.Utilities.Services.Query.GetUtilityByHotelId
             {
                 var items = allUtilityItems
                     .Where(item => item.UtilityId == utilityDto.Id)
-                    .Select(item => item.Name)
+                    .Select(item => _mapper.Map<UtilityItemDto>(item))
                     .ToList();
 
                 utilityDto.UtilityItems = items;
