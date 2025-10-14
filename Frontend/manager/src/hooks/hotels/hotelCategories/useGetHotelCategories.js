@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { getUtilitiesAPI } from "../../apis/hotelCategoryApi";
+import { getHotelCategoriesAPI } from "../../../api/hotels/hotelCategories";
 
 export const useGetHotelCategories = () => {
   const [categories, setCategories] = useState([]);
@@ -9,7 +9,7 @@ export const useGetHotelCategories = () => {
   const fetchCategories = async () => {
     try {
       setLoading(true);
-      const data = await getUtilitiesAPI();
+      const data = await getHotelCategoriesAPI();
       setCategories(data);
     } catch (err) {
       console.error("Error fetching hotel categories:", err);

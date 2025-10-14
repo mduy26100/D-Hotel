@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createUtilityItemAPI } from "../../apis/hotelCategoryApi";
+import { createHotelCategoryAPI } from "../../../api/hotels/hotelCategories";
 
 export const useCreateHotelCategory = () => {
   const [loading, setLoading] = useState(false);
@@ -8,7 +8,7 @@ export const useCreateHotelCategory = () => {
   const createCategory = async (data) => {
     try {
       setLoading(true);
-      const response = await createUtilityItemAPI(data);
+      const response = await createHotelCategoryAPI(data);
       return response;
     } catch (err) {
       console.error("Error creating hotel category:", err);

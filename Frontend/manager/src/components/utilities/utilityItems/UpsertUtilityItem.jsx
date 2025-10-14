@@ -14,7 +14,7 @@ const UpsertUtilityItem = ({ open, onClose, utility, item, refetch }) => {
     setName(item?.name || "");
   }, [item]);
 
-  // 🧩 1. Validate input
+  // ✅ Validate input
   const validateInput = () => {
     if (!name.trim()) {
       notification.warning({
@@ -26,51 +26,43 @@ const UpsertUtilityItem = ({ open, onClose, utility, item, refetch }) => {
     return true;
   };
 
-  // 🧩 2. Handle create logic
+  // ✅ Handle create
   const handleCreate = async () => {
     await createUtilityItem({
       utilityId: utility.id,
       name,
     });
-
     notification.success({
       message: "Success",
       description: `Added new item to "${utility.name}" successfully!`,
     });
-
-    refetch();
-    setName("");
-    onClose();
   };
 
-  // 🧩 3. Handle update logic
+  // ✅ Handle update
   const handleUpdate = async () => {
     await updateUtilityItem({
       id: item.id,
       utilityId: utility.id,
       name,
     });
-
     notification.success({
       message: "Success",
       description: `Updated utility item "${name}" in "${utility.name}" successfully!`,
     });
-
-    refetch();
-    setName("");
-    onClose();
   };
 
-  // 🧩 4. Main handler (chỉ điều hướng)
+  // ✅ Main handler
   const handleOk = async () => {
     if (!validateInput()) return;
-
     try {
       if (isEdit) {
         await handleUpdate();
       } else {
         await handleCreate();
       }
+      refetch();
+      setName("");
+      onClose();
     } catch (error) {
       notification.error({
         message: "Error",
@@ -90,7 +82,11 @@ const UpsertUtilityItem = ({ open, onClose, utility, item, refetch }) => {
       onOk={handleOk}
       confirmLoading={creating || updating}
       maskClosable={false}
-      onCancel={() => setName("")}
+      // ✅ Bấm Cancel sẽ reset và đóng modal
+      onCancel={() => {
+        setName("");
+        onClose();
+      }}
       okText={isEdit ? "Save Changes" : "Add"}
       cancelText="Cancel"
     >

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { deleteUtilityItemAPI } from "../../apis/hotelCategoryApi";
+import { deleteHotelCategoryAPI } from "../../../api/hotels/hotelCategories";
 
 export const useDeleteHotelCategory = () => {
   const [loading, setLoading] = useState(false);
@@ -8,7 +8,7 @@ export const useDeleteHotelCategory = () => {
   const deleteCategory = async (data) => {
     try {
       setLoading(true);
-      const response = await deleteUtilityItemAPI(data);
+      const response = await deleteHotelCategoryAPI(data);
       return response;
     } catch (err) {
       console.error("Error deleting hotel category:", err);

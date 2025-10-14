@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { updateUtilityItemAPI } from "../../apis/hotelCategoryApi";
+import { updateHotelCategoryAPI } from "../../../api/hotels/hotelCategories";
 
 export const useUpdateHotelCategory = () => {
   const [loading, setLoading] = useState(false);
@@ -8,7 +8,7 @@ export const useUpdateHotelCategory = () => {
   const updateCategory = async (data) => {
     try {
       setLoading(true);
-      const response = await updateUtilityItemAPI(data);
+      const response = await updateHotelCategoryAPI(data);
       return response;
     } catch (err) {
       console.error("Error updating hotel category:", err);

@@ -2,7 +2,7 @@ import axiosClient from "../config";
 
 const URL_BASE = "/HotelCategories";
 
-export const createUtilityItemAPI = async (data) => {
+export const createHotelCategoryAPI = async (data) => {
   try {
     const payload = {
       dto: {
@@ -23,10 +23,11 @@ export const createUtilityItemAPI = async (data) => {
   }
 };
 
-export const updateUtilityItemAPI = async (data) => {
+export const updateHotelCategoryAPI = async (data) => {
   try {
     const payload = {
       dto: {
+        id: data.id,
         name: data.name,
       },
     };
@@ -44,7 +45,7 @@ export const updateUtilityItemAPI = async (data) => {
   }
 };
 
-export const deleteUtilityItemAPI = async (data) => {
+export const deleteHotelCategoryAPI = async (data) => {
   try {
     const payload = {
       dto: {
@@ -67,7 +68,7 @@ export const deleteUtilityItemAPI = async (data) => {
   }
 };
 
-export const getUtilitiesAPI = async () => {
+export const getHotelCategoriesAPI = async () => {
   try {
     const response = await axiosClient.get(URL_BASE);
 
