@@ -1,107 +1,109 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Link2, Search, PlusIcon, PencilIcon, TrashIcon } from "lucide-react"
+import { useState, useEffect } from "react";
+import { Link2, Search, PlusIcon, PencilIcon, TrashIcon } from "lucide-react";
 import {
   getRoomTypePurposes,
   createRoomTypePurpose,
   updateRoomTypePurpose,
   deleteRoomTypePurpose,
-} from "../../api/mock/roomTypePurposes"
-import Modal from "../../components/Modal"
-import Input from "../../components/Input"
-import Button from "../../components/Button"
+} from "../../api/mock/roomTypePurposes";
+import Modal from "../../components/ui/Modal";
+import Input from "../../components/ui/Input";
+import Button from "../../components/ui/Button";
 
 export default function RoomTypePurposes() {
-  const [roomTypePurposes, setRoomTypePurposes] = useState([])
-  const [searchTerm, setSearchTerm] = useState("")
-  const [loading, setLoading] = useState(true)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
-  const [selectedRTP, setSelectedRTP] = useState(null)
+  const [roomTypePurposes, setRoomTypePurposes] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [selectedRTP, setSelectedRTP] = useState(null);
   const [formData, setFormData] = useState({
     roomTypeName: "",
     purposeName: "",
     priority: 1,
     description: "",
     status: "Active",
-  })
+  });
 
   useEffect(() => {
-    fetchRoomTypePurposes()
-  }, [searchTerm])
+    fetchRoomTypePurposes();
+  }, [searchTerm]);
 
   const fetchRoomTypePurposes = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
-      const data = await getRoomTypePurposes(searchTerm)
-      setRoomTypePurposes(data)
+      const data = await getRoomTypePurposes(searchTerm);
+      setRoomTypePurposes(data);
     } catch (error) {
-      console.error("Error fetching room type purposes:", error)
+      console.error("Error fetching room type purposes:", error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const handleOpenModal = (rtp = null) => {
     if (rtp) {
-      setSelectedRTP(rtp)
-      setFormData(rtp)
+      setSelectedRTP(rtp);
+      setFormData(rtp);
     } else {
-      setSelectedRTP(null)
+      setSelectedRTP(null);
       setFormData({
         roomTypeName: "",
         purposeName: "",
         priority: 1,
         description: "",
         status: "Active",
-      })
+      });
     }
-    setIsModalOpen(true)
-  }
+    setIsModalOpen(true);
+  };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false)
-    setSelectedRTP(null)
-  }
+    setIsModalOpen(false);
+    setSelectedRTP(null);
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       if (selectedRTP) {
-        await updateRoomTypePurpose(selectedRTP.id, formData)
+        await updateRoomTypePurpose(selectedRTP.id, formData);
       } else {
-        await createRoomTypePurpose(formData)
+        await createRoomTypePurpose(formData);
       }
-      fetchRoomTypePurposes()
-      handleCloseModal()
+      fetchRoomTypePurposes();
+      handleCloseModal();
     } catch (error) {
-      console.error("Error saving room type purpose:", error)
+      console.error("Error saving room type purpose:", error);
     }
-  }
+  };
 
   const handleDeleteClick = (rtp) => {
-    setSelectedRTP(rtp)
-    setIsDeleteModalOpen(true)
-  }
+    setSelectedRTP(rtp);
+    setIsDeleteModalOpen(true);
+  };
 
   const handleDeleteConfirm = async () => {
     try {
-      await deleteRoomTypePurpose(selectedRTP.id)
-      fetchRoomTypePurposes()
-      setIsDeleteModalOpen(false)
-      setSelectedRTP(null)
+      await deleteRoomTypePurpose(selectedRTP.id);
+      fetchRoomTypePurposes();
+      setIsDeleteModalOpen(false);
+      setSelectedRTP(null);
     } catch (error) {
-      console.error("Error deleting room type purpose:", error)
+      console.error("Error deleting room type purpose:", error);
     }
-  }
+  };
 
   return (
     <div className="space-y-6">
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Room Type Purposes</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            Room Type Purposes
+          </h1>
           <p className="text-gray-600">Link room types with travel purposes</p>
         </div>
         <button
@@ -122,7 +124,9 @@ export default function RoomTypePurposes() {
             </div>
             <div>
               <p className="text-sm text-gray-600">Total Mappings</p>
-              <p className="text-2xl font-bold text-gray-900">{roomTypePurposes.length}</p>
+              <p className="text-2xl font-bold text-gray-900">
+                {roomTypePurposes.length}
+              </p>
             </div>
           </div>
         </div>
@@ -134,7 +138,10 @@ export default function RoomTypePurposes() {
             <div>
               <p className="text-sm text-gray-600">Active Mappings</p>
               <p className="text-2xl font-bold text-gray-900">
-                {roomTypePurposes.filter((rtp) => rtp.status === "Active").length}
+                {
+                  roomTypePurposes.filter((rtp) => rtp.status === "Active")
+                    .length
+                }
               </p>
             </div>
           </div>
@@ -197,24 +204,37 @@ export default function RoomTypePurposes() {
             <tbody className="bg-white divide-y divide-gray-200">
               {loading ? (
                 <tr>
-                  <td colSpan="6" className="px-6 py-4 text-center text-gray-500">
+                  <td
+                    colSpan="6"
+                    className="px-6 py-4 text-center text-gray-500"
+                  >
                     Loading...
                   </td>
                 </tr>
               ) : roomTypePurposes.length === 0 ? (
                 <tr>
-                  <td colSpan="6" className="px-6 py-4 text-center text-gray-500">
+                  <td
+                    colSpan="6"
+                    className="px-6 py-4 text-center text-gray-500"
+                  >
                     No room type purposes found
                   </td>
                 </tr>
               ) : (
                 roomTypePurposes.map((rtp) => (
-                  <tr key={rtp.id} className="hover:bg-gray-50 transition-colors">
+                  <tr
+                    key={rtp.id}
+                    className="hover:bg-gray-50 transition-colors"
+                  >
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm font-medium text-gray-900">{rtp.roomTypeName}</div>
+                      <div className="text-sm font-medium text-gray-900">
+                        {rtp.roomTypeName}
+                      </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-900">{rtp.purposeName}</div>
+                      <div className="text-sm text-gray-900">
+                        {rtp.purposeName}
+                      </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded">
@@ -222,12 +242,16 @@ export default function RoomTypePurposes() {
                       </span>
                     </td>
                     <td className="px-6 py-4">
-                      <div className="text-sm text-gray-600 max-w-xs">{rtp.description}</div>
+                      <div className="text-sm text-gray-600 max-w-xs">
+                        {rtp.description}
+                      </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span
                         className={`px-2 py-1 text-xs font-medium rounded ${
-                          rtp.status === "Active" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+                          rtp.status === "Active"
+                            ? "bg-green-100 text-green-800"
+                            : "bg-red-100 text-red-800"
                         }`}
                       >
                         {rtp.status}
@@ -269,13 +293,17 @@ export default function RoomTypePurposes() {
           <Input
             label="Room Type Name"
             value={formData.roomTypeName}
-            onChange={(e) => setFormData({ ...formData, roomTypeName: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, roomTypeName: e.target.value })
+            }
             required
           />
           <Input
             label="Purpose Name"
             value={formData.purposeName}
-            onChange={(e) => setFormData({ ...formData, purposeName: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, purposeName: e.target.value })
+            }
             required
           />
           <Input
@@ -283,24 +311,37 @@ export default function RoomTypePurposes() {
             type="number"
             min="1"
             value={formData.priority}
-            onChange={(e) => setFormData({ ...formData, priority: Number.parseInt(e.target.value) })}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                priority: Number.parseInt(e.target.value),
+              })
+            }
             required
           />
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Description</label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Description
+            </label>
             <textarea
               value={formData.description}
-              onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, description: e.target.value })
+              }
               rows="3"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Status</label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Status
+            </label>
             <select
               value={formData.status}
-              onChange={(e) => setFormData({ ...formData, status: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, status: e.target.value })
+              }
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             >
               <option value="Active">Active</option>
@@ -311,7 +352,11 @@ export default function RoomTypePurposes() {
             <Button type="submit" className="flex-1">
               {selectedRTP ? "Update" : "Create"}
             </Button>
-            <Button type="button" onClick={handleCloseModal} className="flex-1 bg-gray-500 hover:bg-gray-600">
+            <Button
+              type="button"
+              onClick={handleCloseModal}
+              className="flex-1 bg-gray-500 hover:bg-gray-600"
+            >
               Cancel
             </Button>
           </div>
@@ -319,22 +364,34 @@ export default function RoomTypePurposes() {
       </Modal>
 
       {/* Delete Confirmation Modal */}
-      <Modal isOpen={isDeleteModalOpen} onClose={() => setIsDeleteModalOpen(false)} title="Delete Room Type Purpose">
+      <Modal
+        isOpen={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}
+        title="Delete Room Type Purpose"
+      >
         <div className="space-y-4">
           <p className="text-gray-600">
-            Are you sure you want to delete the mapping between <strong>{selectedRTP?.roomTypeName}</strong> and{" "}
-            <strong>{selectedRTP?.purposeName}</strong>? This action cannot be undone.
+            Are you sure you want to delete the mapping between{" "}
+            <strong>{selectedRTP?.roomTypeName}</strong> and{" "}
+            <strong>{selectedRTP?.purposeName}</strong>? This action cannot be
+            undone.
           </p>
           <div className="flex gap-3 pt-4">
-            <Button onClick={handleDeleteConfirm} className="flex-1 bg-red-600 hover:bg-red-700">
+            <Button
+              onClick={handleDeleteConfirm}
+              className="flex-1 bg-red-600 hover:bg-red-700"
+            >
               Delete
             </Button>
-            <Button onClick={() => setIsDeleteModalOpen(false)} className="flex-1 bg-gray-500 hover:bg-gray-600">
+            <Button
+              onClick={() => setIsDeleteModalOpen(false)}
+              className="flex-1 bg-gray-500 hover:bg-gray-600"
+            >
               Cancel
             </Button>
           </div>
         </div>
       </Modal>
     </div>
-  )
+  );
 }

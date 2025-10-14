@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { Menu } from "@headlessui/react"
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Menu } from "@headlessui/react";
 import {
   Bars3Icon,
   MagnifyingGlassIcon,
@@ -11,30 +11,33 @@ import {
   UserIcon,
   Cog6ToothIcon,
   ArrowRightOnRectangleIcon,
-} from "@heroicons/react/24/outline"
-import { clearAuth } from "../utils/localStorage"
+} from "@heroicons/react/24/outline";
+import { clearAuth } from "../../utils/localStorage";
 
 const Navbar = ({ onMenuClick, user }) => {
-  const navigate = useNavigate()
-  const [searchQuery, setSearchQuery] = useState("")
+  const navigate = useNavigate();
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleLogout = () => {
-    clearAuth()
-    navigate("/login")
-  }
+    clearAuth();
+    navigate("/login");
+  };
 
   const handleSearch = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     // Implement search functionality
-    console.log("Search:", searchQuery)
-  }
+    console.log("Search:", searchQuery);
+  };
 
   return (
     <header className="h-16 bg-white border-b border-gray-200 fixed top-0 right-0 left-0 lg:left-64 md:left-20 z-30">
       <div className="h-full flex items-center justify-between px-4 lg:px-6">
         {/* Left Section */}
         <div className="flex items-center gap-4">
-          <button onClick={onMenuClick} className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors">
+          <button
+            onClick={onMenuClick}
+            className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+          >
             <Bars3Icon className="w-6 h-6" />
           </button>
 
@@ -65,11 +68,16 @@ const Navbar = ({ onMenuClick, user }) => {
           <Menu as="div" className="relative">
             <Menu.Button className="flex items-center gap-2 p-2 hover:bg-gray-100 rounded-lg transition-colors">
               <img
-                src={user?.avatarUrl || "/placeholder.svg?height=32&width=32&query=user+avatar"}
+                src={
+                  user?.avatarUrl ||
+                  "/placeholder.svg?height=32&width=32&query=user+avatar"
+                }
                 alt={user?.firstName || "User"}
                 className="w-8 h-8 rounded-full object-cover"
               />
-              <span className="hidden md:block font-medium text-gray-700">{user?.firstName || "User"}</span>
+              <span className="hidden md:block font-medium text-gray-700">
+                {user?.firstName || "User"}
+              </span>
               <ChevronDownIcon className="hidden md:block w-4 h-4 text-gray-500" />
             </Menu.Button>
 
@@ -85,7 +93,9 @@ const Navbar = ({ onMenuClick, user }) => {
                 {({ active }) => (
                   <button
                     onClick={() => navigate("/settings")}
-                    className={`w-full flex items-center gap-3 px-4 py-2 text-sm ${active ? "bg-gray-100" : ""}`}
+                    className={`w-full flex items-center gap-3 px-4 py-2 text-sm ${
+                      active ? "bg-gray-100" : ""
+                    }`}
                   >
                     <Cog6ToothIcon className="w-5 h-5 text-gray-500" />
                     Settings
@@ -113,7 +123,7 @@ const Navbar = ({ onMenuClick, user }) => {
         </div>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

@@ -1,19 +1,32 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Users, Search, Mail, Phone, PlusIcon, PencilIcon, TrashIcon } from "lucide-react"
-import { getHotelStaffs, createHotelStaff, updateHotelStaff, deleteHotelStaff } from "../../api/mock/hotelStaffs"
-import Modal from "../../components/Modal"
-import Input from "../../components/Input"
-import Button from "../../components/Button"
+import { useState, useEffect } from "react";
+import {
+  Users,
+  Search,
+  Mail,
+  Phone,
+  PlusIcon,
+  PencilIcon,
+  TrashIcon,
+} from "lucide-react";
+import {
+  getHotelStaffs,
+  createHotelStaff,
+  updateHotelStaff,
+  deleteHotelStaff,
+} from "../../api/mock/hotelStaffs";
+import Modal from "../../components/ui/Modal";
+import Input from "../../components/ui/Input";
+import Button from "../../components/ui/Button";
 
 export default function HotelStaffs() {
-  const [staffs, setStaffs] = useState([])
-  const [searchTerm, setSearchTerm] = useState("")
-  const [loading, setLoading] = useState(true)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
-  const [selectedStaff, setSelectedStaff] = useState(null)
+  const [staffs, setStaffs] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [selectedStaff, setSelectedStaff] = useState(null);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -23,30 +36,30 @@ export default function HotelStaffs() {
     phone: "",
     status: "Active",
     avatar: "/man-avatar.png",
-  })
+  });
 
   useEffect(() => {
-    fetchStaffs()
-  }, [searchTerm])
+    fetchStaffs();
+  }, [searchTerm]);
 
   const fetchStaffs = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
-      const data = await getHotelStaffs(searchTerm)
-      setStaffs(data)
+      const data = await getHotelStaffs(searchTerm);
+      setStaffs(data);
     } catch (error) {
-      console.error("Error fetching staffs:", error)
+      console.error("Error fetching staffs:", error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const handleOpenModal = (staff = null) => {
     if (staff) {
-      setSelectedStaff(staff)
-      setFormData(staff)
+      setSelectedStaff(staff);
+      setFormData(staff);
     } else {
-      setSelectedStaff(null)
+      setSelectedStaff(null);
       setFormData({
         firstName: "",
         lastName: "",
@@ -56,54 +69,58 @@ export default function HotelStaffs() {
         phone: "",
         status: "Active",
         avatar: "/man-avatar.png",
-      })
+      });
     }
-    setIsModalOpen(true)
-  }
+    setIsModalOpen(true);
+  };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false)
-    setSelectedStaff(null)
-  }
+    setIsModalOpen(false);
+    setSelectedStaff(null);
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       if (selectedStaff) {
-        await updateHotelStaff(selectedStaff.id, formData)
+        await updateHotelStaff(selectedStaff.id, formData);
       } else {
-        await createHotelStaff(formData)
+        await createHotelStaff(formData);
       }
-      fetchStaffs()
-      handleCloseModal()
+      fetchStaffs();
+      handleCloseModal();
     } catch (error) {
-      console.error("Error saving staff:", error)
+      console.error("Error saving staff:", error);
     }
-  }
+  };
 
   const handleDeleteClick = (staff) => {
-    setSelectedStaff(staff)
-    setIsDeleteModalOpen(true)
-  }
+    setSelectedStaff(staff);
+    setIsDeleteModalOpen(true);
+  };
 
   const handleDeleteConfirm = async () => {
     try {
-      await deleteHotelStaff(selectedStaff.id)
-      fetchStaffs()
-      setIsDeleteModalOpen(false)
-      setSelectedStaff(null)
+      await deleteHotelStaff(selectedStaff.id);
+      fetchStaffs();
+      setIsDeleteModalOpen(false);
+      setSelectedStaff(null);
     } catch (error) {
-      console.error("Error deleting staff:", error)
+      console.error("Error deleting staff:", error);
     }
-  }
+  };
 
   return (
     <div className="space-y-6">
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Hotel Staffs</h1>
-          <p className="text-gray-600">Manage hotel staff members and their information</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            Hotel Staffs
+          </h1>
+          <p className="text-gray-600">
+            Manage hotel staff members and their information
+          </p>
         </div>
         <button
           onClick={() => handleOpenModal()}
@@ -123,7 +140,9 @@ export default function HotelStaffs() {
             </div>
             <div>
               <p className="text-sm text-gray-600">Total Staff</p>
-              <p className="text-2xl font-bold text-gray-900">{staffs.length}</p>
+              <p className="text-2xl font-bold text-gray-900">
+                {staffs.length}
+              </p>
             </div>
           </div>
         </div>
@@ -134,7 +153,9 @@ export default function HotelStaffs() {
             </div>
             <div>
               <p className="text-sm text-gray-600">Active Staff</p>
-              <p className="text-2xl font-bold text-gray-900">{staffs.filter((s) => s.status === "Active").length}</p>
+              <p className="text-2xl font-bold text-gray-900">
+                {staffs.filter((s) => s.status === "Active").length}
+              </p>
             </div>
           </div>
         </div>
@@ -199,19 +220,28 @@ export default function HotelStaffs() {
             <tbody className="bg-white divide-y divide-gray-200">
               {loading ? (
                 <tr>
-                  <td colSpan="7" className="px-6 py-4 text-center text-gray-500">
+                  <td
+                    colSpan="7"
+                    className="px-6 py-4 text-center text-gray-500"
+                  >
                     Loading...
                   </td>
                 </tr>
               ) : staffs.length === 0 ? (
                 <tr>
-                  <td colSpan="7" className="px-6 py-4 text-center text-gray-500">
+                  <td
+                    colSpan="7"
+                    className="px-6 py-4 text-center text-gray-500"
+                  >
                     No staff members found
                   </td>
                 </tr>
               ) : (
                 staffs.map((staff) => (
-                  <tr key={staff.id} className="hover:bg-gray-50 transition-colors">
+                  <tr
+                    key={staff.id}
+                    className="hover:bg-gray-50 transition-colors"
+                  >
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center gap-3">
                         <img
@@ -225,7 +255,9 @@ export default function HotelStaffs() {
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-900">{staff.hotelName}</div>
+                      <div className="text-sm text-gray-900">
+                        {staff.hotelName}
+                      </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded">
@@ -245,12 +277,16 @@ export default function HotelStaffs() {
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-900">{staff.hireDate}</div>
+                      <div className="text-sm text-gray-900">
+                        {staff.hireDate}
+                      </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span
                         className={`px-2 py-1 text-xs font-medium rounded ${
-                          staff.status === "Active" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+                          staff.status === "Active"
+                            ? "bg-green-100 text-green-800"
+                            : "bg-red-100 text-red-800"
                         }`}
                       >
                         {staff.status}
@@ -283,50 +319,70 @@ export default function HotelStaffs() {
       </div>
 
       {/* Add/Edit Modal */}
-      <Modal isOpen={isModalOpen} onClose={handleCloseModal} title={selectedStaff ? "Edit Staff" : "Add Staff"}>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        title={selectedStaff ? "Edit Staff" : "Add Staff"}
+      >
         <form onSubmit={handleSubmit} className="space-y-4">
           <Input
             label="First Name"
             value={formData.firstName}
-            onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, firstName: e.target.value })
+            }
             required
           />
           <Input
             label="Last Name"
             value={formData.lastName}
-            onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, lastName: e.target.value })
+            }
             required
           />
           <Input
             label="Hotel Name"
             value={formData.hotelName}
-            onChange={(e) => setFormData({ ...formData, hotelName: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, hotelName: e.target.value })
+            }
             required
           />
           <Input
             label="Position"
             value={formData.position}
-            onChange={(e) => setFormData({ ...formData, position: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, position: e.target.value })
+            }
             required
           />
           <Input
             label="Email"
             type="email"
             value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
             required
           />
           <Input
             label="Phone"
             value={formData.phone}
-            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, phone: e.target.value })
+            }
             required
           />
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Status</label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Status
+            </label>
             <select
               value={formData.status}
-              onChange={(e) => setFormData({ ...formData, status: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, status: e.target.value })
+              }
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             >
               <option value="Active">Active</option>
@@ -337,7 +393,11 @@ export default function HotelStaffs() {
             <Button type="submit" className="flex-1">
               {selectedStaff ? "Update" : "Create"}
             </Button>
-            <Button type="button" onClick={handleCloseModal} className="flex-1 bg-gray-500 hover:bg-gray-600">
+            <Button
+              type="button"
+              onClick={handleCloseModal}
+              className="flex-1 bg-gray-500 hover:bg-gray-600"
+            >
               Cancel
             </Button>
           </div>
@@ -345,7 +405,11 @@ export default function HotelStaffs() {
       </Modal>
 
       {/* Delete Confirmation Modal */}
-      <Modal isOpen={isDeleteModalOpen} onClose={() => setIsDeleteModalOpen(false)} title="Delete Staff">
+      <Modal
+        isOpen={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}
+        title="Delete Staff"
+      >
         <div className="space-y-4">
           <p className="text-gray-600">
             Are you sure you want to delete{" "}
@@ -355,15 +419,21 @@ export default function HotelStaffs() {
             ? This action cannot be undone.
           </p>
           <div className="flex gap-3 pt-4">
-            <Button onClick={handleDeleteConfirm} className="flex-1 bg-red-600 hover:bg-red-700">
+            <Button
+              onClick={handleDeleteConfirm}
+              className="flex-1 bg-red-600 hover:bg-red-700"
+            >
               Delete
             </Button>
-            <Button onClick={() => setIsDeleteModalOpen(false)} className="flex-1 bg-gray-500 hover:bg-gray-600">
+            <Button
+              onClick={() => setIsDeleteModalOpen(false)}
+              className="flex-1 bg-gray-500 hover:bg-gray-600"
+            >
               Cancel
             </Button>
           </div>
         </div>
       </Modal>
     </div>
-  )
+  );
 }

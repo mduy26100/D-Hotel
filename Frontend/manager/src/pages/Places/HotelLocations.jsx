@@ -1,24 +1,31 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { MapPinIcon, Search, PlusIcon, PencilIcon, TrashIcon, Building2Icon } from "lucide-react"
+import { useState, useEffect } from "react";
+import {
+  MapPinIcon,
+  Search,
+  PlusIcon,
+  PencilIcon,
+  TrashIcon,
+  Building2Icon,
+} from "lucide-react";
 import {
   getHotelLocations,
   createHotelLocation,
   updateHotelLocation,
   deleteHotelLocation,
-} from "../../api/mock/hotelLocations"
-import Modal from "../../components/Modal"
-import Input from "../../components/Input"
-import Button from "../../components/Button"
+} from "../../api/mock/hotelLocations";
+import Modal from "../../components/ui/Modal";
+import Input from "../../components/ui/Input";
+import Button from "../../components/ui/Button";
 
 export default function HotelLocations() {
-  const [hotelLocations, setHotelLocations] = useState([])
-  const [searchTerm, setSearchTerm] = useState("")
-  const [loading, setLoading] = useState(true)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
-  const [selectedHotelLocation, setSelectedHotelLocation] = useState(null)
+  const [hotelLocations, setHotelLocations] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [selectedHotelLocation, setSelectedHotelLocation] = useState(null);
   const [formData, setFormData] = useState({
     hotelName: "",
     locationName: "",
@@ -28,30 +35,30 @@ export default function HotelLocations() {
     distanceFromCenter: "",
     nearbyAttractions: "",
     status: "Active",
-  })
+  });
 
   useEffect(() => {
-    fetchHotelLocations()
-  }, [searchTerm])
+    fetchHotelLocations();
+  }, [searchTerm]);
 
   const fetchHotelLocations = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
-      const data = await getHotelLocations(searchTerm)
-      setHotelLocations(data)
+      const data = await getHotelLocations(searchTerm);
+      setHotelLocations(data);
     } catch (error) {
-      console.error("Error fetching hotel locations:", error)
+      console.error("Error fetching hotel locations:", error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const handleOpenModal = (hotelLocation = null) => {
     if (hotelLocation) {
-      setSelectedHotelLocation(hotelLocation)
-      setFormData(hotelLocation)
+      setSelectedHotelLocation(hotelLocation);
+      setFormData(hotelLocation);
     } else {
-      setSelectedHotelLocation(null)
+      setSelectedHotelLocation(null);
       setFormData({
         hotelName: "",
         locationName: "",
@@ -61,54 +68,58 @@ export default function HotelLocations() {
         distanceFromCenter: "",
         nearbyAttractions: "",
         status: "Active",
-      })
+      });
     }
-    setIsModalOpen(true)
-  }
+    setIsModalOpen(true);
+  };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false)
-    setSelectedHotelLocation(null)
-  }
+    setIsModalOpen(false);
+    setSelectedHotelLocation(null);
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       if (selectedHotelLocation) {
-        await updateHotelLocation(selectedHotelLocation.id, formData)
+        await updateHotelLocation(selectedHotelLocation.id, formData);
       } else {
-        await createHotelLocation(formData)
+        await createHotelLocation(formData);
       }
-      fetchHotelLocations()
-      handleCloseModal()
+      fetchHotelLocations();
+      handleCloseModal();
     } catch (error) {
-      console.error("Error saving hotel location:", error)
+      console.error("Error saving hotel location:", error);
     }
-  }
+  };
 
   const handleDeleteClick = (hotelLocation) => {
-    setSelectedHotelLocation(hotelLocation)
-    setIsDeleteModalOpen(true)
-  }
+    setSelectedHotelLocation(hotelLocation);
+    setIsDeleteModalOpen(true);
+  };
 
   const handleDeleteConfirm = async () => {
     try {
-      await deleteHotelLocation(selectedHotelLocation.id)
-      fetchHotelLocations()
-      setIsDeleteModalOpen(false)
-      setSelectedHotelLocation(null)
+      await deleteHotelLocation(selectedHotelLocation.id);
+      fetchHotelLocations();
+      setIsDeleteModalOpen(false);
+      setSelectedHotelLocation(null);
     } catch (error) {
-      console.error("Error deleting hotel location:", error)
+      console.error("Error deleting hotel location:", error);
     }
-  }
+  };
 
   return (
     <div className="space-y-6">
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Hotel Locations</h1>
-          <p className="text-gray-600">Manage hotel location details and coordinates</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            Hotel Locations
+          </h1>
+          <p className="text-gray-600">
+            Manage hotel location details and coordinates
+          </p>
         </div>
         <button
           onClick={() => handleOpenModal()}
@@ -128,7 +139,9 @@ export default function HotelLocations() {
             </div>
             <div>
               <p className="text-sm text-gray-600">Total Locations</p>
-              <p className="text-2xl font-bold text-gray-900">{hotelLocations.length}</p>
+              <p className="text-2xl font-bold text-gray-900">
+                {hotelLocations.length}
+              </p>
             </div>
           </div>
         </div>
@@ -206,35 +219,50 @@ export default function HotelLocations() {
             <tbody className="bg-white divide-y divide-gray-200">
               {loading ? (
                 <tr>
-                  <td colSpan="7" className="px-6 py-4 text-center text-gray-500">
+                  <td
+                    colSpan="7"
+                    className="px-6 py-4 text-center text-gray-500"
+                  >
                     Loading...
                   </td>
                 </tr>
               ) : hotelLocations.length === 0 ? (
                 <tr>
-                  <td colSpan="7" className="px-6 py-4 text-center text-gray-500">
+                  <td
+                    colSpan="7"
+                    className="px-6 py-4 text-center text-gray-500"
+                  >
                     No hotel locations found
                   </td>
                 </tr>
               ) : (
                 hotelLocations.map((hotelLocation) => (
-                  <tr key={hotelLocation.id} className="hover:bg-gray-50 transition-colors">
+                  <tr
+                    key={hotelLocation.id}
+                    className="hover:bg-gray-50 transition-colors"
+                  >
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                           <Building2Icon className="w-6 h-6 text-primary" />
                         </div>
-                        <div className="text-sm font-medium text-gray-900">{hotelLocation.hotelName}</div>
+                        <div className="text-sm font-medium text-gray-900">
+                          {hotelLocation.hotelName}
+                        </div>
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center gap-2">
                         <MapPinIcon className="w-4 h-4 text-gray-400" />
-                        <span className="text-sm text-gray-900">{hotelLocation.locationName}</span>
+                        <span className="text-sm text-gray-900">
+                          {hotelLocation.locationName}
+                        </span>
                       </div>
                     </td>
                     <td className="px-6 py-4">
-                      <div className="text-sm text-gray-900 max-w-xs">{hotelLocation.address}</div>
+                      <div className="text-sm text-gray-900 max-w-xs">
+                        {hotelLocation.address}
+                      </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="text-xs text-gray-600">
@@ -243,12 +271,16 @@ export default function HotelLocations() {
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-900">{hotelLocation.distanceFromCenter}</div>
+                      <div className="text-sm text-gray-900">
+                        {hotelLocation.distanceFromCenter}
+                      </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span
                         className={`px-2 py-1 text-xs font-medium rounded ${
-                          hotelLocation.status === "Active" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+                          hotelLocation.status === "Active"
+                            ? "bg-green-100 text-green-800"
+                            : "bg-red-100 text-red-800"
                         }`}
                       >
                         {hotelLocation.status}
@@ -284,25 +316,33 @@ export default function HotelLocations() {
       <Modal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
-        title={selectedHotelLocation ? "Edit Hotel Location" : "Add Hotel Location"}
+        title={
+          selectedHotelLocation ? "Edit Hotel Location" : "Add Hotel Location"
+        }
       >
         <form onSubmit={handleSubmit} className="space-y-4">
           <Input
             label="Hotel Name"
             value={formData.hotelName}
-            onChange={(e) => setFormData({ ...formData, hotelName: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, hotelName: e.target.value })
+            }
             required
           />
           <Input
             label="Location Name"
             value={formData.locationName}
-            onChange={(e) => setFormData({ ...formData, locationName: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, locationName: e.target.value })
+            }
             required
           />
           <Input
             label="Address"
             value={formData.address}
-            onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, address: e.target.value })
+            }
             required
           />
           <div className="grid grid-cols-2 gap-4">
@@ -311,7 +351,12 @@ export default function HotelLocations() {
               type="number"
               step="0.0001"
               value={formData.latitude}
-              onChange={(e) => setFormData({ ...formData, latitude: Number.parseFloat(e.target.value) })}
+              onChange={(e) =>
+                setFormData({
+                  ...formData,
+                  latitude: Number.parseFloat(e.target.value),
+                })
+              }
               required
             />
             <Input
@@ -319,22 +364,33 @@ export default function HotelLocations() {
               type="number"
               step="0.0001"
               value={formData.longitude}
-              onChange={(e) => setFormData({ ...formData, longitude: Number.parseFloat(e.target.value) })}
+              onChange={(e) =>
+                setFormData({
+                  ...formData,
+                  longitude: Number.parseFloat(e.target.value),
+                })
+              }
               required
             />
           </div>
           <Input
             label="Distance from Center"
             value={formData.distanceFromCenter}
-            onChange={(e) => setFormData({ ...formData, distanceFromCenter: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, distanceFromCenter: e.target.value })
+            }
             placeholder="e.g., 2.5 km"
             required
           />
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Nearby Attractions</label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Nearby Attractions
+            </label>
             <textarea
               value={formData.nearbyAttractions}
-              onChange={(e) => setFormData({ ...formData, nearbyAttractions: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, nearbyAttractions: e.target.value })
+              }
               rows="2"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               placeholder="e.g., Times Square, Central Park"
@@ -342,10 +398,14 @@ export default function HotelLocations() {
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Status</label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Status
+            </label>
             <select
               value={formData.status}
-              onChange={(e) => setFormData({ ...formData, status: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, status: e.target.value })
+              }
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             >
               <option value="Active">Active</option>
@@ -356,7 +416,11 @@ export default function HotelLocations() {
             <Button type="submit" className="flex-1">
               {selectedHotelLocation ? "Update" : "Create"}
             </Button>
-            <Button type="button" onClick={handleCloseModal} className="flex-1 bg-gray-500 hover:bg-gray-600">
+            <Button
+              type="button"
+              onClick={handleCloseModal}
+              className="flex-1 bg-gray-500 hover:bg-gray-600"
+            >
               Cancel
             </Button>
           </div>
@@ -364,22 +428,33 @@ export default function HotelLocations() {
       </Modal>
 
       {/* Delete Confirmation Modal */}
-      <Modal isOpen={isDeleteModalOpen} onClose={() => setIsDeleteModalOpen(false)} title="Delete Hotel Location">
+      <Modal
+        isOpen={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}
+        title="Delete Hotel Location"
+      >
         <div className="space-y-4">
           <p className="text-gray-600">
-            Are you sure you want to delete the location for <strong>{selectedHotelLocation?.hotelName}</strong>? This
-            action cannot be undone.
+            Are you sure you want to delete the location for{" "}
+            <strong>{selectedHotelLocation?.hotelName}</strong>? This action
+            cannot be undone.
           </p>
           <div className="flex gap-3 pt-4">
-            <Button onClick={handleDeleteConfirm} className="flex-1 bg-red-600 hover:bg-red-700">
+            <Button
+              onClick={handleDeleteConfirm}
+              className="flex-1 bg-red-600 hover:bg-red-700"
+            >
               Delete
             </Button>
-            <Button onClick={() => setIsDeleteModalOpen(false)} className="flex-1 bg-gray-500 hover:bg-gray-600">
+            <Button
+              onClick={() => setIsDeleteModalOpen(false)}
+              className="flex-1 bg-gray-500 hover:bg-gray-600"
+            >
               Cancel
             </Button>
           </div>
         </div>
       </Modal>
     </div>
-  )
+  );
 }

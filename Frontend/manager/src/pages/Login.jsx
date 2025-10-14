@@ -1,119 +1,49 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { loginAPI } from "../api/auth"
-import { setToken, setUser } from "../utils/localStorage"
-import { getRolesFromToken } from "../utils/jwtDecode"
-import Input from "../components/Input"
-import Button from "../components/Button"
-import Toast from "../components/Toast"
+import { useState } from "react";
+import Input from "../components/ui/Input";
+import Button from "../components/ui/Button";
+import Toast from "../components/ui/Toast";
+import { useLogin } from "../hooks/auth/useLogin";
 
 const Login = () => {
-  const navigate = useNavigate()
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  })
-  const [errors, setErrors] = useState({})
-  const [loading, setLoading] = useState(false)
-  const [toast, setToast] = useState(null)
+  const [formData, setFormData] = useState({ email: "", password: "" });
+  const { handleLogin, loading, toast, setToast, errors, setErrors } =
+    useLogin();
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }))
-    // Clear error when user starts typing
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name]) {
-      setErrors((prev) => ({
-        ...prev,
-        [name]: "",
-      }))
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
-  }
+  };
 
-  const validate = () => {
-    const newErrors = {}
-
-    if (!formData.email) {
-      newErrors.email = "Email is required"
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Email is invalid"
-    }
-
-    if (!formData.password) {
-      newErrors.password = "Password is required"
-    } else if (formData.password.length < 6) {
-      newErrors.password = "Password must be at least 6 characters"
-    }
-
-    return newErrors
-  }
-
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-
-    const newErrors = validate()
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors)
-      return
-    }
-
-    setLoading(true)
-
-    try {
-      const response = await loginAPI(formData.email, formData.password)
-
-      if (response.accessToken) {
-        setToken(response.accessToken)
-
-        // Check if user has Manager role
-        const roles = getRolesFromToken(response.accessToken)
-
-        if (!roles.includes("Manager")) {
-          setToast({
-            message: "Access denied. Manager role required.",
-            type: "error",
-          })
-          setLoading(false)
-          return
-        }
-
-        // Store user data if available
-        if (response.user) {
-          setUser(response.user)
-        }
-
-        setToast({
-          message: "Login successful! Redirecting...",
-          type: "success",
-        })
-
-        setTimeout(() => {
-          navigate("/dashboard")
-        }, 1000)
-      }
-    } catch (error) {
-      setToast({
-        message: error.message || "Login failed. Please try again.",
-        type: "error",
-      })
-      setLoading(false)
-    }
-  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleLogin(formData);
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/10 via-white to-primary/5">
-      {toast && <Toast message={toast.message} type={toast.type} onClose={() => setToast(null)} />}
+      {toast && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
+      )}
 
       <div className="w-full max-w-md px-6">
         <div className="bg-white rounded-2xl shadow-xl p-8">
-          {/* Logo/Header */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-xl mb-4">
-              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-10 h-10 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -122,11 +52,12 @@ const Login = () => {
                 />
               </svg>
             </div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Hotel Admin</h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              Hotel Admin
+            </h1>
             <p className="text-gray-600">Sign in to manage your hotel</p>
           </div>
 
-          {/* Login Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
             <Input
               label="Email"
@@ -150,24 +81,27 @@ const Login = () => {
               required
             />
 
-            <Button type="submit" variant="primary" className="w-full" disabled={loading}>
+            <Button
+              type="submit"
+              variant="primary"
+              className="w-full"
+              disabled={loading}
+            >
               {loading ? "Signing in..." : "Sign In"}
             </Button>
           </form>
 
-          {/* Footer */}
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-600">Need help? Contact support</p>
           </div>
         </div>
 
-        {/* Info */}
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-500">Manager access required</p>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

@@ -1,50 +1,39 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Outlet } from "react-router-dom"
-import Sidebar from "../components/Sidebar"
-import Navbar from "../components/Navbar"
-import { getCurrentUser } from "../api/user"
-import { getUser, setUser } from "../utils/localStorage"
+import { useState } from "react";
+import { Outlet } from "react-router-dom";
+import Sidebar from "../components/layout/Sidebar";
+import Navbar from "../components/layout/Navbar";
+import { useCurrentUser } from "../hooks/auth/useCurrentUser";
 
 const DashboardLayout = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
-  const [user, setUserState] = useState(null)
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { user, loading } = useCurrentUser();
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      // Try to get user from localStorage first
-      const cachedUser = getUser()
-      if (cachedUser) {
-        setUserState(cachedUser)
-      }
-
-      // Fetch fresh user data from API
-      try {
-        const userData = await getCurrentUser()
-        setUser(userData)
-        setUserState(userData)
-      } catch (error) {
-        console.error("Failed to fetch user:", error)
-        // If API fails, keep using cached user
-      }
-    }
-
-    fetchUser()
-  }, [])
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <p className="text-gray-500">Loading user data...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} user={user} />
+      <Sidebar
+        isOpen={sidebarOpen}
+        onClose={() => setSidebarOpen(false)}
+        user={user}
+      />
       <Navbar onMenuClick={() => setSidebarOpen(true)} user={user} />
 
       <main className="lg:ml-64 md:ml-20 pt-16 min-h-screen">
         <div className="p-4 lg:p-6">
-          <Outlet context={{ user }}/>
+          <Outlet context={{ user }} />
         </div>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default DashboardLayout
+export default DashboardLayout;

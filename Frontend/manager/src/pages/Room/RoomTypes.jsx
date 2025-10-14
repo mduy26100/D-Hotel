@@ -1,19 +1,32 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { DoorOpen, Search, PlusIcon, PencilIcon, TrashIcon, DollarSign, Users } from "lucide-react"
-import { getRoomTypes, createRoomType, updateRoomType, deleteRoomType } from "../../api/mock/roomTypes"
-import Modal from "../../components/Modal"
-import Input from "../../components/Input"
-import Button from "../../components/Button"
+import { useState, useEffect } from "react";
+import {
+  DoorOpen,
+  Search,
+  PlusIcon,
+  PencilIcon,
+  TrashIcon,
+  DollarSign,
+  Users,
+} from "lucide-react";
+import {
+  getRoomTypes,
+  createRoomType,
+  updateRoomType,
+  deleteRoomType,
+} from "../../api/mock/roomTypes";
+import Modal from "../../components/ui/Modal";
+import Input from "../../components/ui/Input";
+import Button from "../../components/ui/Button";
 
 export default function RoomTypes() {
-  const [roomTypes, setRoomTypes] = useState([])
-  const [searchTerm, setSearchTerm] = useState("")
-  const [loading, setLoading] = useState(true)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
-  const [selectedRoomType, setSelectedRoomType] = useState(null)
+  const [roomTypes, setRoomTypes] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [selectedRoomType, setSelectedRoomType] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -26,30 +39,30 @@ export default function RoomTypes() {
     floor: "",
     totalRooms: 1,
     status: "Active",
-  })
+  });
 
   useEffect(() => {
-    fetchRoomTypes()
-  }, [searchTerm])
+    fetchRoomTypes();
+  }, [searchTerm]);
 
   const fetchRoomTypes = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
-      const data = await getRoomTypes(searchTerm)
-      setRoomTypes(data)
+      const data = await getRoomTypes(searchTerm);
+      setRoomTypes(data);
     } catch (error) {
-      console.error("Error fetching room types:", error)
+      console.error("Error fetching room types:", error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const handleOpenModal = (roomType = null) => {
     if (roomType) {
-      setSelectedRoomType(roomType)
-      setFormData(roomType)
+      setSelectedRoomType(roomType);
+      setFormData(roomType);
     } else {
-      setSelectedRoomType(null)
+      setSelectedRoomType(null);
       setFormData({
         name: "",
         description: "",
@@ -62,46 +75,46 @@ export default function RoomTypes() {
         floor: "",
         totalRooms: 1,
         status: "Active",
-      })
+      });
     }
-    setIsModalOpen(true)
-  }
+    setIsModalOpen(true);
+  };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false)
-    setSelectedRoomType(null)
-  }
+    setIsModalOpen(false);
+    setSelectedRoomType(null);
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       if (selectedRoomType) {
-        await updateRoomType(selectedRoomType.id, formData)
+        await updateRoomType(selectedRoomType.id, formData);
       } else {
-        await createRoomType(formData)
+        await createRoomType(formData);
       }
-      fetchRoomTypes()
-      handleCloseModal()
+      fetchRoomTypes();
+      handleCloseModal();
     } catch (error) {
-      console.error("Error saving room type:", error)
+      console.error("Error saving room type:", error);
     }
-  }
+  };
 
   const handleDeleteClick = (roomType) => {
-    setSelectedRoomType(roomType)
-    setIsDeleteModalOpen(true)
-  }
+    setSelectedRoomType(roomType);
+    setIsDeleteModalOpen(true);
+  };
 
   const handleDeleteConfirm = async () => {
     try {
-      await deleteRoomType(selectedRoomType.id)
-      fetchRoomTypes()
-      setIsDeleteModalOpen(false)
-      setSelectedRoomType(null)
+      await deleteRoomType(selectedRoomType.id);
+      fetchRoomTypes();
+      setIsDeleteModalOpen(false);
+      setSelectedRoomType(null);
     } catch (error) {
-      console.error("Error deleting room type:", error)
+      console.error("Error deleting room type:", error);
     }
-  }
+  };
 
   return (
     <div className="space-y-6">
@@ -129,7 +142,9 @@ export default function RoomTypes() {
             </div>
             <div>
               <p className="text-sm text-gray-600">Room Types</p>
-              <p className="text-2xl font-bold text-gray-900">{roomTypes.length}</p>
+              <p className="text-2xl font-bold text-gray-900">
+                {roomTypes.length}
+              </p>
             </div>
           </div>
         </div>
@@ -167,7 +182,11 @@ export default function RoomTypes() {
             <div>
               <p className="text-sm text-gray-600">Avg Price</p>
               <p className="text-2xl font-bold text-gray-900">
-                ${(roomTypes.reduce((sum, rt) => sum + rt.basePrice, 0) / roomTypes.length || 0).toFixed(0)}
+                $
+                {(
+                  roomTypes.reduce((sum, rt) => sum + rt.basePrice, 0) /
+                    roomTypes.length || 0
+                ).toFixed(0)}
               </p>
             </div>
           </div>
@@ -191,31 +210,44 @@ export default function RoomTypes() {
       {/* Room Types Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {loading ? (
-          <div className="col-span-full text-center text-gray-500 py-8">Loading...</div>
+          <div className="col-span-full text-center text-gray-500 py-8">
+            Loading...
+          </div>
         ) : roomTypes.length === 0 ? (
-          <div className="col-span-full text-center text-gray-500 py-8">No room types found</div>
+          <div className="col-span-full text-center text-gray-500 py-8">
+            No room types found
+          </div>
         ) : (
           roomTypes.map((roomType) => (
-            <div key={roomType.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+            <div
+              key={roomType.id}
+              className="bg-white rounded-xl shadow-sm border border-gray-100 p-6"
+            >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                     <DoorOpen className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900">{roomType.name}</h3>
+                    <h3 className="text-lg font-bold text-gray-900">
+                      {roomType.name}
+                    </h3>
                     <p className="text-sm text-gray-600">{roomType.bedType}</p>
                   </div>
                 </div>
                 <span
                   className={`px-2 py-1 text-xs font-medium rounded ${
-                    roomType.status === "Active" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+                    roomType.status === "Active"
+                      ? "bg-green-100 text-green-800"
+                      : "bg-red-100 text-red-800"
                   }`}
                 >
                   {roomType.status}
                 </span>
               </div>
-              <p className="text-sm text-gray-600 mb-4">{roomType.description}</p>
+              <p className="text-sm text-gray-600 mb-4">
+                {roomType.description}
+              </p>
               <div className="grid grid-cols-2 gap-3 mb-4">
                 <div className="flex items-center gap-2 text-sm">
                   <DoorOpen className="w-4 h-4 text-gray-400" />
@@ -223,11 +255,15 @@ export default function RoomTypes() {
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <Users className="w-4 h-4 text-gray-400" />
-                  <span className="text-gray-600">Max {roomType.maxOccupancy}</span>
+                  <span className="text-gray-600">
+                    Max {roomType.maxOccupancy}
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <DollarSign className="w-4 h-4 text-gray-400" />
-                  <span className="text-gray-900 font-medium">${roomType.basePrice}/night</span>
+                  <span className="text-gray-900 font-medium">
+                    ${roomType.basePrice}/night
+                  </span>
                 </div>
                 <div className="text-sm">
                   <span className="text-gray-600">
@@ -236,7 +272,9 @@ export default function RoomTypes() {
                 </div>
               </div>
               <div className="mb-4">
-                <p className="text-xs font-medium text-gray-500 uppercase mb-1">Amenities</p>
+                <p className="text-xs font-medium text-gray-500 uppercase mb-1">
+                  Amenities
+                </p>
                 <p className="text-sm text-gray-900">{roomType.amenities}</p>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-600 mb-4">
@@ -274,7 +312,10 @@ export default function RoomTypes() {
         onClose={handleCloseModal}
         title={selectedRoomType ? "Edit Room Type" : "Add Room Type"}
       >
-        <form onSubmit={handleSubmit} className="space-y-4 max-h-[70vh] overflow-y-auto">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-4 max-h-[70vh] overflow-y-auto"
+        >
           <Input
             label="Room Type Name"
             value={formData.name}
@@ -282,10 +323,14 @@ export default function RoomTypes() {
             required
           />
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Description</label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Description
+            </label>
             <textarea
               value={formData.description}
-              onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, description: e.target.value })
+              }
               rows="2"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               required
@@ -295,14 +340,18 @@ export default function RoomTypes() {
             <Input
               label="Bed Type"
               value={formData.bedType}
-              onChange={(e) => setFormData({ ...formData, bedType: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, bedType: e.target.value })
+              }
               placeholder="e.g., King Size"
               required
             />
             <Input
               label="Size"
               value={formData.size}
-              onChange={(e) => setFormData({ ...formData, size: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, size: e.target.value })
+              }
               placeholder="e.g., 450 sq ft"
               required
             />
@@ -313,7 +362,12 @@ export default function RoomTypes() {
               type="number"
               min="1"
               value={formData.maxOccupancy}
-              onChange={(e) => setFormData({ ...formData, maxOccupancy: Number.parseInt(e.target.value) })}
+              onChange={(e) =>
+                setFormData({
+                  ...formData,
+                  maxOccupancy: Number.parseInt(e.target.value),
+                })
+              }
               required
             />
             <Input
@@ -321,15 +375,24 @@ export default function RoomTypes() {
               type="number"
               min="0"
               value={formData.basePrice}
-              onChange={(e) => setFormData({ ...formData, basePrice: Number.parseInt(e.target.value) })}
+              onChange={(e) =>
+                setFormData({
+                  ...formData,
+                  basePrice: Number.parseInt(e.target.value),
+                })
+              }
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Amenities</label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Amenities
+            </label>
             <textarea
               value={formData.amenities}
-              onChange={(e) => setFormData({ ...formData, amenities: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, amenities: e.target.value })
+              }
               rows="2"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               placeholder="e.g., Mini bar, Coffee maker, Safe"
@@ -340,14 +403,18 @@ export default function RoomTypes() {
             <Input
               label="View Type"
               value={formData.viewType}
-              onChange={(e) => setFormData({ ...formData, viewType: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, viewType: e.target.value })
+              }
               placeholder="e.g., City View"
               required
             />
             <Input
               label="Floor"
               value={formData.floor}
-              onChange={(e) => setFormData({ ...formData, floor: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, floor: e.target.value })
+              }
               placeholder="e.g., 10-15"
               required
             />
@@ -357,14 +424,23 @@ export default function RoomTypes() {
             type="number"
             min="1"
             value={formData.totalRooms}
-            onChange={(e) => setFormData({ ...formData, totalRooms: Number.parseInt(e.target.value) })}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                totalRooms: Number.parseInt(e.target.value),
+              })
+            }
             required
           />
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Status</label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Status
+            </label>
             <select
               value={formData.status}
-              onChange={(e) => setFormData({ ...formData, status: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, status: e.target.value })
+              }
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             >
               <option value="Active">Active</option>
@@ -375,7 +451,11 @@ export default function RoomTypes() {
             <Button type="submit" className="flex-1">
               {selectedRoomType ? "Update" : "Create"}
             </Button>
-            <Button type="button" onClick={handleCloseModal} className="flex-1 bg-gray-500 hover:bg-gray-600">
+            <Button
+              type="button"
+              onClick={handleCloseModal}
+              className="flex-1 bg-gray-500 hover:bg-gray-600"
+            >
               Cancel
             </Button>
           </div>
@@ -383,21 +463,33 @@ export default function RoomTypes() {
       </Modal>
 
       {/* Delete Confirmation Modal */}
-      <Modal isOpen={isDeleteModalOpen} onClose={() => setIsDeleteModalOpen(false)} title="Delete Room Type">
+      <Modal
+        isOpen={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}
+        title="Delete Room Type"
+      >
         <div className="space-y-4">
           <p className="text-gray-600">
-            Are you sure you want to delete <strong>{selectedRoomType?.name}</strong>? This action cannot be undone.
+            Are you sure you want to delete{" "}
+            <strong>{selectedRoomType?.name}</strong>? This action cannot be
+            undone.
           </p>
           <div className="flex gap-3 pt-4">
-            <Button onClick={handleDeleteConfirm} className="flex-1 bg-red-600 hover:bg-red-700">
+            <Button
+              onClick={handleDeleteConfirm}
+              className="flex-1 bg-red-600 hover:bg-red-700"
+            >
               Delete
             </Button>
-            <Button onClick={() => setIsDeleteModalOpen(false)} className="flex-1 bg-gray-500 hover:bg-gray-600">
+            <Button
+              onClick={() => setIsDeleteModalOpen(false)}
+              className="flex-1 bg-gray-500 hover:bg-gray-600"
+            >
               Cancel
             </Button>
           </div>
         </div>
       </Modal>
     </div>
-  )
+  );
 }

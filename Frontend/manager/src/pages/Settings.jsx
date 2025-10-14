@@ -1,6 +1,6 @@
-import { SettingsIcon, User, Bell, Lock, Globe } from "lucide-react"
-import Button from "../components/Button"
-import Input from "../components/Input"
+import { SettingsIcon, User, Bell, Lock, Globe } from "lucide-react";
+import Button from "../components/ui/Button";
+import Input from "../components/ui/Input";
 import { useOutletContext } from "react-router-dom";
 
 export default function Settings() {
@@ -12,7 +12,9 @@ export default function Settings() {
       {/* Page Header */}
       <div>
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Settings</h1>
-        <p className="text-gray-600">Manage your account and application settings</p>
+        <p className="text-gray-600">
+          Manage your account and application settings
+        </p>
       </div>
 
       {/* Settings Sections */}
@@ -27,18 +29,20 @@ export default function Settings() {
                 { icon: Lock, label: "Security", active: false },
                 { icon: Globe, label: "Preferences", active: false },
               ].map((item) => {
-                const Icon = item.icon
+                const Icon = item.icon;
                 return (
                   <button
                     key={item.label}
                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
-                      item.active ? "bg-primary text-white" : "text-gray-700 hover:bg-gray-100"
+                      item.active
+                        ? "bg-primary text-white"
+                        : "text-gray-700 hover:bg-gray-100"
                     }`}
                   >
                     <Icon className="w-5 h-5" />
                     <span className="font-medium">{item.label}</span>
                   </button>
-                )
+                );
               })}
             </nav>
           </div>
@@ -50,7 +54,9 @@ export default function Settings() {
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
             <div className="flex items-center gap-3 mb-6">
               <User className="w-6 h-6 text-primary" />
-              <h2 className="text-xl font-bold text-gray-900">Profile Information</h2>
+              <h2 className="text-xl font-bold text-gray-900">
+                Profile Information
+              </h2>
             </div>
 
             <div className="space-y-4">
@@ -64,7 +70,9 @@ export default function Settings() {
                   <Button variant="outline" className="mb-2 bg-transparent">
                     Change Photo
                   </Button>
-                  <p className="text-xs text-gray-500">JPG, PNG or GIF. Max size 2MB</p>
+                  <p className="text-xs text-gray-500">
+                    JPG, PNG or GIF. Max size 2MB
+                  </p>
                 </div>
               </div>
 
@@ -86,7 +94,9 @@ export default function Settings() {
           <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
             <div className="flex items-center gap-3 mb-6">
               <SettingsIcon className="w-6 h-6 text-primary" />
-              <h2 className="text-xl font-bold text-gray-900">Hotel Settings</h2>
+              <h2 className="text-xl font-bold text-gray-900">
+                Hotel Settings
+              </h2>
             </div>
 
             <div className="space-y-4">
@@ -95,7 +105,11 @@ export default function Settings() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Input label="Check-in Time" type="time" defaultValue="14:00" />
-                <Input label="Check-out Time" type="time" defaultValue="11:00" />
+                <Input
+                  label="Check-out Time"
+                  type="time"
+                  defaultValue="11:00"
+                />
               </div>
 
               <div className="pt-4">
@@ -106,5 +120,5 @@ export default function Settings() {
         </div>
       </div>
     </div>
-  )
+  );
 }

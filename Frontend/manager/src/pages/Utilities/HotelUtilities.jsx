@@ -1,24 +1,32 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Building2, Search, PlusIcon, PencilIcon, TrashIcon, Clock, DollarSign } from "lucide-react"
+import { useState, useEffect } from "react";
+import {
+  Building2,
+  Search,
+  PlusIcon,
+  PencilIcon,
+  TrashIcon,
+  Clock,
+  DollarSign,
+} from "lucide-react";
 import {
   getHotelUtilities,
   createHotelUtility,
   updateHotelUtility,
   deleteHotelUtility,
-} from "../../api/mock/hotelUtilities"
-import Modal from "../../components/Modal"
-import Input from "../../components/Input"
-import Button from "../../components/Button"
+} from "../../api/mock/hotelUtilities";
+import Modal from "../../components/ui/Modal";
+import Input from "../../components/ui/Input";
+import Button from "../../components/ui/Button";
 
 export default function HotelUtilities() {
-  const [hotelUtilities, setHotelUtilities] = useState([])
-  const [searchTerm, setSearchTerm] = useState("")
-  const [loading, setLoading] = useState(true)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
-  const [selectedHU, setSelectedHU] = useState(null)
+  const [hotelUtilities, setHotelUtilities] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [selectedHU, setSelectedHU] = useState(null);
   const [formData, setFormData] = useState({
     hotelName: "",
     utilityName: "",
@@ -28,30 +36,30 @@ export default function HotelUtilities() {
     additionalCost: 0,
     notes: "",
     status: "Active",
-  })
+  });
 
   useEffect(() => {
-    fetchHotelUtilities()
-  }, [searchTerm])
+    fetchHotelUtilities();
+  }, [searchTerm]);
 
   const fetchHotelUtilities = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
-      const data = await getHotelUtilities(searchTerm)
-      setHotelUtilities(data)
+      const data = await getHotelUtilities(searchTerm);
+      setHotelUtilities(data);
     } catch (error) {
-      console.error("Error fetching hotel utilities:", error)
+      console.error("Error fetching hotel utilities:", error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const handleOpenModal = (hu = null) => {
     if (hu) {
-      setSelectedHU(hu)
-      setFormData(hu)
+      setSelectedHU(hu);
+      setFormData(hu);
     } else {
-      setSelectedHU(null)
+      setSelectedHU(null);
       setFormData({
         hotelName: "",
         utilityName: "",
@@ -61,53 +69,55 @@ export default function HotelUtilities() {
         additionalCost: 0,
         notes: "",
         status: "Active",
-      })
+      });
     }
-    setIsModalOpen(true)
-  }
+    setIsModalOpen(true);
+  };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false)
-    setSelectedHU(null)
-  }
+    setIsModalOpen(false);
+    setSelectedHU(null);
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       if (selectedHU) {
-        await updateHotelUtility(selectedHU.id, formData)
+        await updateHotelUtility(selectedHU.id, formData);
       } else {
-        await createHotelUtility(formData)
+        await createHotelUtility(formData);
       }
-      fetchHotelUtilities()
-      handleCloseModal()
+      fetchHotelUtilities();
+      handleCloseModal();
     } catch (error) {
-      console.error("Error saving hotel utility:", error)
+      console.error("Error saving hotel utility:", error);
     }
-  }
+  };
 
   const handleDeleteClick = (hu) => {
-    setSelectedHU(hu)
-    setIsDeleteModalOpen(true)
-  }
+    setSelectedHU(hu);
+    setIsDeleteModalOpen(true);
+  };
 
   const handleDeleteConfirm = async () => {
     try {
-      await deleteHotelUtility(selectedHU.id)
-      fetchHotelUtilities()
-      setIsDeleteModalOpen(false)
-      setSelectedHU(null)
+      await deleteHotelUtility(selectedHU.id);
+      fetchHotelUtilities();
+      setIsDeleteModalOpen(false);
+      setSelectedHU(null);
     } catch (error) {
-      console.error("Error deleting hotel utility:", error)
+      console.error("Error deleting hotel utility:", error);
     }
-  }
+  };
 
   return (
     <div className="space-y-6">
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Hotel Utilities</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            Hotel Utilities
+          </h1>
           <p className="text-gray-600">Manage utilities assigned to hotels</p>
         </div>
         <button
@@ -128,7 +138,9 @@ export default function HotelUtilities() {
             </div>
             <div>
               <p className="text-sm text-gray-600">Total Assignments</p>
-              <p className="text-2xl font-bold text-gray-900">{hotelUtilities.length}</p>
+              <p className="text-2xl font-bold text-gray-900">
+                {hotelUtilities.length}
+              </p>
             </div>
           </div>
         </div>
@@ -139,7 +151,9 @@ export default function HotelUtilities() {
             </div>
             <div>
               <p className="text-sm text-gray-600">Available</p>
-              <p className="text-2xl font-bold text-gray-900">{hotelUtilities.filter((hu) => hu.isAvailable).length}</p>
+              <p className="text-2xl font-bold text-gray-900">
+                {hotelUtilities.filter((hu) => hu.isAvailable).length}
+              </p>
             </div>
           </div>
         </div>
@@ -190,7 +204,9 @@ export default function HotelUtilities() {
                 <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Hours
                 </th>
-                <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Cost</th>
+                <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Cost
+                </th>
                 <th className="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Available
                 </th>
@@ -205,24 +221,37 @@ export default function HotelUtilities() {
             <tbody className="bg-white divide-y divide-gray-200">
               {loading ? (
                 <tr>
-                  <td colSpan="8" className="px-6 py-4 text-center text-gray-500">
+                  <td
+                    colSpan="8"
+                    className="px-6 py-4 text-center text-gray-500"
+                  >
                     Loading...
                   </td>
                 </tr>
               ) : hotelUtilities.length === 0 ? (
                 <tr>
-                  <td colSpan="8" className="px-6 py-4 text-center text-gray-500">
+                  <td
+                    colSpan="8"
+                    className="px-6 py-4 text-center text-gray-500"
+                  >
                     No hotel utilities found
                   </td>
                 </tr>
               ) : (
                 hotelUtilities.map((hu) => (
-                  <tr key={hu.id} className="hover:bg-gray-50 transition-colors">
+                  <tr
+                    key={hu.id}
+                    className="hover:bg-gray-50 transition-colors"
+                  >
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm font-medium text-gray-900">{hu.hotelName}</div>
+                      <div className="text-sm font-medium text-gray-900">
+                        {hu.hotelName}
+                      </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-900">{hu.utilityName}</div>
+                      <div className="text-sm text-gray-900">
+                        {hu.utilityName}
+                      </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="text-sm text-gray-900">{hu.location}</div>
@@ -235,13 +264,17 @@ export default function HotelUtilities() {
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="text-sm font-medium text-gray-900">
-                        {hu.additionalCost > 0 ? `$${hu.additionalCost}` : "Free"}
+                        {hu.additionalCost > 0
+                          ? `$${hu.additionalCost}`
+                          : "Free"}
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span
                         className={`px-2 py-1 text-xs font-medium rounded ${
-                          hu.isAvailable ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+                          hu.isAvailable
+                            ? "bg-green-100 text-green-800"
+                            : "bg-red-100 text-red-800"
                         }`}
                       >
                         {hu.isAvailable ? "Yes" : "No"}
@@ -250,7 +283,9 @@ export default function HotelUtilities() {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span
                         className={`px-2 py-1 text-xs font-medium rounded ${
-                          hu.status === "Active" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+                          hu.status === "Active"
+                            ? "bg-green-100 text-green-800"
+                            : "bg-red-100 text-red-800"
                         }`}
                       >
                         {hu.status}
@@ -292,26 +327,34 @@ export default function HotelUtilities() {
           <Input
             label="Hotel Name"
             value={formData.hotelName}
-            onChange={(e) => setFormData({ ...formData, hotelName: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, hotelName: e.target.value })
+            }
             required
           />
           <Input
             label="Utility Name"
             value={formData.utilityName}
-            onChange={(e) => setFormData({ ...formData, utilityName: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, utilityName: e.target.value })
+            }
             required
           />
           <Input
             label="Location"
             value={formData.location}
-            onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, location: e.target.value })
+            }
             placeholder="e.g., Rooftop, Ground Floor"
             required
           />
           <Input
             label="Operating Hours"
             value={formData.operatingHours}
-            onChange={(e) => setFormData({ ...formData, operatingHours: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, operatingHours: e.target.value })
+            }
             placeholder="e.g., 24/7, 9:00 AM - 5:00 PM"
             required
           />
@@ -320,14 +363,23 @@ export default function HotelUtilities() {
             type="number"
             min="0"
             value={formData.additionalCost}
-            onChange={(e) => setFormData({ ...formData, additionalCost: Number.parseInt(e.target.value) })}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                additionalCost: Number.parseInt(e.target.value),
+              })
+            }
             required
           />
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Notes</label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Notes
+            </label>
             <textarea
               value={formData.notes}
-              onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, notes: e.target.value })
+              }
               rows="2"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             />
@@ -337,17 +389,25 @@ export default function HotelUtilities() {
               <input
                 type="checkbox"
                 checked={formData.isAvailable}
-                onChange={(e) => setFormData({ ...formData, isAvailable: e.target.checked })}
+                onChange={(e) =>
+                  setFormData({ ...formData, isAvailable: e.target.checked })
+                }
                 className="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
               />
-              <span className="text-sm font-medium text-gray-700">Available</span>
+              <span className="text-sm font-medium text-gray-700">
+                Available
+              </span>
             </label>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Status</label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Status
+            </label>
             <select
               value={formData.status}
-              onChange={(e) => setFormData({ ...formData, status: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, status: e.target.value })
+              }
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             >
               <option value="Active">Active</option>
@@ -358,7 +418,11 @@ export default function HotelUtilities() {
             <Button type="submit" className="flex-1">
               {selectedHU ? "Update" : "Create"}
             </Button>
-            <Button type="button" onClick={handleCloseModal} className="flex-1 bg-gray-500 hover:bg-gray-600">
+            <Button
+              type="button"
+              onClick={handleCloseModal}
+              className="flex-1 bg-gray-500 hover:bg-gray-600"
+            >
               Cancel
             </Button>
           </div>
@@ -366,22 +430,34 @@ export default function HotelUtilities() {
       </Modal>
 
       {/* Delete Confirmation Modal */}
-      <Modal isOpen={isDeleteModalOpen} onClose={() => setIsDeleteModalOpen(false)} title="Delete Hotel Utility">
+      <Modal
+        isOpen={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}
+        title="Delete Hotel Utility"
+      >
         <div className="space-y-4">
           <p className="text-gray-600">
-            Are you sure you want to delete the utility assignment for <strong>{selectedHU?.utilityName}</strong> at{" "}
-            <strong>{selectedHU?.hotelName}</strong>? This action cannot be undone.
+            Are you sure you want to delete the utility assignment for{" "}
+            <strong>{selectedHU?.utilityName}</strong> at{" "}
+            <strong>{selectedHU?.hotelName}</strong>? This action cannot be
+            undone.
           </p>
           <div className="flex gap-3 pt-4">
-            <Button onClick={handleDeleteConfirm} className="flex-1 bg-red-600 hover:bg-red-700">
+            <Button
+              onClick={handleDeleteConfirm}
+              className="flex-1 bg-red-600 hover:bg-red-700"
+            >
               Delete
             </Button>
-            <Button onClick={() => setIsDeleteModalOpen(false)} className="flex-1 bg-gray-500 hover:bg-gray-600">
+            <Button
+              onClick={() => setIsDeleteModalOpen(false)}
+              className="flex-1 bg-gray-500 hover:bg-gray-600"
+            >
               Cancel
             </Button>
           </div>
         </div>
       </Modal>
     </div>
-  )
+  );
 }

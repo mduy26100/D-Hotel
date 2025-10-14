@@ -1,24 +1,30 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Building2, Search, PlusIcon, PencilIcon, TrashIcon } from "lucide-react"
+import { useState, useEffect } from "react";
+import {
+  Building2,
+  Search,
+  PlusIcon,
+  PencilIcon,
+  TrashIcon,
+} from "lucide-react";
 import {
   getHotelTravelPurposes,
   createHotelTravelPurpose,
   updateHotelTravelPurpose,
   deleteHotelTravelPurpose,
-} from "../../api/mock/hotelTravelPurposes"
-import Modal from "../../components/Modal"
-import Input from "../../components/Input"
-import Button from "../../components/Button"
+} from "../../api/mock/hotelTravelPurposes";
+import Modal from "../../components/ui/Modal";
+import Input from "../../components/ui/Input";
+import Button from "../../components/ui/Button";
 
 export default function HotelTravelPurposes() {
-  const [hotelTravelPurposes, setHotelTravelPurposes] = useState([])
-  const [searchTerm, setSearchTerm] = useState("")
-  const [loading, setLoading] = useState(true)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
-  const [selectedHTP, setSelectedHTP] = useState(null)
+  const [hotelTravelPurposes, setHotelTravelPurposes] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [selectedHTP, setSelectedHTP] = useState(null);
   const [formData, setFormData] = useState({
     hotelName: "",
     purposeName: "",
@@ -26,30 +32,30 @@ export default function HotelTravelPurposes() {
     amenities: "",
     targetAudience: "",
     status: "Active",
-  })
+  });
 
   useEffect(() => {
-    fetchHotelTravelPurposes()
-  }, [searchTerm])
+    fetchHotelTravelPurposes();
+  }, [searchTerm]);
 
   const fetchHotelTravelPurposes = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
-      const data = await getHotelTravelPurposes(searchTerm)
-      setHotelTravelPurposes(data)
+      const data = await getHotelTravelPurposes(searchTerm);
+      setHotelTravelPurposes(data);
     } catch (error) {
-      console.error("Error fetching hotel travel purposes:", error)
+      console.error("Error fetching hotel travel purposes:", error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const handleOpenModal = (htp = null) => {
     if (htp) {
-      setSelectedHTP(htp)
-      setFormData(htp)
+      setSelectedHTP(htp);
+      setFormData(htp);
     } else {
-      setSelectedHTP(null)
+      setSelectedHTP(null);
       setFormData({
         hotelName: "",
         purposeName: "",
@@ -57,54 +63,58 @@ export default function HotelTravelPurposes() {
         amenities: "",
         targetAudience: "",
         status: "Active",
-      })
+      });
     }
-    setIsModalOpen(true)
-  }
+    setIsModalOpen(true);
+  };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false)
-    setSelectedHTP(null)
-  }
+    setIsModalOpen(false);
+    setSelectedHTP(null);
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       if (selectedHTP) {
-        await updateHotelTravelPurpose(selectedHTP.id, formData)
+        await updateHotelTravelPurpose(selectedHTP.id, formData);
       } else {
-        await createHotelTravelPurpose(formData)
+        await createHotelTravelPurpose(formData);
       }
-      fetchHotelTravelPurposes()
-      handleCloseModal()
+      fetchHotelTravelPurposes();
+      handleCloseModal();
     } catch (error) {
-      console.error("Error saving hotel travel purpose:", error)
+      console.error("Error saving hotel travel purpose:", error);
     }
-  }
+  };
 
   const handleDeleteClick = (htp) => {
-    setSelectedHTP(htp)
-    setIsDeleteModalOpen(true)
-  }
+    setSelectedHTP(htp);
+    setIsDeleteModalOpen(true);
+  };
 
   const handleDeleteConfirm = async () => {
     try {
-      await deleteHotelTravelPurpose(selectedHTP.id)
-      fetchHotelTravelPurposes()
-      setIsDeleteModalOpen(false)
-      setSelectedHTP(null)
+      await deleteHotelTravelPurpose(selectedHTP.id);
+      fetchHotelTravelPurposes();
+      setIsDeleteModalOpen(false);
+      setSelectedHTP(null);
     } catch (error) {
-      console.error("Error deleting hotel travel purpose:", error)
+      console.error("Error deleting hotel travel purpose:", error);
     }
-  }
+  };
 
   return (
     <div className="space-y-6">
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Hotel Travel Purposes</h1>
-          <p className="text-gray-600">Link hotels with travel purposes and target audiences</p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            Hotel Travel Purposes
+          </h1>
+          <p className="text-gray-600">
+            Link hotels with travel purposes and target audiences
+          </p>
         </div>
         <button
           onClick={() => handleOpenModal()}
@@ -124,7 +134,9 @@ export default function HotelTravelPurposes() {
             </div>
             <div>
               <p className="text-sm text-gray-600">Total Mappings</p>
-              <p className="text-2xl font-bold text-gray-900">{hotelTravelPurposes.length}</p>
+              <p className="text-2xl font-bold text-gray-900">
+                {hotelTravelPurposes.length}
+              </p>
             </div>
           </div>
         </div>
@@ -136,7 +148,10 @@ export default function HotelTravelPurposes() {
             <div>
               <p className="text-sm text-gray-600">Active Mappings</p>
               <p className="text-2xl font-bold text-gray-900">
-                {hotelTravelPurposes.filter((htp) => htp.status === "Active").length}
+                {
+                  hotelTravelPurposes.filter((htp) => htp.status === "Active")
+                    .length
+                }
               </p>
             </div>
           </div>
@@ -173,26 +188,37 @@ export default function HotelTravelPurposes() {
       {/* Cards Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {loading ? (
-          <div className="col-span-full text-center text-gray-500 py-8">Loading...</div>
+          <div className="col-span-full text-center text-gray-500 py-8">
+            Loading...
+          </div>
         ) : hotelTravelPurposes.length === 0 ? (
-          <div className="col-span-full text-center text-gray-500 py-8">No hotel travel purposes found</div>
+          <div className="col-span-full text-center text-gray-500 py-8">
+            No hotel travel purposes found
+          </div>
         ) : (
           hotelTravelPurposes.map((htp) => (
-            <div key={htp.id} className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+            <div
+              key={htp.id}
+              className="bg-white rounded-xl shadow-sm border border-gray-100 p-6"
+            >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                     <Building2 className="w-6 h-6 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-gray-900">{htp.hotelName}</h3>
+                    <h3 className="text-lg font-bold text-gray-900">
+                      {htp.hotelName}
+                    </h3>
                     <p className="text-sm text-gray-600">{htp.purposeName}</p>
                   </div>
                 </div>
                 <div className="flex flex-col items-end gap-2">
                   <span
                     className={`px-2 py-1 text-xs font-medium rounded ${
-                      htp.status === "Active" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+                      htp.status === "Active"
+                        ? "bg-green-100 text-green-800"
+                        : "bg-red-100 text-red-800"
                     }`}
                   >
                     {htp.status}
@@ -204,11 +230,15 @@ export default function HotelTravelPurposes() {
               </div>
               <div className="space-y-3 mb-4">
                 <div>
-                  <p className="text-xs font-medium text-gray-500 uppercase mb-1">Amenities</p>
+                  <p className="text-xs font-medium text-gray-500 uppercase mb-1">
+                    Amenities
+                  </p>
                   <p className="text-sm text-gray-900">{htp.amenities}</p>
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-gray-500 uppercase mb-1">Target Audience</p>
+                  <p className="text-xs font-medium text-gray-500 uppercase mb-1">
+                    Target Audience
+                  </p>
                   <p className="text-sm text-gray-900">{htp.targetAudience}</p>
                 </div>
               </div>
@@ -237,19 +267,25 @@ export default function HotelTravelPurposes() {
       <Modal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
-        title={selectedHTP ? "Edit Hotel Travel Purpose" : "Add Hotel Travel Purpose"}
+        title={
+          selectedHTP ? "Edit Hotel Travel Purpose" : "Add Hotel Travel Purpose"
+        }
       >
         <form onSubmit={handleSubmit} className="space-y-4">
           <Input
             label="Hotel Name"
             value={formData.hotelName}
-            onChange={(e) => setFormData({ ...formData, hotelName: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, hotelName: e.target.value })
+            }
             required
           />
           <Input
             label="Purpose Name"
             value={formData.purposeName}
-            onChange={(e) => setFormData({ ...formData, purposeName: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, purposeName: e.target.value })
+            }
             required
           />
           <Input
@@ -257,14 +293,23 @@ export default function HotelTravelPurposes() {
             type="number"
             min="1"
             value={formData.priority}
-            onChange={(e) => setFormData({ ...formData, priority: Number.parseInt(e.target.value) })}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                priority: Number.parseInt(e.target.value),
+              })
+            }
             required
           />
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Amenities</label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Amenities
+            </label>
             <textarea
               value={formData.amenities}
-              onChange={(e) => setFormData({ ...formData, amenities: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, amenities: e.target.value })
+              }
               rows="2"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
               placeholder="e.g., Conference rooms, Business center"
@@ -274,15 +319,21 @@ export default function HotelTravelPurposes() {
           <Input
             label="Target Audience"
             value={formData.targetAudience}
-            onChange={(e) => setFormData({ ...formData, targetAudience: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, targetAudience: e.target.value })
+            }
             placeholder="e.g., Corporate travelers"
             required
           />
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Status</label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Status
+            </label>
             <select
               value={formData.status}
-              onChange={(e) => setFormData({ ...formData, status: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, status: e.target.value })
+              }
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             >
               <option value="Active">Active</option>
@@ -293,7 +344,11 @@ export default function HotelTravelPurposes() {
             <Button type="submit" className="flex-1">
               {selectedHTP ? "Update" : "Create"}
             </Button>
-            <Button type="button" onClick={handleCloseModal} className="flex-1 bg-gray-500 hover:bg-gray-600">
+            <Button
+              type="button"
+              onClick={handleCloseModal}
+              className="flex-1 bg-gray-500 hover:bg-gray-600"
+            >
               Cancel
             </Button>
           </div>
@@ -301,22 +356,34 @@ export default function HotelTravelPurposes() {
       </Modal>
 
       {/* Delete Confirmation Modal */}
-      <Modal isOpen={isDeleteModalOpen} onClose={() => setIsDeleteModalOpen(false)} title="Delete Hotel Travel Purpose">
+      <Modal
+        isOpen={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}
+        title="Delete Hotel Travel Purpose"
+      >
         <div className="space-y-4">
           <p className="text-gray-600">
-            Are you sure you want to delete the mapping between <strong>{selectedHTP?.hotelName}</strong> and{" "}
-            <strong>{selectedHTP?.purposeName}</strong>? This action cannot be undone.
+            Are you sure you want to delete the mapping between{" "}
+            <strong>{selectedHTP?.hotelName}</strong> and{" "}
+            <strong>{selectedHTP?.purposeName}</strong>? This action cannot be
+            undone.
           </p>
           <div className="flex gap-3 pt-4">
-            <Button onClick={handleDeleteConfirm} className="flex-1 bg-red-600 hover:bg-red-700">
+            <Button
+              onClick={handleDeleteConfirm}
+              className="flex-1 bg-red-600 hover:bg-red-700"
+            >
               Delete
             </Button>
-            <Button onClick={() => setIsDeleteModalOpen(false)} className="flex-1 bg-gray-500 hover:bg-gray-600">
+            <Button
+              onClick={() => setIsDeleteModalOpen(false)}
+              className="flex-1 bg-gray-500 hover:bg-gray-600"
+            >
               Cancel
             </Button>
           </div>
         </div>
       </Modal>
     </div>
-  )
+  );
 }

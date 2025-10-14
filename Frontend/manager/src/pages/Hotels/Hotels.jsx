@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
 import {
   Building2Icon as BuildingOfficeIcon,
   Search,
@@ -10,19 +10,24 @@ import {
   PlusIcon,
   PencilIcon,
   TrashIcon,
-} from "lucide-react"
-import { getHotels, createHotel, updateHotel, deleteHotel } from "../../api/mock/hotels"
-import Modal from "../../components/Modal"
-import Input from "../../components/Input"
-import Button from "../../components/Button"
+} from "lucide-react";
+import {
+  getHotels,
+  createHotel,
+  updateHotel,
+  deleteHotel,
+} from "../../api/mock/hotels";
+import Modal from "../../components/ui/Modal";
+import Input from "../../components/ui/Input";
+import Button from "../../components/ui/Button";
 
 export default function Hotels() {
-  const [hotels, setHotels] = useState([])
-  const [searchTerm, setSearchTerm] = useState("")
-  const [loading, setLoading] = useState(true)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
-  const [selectedHotel, setSelectedHotel] = useState(null)
+  const [hotels, setHotels] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [selectedHotel, setSelectedHotel] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     categoryName: "",
@@ -32,30 +37,30 @@ export default function Hotels() {
     rating: 5,
     totalRooms: 0,
     status: "Active",
-  })
+  });
 
   useEffect(() => {
-    fetchHotels()
-  }, [searchTerm])
+    fetchHotels();
+  }, [searchTerm]);
 
   const fetchHotels = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
-      const data = await getHotels(searchTerm)
-      setHotels(data)
+      const data = await getHotels(searchTerm);
+      setHotels(data);
     } catch (error) {
-      console.error("Error fetching hotels:", error)
+      console.error("Error fetching hotels:", error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const handleOpenModal = (hotel = null) => {
     if (hotel) {
-      setSelectedHotel(hotel)
-      setFormData(hotel)
+      setSelectedHotel(hotel);
+      setFormData(hotel);
     } else {
-      setSelectedHotel(null)
+      setSelectedHotel(null);
       setFormData({
         name: "",
         categoryName: "",
@@ -65,46 +70,46 @@ export default function Hotels() {
         rating: 5,
         totalRooms: 0,
         status: "Active",
-      })
+      });
     }
-    setIsModalOpen(true)
-  }
+    setIsModalOpen(true);
+  };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false)
-    setSelectedHotel(null)
-  }
+    setIsModalOpen(false);
+    setSelectedHotel(null);
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       if (selectedHotel) {
-        await updateHotel(selectedHotel.id, formData)
+        await updateHotel(selectedHotel.id, formData);
       } else {
-        await createHotel(formData)
+        await createHotel(formData);
       }
-      fetchHotels()
-      handleCloseModal()
+      fetchHotels();
+      handleCloseModal();
     } catch (error) {
-      console.error("Error saving hotel:", error)
+      console.error("Error saving hotel:", error);
     }
-  }
+  };
 
   const handleDeleteClick = (hotel) => {
-    setSelectedHotel(hotel)
-    setIsDeleteModalOpen(true)
-  }
+    setSelectedHotel(hotel);
+    setIsDeleteModalOpen(true);
+  };
 
   const handleDeleteConfirm = async () => {
     try {
-      await deleteHotel(selectedHotel.id)
-      fetchHotels()
-      setIsDeleteModalOpen(false)
-      setSelectedHotel(null)
+      await deleteHotel(selectedHotel.id);
+      fetchHotels();
+      setIsDeleteModalOpen(false);
+      setSelectedHotel(null);
     } catch (error) {
-      console.error("Error deleting hotel:", error)
+      console.error("Error deleting hotel:", error);
     }
-  }
+  };
 
   return (
     <div className="space-y-6">
@@ -132,7 +137,9 @@ export default function Hotels() {
             </div>
             <div>
               <p className="text-sm text-gray-600">Total Hotels</p>
-              <p className="text-2xl font-bold text-gray-900">{hotels.length}</p>
+              <p className="text-2xl font-bold text-gray-900">
+                {hotels.length}
+              </p>
             </div>
           </div>
         </div>
@@ -143,7 +150,9 @@ export default function Hotels() {
             </div>
             <div>
               <p className="text-sm text-gray-600">Active Hotels</p>
-              <p className="text-2xl font-bold text-gray-900">{hotels.filter((h) => h.status === "Active").length}</p>
+              <p className="text-2xl font-bold text-gray-900">
+                {hotels.filter((h) => h.status === "Active").length}
+              </p>
             </div>
           </div>
         </div>
@@ -154,7 +163,9 @@ export default function Hotels() {
             </div>
             <div>
               <p className="text-sm text-gray-600">Total Rooms</p>
-              <p className="text-2xl font-bold text-gray-900">{hotels.reduce((sum, h) => sum + h.totalRooms, 0)}</p>
+              <p className="text-2xl font-bold text-gray-900">
+                {hotels.reduce((sum, h) => sum + h.totalRooms, 0)}
+              </p>
             </div>
           </div>
         </div>
@@ -206,26 +217,37 @@ export default function Hotels() {
             <tbody className="bg-white divide-y divide-gray-200">
               {loading ? (
                 <tr>
-                  <td colSpan="7" className="px-6 py-4 text-center text-gray-500">
+                  <td
+                    colSpan="7"
+                    className="px-6 py-4 text-center text-gray-500"
+                  >
                     Loading...
                   </td>
                 </tr>
               ) : hotels.length === 0 ? (
                 <tr>
-                  <td colSpan="7" className="px-6 py-4 text-center text-gray-500">
+                  <td
+                    colSpan="7"
+                    className="px-6 py-4 text-center text-gray-500"
+                  >
                     No hotels found
                   </td>
                 </tr>
               ) : (
                 hotels.map((hotel) => (
-                  <tr key={hotel.id} className="hover:bg-gray-50 transition-colors">
+                  <tr
+                    key={hotel.id}
+                    className="hover:bg-gray-50 transition-colors"
+                  >
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
                           <BuildingOfficeIcon className="w-6 h-6 text-primary" />
                         </div>
                         <div>
-                          <div className="text-sm font-medium text-gray-900">{hotel.name}</div>
+                          <div className="text-sm font-medium text-gray-900">
+                            {hotel.name}
+                          </div>
                           <div className="text-xs text-gray-500 flex items-center gap-1">
                             <MapPinIcon className="w-3 h-3" />
                             {hotel.address}
@@ -253,16 +275,22 @@ export default function Hotels() {
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center gap-1">
                         <span className="text-yellow-500">★</span>
-                        <span className="text-sm font-medium text-gray-900">{hotel.rating}</span>
+                        <span className="text-sm font-medium text-gray-900">
+                          {hotel.rating}
+                        </span>
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-900">{hotel.totalRooms}</div>
+                      <div className="text-sm text-gray-900">
+                        {hotel.totalRooms}
+                      </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span
                         className={`px-2 py-1 text-xs font-medium rounded ${
-                          hotel.status === "Active" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+                          hotel.status === "Active"
+                            ? "bg-green-100 text-green-800"
+                            : "bg-red-100 text-red-800"
                         }`}
                       >
                         {hotel.status}
@@ -295,7 +323,11 @@ export default function Hotels() {
       </div>
 
       {/* Add/Edit Modal */}
-      <Modal isOpen={isModalOpen} onClose={handleCloseModal} title={selectedHotel ? "Edit Hotel" : "Add Hotel"}>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        title={selectedHotel ? "Edit Hotel" : "Add Hotel"}
+      >
         <form onSubmit={handleSubmit} className="space-y-4">
           <Input
             label="Hotel Name"
@@ -306,26 +338,34 @@ export default function Hotels() {
           <Input
             label="Category"
             value={formData.categoryName}
-            onChange={(e) => setFormData({ ...formData, categoryName: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, categoryName: e.target.value })
+            }
             required
           />
           <Input
             label="Address"
             value={formData.address}
-            onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, address: e.target.value })
+            }
             required
           />
           <Input
             label="Phone"
             value={formData.phone}
-            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, phone: e.target.value })
+            }
             required
           />
           <Input
             label="Email"
             type="email"
             value={formData.email}
-            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
             required
           />
           <Input
@@ -334,7 +374,12 @@ export default function Hotels() {
             min="1"
             max="5"
             value={formData.rating}
-            onChange={(e) => setFormData({ ...formData, rating: Number.parseInt(e.target.value) })}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                rating: Number.parseInt(e.target.value),
+              })
+            }
             required
           />
           <Input
@@ -342,14 +387,23 @@ export default function Hotels() {
             type="number"
             min="0"
             value={formData.totalRooms}
-            onChange={(e) => setFormData({ ...formData, totalRooms: Number.parseInt(e.target.value) })}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                totalRooms: Number.parseInt(e.target.value),
+              })
+            }
             required
           />
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Status</label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Status
+            </label>
             <select
               value={formData.status}
-              onChange={(e) => setFormData({ ...formData, status: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, status: e.target.value })
+              }
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             >
               <option value="Active">Active</option>
@@ -360,7 +414,11 @@ export default function Hotels() {
             <Button type="submit" className="flex-1">
               {selectedHotel ? "Update" : "Create"}
             </Button>
-            <Button type="button" onClick={handleCloseModal} className="flex-1 bg-gray-500 hover:bg-gray-600">
+            <Button
+              type="button"
+              onClick={handleCloseModal}
+              className="flex-1 bg-gray-500 hover:bg-gray-600"
+            >
               Cancel
             </Button>
           </div>
@@ -368,21 +426,33 @@ export default function Hotels() {
       </Modal>
 
       {/* Delete Confirmation Modal */}
-      <Modal isOpen={isDeleteModalOpen} onClose={() => setIsDeleteModalOpen(false)} title="Delete Hotel">
+      <Modal
+        isOpen={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}
+        title="Delete Hotel"
+      >
         <div className="space-y-4">
           <p className="text-gray-600">
-            Are you sure you want to delete <strong>{selectedHotel?.name}</strong>? This action cannot be undone.
+            Are you sure you want to delete{" "}
+            <strong>{selectedHotel?.name}</strong>? This action cannot be
+            undone.
           </p>
           <div className="flex gap-3 pt-4">
-            <Button onClick={handleDeleteConfirm} className="flex-1 bg-red-600 hover:bg-red-700">
+            <Button
+              onClick={handleDeleteConfirm}
+              className="flex-1 bg-red-600 hover:bg-red-700"
+            >
               Delete
             </Button>
-            <Button onClick={() => setIsDeleteModalOpen(false)} className="flex-1 bg-gray-500 hover:bg-gray-600">
+            <Button
+              onClick={() => setIsDeleteModalOpen(false)}
+              className="flex-1 bg-gray-500 hover:bg-gray-600"
+            >
               Cancel
             </Button>
           </div>
         </div>
       </Modal>
     </div>
-  )
+  );
 }

@@ -1,19 +1,31 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Package, Search, PlusIcon, PencilIcon, TrashIcon, Calendar } from "lucide-react"
-import { getUtilityItems, createUtilityItem, updateUtilityItem, deleteUtilityItem } from "../../api/mock/utilityItems"
-import Modal from "../../components/Modal"
-import Input from "../../components/Input"
-import Button from "../../components/Button"
+import { useState, useEffect } from "react";
+import {
+  Package,
+  Search,
+  PlusIcon,
+  PencilIcon,
+  TrashIcon,
+  Calendar,
+} from "lucide-react";
+import {
+  getUtilityItems,
+  createUtilityItem,
+  updateUtilityItem,
+  deleteUtilityItem,
+} from "../../api/mock/utilityItems";
+import Modal from "../../components/ui/Modal";
+import Input from "../../components/ui/Input";
+import Button from "../../components/ui/Button";
 
 export default function UtilityItems() {
-  const [utilityItems, setUtilityItems] = useState([])
-  const [searchTerm, setSearchTerm] = useState("")
-  const [loading, setLoading] = useState(true)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false)
-  const [selectedItem, setSelectedItem] = useState(null)
+  const [utilityItems, setUtilityItems] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
   const [formData, setFormData] = useState({
     utilityName: "",
     itemName: "",
@@ -23,30 +35,30 @@ export default function UtilityItems() {
     purchaseDate: "",
     warrantyExpiry: "",
     status: "Active",
-  })
+  });
 
   useEffect(() => {
-    fetchUtilityItems()
-  }, [searchTerm])
+    fetchUtilityItems();
+  }, [searchTerm]);
 
   const fetchUtilityItems = async () => {
-    setLoading(true)
+    setLoading(true);
     try {
-      const data = await getUtilityItems(searchTerm)
-      setUtilityItems(data)
+      const data = await getUtilityItems(searchTerm);
+      setUtilityItems(data);
     } catch (error) {
-      console.error("Error fetching utility items:", error)
+      console.error("Error fetching utility items:", error);
     } finally {
-      setLoading(false)
+      setLoading(false);
     }
-  }
+  };
 
   const handleOpenModal = (item = null) => {
     if (item) {
-      setSelectedItem(item)
-      setFormData(item)
+      setSelectedItem(item);
+      setFormData(item);
     } else {
-      setSelectedItem(null)
+      setSelectedItem(null);
       setFormData({
         utilityName: "",
         itemName: "",
@@ -56,53 +68,55 @@ export default function UtilityItems() {
         purchaseDate: "",
         warrantyExpiry: "",
         status: "Active",
-      })
+      });
     }
-    setIsModalOpen(true)
-  }
+    setIsModalOpen(true);
+  };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false)
-    setSelectedItem(null)
-  }
+    setIsModalOpen(false);
+    setSelectedItem(null);
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       if (selectedItem) {
-        await updateUtilityItem(selectedItem.id, formData)
+        await updateUtilityItem(selectedItem.id, formData);
       } else {
-        await createUtilityItem(formData)
+        await createUtilityItem(formData);
       }
-      fetchUtilityItems()
-      handleCloseModal()
+      fetchUtilityItems();
+      handleCloseModal();
     } catch (error) {
-      console.error("Error saving utility item:", error)
+      console.error("Error saving utility item:", error);
     }
-  }
+  };
 
   const handleDeleteClick = (item) => {
-    setSelectedItem(item)
-    setIsDeleteModalOpen(true)
-  }
+    setSelectedItem(item);
+    setIsDeleteModalOpen(true);
+  };
 
   const handleDeleteConfirm = async () => {
     try {
-      await deleteUtilityItem(selectedItem.id)
-      fetchUtilityItems()
-      setIsDeleteModalOpen(false)
-      setSelectedItem(null)
+      await deleteUtilityItem(selectedItem.id);
+      fetchUtilityItems();
+      setIsDeleteModalOpen(false);
+      setSelectedItem(null);
     } catch (error) {
-      console.error("Error deleting utility item:", error)
+      console.error("Error deleting utility item:", error);
     }
-  }
+  };
 
   return (
     <div className="space-y-6">
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Utility Items</h1>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">
+            Utility Items
+          </h1>
           <p className="text-gray-600">Manage inventory items for utilities</p>
         </div>
         <button
@@ -123,7 +137,9 @@ export default function UtilityItems() {
             </div>
             <div>
               <p className="text-sm text-gray-600">Total Items</p>
-              <p className="text-2xl font-bold text-gray-900">{utilityItems.length}</p>
+              <p className="text-2xl font-bold text-gray-900">
+                {utilityItems.length}
+              </p>
             </div>
           </div>
         </div>
@@ -204,24 +220,37 @@ export default function UtilityItems() {
             <tbody className="bg-white divide-y divide-gray-200">
               {loading ? (
                 <tr>
-                  <td colSpan="8" className="px-6 py-4 text-center text-gray-500">
+                  <td
+                    colSpan="8"
+                    className="px-6 py-4 text-center text-gray-500"
+                  >
                     Loading...
                   </td>
                 </tr>
               ) : utilityItems.length === 0 ? (
                 <tr>
-                  <td colSpan="8" className="px-6 py-4 text-center text-gray-500">
+                  <td
+                    colSpan="8"
+                    className="px-6 py-4 text-center text-gray-500"
+                  >
                     No utility items found
                   </td>
                 </tr>
               ) : (
                 utilityItems.map((item) => (
-                  <tr key={item.id} className="hover:bg-gray-50 transition-colors">
+                  <tr
+                    key={item.id}
+                    className="hover:bg-gray-50 transition-colors"
+                  >
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm font-medium text-gray-900">{item.utilityName}</div>
+                      <div className="text-sm font-medium text-gray-900">
+                        {item.utilityName}
+                      </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-900">{item.itemName}</div>
+                      <div className="text-sm text-gray-900">
+                        {item.itemName}
+                      </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="text-sm text-gray-900">
@@ -234,15 +263,21 @@ export default function UtilityItems() {
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-900">{item.purchaseDate}</div>
+                      <div className="text-sm text-gray-900">
+                        {item.purchaseDate}
+                      </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-gray-900">{item.warrantyExpiry}</div>
+                      <div className="text-sm text-gray-900">
+                        {item.warrantyExpiry}
+                      </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
                       <span
                         className={`px-2 py-1 text-xs font-medium rounded ${
-                          item.status === "Active" ? "bg-green-100 text-green-800" : "bg-red-100 text-red-800"
+                          item.status === "Active"
+                            ? "bg-green-100 text-green-800"
+                            : "bg-red-100 text-red-800"
                         }`}
                       >
                         {item.status}
@@ -284,26 +319,34 @@ export default function UtilityItems() {
           <Input
             label="Utility Name"
             value={formData.utilityName}
-            onChange={(e) => setFormData({ ...formData, utilityName: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, utilityName: e.target.value })
+            }
             required
           />
           <Input
             label="Item Name"
             value={formData.itemName}
-            onChange={(e) => setFormData({ ...formData, itemName: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, itemName: e.target.value })
+            }
             required
           />
           <div className="grid grid-cols-2 gap-4">
             <Input
               label="Brand"
               value={formData.brand}
-              onChange={(e) => setFormData({ ...formData, brand: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, brand: e.target.value })
+              }
               required
             />
             <Input
               label="Model"
               value={formData.model}
-              onChange={(e) => setFormData({ ...formData, model: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, model: e.target.value })
+              }
               required
             />
           </div>
@@ -312,7 +355,12 @@ export default function UtilityItems() {
             type="number"
             min="1"
             value={formData.quantity}
-            onChange={(e) => setFormData({ ...formData, quantity: Number.parseInt(e.target.value) })}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                quantity: Number.parseInt(e.target.value),
+              })
+            }
             required
           />
           <div className="grid grid-cols-2 gap-4">
@@ -320,22 +368,30 @@ export default function UtilityItems() {
               label="Purchase Date"
               type="date"
               value={formData.purchaseDate}
-              onChange={(e) => setFormData({ ...formData, purchaseDate: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, purchaseDate: e.target.value })
+              }
               required
             />
             <Input
               label="Warranty Expiry"
               type="date"
               value={formData.warrantyExpiry}
-              onChange={(e) => setFormData({ ...formData, warrantyExpiry: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, warrantyExpiry: e.target.value })
+              }
               required
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-2">Status</label>
+            <label className="block text-sm font-medium text-gray-700 mb-2">
+              Status
+            </label>
             <select
               value={formData.status}
-              onChange={(e) => setFormData({ ...formData, status: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, status: e.target.value })
+              }
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             >
               <option value="Active">Active</option>
@@ -346,7 +402,11 @@ export default function UtilityItems() {
             <Button type="submit" className="flex-1">
               {selectedItem ? "Update" : "Create"}
             </Button>
-            <Button type="button" onClick={handleCloseModal} className="flex-1 bg-gray-500 hover:bg-gray-600">
+            <Button
+              type="button"
+              onClick={handleCloseModal}
+              className="flex-1 bg-gray-500 hover:bg-gray-600"
+            >
               Cancel
             </Button>
           </div>
@@ -354,21 +414,33 @@ export default function UtilityItems() {
       </Modal>
 
       {/* Delete Confirmation Modal */}
-      <Modal isOpen={isDeleteModalOpen} onClose={() => setIsDeleteModalOpen(false)} title="Delete Utility Item">
+      <Modal
+        isOpen={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}
+        title="Delete Utility Item"
+      >
         <div className="space-y-4">
           <p className="text-gray-600">
-            Are you sure you want to delete <strong>{selectedItem?.itemName}</strong>? This action cannot be undone.
+            Are you sure you want to delete{" "}
+            <strong>{selectedItem?.itemName}</strong>? This action cannot be
+            undone.
           </p>
           <div className="flex gap-3 pt-4">
-            <Button onClick={handleDeleteConfirm} className="flex-1 bg-red-600 hover:bg-red-700">
+            <Button
+              onClick={handleDeleteConfirm}
+              className="flex-1 bg-red-600 hover:bg-red-700"
+            >
               Delete
             </Button>
-            <Button onClick={() => setIsDeleteModalOpen(false)} className="flex-1 bg-gray-500 hover:bg-gray-600">
+            <Button
+              onClick={() => setIsDeleteModalOpen(false)}
+              className="flex-1 bg-gray-500 hover:bg-gray-600"
+            >
               Cancel
             </Button>
           </div>
         </div>
       </Modal>
     </div>
-  )
+  );
 }
