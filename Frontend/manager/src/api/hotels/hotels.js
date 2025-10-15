@@ -98,3 +98,13 @@ export const getHotelsAPI = async () => {
     throw error;
   }
 };
+
+export const getHotelDetailsAPI = async (id) => {
+  try {
+    const response = await axiosClient.get(`${URL_BASE}/${id}/details`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error fetching hotel details (id: ${id}):`, error);
+    throw error;
+  }
+};

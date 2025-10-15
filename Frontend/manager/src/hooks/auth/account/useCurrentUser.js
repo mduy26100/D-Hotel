@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import { getCurrentUser } from "../../../api/auth/account";
 import { getUser, setUser } from "../../../utils/localStorage";
 
+let cachedUser = null; // client-side cache
+
 export const useCurrentUser = () => {
-  const [user, setUserState] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [user, setUserState] = useState(cachedUser || getUser());
+  const [loading, setLoading] = useState(!cachedUser);
 
   const fetchUser = async () => {
     try {
-      const cachedUser = getUser();
       if (cachedUser) {
         setUserState(cachedUser);
       }
@@ -16,6 +17,7 @@ export const useCurrentUser = () => {
       const userData = await getCurrentUser();
 
       if (userData) {
+        cachedUser = userData;
         setUser(userData);
         setUserState(userData);
       }
@@ -27,7 +29,9 @@ export const useCurrentUser = () => {
   };
 
   useEffect(() => {
-    fetchUser();
+    if (!cachedUser) {
+      fetchUser();
+    }
   }, []);
 
   return { user, setUser: setUserState, loading, refreshUser: fetchUser };

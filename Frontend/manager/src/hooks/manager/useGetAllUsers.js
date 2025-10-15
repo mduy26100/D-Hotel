@@ -1,16 +1,24 @@
 import { useState, useEffect, useCallback } from "react";
 import { getAllUsersAPI } from "../../api/manager/managerUsers";
 
+const cachedUsers = {}; // key = role, value = users array
+
 export const useGetAllUsers = (role = null) => {
-  const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [users, setUsers] = useState(cachedUsers[role] || []);
+  const [loading, setLoading] = useState(!cachedUsers[role]);
   const [error, setError] = useState(null);
 
   const fetchUsers = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
+      // Nếu có cache, set ngay
+      if (cachedUsers[role]) {
+        setUsers(cachedUsers[role]);
+      }
+
       const data = await getAllUsersAPI(role);
+      cachedUsers[role] = data; // lưu cache
       setUsers(data);
     } catch (err) {
       setError(err);
@@ -20,8 +28,10 @@ export const useGetAllUsers = (role = null) => {
   }, [role]);
 
   useEffect(() => {
-    fetchUsers();
-  }, [fetchUsers]);
+    if (!cachedUsers[role]) {
+      fetchUsers();
+    }
+  }, [fetchUsers, role]);
 
   return {
     users,

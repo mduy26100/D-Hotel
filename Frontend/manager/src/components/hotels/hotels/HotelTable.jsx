@@ -1,9 +1,10 @@
+// HotelTable.jsx
 import React, { useState, useMemo } from "react";
 import { PencilIcon, TrashIcon, ChevronLeft, ChevronRight } from "lucide-react";
 
-const HotelTable = ({ hotels, onEdit, onDelete }) => {
+const HotelTable = ({ hotels, onEdit, onDelete, onViewDetails }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
+  const [pageSize, setPageSize] = useState(5);
 
   const totalPages = Math.ceil((hotels?.length || 0) / pageSize);
 
@@ -63,9 +64,17 @@ const HotelTable = ({ hotels, onEdit, onDelete }) => {
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     {(currentPage - 1) * pageSize + index + 1}
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                    {hotel.name}
+
+                  {/* Clickable hotel name */}
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <button
+                      onClick={() => onViewDetails?.(hotel.id)}
+                      className="text-indigo-600 hover:text-indigo-800 underline transition-colors"
+                    >
+                      {hotel.name}
+                    </button>
                   </td>
+
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                     {hotel.categoryId}
                   </td>
@@ -83,17 +92,18 @@ const HotelTable = ({ hotels, onEdit, onDelete }) => {
                       {hotel.isActive ? "Active" : "Inactive"}
                     </span>
                   </td>
+
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
                     <div className="flex gap-2">
                       <button
                         onClick={() => onEdit(hotel)}
-                        className="text-indigo-600 hover:text-indigo-900 transition-colors"
+                        className="text-indigo-600 hover:text-indigo-900"
                       >
                         <PencilIcon size={18} />
                       </button>
                       <button
                         onClick={() => onDelete(hotel)}
-                        className="text-red-600 hover:text-red-900 transition-colors"
+                        className="text-red-600 hover:text-red-900"
                       >
                         <TrashIcon size={18} />
                       </button>
@@ -115,6 +125,7 @@ const HotelTable = ({ hotels, onEdit, onDelete }) => {
         </table>
       </div>
 
+      {/* Pagination controls */}
       {hotels?.length > 0 && (
         <div className="flex flex-col sm:flex-row justify-between items-center px-6 py-4 bg-gray-50 border-t border-gray-200 gap-3">
           <div className="flex items-center gap-2 text-sm text-gray-600">
@@ -127,7 +138,6 @@ const HotelTable = ({ hotels, onEdit, onDelete }) => {
               <option value="5">5</option>
               <option value="10">10</option>
               <option value="15">15</option>
-              <option value="20">20</option>
             </select>
             <span>per page (Total {hotels.length} hotels)</span>
           </div>
