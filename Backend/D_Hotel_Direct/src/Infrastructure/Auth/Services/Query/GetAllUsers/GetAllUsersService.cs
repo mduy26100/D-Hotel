@@ -22,13 +22,11 @@ namespace Infrastructure.Auth.Services.Query.GetAllUsers
             {
                 var roles = await _userManager.GetRolesAsync(user);
 
-                // Nếu muốn luôn bỏ qua Manager, vẫn giữ điều kiện này
                 if (roles.Contains(Roles.Manager, StringComparer.OrdinalIgnoreCase))
                 {
                     continue;
                 }
 
-                // Nếu role truyền vào != null, chỉ lấy user có role đó
                 if (!string.IsNullOrEmpty(role) && !roles.Contains(role, StringComparer.OrdinalIgnoreCase))
                 {
                     continue;

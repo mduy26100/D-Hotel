@@ -1,4 +1,5 @@
-﻿using Application.Features.Hotels.DTOs;
+﻿using Application.Features.Auth.Services.Query.CurrentUser;
+using Application.Features.Hotels.DTOs;
 using Application.Features.Hotels.Interfaces.Services.Query.GetHotelDetail;
 using Application.Features.Hotels.Repositories;
 using Application.Features.Places.DTOs;
@@ -17,6 +18,7 @@ namespace Application.Features.Hotels.Services.Query.GetHotelDetail
         private readonly IUtilityItemRepository _utilityItemRepository;
         private readonly IHotelLocationsRepository _hotelLocationsRepository;
         private readonly ILocationsRepository _locationsRepository;
+        private readonly ICurrentUserService _currentUserService;
 
         public GetHotelDetailService(
             IHotelRepository hotelRepository,
@@ -25,7 +27,8 @@ namespace Application.Features.Hotels.Services.Query.GetHotelDetail
             IUtilityRepository utilityRepository,
             IUtilityItemRepository utilityItemRepository,
             IHotelLocationsRepository hotelLocationsRepository,
-            ILocationsRepository locationsRepository)
+            ILocationsRepository locationsRepository,
+            ICurrentUserService currentUserService)
         {
             _hotelRepository = hotelRepository;
             _hotelUtilityRepository = hotelUtilityRepository;
@@ -34,6 +37,7 @@ namespace Application.Features.Hotels.Services.Query.GetHotelDetail
             _utilityItemRepository = utilityItemRepository;
             _hotelLocationsRepository = hotelLocationsRepository;
             _locationsRepository = locationsRepository;
+            _currentUserService = currentUserService;
         }
 
         public async Task<HotelDetailDto?> GetHotelDetailAsync(int hotelId, CancellationToken cancellationToken)
@@ -44,14 +48,12 @@ namespace Application.Features.Hotels.Services.Query.GetHotelDetail
 
             var category = await _hotelCategoryRepository.GetByIdAsync(hotel.CategoryId, cancellationToken);
 
-            // 🔹 Lấy danh sách utility của khách sạn
             var hotelUtilities = await _hotelUtilityRepository.FindAsync(h => h.HotelId == hotelId, cancellationToken);
             var utilityIds = hotelUtilities.Select(hu => hu.UtilityId).Distinct().ToList();
 
             var utilities = await _utilityRepository.GetManyByIdsAsync(utilityIds, cancellationToken);
             var utilityItems = await _utilityItemRepository.GetByUtilityIdListAsync(utilityIds, cancellationToken);
 
-            // 🔹 Nhóm lại theo UtilityId, giờ map sang UtilityItemDto thay vì string
             var groupedItems = utilityItems
                 .GroupBy(ui => ui.UtilityId)
                 .ToDictionary(
@@ -64,7 +66,6 @@ namespace Application.Features.Hotels.Services.Query.GetHotelDetail
                     }).ToList()
                 );
 
-            // 🔹 Tạo danh sách UtilityDto hoàn chỉnh
             var utilityDtos = utilities.Select(utility => new UtilityDto
             {
                 Id = utility.Id,
@@ -75,7 +76,6 @@ namespace Application.Features.Hotels.Services.Query.GetHotelDetail
                     : new List<UtilityItemDto>()
             }).ToList();
 
-            // 🔹 Lấy location
             LocationsDto? locationDto = null;
             var hotelLocationMapping = await _hotelLocationsRepository.FindOneAsync(h => h.HotelId == hotel.Id, cancellationToken);
             if (hotelLocationMapping != null)
@@ -92,13 +92,17 @@ namespace Application.Features.Hotels.Services.Query.GetHotelDetail
                 }
             }
 
-            // 🔹 Trả về DTO cuối cùng
+            var managerProfile = await _currentUserService.GetCurrentUserAsync(hotel.HotelManagerId, cancellationToken);
+            var hotelManagerName = managerProfile != null
+                ? $"{managerProfile.LastName} {managerProfile.FirstName}"
+                : "Unknown";
+
             return new HotelDetailDto
             {
                 Id = hotel.Id,
                 Name = hotel.Name,
                 Address = hotel.Address,
-                HotelManagerId = hotel.HotelManagerId,
+                HotelManagerName = hotelManagerName,
                 Description = hotel.Description,
                 ImgUrl = hotel.ImgUrl,
                 IsActive = hotel.IsActive,

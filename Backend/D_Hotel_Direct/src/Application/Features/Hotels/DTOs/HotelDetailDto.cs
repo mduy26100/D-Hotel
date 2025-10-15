@@ -8,7 +8,7 @@ namespace Application.Features.Hotels.DTOs
         public int Id { get; set; }
         public required string Name { get; set; }
         public HotelCategoryDto Category { get; set; } = null!;
-        public Guid HotelManagerId { get; set; }
+        public string HotelManagerName { get; set; } = string.Empty;
         public required string Address { get; set; }
         public required string Description { get; set; }
         public required string ImgUrl { get; set; }
