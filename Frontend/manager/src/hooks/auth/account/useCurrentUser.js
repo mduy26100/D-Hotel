@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { getCurrentUser } from "../../api/auth/account";
-import { getUser, setUser } from "../../utils/localStorage";
+import { getCurrentUser } from "../../../api/auth/account";
+import { getUser, setUser } from "../../../utils/localStorage";
 
 export const useCurrentUser = () => {
   const [user, setUserState] = useState(null);

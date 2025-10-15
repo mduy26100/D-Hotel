@@ -4,7 +4,7 @@ import { useState } from "react";
 import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
 import Toast from "../components/ui/Toast";
-import { useLogin } from "../hooks/auth/useLogin";
+import { useLogin } from "../hooks/auth/auth/useLogin";
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });

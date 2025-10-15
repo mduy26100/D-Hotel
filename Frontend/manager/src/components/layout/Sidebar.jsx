@@ -1,5 +1,5 @@
-"use client"
-import { NavLink } from "react-router-dom"
+"use client";
+import { NavLink } from "react-router-dom";
 import {
   HomeIcon,
   CalendarDaysIcon,
@@ -14,18 +14,18 @@ import {
   BriefcaseIcon,
   CubeIcon,
   WrenchScrewdriverIcon,
-} from "@heroicons/react/24/outline"
-import { useState } from "react"
+} from "@heroicons/react/24/outline";
+import { useState } from "react";
 
 const Sidebar = ({ isOpen, onClose, user }) => {
-  const [openSubmenus, setOpenSubmenus] = useState({})
+  const [openSubmenus, setOpenSubmenus] = useState({});
 
   const toggleSubmenu = (name) => {
     setOpenSubmenus((prev) => ({
       ...prev,
       [name]: !prev[name],
-    }))
-  }
+    }));
+  };
 
   const menuItems = [
     { name: "Dashboard", path: "/dashboard", icon: HomeIcon },
@@ -85,23 +85,39 @@ const Sidebar = ({ isOpen, onClose, user }) => {
       ],
     },
     {
-      name: "Staff",
+      name: "User",
       icon: UsersIcon,
       submenu: [
+        { name: "Users", path: "/users" },
         { name: "Departments", path: "/departments" },
         { name: "Employees", path: "/employees" },
         { name: "Shifts", path: "/shifts" },
       ],
     },
     { name: "Reports", path: "/reports", icon: ChartBarIcon, comingSoon: true },
-    { name: "Analytics", path: "/analytics", icon: ChartPieIcon, comingSoon: true },
-    { name: "Chat", path: "/chat", icon: ChatBubbleLeftRightIcon, comingSoon: true },
-  ]
+    {
+      name: "Analytics",
+      path: "/analytics",
+      icon: ChartPieIcon,
+      comingSoon: true,
+    },
+    {
+      name: "Chat",
+      path: "/chat",
+      icon: ChatBubbleLeftRightIcon,
+      comingSoon: true,
+    },
+  ];
 
   return (
     <>
       {/* Mobile Overlay */}
-      {isOpen && <div className="fixed inset-0 bg-black/50 z-40 lg:hidden" onClick={onClose} />}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          onClick={onClose}
+        />
+      )}
 
       {/* Sidebar */}
       <aside
@@ -113,7 +129,12 @@ const Sidebar = ({ isOpen, onClose, user }) => {
         <div className="h-16 flex items-center justify-between px-4 border-b border-gray-200 flex-shrink-0">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg
+                className="w-6 h-6 text-white"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -122,9 +143,14 @@ const Sidebar = ({ isOpen, onClose, user }) => {
                 />
               </svg>
             </div>
-            <span className="font-bold text-xl text-primary md:hidden lg:block">Hotel Admin</span>
+            <span className="font-bold text-xl text-primary md:hidden lg:block">
+              Hotel Admin
+            </span>
           </div>
-          <button onClick={onClose} className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors">
+          <button
+            onClick={onClose}
+            className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+          >
             <XMarkIcon className="w-6 h-6" />
           </button>
         </div>
@@ -134,7 +160,10 @@ const Sidebar = ({ isOpen, onClose, user }) => {
           <div className="p-4 border-b border-gray-200 flex-shrink-0">
             <div className="flex items-center gap-3">
               <img
-                src={user.avatarUrl || "/placeholder.svg?height=40&width=40&query=user+avatar"}
+                src={
+                  user.avatarUrl ||
+                  "/placeholder.svg?height=40&width=40&query=user+avatar"
+                }
                 alt={user.firstName}
                 className="w-10 h-10 rounded-full object-cover flex-shrink-0"
               />
@@ -160,7 +189,9 @@ const Sidebar = ({ isOpen, onClose, user }) => {
                       className="w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 text-gray-700 hover:bg-gray-100"
                     >
                       <item.icon className="w-6 h-6 flex-shrink-0" />
-                      <span className="md:hidden lg:block font-medium flex-1 text-left">{item.name}</span>
+                      <span className="md:hidden lg:block font-medium flex-1 text-left">
+                        {item.name}
+                      </span>
                       <svg
                         className={`w-4 h-4 md:hidden lg:block transition-transform ${
                           openSubmenus[item.name] ? "rotate-180" : ""
@@ -169,7 +200,12 @@ const Sidebar = ({ isOpen, onClose, user }) => {
                         stroke="currentColor"
                         viewBox="0 0 24 24"
                       >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M19 9l-7 7-7-7"
+                        />
                       </svg>
                     </button>
                     {openSubmenus[item.name] && (
@@ -180,7 +216,9 @@ const Sidebar = ({ isOpen, onClose, user }) => {
                               to={subItem.path}
                               className={({ isActive }) =>
                                 `flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-200 text-sm ${
-                                  isActive ? "bg-primary/10 text-primary font-medium" : "text-gray-600 hover:bg-gray-50"
+                                  isActive
+                                    ? "bg-primary/10 text-primary font-medium"
+                                    : "text-gray-600 hover:bg-gray-50"
                                 }`
                               }
                             >
@@ -197,17 +235,23 @@ const Sidebar = ({ isOpen, onClose, user }) => {
                     to={item.path}
                     className={({ isActive }) =>
                       `flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 group ${
-                        isActive ? "bg-primary text-white" : "text-gray-700 hover:bg-gray-100"
-                      } ${item.comingSoon ? "cursor-not-allowed opacity-60" : ""}`
+                        isActive
+                          ? "bg-primary text-white"
+                          : "text-gray-700 hover:bg-gray-100"
+                      } ${
+                        item.comingSoon ? "cursor-not-allowed opacity-60" : ""
+                      }`
                     }
                     onClick={(e) => {
                       if (item.comingSoon) {
-                        e.preventDefault()
+                        e.preventDefault();
                       }
                     }}
                   >
                     <item.icon className="w-6 h-6 flex-shrink-0" />
-                    <span className="md:hidden lg:block font-medium">{item.name}</span>
+                    <span className="md:hidden lg:block font-medium">
+                      {item.name}
+                    </span>
                     {item.comingSoon && (
                       <span className="md:hidden lg:block ml-auto text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded">
                         Soon
@@ -221,7 +265,7 @@ const Sidebar = ({ isOpen, onClose, user }) => {
         </nav>
       </aside>
     </>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { loginAPI } from "../../api/auth/auth";
-import { setToken, setUser } from "../../utils/localStorage";
-import { getRolesFromToken } from "../../utils/jwtDecode";
+import { loginAPI } from "../../../api/auth/auth";
+import { setToken, setUser } from "../../../utils/localStorage";
+import { getRolesFromToken } from "../../../utils/jwtDecode";
 
 export const useLogin = () => {
   const navigate = useNavigate();

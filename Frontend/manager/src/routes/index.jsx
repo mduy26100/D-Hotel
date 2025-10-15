@@ -36,10 +36,11 @@ import Discounts from "../pages/Revenue/Discounts";
 import Invoices from "../pages/Revenue/Invoices";
 import Payments from "../pages/Revenue/Payments";
 
-import Departments from "../pages/Staff/Departments";
-import Employees from "../pages/Staff/Employees";
-import Shifts from "../pages/Staff/Shifts";
+import Departments from "../pages/Users/Departments";
+import Employees from "../pages/Users/Employees";
+import Shifts from "../pages/Users/Shifts";
 import ErrorPage from "../pages/Error/ErrorPage";
+import Users from "../pages/Users/Users";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -95,10 +96,11 @@ const router = createBrowserRouter(
         <Route path="invoices" element={<Invoices />} />
         <Route path="payments" element={<Payments />} />
 
-        {/* Employee & Department */}
+        {/* User */}
         <Route path="departments" element={<Departments />} />
         <Route path="employees" element={<Employees />} />
         <Route path="shifts" element={<Shifts />} />
+        <Route path="users" element={<Users />} />
       </Route>
     </>
   )
