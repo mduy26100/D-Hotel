@@ -3,5 +3,6 @@
     public interface ICurrentUserContext
     {
         Guid UserId { get; }
+        IEnumerable<string> Roles { get; }
     }
 }

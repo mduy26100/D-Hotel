@@ -21,5 +21,16 @@ namespace Infrastructure.Common.Shared
                 return Guid.TryParse(userIdStr, out var userId) ? userId : Guid.Empty;
             }
         }
+
+        public IEnumerable<string> Roles
+        {
+            get
+            {
+                return _httpContextAccessor.HttpContext?.User?
+                    .FindAll(ClaimTypes.Role)
+                    .Select(r => r.Value)
+                    ?? Enumerable.Empty<string>();
+            }
+        }
     }
 }
