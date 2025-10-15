@@ -24,7 +24,7 @@ namespace Application.Features.Auth.Queries.GetAllUsers
 
             try
             {
-                var users = await _getAllUsersService.GetAllUsersAsync(cancellationToken);
+                var users = await _getAllUsersService.GetAllUsersAsync(request.Role ,cancellationToken);
                 _logger.LogInformation($"[GetAllUsers] Retrieved {users.Count()} users");
                 return users;
             }

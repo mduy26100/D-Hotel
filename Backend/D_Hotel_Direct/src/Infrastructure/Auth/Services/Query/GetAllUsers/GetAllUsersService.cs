@@ -12,7 +12,7 @@ namespace Infrastructure.Auth.Services.Query.GetAllUsers
             _userManager = userManager;
         }
 
-        public async Task<IEnumerable<UserProfileDto>> GetAllUsersAsync(CancellationToken cancellationToken = default)
+        public async Task<IEnumerable<UserProfileDto>> GetAllUsersAsync(string? role = null, CancellationToken cancellationToken = default)
         {
             var users = await _userManager.Users.ToListAsync(cancellationToken);
 
@@ -22,7 +22,14 @@ namespace Infrastructure.Auth.Services.Query.GetAllUsers
             {
                 var roles = await _userManager.GetRolesAsync(user);
 
-                if(roles.Contains(Roles.Manager, StringComparer.OrdinalIgnoreCase))
+                // Nếu muốn luôn bỏ qua Manager, vẫn giữ điều kiện này
+                if (roles.Contains(Roles.Manager, StringComparer.OrdinalIgnoreCase))
+                {
+                    continue;
+                }
+
+                // Nếu role truyền vào != null, chỉ lấy user có role đó
+                if (!string.IsNullOrEmpty(role) && !roles.Contains(role, StringComparer.OrdinalIgnoreCase))
                 {
                     continue;
                 }

@@ -3,5 +3,5 @@ using MediatR;
 
 namespace Application.Features.Auth.Queries.GetAllUsers
 {
-    public record GetAllUsersQuery : IRequest<IEnumerable<UserProfileDto>>;
+    public record GetAllUsersQuery(string? Role) : IRequest<IEnumerable<UserProfileDto>>;
 }

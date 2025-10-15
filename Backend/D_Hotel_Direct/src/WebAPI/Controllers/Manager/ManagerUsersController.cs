@@ -18,9 +18,9 @@ namespace WebAPI.Controllers.Manager
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll(CancellationToken cancellationToken)
+        public async Task<IActionResult> GetAll([FromQuery] string? role, CancellationToken cancellationToken)
         {
-            var query = new GetAllUsersQuery();
+            var query = new GetAllUsersQuery(role);
             var allUsers = await _mediator.Send(query, cancellationToken);
 
             if (allUsers == null || !allUsers.Any())
