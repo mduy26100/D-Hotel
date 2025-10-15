@@ -6,8 +6,6 @@ namespace Application.Features.Auth.Commands.UpdateProfile
     {
         public UpdateProfileCommandValidator()
         {
-            RuleFor(x => x.Dto.Id)
-                .NotEmpty().WithMessage("User ID is required.");
 
             RuleFor(x => x.Dto.FirstName)
                 .MaximumLength(50).WithMessage("First name must be at most 50 characters.");

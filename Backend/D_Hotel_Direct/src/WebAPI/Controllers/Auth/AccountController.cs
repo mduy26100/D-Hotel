@@ -30,7 +30,6 @@ namespace WebAPI.Controllers.Auth
         [HttpPut("profile")]
         [Consumes("multipart/form-data")]
         public async Task<IActionResult> UpdateProfile(
-            [FromForm] Guid id,
             [FromForm] string? firstName,
             [FromForm] string? lastName,
             [FromForm] string? phoneNumber,
@@ -40,7 +39,6 @@ namespace WebAPI.Controllers.Auth
         {
             var dto = new UpdateProfileDto
             {
-                Id = id,
                 FirstName = firstName,
                 LastName = lastName,
                 PhoneNumber = phoneNumber,

@@ -8,13 +8,17 @@ namespace Application.Features.Auth.Commands.UpdateProfile
     {
         private readonly IUpdateProfileService _updateProfileService;
         private readonly ILoggingService<UpdateProfileCommandHandler> _logger;
+        private readonly ICurrentUserContext _currentUserContext;
+
 
         public UpdateProfileCommandHandler(
             IUpdateProfileService updateProfileService,
-            ILoggingService<UpdateProfileCommandHandler> logger)
+            ILoggingService<UpdateProfileCommandHandler> logger,
+            ICurrentUserContext currentUserContext)
         {
             _updateProfileService = updateProfileService;
             _logger = logger;
+            _currentUserContext = currentUserContext;
         }
 
         public async Task<Unit> Handle(UpdateProfileCommand request, CancellationToken cancellationToken)
@@ -23,6 +27,7 @@ namespace Application.Features.Auth.Commands.UpdateProfile
 
             try
             {
+                request.Dto.Id = _currentUserContext.UserId;
                 await _updateProfileService.UpdateProfileAsync(request.Dto, cancellationToken);
                 _logger.LogInformation($"[UpdateProfile] Update profile successful for userId: {request.Dto.Id}");
             }
