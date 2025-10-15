@@ -27,7 +27,7 @@ const HotelDetailsModal = ({ id, isOpen, onClose }) => {
         width={900}
         centered
         destroyOnClose
-        bodyStyle={{
+        styles={{
           background: "#fafafa",
           padding: "2rem 2.5rem",
           borderRadius: "1rem",
@@ -120,10 +120,10 @@ const HotelDetailsModal = ({ id, isOpen, onClose }) => {
                     <User size={20} className="text-purple-600" />
                   </div>
                   <h4 className="text-sm text-gray-500 mb-1 font-medium">
-                    Manager ID
+                    Manager
                   </h4>
                   <span className="text-sm font-medium text-gray-700 break-all">
-                    {hotel?.hotelManagerId}
+                    {hotel?.hotelManagerName}
                   </span>
                 </div>
               </section>

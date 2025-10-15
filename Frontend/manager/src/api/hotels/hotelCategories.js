@@ -78,3 +78,13 @@ export const getHotelCategoriesAPI = async () => {
     throw error;
   }
 };
+
+export const getHotelCategoryByIdAPI = async (id) => {
+  try {
+    const response = await axiosClient.get(`${URL_BASE}/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error fetching hotel category with id ${id}:`, error);
+    throw error;
+  }
+};
