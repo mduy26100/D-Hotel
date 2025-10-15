@@ -27,6 +27,7 @@ namespace Infrastructure.Auth.Services.Query.CurrentUser
                 Id = user.Id,
                 UserName = user.UserName,
                 Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 AvatarUrl = user.AvatarUrl,
