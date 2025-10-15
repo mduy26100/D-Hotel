@@ -24,7 +24,7 @@ namespace Application.Features.Auth.Queries.CurrentUser
 
         public async Task<UserProfileDto> Handle(CurrentUserQuery request, CancellationToken cancellationToken)
         {
-            var userId = _currentUserContext.UserId;
+            var userId = request.UserId ?? _currentUserContext.UserId;
             _logger.LogInformation($"[CurrentUser] Fetching user with UserId: {userId}");
 
             var user = await _currentUserService.GetCurrentUserAsync(userId, cancellationToken);

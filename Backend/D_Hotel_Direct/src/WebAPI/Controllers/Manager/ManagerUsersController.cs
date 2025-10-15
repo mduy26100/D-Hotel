@@ -1,4 +1,5 @@
-﻿using Application.Features.Auth.Queries.GetAllUsers;
+﻿using Application.Features.Auth.Queries.CurrentUser;
+using Application.Features.Auth.Queries.GetAllUsers;
 using Domain.Consts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -29,6 +30,13 @@ namespace WebAPI.Controllers.Manager
             }
 
             return Ok(allUsers);
+        }
+
+        [HttpGet("{id:guid}")]
+        public async Task<IActionResult> GetUserById(Guid id, CancellationToken cancellationToken)
+        {
+            var user = await _mediator.Send(new CurrentUserQuery(id), cancellationToken);
+            return user == null ? NotFound("User not found.") : Ok(user);
         }
     }
 }

@@ -3,5 +3,5 @@ using MediatR;
 
 namespace Application.Features.Auth.Queries.CurrentUser
 {
-    public record CurrentUserQuery() : IRequest<UserProfileDto>;
+    public record CurrentUserQuery(Guid? UserId = null) : IRequest<UserProfileDto>;
 }
