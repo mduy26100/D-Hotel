@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250821092102_AddLocationsAndHotelLocations")]
-    partial class AddLocationsAndHotelLocations
+    [Migration("20251016102040_FixHotelLocations")]
+    partial class FixHotelLocations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -226,6 +226,35 @@ namespace Infrastructure.Data.Migrations
                     b.ToTable("HotelCategories", (string)null);
                 });
 
+            modelBuilder.Entity("Domain.Models.Hotels.HotelStaff", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("HotelId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HotelId");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("HotelStaffs", (string)null);
+                });
+
             modelBuilder.Entity("Domain.Models.Places.HotelLocations", b =>
                 {
                     b.Property<int>("HotelId")
@@ -235,8 +264,6 @@ namespace Infrastructure.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("HotelId", "LocationId");
-
-                    b.HasIndex("LocationId");
 
                     b.ToTable("HotelLocations", (string)null);
                 });
@@ -777,15 +804,6 @@ namespace Infrastructure.Data.Migrations
                         .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Domain.Models.Places.HotelLocations", b =>
-                {
-                    b.HasOne("Domain.Models.Places.Locations", null)
-                        .WithMany()
-                        .HasForeignKey("LocationId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 

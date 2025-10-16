@@ -262,8 +262,6 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasKey("HotelId", "LocationId");
 
-                    b.HasIndex("LocationId");
-
                     b.ToTable("HotelLocations", (string)null);
                 });
 
@@ -803,15 +801,6 @@ namespace Infrastructure.Data.Migrations
                         .WithMany()
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Domain.Models.Places.HotelLocations", b =>
-                {
-                    b.HasOne("Domain.Models.Places.Locations", null)
-                        .WithMany()
-                        .HasForeignKey("LocationId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 

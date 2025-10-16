@@ -1,5 +1,4 @@
-﻿using Application.Common.Interfaces.Persistence.EFCore;
-using Application.Features.Places.DTOs;
+﻿using Application.Features.Places.DTOs;
 using Application.Features.Places.Interfaces.Services.Command.UpdateHotelLocation;
 using Application.Features.Places.Repositories;
 using AutoMapper;
@@ -24,10 +23,23 @@ namespace Application.Features.Places.Services.Command.UpdateHotelLocation
 
         public async Task UpdateAsync(HotelLocationsDto hotelLocationsDto, CancellationToken cancellationToken = default)
         {
-            var entity = _mapper.Map<HotelLocations>(hotelLocationsDto);
-            _hotelLocationsRepository.Update(entity);
-            await _context.SaveChangesAsync(cancellationToken);
-            await Task.CompletedTask;
+            var oldEntity = await _hotelLocationsRepository
+                .FindOneAsync(h => h.HotelId == hotelLocationsDto.HotelId, cancellationToken);
+
+            if (oldEntity != null)
+            {
+                _hotelLocationsRepository.Remove(oldEntity);
+
+                var newEntity = new HotelLocations
+                {
+                    HotelId = hotelLocationsDto.HotelId,
+                    LocationId = hotelLocationsDto.LocationId
+                };
+                await _hotelLocationsRepository.AddAsync(newEntity);
+
+                await _context.SaveChangesAsync(cancellationToken);
+            }
         }
+
     }
 }

@@ -10,10 +10,11 @@ namespace Infrastructure.Data.Configurations.Places
 
             builder.HasKey(hl => new { hl.HotelId, hl.LocationId });
 
-            builder.HasOne<Locations>()
-                   .WithMany()
-                   .HasForeignKey(hl => hl.LocationId)
-                   .OnDelete(DeleteBehavior.Cascade);
+            builder.Property(hl => hl.HotelId)
+                .IsRequired();
+
+            builder.Property(hl => hl.LocationId)
+                .IsRequired();
         }
     }
 }
