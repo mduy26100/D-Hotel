@@ -27,11 +27,6 @@ const HotelDetailsModal = ({ id, isOpen, onClose }) => {
         width={900}
         centered
         destroyOnClose
-        styles={{
-          background: "#fafafa",
-          padding: "2rem 2.5rem",
-          borderRadius: "1rem",
-        }}
         title={
           hotel && (
             <div className="flex items-center justify-between">
@@ -64,130 +59,138 @@ const HotelDetailsModal = ({ id, isOpen, onClose }) => {
             </div>
           )
         }
+        styles={{
+          body: {
+            padding: 0,
+          },
+        }}
       >
-        {loading ? (
-          <div className="flex justify-center items-center py-12">
-            <Spin size="large" />
-          </div>
-        ) : error ? (
-          <div className="text-center text-red-500 py-8 font-medium">
-            Failed to load hotel details.
-          </div>
-        ) : (
-          hotel && (
-            <div className="space-y-8">
-              {/* Description */}
-              <section className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
-                <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-800 mb-3">
-                  <Info size={18} /> Description
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {hotel?.description || "No description available."}
-                </p>
-              </section>
-
-              {/* Info grid */}
-              <section className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-                {/* Category */}
-                <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex flex-col justify-center text-center">
-                  <div className="mx-auto mb-2 p-2 bg-blue-50 rounded-lg">
-                    <Layers size={20} className="text-blue-600" />
-                  </div>
-                  <h4 className="text-sm text-gray-500 mb-1 font-medium">
-                    Category
-                  </h4>
-                  <span className="text-base font-semibold text-gray-700">
-                    {hotel?.category?.name || "Unknown"}
-                  </span>
-                </div>
-
-                {/* Location */}
-                <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex flex-col justify-center text-center">
-                  <div className="mx-auto mb-2 p-2 bg-pink-50 rounded-lg">
-                    <MapPin size={20} className="text-pink-600" />
-                  </div>
-                  <h4 className="text-sm text-gray-500 mb-1 font-medium">
-                    Location
-                  </h4>
-                  <span className="text-base font-semibold text-gray-700">
-                    {hotel?.location?.name || "Unknown"}
-                  </span>
-                </div>
-
-                {/* Manager */}
-                <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex flex-col justify-center text-center">
-                  <div className="mx-auto mb-2 p-2 bg-purple-50 rounded-lg">
-                    <User size={20} className="text-purple-600" />
-                  </div>
-                  <h4 className="text-sm text-gray-500 mb-1 font-medium">
-                    Manager
-                  </h4>
-                  <span className="text-sm font-medium text-gray-700 break-all">
-                    {hotel?.hotelManagerName}
-                  </span>
-                </div>
-              </section>
-
-              <Divider className="!my-2" />
-
-              {/* Utilities */}
-              <section>
-                <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-800 mb-4">
-                  <Sparkles size={18} className="text-yellow-500" /> Utilities
-                </h3>
-
-                {hotel?.utilities?.length > 0 ? (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    {hotel.utilities.map((utility) => (
-                      <div
-                        key={utility.id}
-                        className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all"
-                      >
-                        <div className="flex items-center gap-3 mb-3">
-                          {utility.iconUrl && (
-                            <img
-                              src={utility.iconUrl}
-                              alt={utility.name}
-                              className="w-12 h-12 rounded-lg object-cover border border-gray-200"
-                            />
-                          )}
-                          <h4 className="text-gray-800 font-semibold text-base">
-                            {utility.name}
-                          </h4>
-                        </div>
-                        <div className="flex flex-wrap gap-2">
-                          {utility.utilityItems?.map((item) => (
-                            <Tag
-                              key={item.id}
-                              color="purple"
-                              className="rounded-lg px-3 py-1 text-sm"
-                            >
-                              {item.name}
-                            </Tag>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="text-center text-gray-500 py-8 bg-gray-50 rounded-2xl border border-dashed border-gray-200">
-                    No utilities found.
-                  </div>
-                )}
-
-                {/* Button mở Add Utilities Modal */}
-                <div className="mt-6 text-right">
-                  <Button
-                    type="primary"
-                    onClick={() => setIsAddModalOpen(true)}
-                  >
-                    Add Utilities
-                  </Button>
-                </div>
-              </section>
+        {/* Toàn bộ nội dung có thể scroll */}
+        <div className="max-h-[80vh] overflow-y-auto px-10 py-8 bg-[#fafafa] rounded-2xl space-y-8">
+          {loading ? (
+            <div className="flex justify-center items-center py-12">
+              <Spin size="large" />
             </div>
-          )
-        )}
+          ) : error ? (
+            <div className="text-center text-red-500 py-8 font-medium">
+              Failed to load hotel details.
+            </div>
+          ) : (
+            hotel && (
+              <>
+                {/* Description */}
+                <section className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                  <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-800 mb-3">
+                    <Info size={18} /> Description
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    {hotel?.description || "No description available."}
+                  </p>
+                </section>
+
+                {/* Info grid */}
+                <section className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                  {/* Category */}
+                  <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex flex-col justify-center text-center">
+                    <div className="mx-auto mb-2 p-2 bg-blue-50 rounded-lg">
+                      <Layers size={20} className="text-blue-600" />
+                    </div>
+                    <h4 className="text-sm text-gray-500 mb-1 font-medium">
+                      Category
+                    </h4>
+                    <span className="text-base font-semibold text-gray-700">
+                      {hotel?.category?.name || "Unknown"}
+                    </span>
+                  </div>
+
+                  {/* Location */}
+                  <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex flex-col justify-center text-center">
+                    <div className="mx-auto mb-2 p-2 bg-pink-50 rounded-lg">
+                      <MapPin size={20} className="text-pink-600" />
+                    </div>
+                    <h4 className="text-sm text-gray-500 mb-1 font-medium">
+                      Location
+                    </h4>
+                    <span className="text-base font-semibold text-gray-700">
+                      {hotel?.location?.name || "Unknown"}
+                    </span>
+                  </div>
+
+                  {/* Manager */}
+                  <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex flex-col justify-center text-center">
+                    <div className="mx-auto mb-2 p-2 bg-purple-50 rounded-lg">
+                      <User size={20} className="text-purple-600" />
+                    </div>
+                    <h4 className="text-sm text-gray-500 mb-1 font-medium">
+                      Manager
+                    </h4>
+                    <span className="text-sm font-medium text-gray-700 break-all">
+                      {hotel?.hotelManagerName}
+                    </span>
+                  </div>
+                </section>
+
+                <Divider className="!my-2" />
+
+                {/* Utilities */}
+                <section>
+                  <h3 className="flex items-center gap-2 text-lg font-semibold text-gray-800 mb-4">
+                    <Sparkles size={18} className="text-yellow-500" /> Utilities
+                  </h3>
+
+                  {hotel?.utilities?.length > 0 ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                      {hotel.utilities.map((utility) => (
+                        <div
+                          key={utility.id}
+                          className="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all"
+                        >
+                          <div className="flex items-center gap-3 mb-3">
+                            {utility.iconUrl && (
+                              <img
+                                src={utility.iconUrl}
+                                alt={utility.name}
+                                className="w-12 h-12 rounded-lg object-cover border border-gray-200"
+                              />
+                            )}
+                            <h4 className="text-gray-800 font-semibold text-base">
+                              {utility.name}
+                            </h4>
+                          </div>
+                          <div className="flex flex-wrap gap-2">
+                            {utility.utilityItems?.map((item) => (
+                              <Tag
+                                key={item.id}
+                                color="purple"
+                                className="rounded-lg px-3 py-1 text-sm"
+                              >
+                                {item.name}
+                              </Tag>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="text-center text-gray-500 py-8 bg-gray-50 rounded-2xl border border-dashed border-gray-200">
+                      No utilities found.
+                    </div>
+                  )}
+
+                  {/* Add Utilities Button */}
+                  <div className="mt-6 text-right">
+                    <Button
+                      type="primary"
+                      onClick={() => setIsAddModalOpen(true)}
+                    >
+                      Add Utilities
+                    </Button>
+                  </div>
+                </section>
+              </>
+            )
+          )}
+        </div>
       </Modal>
 
       {hotel && (
