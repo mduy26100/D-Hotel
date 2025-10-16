@@ -1,7 +1,6 @@
 ﻿using Application.Features.Places.Commands.CreateHotelLocation;
-using Application.Features.Places.Commands.DeleteLocation;
+using Application.Features.Places.Commands.DeleteHotelLocation;
 using Application.Features.Places.Commands.UpdateHotelLocation;
-using Application.Features.Places.DTOs;
 using Application.Features.Places.Queries.GetHotelLocationByHotelId;
 using Application.Features.Places.Queries.GetHotelLocationByLocationId;
 using Microsoft.AspNetCore.Mvc;
@@ -19,20 +18,19 @@ namespace WebAPI.Controllers.Places
             _mediator = mediator;
         }
 
-        [HttpPost("create-hotel-location")]
-        public async Task<ActionResult> CreateHotelLocation([FromBody] CreateHotelLocationCommand command, CancellationToken cancellationToken)
+        [HttpPost]
+        public async Task<ActionResult> CreateHotelLocation(
+            [FromBody] CreateHotelLocationCommand command,
+            CancellationToken cancellationToken)
         {
             if (command.dto == null || command.dto.LocationId <= 0)
-            {
                 return BadRequest("Invalid location data.");
-            }
 
             var result = await _mediator.Send(command, cancellationToken);
-            //return CreatedAtAction(nameof(GetLocationById), new { id = result.LocationId }, result);
-            return Ok(result);
+            return CreatedAtAction(nameof(GetHotelLocationById), new { id = result.LocationId }, result);
         }
 
-        [HttpPut("update-hotel-location")]
+        [HttpPut("{locationId:int}")]
         public async Task<ActionResult> UpdateHotelLocation(int locationId, [FromBody] UpdateHotelLocationCommand command, CancellationToken cancellationToken)
         {
             if (command.dto == null || command.dto.LocationId <= 0 || command.dto.LocationId != locationId)
@@ -43,26 +41,21 @@ namespace WebAPI.Controllers.Places
             return NoContent();
         }
 
-        [HttpDelete("delete-hotel-location")]
-        public async Task<ActionResult> DeleteHotelLocation(int locationId, CancellationToken cancellationToken)
+        [HttpDelete]
+        public async Task<ActionResult> DeleteHotelLocation(DeleteHotelLocationCommand command, CancellationToken cancellationToken)
         {
-            if (locationId <= 0)
-            {
-                return BadRequest("Invalid location ID.");
-            }
-            var command = new DeleteLocationCommand(new LocationsDto { Id = locationId });
             await _mediator.Send(command, cancellationToken);
             return NoContent();
         }
 
-        [HttpGet("get-hotel-location-by-locationId")]
-        public async Task<ActionResult> GetHotelLocationById([FromQuery] int locationId, CancellationToken cancellationToken)
+        [HttpGet("{id:int}")]
+        public async Task<ActionResult> GetHotelLocationById(int id, CancellationToken cancellationToken)
         {
-            if (locationId <= 0)
+            if (id <= 0)
             {
                 return BadRequest("Invalid location ID.");
             }
-            var query = new GetHotelLocationByLocationIdQuery(locationId);
+            var query = new GetHotelLocationByLocationIdQuery(id);
             var result = await _mediator.Send(query, cancellationToken);
             if (result == null)
             {
@@ -71,19 +64,20 @@ namespace WebAPI.Controllers.Places
             return Ok(result);
         }
 
-        [HttpGet("get-hotel-location-by-hotelId")]
-        public async Task<ActionResult> GetHotelLocationByHotelId([FromQuery] int hotelId, CancellationToken cancellationToken)
+        [HttpGet("hotel/{hotelId:int}")]
+        public async Task<ActionResult> GetHotelLocationByHotelId(
+            int hotelId,
+            CancellationToken cancellationToken)
         {
             if (hotelId <= 0)
-            {
                 return BadRequest("Invalid hotel ID.");
-            }
+
             var query = new GetHotelLocationByHotelIdQuery(hotelId);
             var result = await _mediator.Send(query, cancellationToken);
+
             if (result == null)
-            {
                 return NotFound();
-            }
+
             return Ok(result);
         }
     }
