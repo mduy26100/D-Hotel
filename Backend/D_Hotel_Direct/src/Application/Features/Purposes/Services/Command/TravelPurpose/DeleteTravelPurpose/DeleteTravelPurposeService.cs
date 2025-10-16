@@ -25,7 +25,7 @@ namespace Application.Features.Purposes.Services.Command.TravelPurpose.DeleteTra
         public async Task DeleteAsync(TravelPurposeDto travelPurposeDto, CancellationToken cancellationToken = default)
         {
             var entity = _mapper.Map<TravelPurposeEntity>(travelPurposeDto);
-            _travelPurposeRepository.Update(entity);
+            _travelPurposeRepository.Remove(entity);
             await _context.SaveChangesAsync(cancellationToken);
         }
     }
