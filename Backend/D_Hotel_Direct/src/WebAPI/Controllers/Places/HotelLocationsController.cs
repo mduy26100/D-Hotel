@@ -9,11 +9,11 @@ namespace WebAPI.Controllers.Places
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class HotelLocationController : ControllerBase
+    public class HotelLocationsController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public HotelLocationController(IMediator mediator)
+        public HotelLocationsController(IMediator mediator)
         {
             _mediator = mediator;
         }
