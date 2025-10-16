@@ -1,5 +1,4 @@
-﻿using Application.Common.Interfaces.Persistence.EFCore;
-using Application.Features.Purposes.DTOs;
+﻿using Application.Features.Purposes.DTOs;
 using Application.Features.Purposes.Interfaces.Services.Command.HotelTravelPurpose.UpdateHotelTravelPurpose;
 using Application.Features.Purposes.Repositories;
 using AutoMapper;
@@ -24,9 +23,23 @@ namespace Application.Features.Purposes.Services.Command.HotelTravelPurpose.Upda
 
         public async Task UpdateAsync(HotelTravelPurposeDto hotelTravelPurposeDto, CancellationToken cancellationToken = default)
         {
-            var entity = _mapper.Map<HotelTravelPurposeEntity>(hotelTravelPurposeDto);
-            _hotelTravelPurposeRepository.Update(entity);
-            await _context.SaveChangesAsync();
+
+            var oldEntity = await _hotelTravelPurposeRepository
+                .FindOneAsync(rtp => rtp.HotelId == hotelTravelPurposeDto.HotelId, cancellationToken);
+
+            if (oldEntity != null)
+            {
+                _hotelTravelPurposeRepository.Remove(oldEntity);
+
+                var newEntity = new HotelTravelPurposeEntity
+                {
+                    HotelId = hotelTravelPurposeDto.HotelId,
+                    TravelPurposeId = hotelTravelPurposeDto.TravelPurposeId
+                };
+                await _hotelTravelPurposeRepository.AddAsync(newEntity);
+
+                await _context.SaveChangesAsync(cancellationToken);
+            }
         }
     }
 }

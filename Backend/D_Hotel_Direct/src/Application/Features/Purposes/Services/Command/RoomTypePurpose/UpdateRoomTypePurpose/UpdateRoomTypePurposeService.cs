@@ -1,5 +1,4 @@
-﻿using Application.Common.Interfaces.Persistence.EFCore;
-using Application.Features.Purposes.DTOs;
+﻿using Application.Features.Purposes.DTOs;
 using Application.Features.Purposes.Interfaces.Services.Command.RoomTypePurpose.UpdateRoomTypePurpose;
 using Application.Features.Purposes.Repositories;
 using AutoMapper;
@@ -24,9 +23,22 @@ namespace Application.Features.Purposes.Services.Command.RoomTypePurpose.UpdateR
 
         public async Task UpdateAsync(RoomTypePurposeDto roomTypePurposeDto, CancellationToken cancellationToken = default)
         {
-            var entity = _mapper.Map<RoomTypePurposeEnity>(roomTypePurposeDto);
-            _roomTypePurposeRepository.Update(entity);
-            await _context.SaveChangesAsync();
+            var oldEntity = await _roomTypePurposeRepository
+                .FindOneAsync(rtp => rtp.RoomId == roomTypePurposeDto.RoomId, cancellationToken);
+
+            if (oldEntity != null)
+            {
+                _roomTypePurposeRepository.Remove(oldEntity);
+
+                var newEntity = new RoomTypePurposeEnity
+                {
+                    RoomId = roomTypePurposeDto.RoomId,
+                    RoomPurposeId = roomTypePurposeDto.RoomPurposeId
+                };
+                await _roomTypePurposeRepository.AddAsync(newEntity);
+
+                await _context.SaveChangesAsync(cancellationToken);
+            }
         }
     }
 }
