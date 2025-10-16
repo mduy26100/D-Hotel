@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { updateLocationAPI } from "../../../api/places/location";
+import { updateLocationAPI } from "../../../api/places/locations";
 
 export const useUpdateLocation = () => {
   const [loading, setLoading] = useState(false);

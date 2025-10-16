@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAllLocationsAPI } from "../../../api/places/location";
+import { getAllLocationsAPI } from "../../../api/places/locations";
 
 let cachedLocations = null;
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { deleteLocationAPI } from "../../../api/places/location";
+import { deleteLocationAPI } from "../../../api/places/locations";
 
 export const useDeleteLocation = () => {
   const [loading, setLoading] = useState(false);

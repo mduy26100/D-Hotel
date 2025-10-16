@@ -11,10 +11,13 @@ import {
   Button,
   notification,
   Image,
+  Select,
+  Spin,
 } from "antd";
 import { UploadOutlined } from "@ant-design/icons";
 import { useCreateHotel } from "../../../hooks/hotels/hotels/useCreateHotel";
 import { useUpdateHotel } from "../../../hooks/hotels/hotels/useUpdateHotel";
+import { useGetHotelCategories } from "../../../hooks/hotels/hotelCategories/useGetHotelCategories";
 
 const UpsertHotel = ({ isOpen, onClose, hotel, refetch }) => {
   const [form] = Form.useForm();
@@ -24,6 +27,10 @@ const UpsertHotel = ({ isOpen, onClose, hotel, refetch }) => {
 
   const { createHotel, loading: creating } = useCreateHotel();
   const { updateHotel, loading: updating } = useUpdateHotel();
+  const { categories, loading: loadingCategories } = useGetHotelCategories();
+
+  const { Option } = Select;
+
   const isEdit = !!hotel;
 
   // ✨ Load data khi edit
@@ -144,11 +151,24 @@ const UpsertHotel = ({ isOpen, onClose, hotel, refetch }) => {
           </Form.Item>
 
           <Form.Item
-            label="Category ID"
+            label="Category"
             name="categoryId"
-            rules={[{ required: true, message: "Please enter category ID!" }]}
+            rules={[{ required: true, message: "Please select a category!" }]}
           >
-            <InputNumber min={1} style={{ width: "100%" }} />
+            {loadingCategories ? (
+              <Spin />
+            ) : (
+              <Select
+                placeholder="Select a category"
+                dropdownStyle={{ maxHeight: 120, overflow: "auto" }} // 3 items ~ 120px
+              >
+                {categories.map((cat) => (
+                  <Option key={cat.id} value={cat.id}>
+                    {cat.name}
+                  </Option>
+                ))}
+              </Select>
+            )}
           </Form.Item>
 
           <Form.Item

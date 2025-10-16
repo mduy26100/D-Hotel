@@ -13,10 +13,12 @@ import {
 } from "lucide-react";
 import { useHotelDetails } from "../../../hooks/hotels/hotels/useHotelDetails";
 import UpsertHotelUtilitiesModal from "./UpsertHotelUtilitiesModal";
+import UpsertHotelLocationModal from "./UpsertHotelLocationModal";
 
 const HotelDetailsModal = ({ id, isOpen, onClose }) => {
   const { hotel, loading, error, refetch } = useHotelDetails(id);
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
+  const [isLocationModalOpen, setIsLocationModalOpen] = useState(false);
 
   return (
     <>
@@ -104,7 +106,7 @@ const HotelDetailsModal = ({ id, isOpen, onClose }) => {
                   </div>
 
                   {/* Location */}
-                  <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex flex-col justify-center text-center">
+                  <div className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex flex-col justify-center text-center relative">
                     <div className="mx-auto mb-2 p-2 bg-pink-50 rounded-lg">
                       <MapPin size={20} className="text-pink-600" />
                     </div>
@@ -114,6 +116,15 @@ const HotelDetailsModal = ({ id, isOpen, onClose }) => {
                     <span className="text-base font-semibold text-gray-700">
                       {hotel?.location?.name || "Unknown"}
                     </span>
+
+                    <Button
+                      size="small"
+                      type="primary"
+                      className="absolute top-3 right-3"
+                      onClick={() => setIsLocationModalOpen(true)}
+                    >
+                      {hotel?.location ? "Update" : "Add"}
+                    </Button>
                   </div>
 
                   {/* Manager */}
@@ -201,6 +212,13 @@ const HotelDetailsModal = ({ id, isOpen, onClose }) => {
           refetch={refetch}
         />
       )}
+
+      <UpsertHotelLocationModal
+        hotel={hotel}
+        isOpen={isLocationModalOpen}
+        onClose={() => setIsLocationModalOpen(false)}
+        refetch={refetch}
+      />
     </>
   );
 };
