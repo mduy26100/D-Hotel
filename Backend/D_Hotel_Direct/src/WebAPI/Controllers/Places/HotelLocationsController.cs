@@ -4,6 +4,7 @@ using Application.Features.Places.Commands.UpdateHotelLocation;
 using Application.Features.Places.Queries.GetHotelLocationByHotelId;
 using Application.Features.Places.Queries.GetHotelLocationByLocationId;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading;
 
 namespace WebAPI.Controllers.Places
 {
@@ -30,13 +31,14 @@ namespace WebAPI.Controllers.Places
             return CreatedAtAction(nameof(GetHotelLocationById), new { id = result.LocationId }, result);
         }
 
-        [HttpPut("{locationId:int}")]
-        public async Task<ActionResult> UpdateHotelLocation(int locationId, [FromBody] UpdateHotelLocationCommand command, CancellationToken cancellationToken)
+        [HttpPut("{hotelId:int}")]
+        public async Task<ActionResult> UpdateHotelLocation(int hotelId, [FromBody] UpdateHotelLocationCommand command, CancellationToken cancellationToken)
         {
-            if (command.dto == null || command.dto.LocationId <= 0 || command.dto.LocationId != locationId)
+            if (command.dto == null || command.dto.HotelId <= 0 || command.dto.HotelId != hotelId)
             {
-                return BadRequest("Invalid location data.");
+                return BadRequest("Invalid hotel data.");
             }
+
             var result = await _mediator.Send(command, cancellationToken);
             return NoContent();
         }
