@@ -6,15 +6,16 @@ namespace Application.Features.Hotels.DTOs
     public class HotelDetailDto
     {
         public int Id { get; set; }
-        public required string Name { get; set; }
-        public HotelCategoryDto Category { get; set; } = null!;
-        public string HotelManagerName { get; set; } = string.Empty;
-        public required string Address { get; set; }
-        public required string Description { get; set; }
-        public required string ImgUrl { get; set; }
+        public string Name { get; set; } = default!;
+        public string Address { get; set; } = default!;
+        public string Description { get; set; } = default!;
+        public string ImgUrl { get; set; } = default!;
         public bool IsActive { get; set; }
-        public LocationsDto? Location { get; set; }
 
-        public List<UtilityDto> Utilities { get; set; } = new();
+        public string HotelManagerName { get; set; } = default!;
+        public HotelCategoryDto Category { get; set; } = null!;
+        public LocationsDto? Location { get; set; }
+        public IEnumerable<UtilityDto> Utilities { get; set; } = new List<UtilityDto>();
+        public string? TravelPurpose { get; set; }
     }
 }

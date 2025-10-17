@@ -19,7 +19,7 @@ namespace Application.Features.Purposes.Services.Query.HotelTravelPurpose.GetTra
 
         public async Task<HotelTravelPurposeDto> GetTravelPurposeByHotelIdAsync(int hotelId, CancellationToken cancellationToken = default)
         {
-            var travelPurpose = await _hotelTravelPurposeRepository.FindAsync(h => h.HotelId == hotelId, cancellationToken);
+            var travelPurpose = await _hotelTravelPurposeRepository.FindOneAsync(h => h.HotelId == hotelId, cancellationToken);
             return _mapper.Map<HotelTravelPurposeDto>(travelPurpose);
         }
     }
