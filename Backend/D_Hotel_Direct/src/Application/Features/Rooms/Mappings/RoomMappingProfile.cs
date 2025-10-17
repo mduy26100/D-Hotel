@@ -12,6 +12,7 @@ namespace Application.Features.Rooms.Mappings
             CreateMap<QuantityGuest, QuantityGuestDto>().ReverseMap();
             CreateMap<RoomType, RoomTypeDto>().ReverseMap();
             CreateMap<RoomTypeImage, RoomTypeImageDto>().ReverseMap();
+            CreateMap<RoomTypePrice, RoomTypePriceDto>().ReverseMap();
         }
     }
 }

@@ -10,6 +10,9 @@ using Application.Features.Rooms.Interfaces.Services.Command.RoomType.UpdateRoom
 using Application.Features.Rooms.Interfaces.Services.Command.RoomTypeImage.CreateRoomTypeImage;
 using Application.Features.Rooms.Interfaces.Services.Command.RoomTypeImage.DeleteRoomTypeImage;
 using Application.Features.Rooms.Interfaces.Services.Command.RoomTypeImage.UpdateRoomTypeImage;
+using Application.Features.Rooms.Interfaces.Services.Command.RoomTypePrice.CreateRoomTypePrice;
+using Application.Features.Rooms.Interfaces.Services.Command.RoomTypePrice.DeleteRoomTypePrice;
+using Application.Features.Rooms.Interfaces.Services.Command.RoomTypePrice.UpdateRoomTypePrice;
 using Application.Features.Rooms.Interfaces.Services.Query.BedType.GetAllBedTypes;
 using Application.Features.Rooms.Interfaces.Services.Query.BedType.GetBedTypeById;
 using Application.Features.Rooms.Interfaces.Services.Query.QuantityGuest.GetAllQuantityGuests;
@@ -19,6 +22,7 @@ using Application.Features.Rooms.Interfaces.Services.Query.RoomType.GetRoomTypeB
 using Application.Features.Rooms.Interfaces.Services.Query.RoomType.GetRoomTypeById;
 using Application.Features.Rooms.Interfaces.Services.Query.RoomType.GetRoomTypeByQuantityGuestId;
 using Application.Features.Rooms.Interfaces.Services.Query.RoomTypeImage.GetRoomImagesByRoomTypeId;
+using Application.Features.Rooms.Interfaces.Services.Query.RoomTypePrice.GetAllRoomTypePrices;
 using Application.Features.Rooms.Repositories;
 using Application.Features.Rooms.Services.Command.BedType.CreateBedType;
 using Application.Features.Rooms.Services.Command.BedType.DeleteBedType;
@@ -32,6 +36,9 @@ using Application.Features.Rooms.Services.Command.RoomType.UpdateRoomType;
 using Application.Features.Rooms.Services.Command.RoomTypeImage.CreateRoomTypeImage;
 using Application.Features.Rooms.Services.Command.RoomTypeImage.DeleteRoomTypeImage;
 using Application.Features.Rooms.Services.Command.RoomTypeImage.UpdateRoomTypeImage;
+using Application.Features.Rooms.Services.Command.RoomTypePrice.CreateRoomTypePrice;
+using Application.Features.Rooms.Services.Command.RoomTypePrice.DeleteRoomTypePrice;
+using Application.Features.Rooms.Services.Command.RoomTypePrice.UpdateRoomTypePrice;
 using Application.Features.Rooms.Services.Query.BedType.GetAllBedTypes;
 using Application.Features.Rooms.Services.Query.BedType.GetBedTypeById;
 using Application.Features.Rooms.Services.Query.QuantityGuest.GetAllQuantityGuests;
@@ -41,6 +48,7 @@ using Application.Features.Rooms.Services.Query.RoomType.GetRoomTypeByBedTypeId;
 using Application.Features.Rooms.Services.Query.RoomType.GetRoomTypeById;
 using Application.Features.Rooms.Services.Query.RoomType.GetRoomTypeByQuantityGuestId;
 using Application.Features.Rooms.Services.Query.RoomTypeImage.GetRoomImagesByRoomTypeId;
+using Application.Features.Rooms.Services.Query.RoomTypePrice.GetAllRoomTypePrices;
 using Infrastructure.Rooms.Repositories;
 
 namespace WebAPI.DependencyInjection.Features
@@ -54,6 +62,7 @@ namespace WebAPI.DependencyInjection.Features
             services.AddScoped<IQuantityGuestRepository, QuantityGuestRepository>();
             services.AddScoped<IRoomTypeImageRepository, RoomTypeImageRepository>();
             services.AddScoped<IRoomTypeRepository, RoomTypeRepository>();
+            services.AddScoped<IRoomTypePriceRepository, RoomTypePriceRepository>();
 
             //BedType
             services.AddScoped<ICreateBedTypeService, CreateBedTypeService>();
@@ -83,6 +92,12 @@ namespace WebAPI.DependencyInjection.Features
             services.AddScoped<IDeleteRoomTypeImageService, DeleteRoomTypeImageService>();
             services.AddScoped<IUpdateRoomTypeImageService, UpdateRoomTypeImageService>();
             services.AddScoped<IGetRoomImagesByRoomTypeIdService, GetRoomImagesByRoomTypeIdService>();
+
+            //RoomTypePrice
+            services.AddScoped<ICreateRoomTypePriceService, CreateRoomTypePriceService>();
+            services.AddScoped<IUpdateRoomTypePriceService, UpdateRoomTypePriceService>();
+            services.AddScoped<IDeleteRoomTypePriceService, DeleteRoomTypePriceService>();
+            services.AddScoped<IGetAllRoomTypePricesService, GetAllRoomTypePricesService>();
 
             return services;
         }
