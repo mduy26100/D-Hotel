@@ -11,6 +11,18 @@
             builder.Property(b => b.Name)
                 .IsRequired()
                 .HasMaxLength(128);
+
+            builder.Property(b => b.Description)
+                .HasMaxLength(512);
+
+            builder.Property(b => b.Dimensions)
+                .HasMaxLength(64);
+
+            builder.Property(b => b.Capacity)
+                .IsRequired();
+
+            builder.Property(b => b.IsShared)
+                .IsRequired();
         }
     }
 }

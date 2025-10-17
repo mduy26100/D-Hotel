@@ -19,7 +19,7 @@
                 .IsRequired()
                 .HasMaxLength(1024);
 
-            builder.Property(r => r.Price)
+            builder.Property(r => r.BasePrice)
                 .IsRequired()
                 .HasColumnType("decimal(18,2)");
 
@@ -38,6 +38,17 @@
 
             builder.Property(r => r.IsActive)
                 .IsRequired();
+
+            // Relationships (foreign keys)
+            builder.HasOne<BedType>()
+                .WithMany()
+                .HasForeignKey(r => r.BedTypeId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasOne<QuantityGuest>()
+                .WithMany()
+                .HasForeignKey(r => r.QuantityGuestId)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

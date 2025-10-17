@@ -48,6 +48,7 @@ namespace Infrastructure.Data
             builder.ApplyConfiguration(new QuantityGuestConfiguration());
             builder.ApplyConfiguration(new RoomTypeImageConfiguration());
             builder.ApplyConfiguration(new RoomTypeConfiguration());
+            builder.ApplyConfiguration(new RoomTypePriceConfiguration());
 
             // Utilities
             builder.ApplyConfiguration(new HotelUtilityConfiguration());
@@ -89,6 +90,7 @@ namespace Infrastructure.Data
         public DbSet<QuantityGuest> QuantityGuests { get; set; }
         public DbSet<RoomTypeImage> RoomTypeImages { get; set; }
         public DbSet<RoomType> RoomTypes { get; set; }
+        public DbSet<RoomTypePrice> RoomTypePrices { get; set; }
 
         //Utilities
         public DbSet<HotelUtility> HotelUtility { get; set; }
