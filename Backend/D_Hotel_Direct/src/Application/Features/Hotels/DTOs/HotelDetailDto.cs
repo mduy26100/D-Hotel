@@ -1,4 +1,5 @@
 ﻿using Application.Features.Places.DTOs;
+using Application.Features.Purposes.DTOs;
 using Application.Features.Utilities.DTOs;
 
 namespace Application.Features.Hotels.DTOs
@@ -16,6 +17,6 @@ namespace Application.Features.Hotels.DTOs
         public HotelCategoryDto Category { get; set; } = null!;
         public LocationsDto? Location { get; set; }
         public IEnumerable<UtilityDto> Utilities { get; set; } = new List<UtilityDto>();
-        public string? TravelPurpose { get; set; }
+        public TravelPurposeDto? TravelPurpose { get; set; }
     }
 }

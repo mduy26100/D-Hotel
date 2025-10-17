@@ -6,6 +6,7 @@ using Application.Features.Hotels.Repositories;
 using Application.Features.Places.DTOs;
 using Application.Features.Places.Interfaces.Services.Query.GetHotelLocationByHotelId;
 using Application.Features.Places.Interfaces.Services.Query.GetLocationById;
+using Application.Features.Purposes.DTOs;
 using Application.Features.Purposes.Interfaces.Services.Query.HotelTravelPurpose.GetTravelPurposeByHotelId;
 using Application.Features.Purposes.Interfaces.Services.Query.TravelPurpose.GetTravelPurposeById;
 using Application.Features.Utilities.DTOs;
@@ -82,6 +83,13 @@ namespace Application.Features.Hotels.Services.Query.GetHotelDetail
             var hotelTravelPurpose = travelPurposeId != null
                 ? await _getTravelPurposeByIdService.GetByIdAsync(travelPurposeId.TravelPurposeId, cancellationToken)
                 : null;
+            var hotelTravelPurposeDto = hotelTravelPurpose != null
+                ? new TravelPurposeDto
+                {
+                    Id = hotelTravelPurpose.Id,
+                    Name = hotelTravelPurpose.Name
+                }
+                : null;
 
             return new HotelDetailDto
             {
@@ -97,7 +105,7 @@ namespace Application.Features.Hotels.Services.Query.GetHotelDetail
                     ? null
                     : new LocationsDto { Id = hotelLocation.Id, Name = hotelLocation.Name, ImgUrl = hotelLocation.ImgUrl },
                 Utilities = utilityDtos,
-                TravelPurpose = hotelTravelPurpose?.Name
+                TravelPurpose = hotelTravelPurposeDto
             };
         }
     }

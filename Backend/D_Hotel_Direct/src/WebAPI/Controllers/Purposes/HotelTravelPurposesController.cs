@@ -33,8 +33,8 @@ namespace WebAPI.Controllers.Purposes
             return Ok(result);
         }
 
-        [HttpPut("{id:int}")]
-        public async Task<IActionResult> UpdateHotelTravelPurpose(int id, [FromBody] UpdateHotelTravelPurposeCommand command, CancellationToken cancellationToken)
+        [HttpPut("{hotelId:int}")]
+        public async Task<IActionResult> UpdateHotelTravelPurpose(int hotelId, [FromBody] UpdateHotelTravelPurposeCommand command, CancellationToken cancellationToken)
         {
             var result = await _mediator.Send(command, cancellationToken);
             return Ok(result);
