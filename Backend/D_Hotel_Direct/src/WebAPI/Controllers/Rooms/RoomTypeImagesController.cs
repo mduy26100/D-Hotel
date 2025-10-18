@@ -18,27 +18,35 @@ namespace WebAPI.Controllers.Rooms
             _mediator = mediator;
         }
 
-        // POST: api/roomtypeimages
-        [HttpPost]
+        // POST: api/roomtypeimages/
+        [HttpPost()]
         [Consumes("multipart/form-data")]
-        public async Task<IActionResult> Create([FromForm] int roomTypeId, IFormFile image, CancellationToken cancellationToken)
+        public async Task<IActionResult> CreateMultiple(
+            [FromForm] int roomTypeId,
+            [FromForm] List<IFormFile> images,
+            CancellationToken cancellationToken)
         {
-            Stream? imageStream = null;
-            if (image != null)
-            {
-                imageStream = image.OpenReadStream();
-            }
+            var createdImages = new List<RoomTypeImageDto>();
 
-            var command = new CreateRoomTypeImageCommand(
+            foreach (var image in images)
+            {
+                if (image == null || image.Length == 0)
+                    continue;
+
+                using var imageStream = image.OpenReadStream();
+
+                var command = new CreateRoomTypeImageCommand(
                     roomTypeId,
                     imageStream,
-                    image?.FileName,
-                    image?.ContentType
+                    image.FileName,
+                    image.ContentType
                 );
 
-            var result = await _mediator.Send(command, cancellationToken);
+                var result = await _mediator.Send(command, cancellationToken);
+                createdImages.Add(result);
+            }
 
-            return Ok(result);
+            return Ok(createdImages);
         }
 
         // PUT: api/roomtypeimages/{id}
