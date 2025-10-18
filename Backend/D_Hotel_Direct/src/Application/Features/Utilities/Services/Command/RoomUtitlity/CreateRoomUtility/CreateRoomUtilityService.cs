@@ -23,10 +23,18 @@ namespace Application.Features.Utilities.Services.Command.RoomUtitlity.CreateRoo
 
         public async Task<RoomUtilityDto> CreateAsync(RoomUtilityDto roomUtilityDto, CancellationToken cancellationToken = default)
         {
-            var entity = _mapper.Map<RoomUtilityEntity>(roomUtilityDto);
-            await _roomUtilityRepository.AddAsync(entity, cancellationToken);
+            foreach (var item in roomUtilityDto.UtilityIds)
+            {
+                var roomUtility = new RoomUtilityEntity
+                {
+                    RoomId = roomUtilityDto.RoomId,
+                    UtilityId = item
+                };
+                await _roomUtilityRepository.AddAsync(roomUtility, cancellationToken);
+            }
+
             await _context.SaveChangesAsync(cancellationToken);
-            return _mapper.Map<RoomUtilityDto>(entity);
+            return roomUtilityDto;
         }
     }
 }

@@ -23,8 +23,11 @@ namespace Application.Features.Utilities.Services.Command.RoomUtitlity.DeleteRoo
 
         public async Task DeleteAsync(RoomUtilityDto roomUtilityDto, CancellationToken cancellationToken = default)
         {
-            var entity = _mapper.Map<RoomUtilityEntity>(roomUtilityDto);
-            _roomUtilityRepository.Remove(entity);
+            var existingUtilities = await _roomUtilityRepository.FindAsync(r => r.RoomId == roomUtilityDto.RoomId, cancellationToken);
+            foreach (var utility in existingUtilities.Where(u => roomUtilityDto.UtilityIds.Contains(u.UtilityId)))
+            {
+                _roomUtilityRepository.Remove(utility);
+            }
             await _context.SaveChangesAsync(cancellationToken);
         }
     }

@@ -33,10 +33,11 @@ namespace WebAPI.Controllers.Utilities
         [HttpPut("{roomId:int}")]
         public async Task<IActionResult> Update(int roomId, [FromBody] UpdateRoomUtilityCommand command, CancellationToken cancellationToken)
         {
-            if(roomId != command.roomUtilityDto.RoomId)
+            if(roomId != command.roomId)
             {
                 return BadRequest("Invalid room utility data.");
             }
+
             var result = await _mediator.Send(command, cancellationToken);
             return Ok(result);
         }

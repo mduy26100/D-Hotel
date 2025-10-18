@@ -12,9 +12,24 @@ namespace Application.Features.Utilities.Commands.RoomUtitlity.CreateRoomUtility
         {
             _createRoomUtilityService = createRoomUtilityService;
         }
+
         public async Task<RoomUtilityDto> Handle(CreateRoomUtilityCommand request, CancellationToken cancellationToken)
         {
-            return await _createRoomUtilityService.CreateAsync(request.roomUtilityDto, cancellationToken);
+            var parsedUtilityIds = request.utilityId
+                .Split(',', StringSplitOptions.RemoveEmptyEntries)
+                .Select(id => int.TryParse(id.Trim(), out var val) ? val : throw new FormatException("Invalid utility ID"))
+                .Distinct()
+                .ToList();
+
+            var dto = new RoomUtilityDto
+            {
+                RoomId = request.roomId,
+                UtilityIds = parsedUtilityIds
+            };
+
+            var result = await _createRoomUtilityService.CreateAsync(dto, cancellationToken);
+
+            return result;
         }
     }
 }

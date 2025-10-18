@@ -1,4 +1,5 @@
-﻿using Application.Features.Utilities.Interfaces.Services.Command.RoomUtitlity.DeleteRoomUtility;
+﻿using Application.Features.Utilities.DTOs;
+using Application.Features.Utilities.Interfaces.Services.Command.RoomUtitlity.DeleteRoomUtility;
 using MediatR;
 
 namespace Application.Features.Utilities.Commands.RoomUtitlity.DeleteRoomUtitlity
@@ -14,7 +15,19 @@ namespace Application.Features.Utilities.Commands.RoomUtitlity.DeleteRoomUtitlit
 
         public async Task<Unit> Handle(DeleteRoomUtitlityCommand request, CancellationToken cancellationToken)
         {
-            await _deleteRoomUtilityService.DeleteAsync(request.roomUtilityDto, cancellationToken);
+            var parsedUtilityIds = request.utilityIds
+                .Split(',', StringSplitOptions.RemoveEmptyEntries)
+                .Select(id => int.TryParse(id.Trim(), out var val) ? val : throw new FormatException("Invalid utility ID"))
+                .Distinct()
+                .ToList();
+
+            var dto = new RoomUtilityDto
+            {
+                RoomId = request.roomId,
+                UtilityIds = parsedUtilityIds
+            };
+
+            await _deleteRoomUtilityService.DeleteAsync(dto, cancellationToken);
             return Unit.Value;
         }
     }

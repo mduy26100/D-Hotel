@@ -1,9 +1,8 @@
-﻿using Application.Features.Utilities.DTOs;
-using MediatR;
+﻿using MediatR;
 
 namespace Application.Features.Utilities.Commands.RoomUtitlity.UpdateRoomUtility
 {
-    public record UpdateRoomUtilityCommand(RoomUtilityDto roomUtilityDto) : IRequest
+    public record UpdateRoomUtilityCommand(int roomId, string utilityIds) : IRequest
     {
     }
 }

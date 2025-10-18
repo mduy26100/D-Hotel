@@ -23,8 +23,22 @@ namespace Application.Features.Utilities.Services.Command.RoomUtitlity.UpdateRoo
 
         public async Task UpdateAsync(RoomUtilityDto roomUtilityDto, CancellationToken cancellationToken = default)
         {
-            var entity = _mapper.Map<RoomUtilityEntity>(roomUtilityDto);
-            _roomUtilityRepository.Update(entity);
+            var existingUtilities = await _roomUtilityRepository.FindAsync(h => h.RoomId == roomUtilityDto.RoomId, cancellationToken);
+            foreach (var utility in existingUtilities)
+            {
+                _roomUtilityRepository.Remove(utility);
+            }
+
+            foreach (var utilityId in roomUtilityDto.UtilityIds.Distinct())
+            {
+                var hotelUtility = new RoomUtilityEntity
+                {
+                    RoomId = roomUtilityDto.RoomId,
+                    UtilityId = utilityId
+                };
+                await _roomUtilityRepository.AddAsync(hotelUtility, cancellationToken);
+            }
+
             await _context.SaveChangesAsync(cancellationToken);
         }
     }

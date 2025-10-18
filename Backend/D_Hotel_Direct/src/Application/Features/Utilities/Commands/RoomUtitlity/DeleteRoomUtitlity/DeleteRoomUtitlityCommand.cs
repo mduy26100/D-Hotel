@@ -1,9 +1,8 @@
-﻿using Application.Features.Utilities.DTOs;
-using MediatR;
+﻿using MediatR;
 
 namespace Application.Features.Utilities.Commands.RoomUtitlity.DeleteRoomUtitlity
 {
-    public record DeleteRoomUtitlityCommand(RoomUtilityDto roomUtilityDto) : IRequest
+    public record DeleteRoomUtitlityCommand(int roomId, string utilityIds) : IRequest
     {
     }
 }
