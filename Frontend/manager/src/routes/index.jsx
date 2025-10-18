@@ -41,6 +41,7 @@ import Employees from "../pages/Users/Employees";
 import Shifts from "../pages/Users/Shifts";
 import ErrorPage from "../pages/Error/ErrorPage";
 import Users from "../pages/Users/Users";
+import RoomTypePrices from "../pages/Room/RoomTypePrices";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -85,6 +86,7 @@ const router = createBrowserRouter(
         <Route path="quantity-guests" element={<QuantityGuests />} />
         <Route path="room-type-images" element={<RoomTypeImages />} />
         <Route path="room-types" element={<RoomTypes />} />
+        <Route path="room-type-prices" element={<RoomTypePrices />} />
 
         {/* Utilities */}
         <Route path="utilities" element={<Utilities />} />

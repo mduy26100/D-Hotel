@@ -60,10 +60,11 @@ const Sidebar = ({ isOpen, onClose, user }) => {
       name: "Room",
       icon: CubeIcon,
       submenu: [
+        { name: "Room Types", path: "/room-types" },
+        { name: "Room Type Images", path: "/room-type-images" },
         { name: "Bed Types", path: "/bed-types" },
         { name: "Quantity Guests", path: "/quantity-guests" },
-        { name: "Room Type Images", path: "/room-type-images" },
-        { name: "Room Types", path: "/room-types" },
+        { name: "Room Type Prices", path: "/room-type-prices" },
       ],
     },
     {
