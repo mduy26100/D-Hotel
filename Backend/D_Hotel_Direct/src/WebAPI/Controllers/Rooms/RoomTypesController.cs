@@ -5,6 +5,7 @@ using Application.Features.Rooms.Queries.RoomType.GetAllRoomTypes;
 using Application.Features.Rooms.Queries.RoomType.GetRoomTypeByBedTypeId;
 using Application.Features.Rooms.Queries.RoomType.GetRoomTypeById;
 using Application.Features.Rooms.Queries.RoomType.GetRoomTypeByQuantityGuestId;
+using Application.Features.Rooms.Queries.RoomType.GetRoomTypeDetailById;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers.Rooms
@@ -59,6 +60,14 @@ namespace WebAPI.Controllers.Rooms
         public async Task<IActionResult> GetById(int id, CancellationToken cancellationToken)
         {
             var query = new GetRoomTypeByIdQuery(id);
+            var result = await _mediator.Send(query, cancellationToken);
+            return Ok(result);
+        }
+
+        [HttpGet("{roomTypeId:int}/details")]
+        public async Task<IActionResult> GetDetailsById(int roomTypeId, CancellationToken cancellationToken)
+        {
+            var query = new GetRoomTypeDetailByIdQuery(roomTypeId);
             var result = await _mediator.Send(query, cancellationToken);
             return Ok(result);
         }

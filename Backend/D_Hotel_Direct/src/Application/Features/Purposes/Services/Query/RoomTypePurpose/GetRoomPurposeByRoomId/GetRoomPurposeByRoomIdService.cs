@@ -19,7 +19,7 @@ namespace Application.Features.Purposes.Services.Query.RoomTypePurpose.GetRoomPu
 
         public async Task<RoomTypePurposeDto> GetRoomPurposeByRoomId(int roomId, CancellationToken cancellationToken = default)
         {
-            var entity = await _roomTypePurposeRepository.GetByIdAsync(roomId, cancellationToken);
+            var entity = await _roomTypePurposeRepository.FindOneAsync(h => h.RoomId == roomId, cancellationToken);
             return _mapper.Map<RoomTypePurposeDto>(entity);
         }
     }
