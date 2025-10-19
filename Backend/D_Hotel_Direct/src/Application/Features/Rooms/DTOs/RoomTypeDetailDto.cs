@@ -22,7 +22,7 @@ namespace Application.Features.Rooms.DTOs
 
         public bool IsActive { get; set; }
 
-        public IEnumerable<RoomTypeImageDto>? RoomImages = new List<RoomTypeImageDto>();
+        public IEnumerable<RoomTypeImageDto>? RoomImages { get; set; } = new List<RoomTypeImageDto>();
         public IEnumerable<UtilityDto> Utilities { get; set; } = new List<UtilityDto>();
         public RoomPurposeDto? RoomPurpose { get; set; }
         public RoomTypePriceDto? RoomTypePrice { get; set; }
