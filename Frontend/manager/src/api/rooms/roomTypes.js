@@ -99,3 +99,13 @@ export const getRoomTypesAPI = async () => {
     throw error;
   }
 };
+
+export const getRoomTypeDetailsAPI = async (roomTypeId) => {
+  try {
+    const response = await axiosClient.get(`${URL_BASE}/${roomTypeId}/details`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error fetching hotel details (id: ${roomTypeId}):`, error);
+    throw error;
+  }
+};

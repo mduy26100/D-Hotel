@@ -16,12 +16,7 @@ import { useGetHotels } from "../../../hooks/hotels/hotels/useGetHotels";
 import { useGetBedTypes } from "../../../hooks/rooms/bedTypes/useGetBedTypes";
 import { useGetQuantityGuests } from "../../../hooks/rooms/quantityGuests/useGetQuantityGuests";
 
-export default function UpsertRoomType({
-  open,
-  onClose,
-  refetch,
-  editingRoomType,
-}) {
+const UpsertRoomType = ({ open, onClose, refetch, editingRoomType }) => {
   const [form] = Form.useForm();
   const { createRoomType, loading: creating } = useCreateRoomType();
   const { updateRoomType, loading: updating } = useUpdateRoomType();
@@ -85,6 +80,7 @@ export default function UpsertRoomType({
       cancelText="Cancel"
       className="rounded-xl"
       width={700}
+      forceRender
     >
       <Form
         form={form}
@@ -223,4 +219,6 @@ export default function UpsertRoomType({
       </Form>
     </Modal>
   );
-}
+};
+
+export default UpsertRoomType;

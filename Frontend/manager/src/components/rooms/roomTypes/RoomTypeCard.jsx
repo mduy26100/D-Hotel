@@ -10,7 +10,7 @@ import {
   BedSingle,
 } from "lucide-react";
 
-const RoomTypeCard = ({ roomType, onEdit, onDelete }) => {
+const RoomTypeCard = ({ roomType, onEdit, onDelete, onShowDetails }) => {
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-all">
       <div className="flex items-start justify-between mb-4">
@@ -19,7 +19,13 @@ const RoomTypeCard = ({ roomType, onEdit, onDelete }) => {
             <DoorOpen className="w-6 h-6 text-primary" />
           </div>
           <div>
-            <h3 className="text-lg font-bold text-gray-900">{roomType.name}</h3>
+            {/* ✅ Tên phòng chuyển thành nút bấm */}
+            <button
+              onClick={() => onShowDetails(roomType.id)}
+              className="text-lg font-bold text-gray-900 hover:text-blue-600 transition-all underline-offset-2 hover:underline"
+            >
+              {roomType.name}
+            </button>
             <p className="text-sm text-gray-600">
               {roomType.bedType || "Standard Bed"}
             </p>

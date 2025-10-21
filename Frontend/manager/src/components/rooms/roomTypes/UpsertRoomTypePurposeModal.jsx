@@ -2,17 +2,17 @@
 
 import React from "react";
 import { Modal, Select, Form, Button, Spin, notification } from "antd";
-import { useGetTravelPurposes } from "../../../hooks/purposes/travelPurposes/useGetTravelPurposes";
-import { useCreateHotelTravelPurpose } from "../../../hooks/purposes/hotelTravelPurposes/useCreateHotelTravelPurpose";
-import { useUpdateHotelTravelPurpose } from "../../../hooks/purposes/hotelTravelPurposes/useUpdateHotelTravelPurpose";
+import { useCreateRoomTypePurpose } from "../../../hooks/purposes/roomTypePurposes/useCreateRoomTypePurpose";
+import { useUpdateRoomTypePurpose } from "../../../hooks/purposes/roomTypePurposes/useUpdateRoomTypePurpose";
+import { useGetRoomPurposes } from "../../../hooks/purposes/roomPurposes/useGetRoomPurposes";
 
-const UpsertHotelTravelPurposeModal = ({ hotel, isOpen, onClose, refetch }) => {
+const UpsertRoomTypePurposeModal = ({ room, isOpen, onClose, refetch }) => {
   const [form] = Form.useForm();
-  const { travelPurposes, loading: loadingPurposes } = useGetTravelPurposes();
-  const { createHotelTravelPurpose, loading: creating } =
-    useCreateHotelTravelPurpose();
-  const { updateHotelTravelPurpose, loading: updating } =
-    useUpdateHotelTravelPurpose();
+  const { roomPurposes, loading: loadingPurposes } = useGetRoomPurposes();
+  const { createRoomTypePurpose, loading: creating } =
+    useCreateRoomTypePurpose();
+  const { updateRoomTypePurpose, loading: updating } =
+    useUpdateRoomTypePurpose();
 
   const [api, contextHolder] = notification.useNotification();
 
@@ -25,36 +25,31 @@ const UpsertHotelTravelPurposeModal = ({ hotel, isOpen, onClose, refetch }) => {
   };
 
   const handleSubmit = async (values) => {
-    const { travelPurposeId } = values;
+    const { roomPurposeId } = values;
     try {
-      const payload = { hotelId: hotel.id, travelPurposeId };
+      const payload = { roomId: room.id, roomPurposeId };
 
-      if (hotel?.travelPurpose?.id) {
-        // update: thêm id của record cũ
-        await updateHotelTravelPurpose(payload);
+      if (room?.roomPurpose?.id) {
+        await updateRoomTypePurpose(payload);
         openNotification(
           "success",
           "Updated Successfully",
-          "Hotel travel purpose has been updated."
+          "Room type purpose has been updated."
         );
       } else {
         // create
-        await createHotelTravelPurpose(payload);
+        await createRoomTypePurpose(payload);
         openNotification(
           "success",
           "Added Successfully",
-          "Hotel travel purpose has been added."
+          "Room type purpose has been added."
         );
       }
 
       refetch?.();
       onClose();
     } catch (error) {
-      openNotification(
-        "error",
-        "Error",
-        "Failed to save hotel travel purpose."
-      );
+      openNotification("error", "Error", "Failed to save room room purpose.");
     }
   };
 
@@ -69,9 +64,9 @@ const UpsertHotelTravelPurposeModal = ({ hotel, isOpen, onClose, refetch }) => {
         destroyOnClose
         title={
           <div className="text-lg font-semibold text-gray-900">
-            {hotel?.travelPurpose?.[0]?.id
-              ? "Update Hotel Travel Purpose"
-              : "Add Hotel Travel Purpose"}
+            {room?.roomPurpose?.[0]?.id
+              ? "Update Room Type Purpose"
+              : "Add Room Type Purpose"}
           </div>
         }
         footer={null}
@@ -83,7 +78,7 @@ const UpsertHotelTravelPurposeModal = ({ hotel, isOpen, onClose, refetch }) => {
             layout="vertical"
             onFinish={handleSubmit}
             initialValues={{
-              travelPurposeId: hotel?.travelPurpose?.[0]?.id || undefined,
+              roomPurposeId: room?.roomPurpose?.[0]?.id || undefined,
             }}
           >
             <Form.Item
@@ -92,9 +87,9 @@ const UpsertHotelTravelPurposeModal = ({ hotel, isOpen, onClose, refetch }) => {
                   Select Travel Purpose
                 </span>
               }
-              name="travelPurposeId"
+              name="roomPurposeId"
               rules={[
-                { required: true, message: "Please select a travel purpose" },
+                { required: true, message: "Please select a room purpose" },
               ]}
             >
               {loadingPurposes ? (
@@ -104,9 +99,9 @@ const UpsertHotelTravelPurposeModal = ({ hotel, isOpen, onClose, refetch }) => {
               ) : (
                 <Select
                   size="large"
-                  placeholder="Select a travel purpose"
+                  placeholder="Select a room purpose"
                   className="rounded-xl"
-                  options={travelPurposes.map((tp) => ({
+                  options={roomPurposes.map((tp) => ({
                     value: tp.id,
                     label: tp.name,
                   }))}
@@ -124,7 +119,7 @@ const UpsertHotelTravelPurposeModal = ({ hotel, isOpen, onClose, refetch }) => {
                 className="rounded-lg px-6 py-2"
                 loading={creating || updating}
               >
-                {hotel?.travelPurpose?.[0]?.id ? "Update" : "Add"}
+                {room?.roomPurpose?.[0]?.id ? "Update" : "Add"}
               </Button>
             </Form.Item>
           </Form>
@@ -134,4 +129,4 @@ const UpsertHotelTravelPurposeModal = ({ hotel, isOpen, onClose, refetch }) => {
   );
 };
 
-export default UpsertHotelTravelPurposeModal;
+export default UpsertRoomTypePurposeModal;

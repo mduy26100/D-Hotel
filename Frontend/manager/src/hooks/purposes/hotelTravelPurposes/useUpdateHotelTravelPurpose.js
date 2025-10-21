@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { updateHotelTravelPurposeAPI } from "../../../api/purposes/hotelTravelPurpose";
+import { updateHotelTravelPurposeAPI } from "../../../api/purposes/hotelTravelPurposes";
 
 export const useUpdateHotelTravelPurpose = () => {
   const [loading, setLoading] = useState(false);

@@ -68,7 +68,7 @@ const UpsertHotelLocationModal = ({ hotel, isOpen, onClose, refetch }) => {
           </div>
         }
         footer={null}
-        bodyStyle={{ backgroundColor: "#ffffff" }}
+        styles={{ backgroundColor: "#ffffff" }}
       >
         <div className="py-3">
           <Form
