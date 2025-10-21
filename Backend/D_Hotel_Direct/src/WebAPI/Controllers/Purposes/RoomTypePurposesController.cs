@@ -32,7 +32,7 @@ namespace WebAPI.Controllers.Purposes
             return Ok(result);
         }
 
-        [HttpPost("{id:int}")]
+        [HttpPut("{id:int}")]
         public async Task<IActionResult> Update(int id, [FromBody] UpdateRoomTypePurposeCommand command, CancellationToken cancellationToken)
         {
             var result = await _mediator.Send(command, cancellationToken);
