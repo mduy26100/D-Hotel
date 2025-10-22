@@ -8,8 +8,21 @@
         public required string Name { get; set; }
         public required string Description { get; set; }
 
-        // Giá cơ bản / 1 đêm
-        public decimal BasePrice { get; set; }
+        // --- Thuê theo giờ ---
+        public decimal? BaseHourlyPrice { get; set; }      // Giá cố định cho BaseHours đầu
+        public int? BaseHours { get; set; }                // Số giờ đầu
+        public decimal? ExtraHourPrice { get; set; }       // Giá mỗi giờ thêm
+        public int? MaxHours { get; set; }                 // Giới hạn số giờ (vd: 6h)
+
+        // --- Thuê qua đêm ---
+        public decimal? OvernightPrice { get; set; }
+        public TimeSpan? OvernightStartTime { get; set; }  // ví dụ: 22:00
+        public TimeSpan? OvernightEndTime { get; set; }    // ví dụ: 06:00
+
+        // --- Thuê theo ngày ---
+        public decimal? DailyPrice { get; set; }
+        public TimeSpan? DailyStartTime { get; set; }
+        public TimeSpan? DailyEndTime { get; set; }
 
         // Diện tích (m2)
         public required string Area { get; set; }

@@ -25,7 +25,8 @@ namespace Application.Features.Rooms.Services.Query.RoomType.GetRoomTypeDetailBy
         private readonly IGetQuantityGuestByIdService _getQuantityGuestByIdService;
         private readonly IMapper _mapper;
 
-        public GetRoomTypeDetailByIdService(IRoomTypeRepository roomTypeRepository, 
+        public GetRoomTypeDetailByIdService(
+            IRoomTypeRepository roomTypeRepository,
             IMapper mapper,
             IRoomTypePriceRepository roomTypePriceRepository,
             IGetRoomImagesByRoomTypeIdService getRoomImagesByRoomTypeIdService,
@@ -54,29 +55,26 @@ namespace Application.Features.Rooms.Services.Query.RoomType.GetRoomTypeDetailBy
 
             var currentDate = DateTime.UtcNow;
 
-            var dayPrice = await _roomTypePriceRepository.FindOneAsync(p =>
+            // 🔹 Tìm giá đang có hiệu lực (nếu có)
+            var currentPrice = await _roomTypePriceRepository.FindOneAsync(p =>
                 p.RoomTypeId == roomType.Id &&
                 p.IsActive &&
                 currentDate >= p.StartDate &&
                 currentDate <= p.EndDate);
 
+            // 🔹 Load thông tin phụ
             var quantityGuestDto = await _getQuantityGuestByIdService.GetByIdAsync(roomType.QuantityGuestId, cancellationToken);
-
             var bedTypeDto = await _getBedTypeByIdService.GetByIdAsync(roomType.BedTypeId, cancellationToken);
-
             var roomImages = await _getRoomImagesByRoomTypeIdService.GetByRoomTypeIdAsync(roomType.Id, cancellationToken);
-
             var roomUtilities = await _getUtilityByRoomIdService.GetByIdAsync(roomType.Id, cancellationToken);
             var utilityDtos = roomUtilities.FirstOrDefault()?.Utilities ?? new List<UtilityDto>();
 
+            // 🔹 Lấy RoomPurpose (nếu có)
             var roomPurposes = await _getRoomPurposeByRoomIdService.GetRoomPurposeByRoomId(roomType.Id, cancellationToken);
-
-            // Lấy RoomPurposeId từ bảng trung gian RoomTypePurpose
             var roomPurpose = roomPurposes != null
                 ? await _getRoomPurposeByIdService.GetByIdAsync(roomPurposes.RoomPurposeId, cancellationToken)
                 : null;
 
-            // Map sang DTO (nếu tồn tại)
             var roomPurposeDto = roomPurpose != null
                 ? new RoomPurposeDto
                 {
@@ -85,23 +83,38 @@ namespace Application.Features.Rooms.Services.Query.RoomType.GetRoomTypeDetailBy
                 }
                 : null;
 
+            // 🔹 Gộp giá (ưu tiên lấy giá theo thời gian nếu có)
             var dto = new RoomTypeDetailDto
             {
                 Id = roomType.Id,
                 HotelId = roomType.HotelId,
                 Name = roomType.Name,
                 Description = roomType.Description,
-                BasePrice = dayPrice != null ? dayPrice.Price : roomType.BasePrice,
                 Area = roomType.Area,
                 Quantity = roomType.Quantity,
                 IsActive = roomType.IsActive,
 
+                // --- Giá thuê (ưu tiên RoomTypePrice nếu có) ---
+                BaseHourlyPrice = currentPrice?.BaseHourlyPrice ?? roomType.BaseHourlyPrice,
+                ExtraHourPrice = currentPrice?.ExtraHourPrice ?? roomType.ExtraHourPrice,
+                OvernightPrice = currentPrice?.OvernightPrice ?? roomType.OvernightPrice,
+                DailyPrice = currentPrice?.DailyPrice ?? roomType.DailyPrice,
+
+                // --- Thời gian & giới hạn (chỉ lấy từ RoomType) ---
+                BaseHours = roomType.BaseHours,
+                MaxHours = roomType.MaxHours,
+                OvernightStartTime = roomType.OvernightStartTime,
+                OvernightEndTime = roomType.OvernightEndTime,
+                DailyStartTime = roomType.DailyStartTime,
+                DailyEndTime = roomType.DailyEndTime,
+
+                // --- Liên kết dữ liệu ---
                 QuantityGuest = quantityGuestDto,
                 BedType = bedTypeDto,
                 RoomImages = roomImages,
                 Utilities = utilityDtos,
                 RoomPurpose = roomPurposeDto,
-                RoomTypePrice = dayPrice != null ? _mapper.Map<RoomTypePriceDto>(dayPrice) : null
+                RoomTypePrice = currentPrice != null ? _mapper.Map<RoomTypePriceDto>(currentPrice) : null
             };
 
             return dto;

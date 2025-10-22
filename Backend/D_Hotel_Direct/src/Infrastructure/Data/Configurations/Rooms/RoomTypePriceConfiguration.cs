@@ -14,23 +14,34 @@
             builder.Property(p => p.RoomTypeId)
                 .IsRequired();
 
-            builder.Property(p => p.Price)
+            builder.Property(p => p.PriceType)
                 .IsRequired()
+                .HasMaxLength(64);
+
+            // --- Giá theo từng loại ---
+            builder.Property(p => p.BaseHourlyPrice)
                 .HasColumnType("decimal(18,2)");
 
+            builder.Property(p => p.ExtraHourPrice)
+                .HasColumnType("decimal(18,2)");
+
+            builder.Property(p => p.OvernightPrice)
+                .HasColumnType("decimal(18,2)");
+
+            builder.Property(p => p.DailyPrice)
+                .HasColumnType("decimal(18,2)");
+
+            // --- Khoảng thời gian áp dụng ---
             builder.Property(p => p.StartDate)
                 .IsRequired();
 
             builder.Property(p => p.EndDate)
                 .IsRequired();
 
-            builder.Property(p => p.PriceType)
-                .HasMaxLength(64);
-
             builder.Property(p => p.IsActive)
                 .IsRequired();
 
-            // Relationship
+            // --- Quan hệ ---
             builder.HasOne<RoomType>()
                 .WithMany()
                 .HasForeignKey(p => p.RoomTypeId)
