@@ -2,6 +2,7 @@
 using Application.Features.Rooms.Commands.RoomType.DeleteRoomType;
 using Application.Features.Rooms.Commands.RoomType.UpdateRoomType;
 using Application.Features.Rooms.Queries.RoomType.GetAllRoomTypes;
+using Application.Features.Rooms.Queries.RoomType.GetRoomsByHotelId;
 using Application.Features.Rooms.Queries.RoomType.GetRoomTypeByBedTypeId;
 using Application.Features.Rooms.Queries.RoomType.GetRoomTypeById;
 using Application.Features.Rooms.Queries.RoomType.GetRoomTypeByQuantityGuestId;
@@ -68,6 +69,19 @@ namespace WebAPI.Controllers.Rooms
         public async Task<IActionResult> GetDetailsById(int roomTypeId, CancellationToken cancellationToken)
         {
             var query = new GetRoomTypeDetailByIdQuery(roomTypeId);
+            var result = await _mediator.Send(query, cancellationToken);
+            return Ok(result);
+        }
+
+        [HttpGet("by-hotel/{hotelId:int}")]
+        public async Task<IActionResult> GetRoomsByHotelId(int hotelId,
+            string? priceType = null,
+            DateTime? startDate = null,
+            DateTime? endDate = null,
+            TimeSpan? checkInTime = null,
+            int? usageHours = null, CancellationToken cancellationToken = default)
+        {
+            var query = new GetRoomsByHotelIdQuery(hotelId, priceType, startDate, endDate, checkInTime, usageHours);
             var result = await _mediator.Send(query, cancellationToken);
             return Ok(result);
         }

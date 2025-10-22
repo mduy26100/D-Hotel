@@ -18,6 +18,7 @@ using Application.Features.Rooms.Interfaces.Services.Query.BedType.GetBedTypeByI
 using Application.Features.Rooms.Interfaces.Services.Query.QuantityGuest.GetAllQuantityGuests;
 using Application.Features.Rooms.Interfaces.Services.Query.QuantityGuest.GetQuantityGuestById;
 using Application.Features.Rooms.Interfaces.Services.Query.RoomType.GetAllRoomTypes;
+using Application.Features.Rooms.Interfaces.Services.Query.RoomType.GetRoomsByHotelId;
 using Application.Features.Rooms.Interfaces.Services.Query.RoomType.GetRoomTypeByBedTypeId;
 using Application.Features.Rooms.Interfaces.Services.Query.RoomType.GetRoomTypeById;
 using Application.Features.Rooms.Interfaces.Services.Query.RoomType.GetRoomTypeByQuantityGuestId;
@@ -45,6 +46,7 @@ using Application.Features.Rooms.Services.Query.BedType.GetBedTypeById;
 using Application.Features.Rooms.Services.Query.QuantityGuest.GetAllQuantityGuests;
 using Application.Features.Rooms.Services.Query.QuantityGuest.GetQuantityGuestById;
 using Application.Features.Rooms.Services.Query.RoomType.GetAllRoomTypes;
+using Application.Features.Rooms.Services.Query.RoomType.GetRoomsByHotelId;
 using Application.Features.Rooms.Services.Query.RoomType.GetRoomTypeByBedTypeId;
 using Application.Features.Rooms.Services.Query.RoomType.GetRoomTypeById;
 using Application.Features.Rooms.Services.Query.RoomType.GetRoomTypeByQuantityGuestId;
@@ -89,6 +91,7 @@ namespace WebAPI.DependencyInjection.Features
             services.AddScoped<IGetRoomTypeByBedTypeIdService, GetRoomTypeByBedTypeIdService>();
             services.AddScoped<IGetRoomTypeByQuantityGuestIdService, GetRoomTypeByQuantityGuestIdService>();
             services.AddScoped<IGetRoomTypeDetailByIdService, GetRoomTypeDetailByIdService>();
+            services.AddScoped<IGetRoomsByHotelIdService, GetRoomsByHotelIdService>();
 
             //RoomTypeImage
             services.AddScoped<ICreateRoomTypeImageService, CreateRoomTypeImageService>();

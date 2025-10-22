@@ -35,5 +35,8 @@
         public int Quantity { get; set; }
 
         public bool IsActive { get; set; }
+
+        // ✅ Thêm thuộc tính hiển thị giá cuối cùng
+        public decimal DisplayPrice { get; set; }
     }
 }
