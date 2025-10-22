@@ -8,10 +8,13 @@ export const createRoomTypePriceAPI = async (data) => {
       dto: {
         id: data.id,
         roomTypeId: data.roomTypeId,
-        price: data.price,
+        priceType: data.priceType,
+        baseHourlyPrice: data.baseHourlyPrice,
+        extraHourPrice: data.extraHourPrice,
+        overnightPrice: data.overnightPrice,
+        dailyPrice: data.dailyPrice,
         startDate: data.startDate,
         endDate: data.endDate,
-        priceType: data.priceType,
         isActive: data.isActive,
       },
     };
@@ -35,10 +38,13 @@ export const deleteRoomTypePriceAPI = async (data) => {
       dto: {
         id: data.id,
         roomTypeId: data.roomTypeId,
-        price: data.price,
+        priceType: data.priceType,
+        baseHourlyPrice: data.baseHourlyPrice,
+        extraHourPrice: data.extraHourPrice,
+        overnightPrice: data.overnightPrice,
+        dailyPrice: data.dailyPrice,
         startDate: data.startDate,
         endDate: data.endDate,
-        priceType: data.priceType,
         isActive: data.isActive,
       },
     };
@@ -61,10 +67,13 @@ export const updateRoomTypePriceAPI = async (data) => {
       dto: {
         id: data.id,
         roomTypeId: data.roomTypeId,
-        price: data.price,
+        priceType: data.priceType,
+        baseHourlyPrice: data.baseHourlyPrice,
+        extraHourPrice: data.extraHourPrice,
+        overnightPrice: data.overnightPrice,
+        dailyPrice: data.dailyPrice,
         startDate: data.startDate,
         endDate: data.endDate,
-        priceType: data.priceType,
         isActive: data.isActive,
       },
     };

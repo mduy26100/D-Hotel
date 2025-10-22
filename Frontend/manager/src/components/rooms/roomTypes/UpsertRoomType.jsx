@@ -8,13 +8,19 @@ import {
   InputNumber,
   Select,
   Switch,
+  TimePicker,
+  Divider,
+  Typography,
   notification,
 } from "antd";
+import dayjs from "dayjs";
 import { useCreateRoomType } from "../../../hooks/rooms/roomTypes/useCreateRoomType";
 import { useUpdateRoomType } from "../../../hooks/rooms/roomTypes/useUpdateRoomType";
 import { useGetHotels } from "../../../hooks/hotels/hotels/useGetHotels";
 import { useGetBedTypes } from "../../../hooks/rooms/bedTypes/useGetBedTypes";
 import { useGetQuantityGuests } from "../../../hooks/rooms/quantityGuests/useGetQuantityGuests";
+
+const { Title } = Typography;
 
 const UpsertRoomType = ({ open, onClose, refetch, editingRoomType }) => {
   const [form] = Form.useForm();
@@ -28,7 +34,35 @@ const UpsertRoomType = ({ open, onClose, refetch, editingRoomType }) => {
 
   useEffect(() => {
     if (isEditMode && editingRoomType) {
-      form.setFieldsValue(editingRoomType);
+      const initial = {
+        BaseHourlyPrice: editingRoomType.baseHourlyPrice ?? null,
+        BaseHours: editingRoomType.baseHours ?? null,
+        ExtraHourPrice: editingRoomType.extraHourPrice ?? null,
+        MaxHours: editingRoomType.maxHours ?? null,
+        OvernightPrice: editingRoomType.overnightPrice ?? null,
+        OvernightStartTime: editingRoomType.overnightStartTime
+          ? dayjs(editingRoomType.overnightStartTime, "HH:mm:ss")
+          : null,
+        OvernightEndTime: editingRoomType.overnightEndTime
+          ? dayjs(editingRoomType.overnightEndTime, "HH:mm:ss")
+          : null,
+        DailyPrice: editingRoomType.dailyPrice ?? null,
+        DailyStartTime: editingRoomType.dailyStartTime
+          ? dayjs(editingRoomType.dailyStartTime, "HH:mm:ss")
+          : null,
+        DailyEndTime: editingRoomType.dailyEndTime
+          ? dayjs(editingRoomType.dailyEndTime, "HH:mm:ss")
+          : null,
+        quantity: editingRoomType.quantity ?? null,
+        hotelId: editingRoomType.hotelId ?? null,
+        name: editingRoomType.name ?? "",
+        description: editingRoomType.description ?? "",
+        area: editingRoomType.area ?? "",
+        quantityGuestId: editingRoomType.quantityGuestId ?? null,
+        bedTypeId: editingRoomType.bedTypeId ?? null,
+        isActive: editingRoomType.isActive ?? true,
+      };
+      form.setFieldsValue(initial);
     } else {
       form.resetFields();
     }
@@ -38,8 +72,25 @@ const UpsertRoomType = ({ open, onClose, refetch, editingRoomType }) => {
     try {
       const payload = {
         ...values,
-        basePrice: Number(values.basePrice),
-        quantity: Number(values.quantity),
+        baseHourlyPrice: Number(values.BaseHourlyPrice) || null,
+        baseHours: Number(values.BaseHours) || null,
+        extraHourPrice: Number(values.ExtraHourPrice) || null,
+        maxHours: Number(values.MaxHours) || null,
+        overnightPrice: Number(values.OvernightPrice) || null,
+        dailyPrice: Number(values.DailyPrice) || null,
+        quantity: Number(values.quantity) || null,
+        overnightStartTime: values.OvernightStartTime
+          ? values.OvernightStartTime.format("HH:mm:ss")
+          : null,
+        overnightEndTime: values.OvernightEndTime
+          ? values.OvernightEndTime.format("HH:mm:ss")
+          : null,
+        dailyStartTime: values.DailyStartTime
+          ? values.DailyStartTime.format("HH:mm:ss")
+          : null,
+        dailyEndTime: values.DailyEndTime
+          ? values.DailyEndTime.format("HH:mm:ss")
+          : null,
       };
 
       if (isEditMode) {
@@ -47,14 +98,12 @@ const UpsertRoomType = ({ open, onClose, refetch, editingRoomType }) => {
         notification.success({
           message: "Room type updated successfully",
           description: `${payload.name} has been updated.`,
-          placement: "topRight",
         });
       } else {
         await createRoomType(payload);
         notification.success({
           message: "Room type created successfully",
           description: `${payload.name} has been added.`,
-          placement: "topRight",
         });
       }
 
@@ -64,7 +113,6 @@ const UpsertRoomType = ({ open, onClose, refetch, editingRoomType }) => {
       notification.error({
         message: "Action failed",
         description: error.message || "Something went wrong.",
-        placement: "topRight",
       });
     }
   };
@@ -78,8 +126,8 @@ const UpsertRoomType = ({ open, onClose, refetch, editingRoomType }) => {
       confirmLoading={creating || updating}
       okText={isEditMode ? "Update" : "Create"}
       cancelText="Cancel"
+      width={720}
       className="rounded-xl"
-      width={700}
       forceRender
     >
       <Form
@@ -88,66 +136,43 @@ const UpsertRoomType = ({ open, onClose, refetch, editingRoomType }) => {
         onFinish={handleSubmit}
         initialValues={{ isActive: true }}
       >
-        {/* Hotel */}
-        <Form.Item
-          label="Hotel"
-          name="hotelId"
-          rules={[{ required: true, message: "Please select a hotel" }]}
-        >
-          <Select
-            loading={loadingHotels}
-            placeholder="Select a hotel"
-            showSearch
-            optionFilterProp="children"
-            className="w-full"
-          >
-            {hotels
-              .filter((h) => h.isActive)
-              .map((hotel) => (
-                <Select.Option key={hotel.id} value={hotel.id}>
-                  {hotel.name}
-                </Select.Option>
-              ))}
-          </Select>
-        </Form.Item>
+        {/* ========== Thông tin cơ bản ========== */}
+        <Title level={4} className="!text-blue-600 !mb-3">
+          Basic Information
+        </Title>
 
-        {/* Name */}
-        <Form.Item
-          label="Room Type Name"
-          name="name"
-          rules={[{ required: true, message: "Please enter a room type name" }]}
-        >
-          <Input placeholder="e.g., Deluxe Sea View" />
-        </Form.Item>
-
-        {/* Description */}
-        <Form.Item
-          label="Description"
-          name="description"
-          rules={[{ required: true, message: "Please enter a description" }]}
-        >
-          <Input.TextArea rows={3} placeholder="Enter room description..." />
-        </Form.Item>
-
-        <div className="grid grid-cols-2 gap-4">
-          {/* Base Price */}
+        <div className="grid grid-cols-2 gap-4 mb-4">
           <Form.Item
-            label="Base Price (₫)"
-            name="basePrice"
-            rules={[{ required: true, message: "Please enter base price" }]}
+            label="Hotel"
+            name="hotelId"
+            rules={[{ required: true, message: "Please select a hotel" }]}
           >
-            <InputNumber
-              min={0}
-              step={10000}
-              style={{ width: "100%" }}
-              formatter={(value) =>
-                `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-              }
-              parser={(value) => value.replace(/,/g, "")}
-            />
+            <Select
+              loading={loadingHotels}
+              placeholder="Select a hotel"
+              showSearch
+              optionFilterProp="children"
+            >
+              {hotels
+                .filter((h) => h.isActive)
+                .map((hotel) => (
+                  <Select.Option key={hotel.id} value={hotel.id}>
+                    {hotel.name}
+                  </Select.Option>
+                ))}
+            </Select>
           </Form.Item>
 
-          {/* Area */}
+          <Form.Item
+            label="Room Type Name"
+            name="name"
+            rules={[
+              { required: true, message: "Please enter a room type name" },
+            ]}
+          >
+            <Input placeholder="e.g., Deluxe Sea View" />
+          </Form.Item>
+
           <Form.Item
             label="Area"
             name="area"
@@ -156,7 +181,6 @@ const UpsertRoomType = ({ open, onClose, refetch, editingRoomType }) => {
             <Input placeholder="e.g., 40m²" />
           </Form.Item>
 
-          {/* Quantity */}
           <Form.Item
             label="Quantity"
             name="quantity"
@@ -164,8 +188,115 @@ const UpsertRoomType = ({ open, onClose, refetch, editingRoomType }) => {
           >
             <InputNumber min={1} style={{ width: "100%" }} />
           </Form.Item>
+        </div>
 
-          {/* Guest Quantity */}
+        <Form.Item
+          label="Description"
+          name="description"
+          rules={[{ required: true, message: "Please enter a description" }]}
+        >
+          <Input.TextArea rows={3} placeholder="Enter room description..." />
+        </Form.Item>
+
+        <Divider />
+
+        {/* ========== Theo giờ ========== */}
+        <Title level={4} className="!text-blue-600 !mb-3">
+          🕒 Hourly Pricing
+        </Title>
+
+        <div className="grid grid-cols-2 gap-4 mb-4">
+          <Form.Item label="Base Hourly Price (₫)" name="BaseHourlyPrice">
+            <InputNumber
+              min={0}
+              step={10000}
+              style={{ width: "100%" }}
+              formatter={(v) => `${v}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              parser={(v) => v.replace(/,/g, "")}
+            />
+          </Form.Item>
+
+          <Form.Item label="Base Hours" name="BaseHours">
+            <InputNumber min={0} style={{ width: "100%" }} />
+          </Form.Item>
+
+          <Form.Item label="Extra Hour Price (₫)" name="ExtraHourPrice">
+            <InputNumber
+              min={0}
+              step={10000}
+              style={{ width: "100%" }}
+              formatter={(v) => `${v}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              parser={(v) => v.replace(/,/g, "")}
+            />
+          </Form.Item>
+
+          <Form.Item label="Max Hours" name="MaxHours">
+            <InputNumber min={0} style={{ width: "100%" }} />
+          </Form.Item>
+        </div>
+
+        <Divider />
+
+        {/* ========== Qua đêm ========== */}
+        <Title level={4} className="!text-blue-600 !mb-3">
+          🌙 Overnight Pricing
+        </Title>
+
+        <div className="grid grid-cols-2 gap-4 mb-4">
+          <Form.Item label="Overnight Price (₫)" name="OvernightPrice">
+            <InputNumber
+              min={0}
+              step={10000}
+              style={{ width: "100%" }}
+              formatter={(v) => `${v}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              parser={(v) => v.replace(/,/g, "")}
+            />
+          </Form.Item>
+
+          <Form.Item label="Overnight Start Time" name="OvernightStartTime">
+            <TimePicker format="HH:mm" style={{ width: "100%" }} />
+          </Form.Item>
+
+          <Form.Item label="Overnight End Time" name="OvernightEndTime">
+            <TimePicker format="HH:mm" style={{ width: "100%" }} />
+          </Form.Item>
+        </div>
+
+        <Divider />
+
+        {/* ========== Theo ngày ========== */}
+        <Title level={4} className="!text-blue-600 !mb-3">
+          ☀️ Daily Pricing
+        </Title>
+
+        <div className="grid grid-cols-2 gap-4 mb-4">
+          <Form.Item label="Daily Price (₫)" name="DailyPrice">
+            <InputNumber
+              min={0}
+              step={10000}
+              style={{ width: "100%" }}
+              formatter={(v) => `${v}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              parser={(v) => v.replace(/,/g, "")}
+            />
+          </Form.Item>
+
+          <Form.Item label="Daily Start Time" name="DailyStartTime">
+            <TimePicker format="HH:mm" style={{ width: "100%" }} />
+          </Form.Item>
+
+          <Form.Item label="Daily End Time" name="DailyEndTime">
+            <TimePicker format="HH:mm" style={{ width: "100%" }} />
+          </Form.Item>
+        </div>
+
+        <Divider />
+
+        {/* ========== Các thuộc tính khác ========== */}
+        <Title level={4} className="!text-blue-600 !mb-3">
+          Additional Settings
+        </Title>
+
+        <div className="grid grid-cols-2 gap-4">
           <Form.Item
             label="Guest Capacity"
             name="quantityGuestId"
@@ -176,7 +307,6 @@ const UpsertRoomType = ({ open, onClose, refetch, editingRoomType }) => {
               placeholder="Select guest type"
               showSearch
               optionFilterProp="children"
-              className="w-full"
             >
               {quantityGuests.map((g) => (
                 <Select.Option key={g.id} value={g.id}>
@@ -186,7 +316,6 @@ const UpsertRoomType = ({ open, onClose, refetch, editingRoomType }) => {
             </Select>
           </Form.Item>
 
-          {/* Bed Type */}
           <Form.Item
             label="Bed Type"
             name="bedTypeId"
@@ -197,7 +326,6 @@ const UpsertRoomType = ({ open, onClose, refetch, editingRoomType }) => {
               placeholder="Select bed type"
               showSearch
               optionFilterProp="children"
-              className="w-full"
             >
               {bedTypes.map((b) => (
                 <Select.Option key={b.id} value={b.id}>
@@ -207,7 +335,6 @@ const UpsertRoomType = ({ open, onClose, refetch, editingRoomType }) => {
             </Select>
           </Form.Item>
 
-          {/* Active */}
           <Form.Item
             label="Active Status"
             name="isActive"

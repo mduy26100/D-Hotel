@@ -8,6 +8,7 @@ import {
   Switch,
   notification,
   Select,
+  Divider,
 } from "antd";
 import dayjs from "dayjs";
 import { useCreateRoomTypePrice } from "../../../hooks/rooms/roomTypePrices/useCreateRoomTypePrice";
@@ -51,10 +52,16 @@ const UpsertRoomTypePrice = ({ open, onClose, initialData, onSuccess }) => {
       }
 
       const payload = {
-        ...values,
         id: initialData?.id || 0,
-        startDate: values.startDate.toISOString(),
-        endDate: values.endDate.toISOString(),
+        roomTypeId: values.roomTypeId,
+        priceType: values.priceType,
+        baseHourlyPrice: values.baseHourlyPrice || 0,
+        extraHourPrice: values.extraHourPrice || 0,
+        overnightPrice: values.overnightPrice || 0,
+        dailyPrice: values.dailyPrice || 0,
+        startDate: values.startDate.format("YYYY-MM-DDTHH:mm:ss"),
+        endDate: values.endDate.format("YYYY-MM-DDTHH:mm:ss"),
+        isActive: values.isActive,
       };
 
       if (isEdit) {
@@ -90,7 +97,7 @@ const UpsertRoomTypePrice = ({ open, onClose, initialData, onSuccess }) => {
       onOk={handleSubmit}
       confirmLoading={creating || updating}
       destroyOnClose
-      width={600}
+      width={700}
     >
       <Form
         layout="vertical"
@@ -116,7 +123,7 @@ const UpsertRoomTypePrice = ({ open, onClose, initialData, onSuccess }) => {
               .filter((rt) => rt.isActive)
               .map((rt) => (
                 <Select.Option key={rt.id} value={rt.id}>
-                  {rt.name} — {rt.basePrice.toLocaleString()}₫
+                  {rt.name}
                 </Select.Option>
               ))}
           </Select>
@@ -125,41 +132,98 @@ const UpsertRoomTypePrice = ({ open, onClose, initialData, onSuccess }) => {
         <Form.Item
           name="priceType"
           label="Price Type"
-          rules={[{ required: true, message: "Please enter Price Type" }]}
+          rules={[{ required: true, message: "Please enter price type" }]}
         >
-          <Input placeholder="e.g., Holiday Season, Weekend, etc." />
+          <Input placeholder="e.g., Weekend Promotion, Holiday Discount..." />
         </Form.Item>
 
-        <Form.Item
-          name="price"
-          label="Price (VND)"
-          rules={[{ required: true, message: "Please enter price" }]}
-        >
-          <InputNumber
-            min={0}
-            className="w-full"
-            formatter={(value) =>
-              `${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-            }
-            parser={(value) => value.replace(/,/g, "")}
-          />
-        </Form.Item>
+        <Divider orientation="left">Pricing Details</Divider>
 
-        <Form.Item
-          name="startDate"
-          label="Start Date"
-          rules={[{ required: true, message: "Please select a start date" }]}
-        >
-          <DatePicker className="w-full" format="DD/MM/YYYY" />
-        </Form.Item>
+        <div className="grid grid-cols-2 gap-4">
+          <Form.Item
+            name="baseHourlyPrice"
+            label="Base Hourly Price (₫)"
+            rules={[
+              { required: true, message: "Please enter base hourly price" },
+            ]}
+          >
+            <InputNumber
+              min={0}
+              step={10000}
+              className="w-full"
+              formatter={(v) => `${v}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              parser={(v) => v.replace(/,/g, "")}
+            />
+          </Form.Item>
 
-        <Form.Item
-          name="endDate"
-          label="End Date"
-          rules={[{ required: true, message: "Please select an end date" }]}
-        >
-          <DatePicker className="w-full" format="DD/MM/YYYY" />
-        </Form.Item>
+          <Form.Item
+            name="extraHourPrice"
+            label="Extra Hour Price (₫)"
+            rules={[
+              { required: true, message: "Please enter extra hour price" },
+            ]}
+          >
+            <InputNumber
+              min={0}
+              step={10000}
+              className="w-full"
+              formatter={(v) => `${v}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              parser={(v) => v.replace(/,/g, "")}
+            />
+          </Form.Item>
+
+          <Form.Item
+            name="overnightPrice"
+            label="Overnight Price (₫)"
+            rules={[
+              { required: true, message: "Please enter overnight price" },
+            ]}
+          >
+            <InputNumber
+              min={0}
+              step={10000}
+              className="w-full"
+              formatter={(v) => `${v}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              parser={(v) => v.replace(/,/g, "")}
+            />
+          </Form.Item>
+
+          <Form.Item
+            name="dailyPrice"
+            label="Daily Price (₫)"
+            rules={[{ required: true, message: "Please enter daily price" }]}
+          >
+            <InputNumber
+              min={0}
+              step={10000}
+              className="w-full"
+              formatter={(v) => `${v}`.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              parser={(v) => v.replace(/,/g, "")}
+            />
+          </Form.Item>
+        </div>
+
+        <Divider orientation="left">Active Period</Divider>
+
+        <div className="grid grid-cols-2 gap-4">
+          <Form.Item
+            name="startDate"
+            label="Start Date"
+            rules={[{ required: true, message: "Please select start date" }]}
+          >
+            <DatePicker className="w-full" format="DD/MM/YYYY" />
+          </Form.Item>
+
+          <Form.Item
+            name="endDate"
+            label="End Date"
+            rules={[{ required: true, message: "Please select end date" }]}
+          >
+            <DatePicker className="w-full" format="DD/MM/YYYY" />
+          </Form.Item>
+        </div>
+
+        <Divider orientation="left">Status</Divider>
 
         <Form.Item
           name="isActive"

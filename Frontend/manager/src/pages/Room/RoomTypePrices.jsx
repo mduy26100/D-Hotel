@@ -44,10 +44,13 @@ const RoomTypePrices = () => {
           await deleteRoomTypePrice({
             id: roomTypePrice.id,
             roomTypeId: roomTypePrice.roomTypeId,
-            price: roomTypePrice.price,
+            priceType: roomTypePrice.priceType,
+            baseHourlyPrice: roomTypePrice.baseHourlyPrice,
+            extraHourPrice: roomTypePrice.extraHourPrice,
+            overnightPrice: roomTypePrice.overnightPrice,
+            dailyPrice: roomTypePrice.dailyPrice,
             startDate: roomTypePrice.startDate,
             endDate: roomTypePrice.endDate,
-            priceType: roomTypePrice.priceType,
             isActive: roomTypePrice.isActive,
           });
           notification.success({

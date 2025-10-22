@@ -20,6 +20,7 @@ import UpsertRoomUtilitiesModal from "./UpsertRoomUtilitiesModal";
 import UpsertRoomTypePurposeModal from "./UpsertRoomTypePurposeModal";
 
 const RoomDetail = ({ roomTypeId, open, onClose }) => {
+  // 🔹 Hooks & State
   const { details, loading, refetch } = useGetRoomTypeDetails(roomTypeId);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -29,6 +30,7 @@ const RoomDetail = ({ roomTypeId, open, onClose }) => {
   const [isTravelPurposeModalOpen, setIsTravelPurposeModalOpen] =
     useState(false);
 
+  // 🔹 Handlers
   const handlePrevImage = () => {
     setCurrentImageIndex((prev) =>
       prev === 0 ? (details?.roomImages?.length || 1) - 1 : prev - 1
@@ -54,6 +56,7 @@ const RoomDetail = ({ roomTypeId, open, onClose }) => {
     setIsModalOpen(true);
   };
 
+  // 🔹 Render
   return (
     <>
       <Modal
@@ -87,7 +90,7 @@ const RoomDetail = ({ roomTypeId, open, onClose }) => {
           </p>
         ) : (
           <>
-            {/* Image Carousel */}
+            {/* 🖼️ Image Carousel & Buttons */}
             {details.roomImages?.length > 0 && (
               <div className="flex justify-center mb-6">
                 <div className="w-full max-w-2xl relative bg-gray-100 rounded-lg overflow-hidden aspect-video">
@@ -132,7 +135,6 @@ const RoomDetail = ({ roomTypeId, open, onClose }) => {
               </div>
             )}
 
-            {/* Buttons */}
             <div className="flex gap-3 mt-4 mb-6">
               <button
                 onClick={openCreateModal}
@@ -149,7 +151,9 @@ const RoomDetail = ({ roomTypeId, open, onClose }) => {
               </button>
             </div>
 
-            {/* Basic Info */}
+            <Divider />
+
+            {/* 🧾 Basic Info */}
             <section>
               <div className="flex items-center gap-2 mb-4">
                 <Info className="w-5 h-5 text-blue-600" />
@@ -160,11 +164,6 @@ const RoomDetail = ({ roomTypeId, open, onClose }) => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-50 rounded-lg p-4 border border-gray-200">
                 <InfoRow label="Name" value={details.name} />
                 <InfoRow label="Area" value={details.area} />
-                <InfoRow
-                  label="Base Price"
-                  value={`${details.basePrice?.toLocaleString("vi-VN")}₫`}
-                  strong
-                />
                 <InfoRow label="Quantity" value={details.quantity} />
                 <InfoRow
                   label="Room Purpose"
@@ -184,7 +183,7 @@ const RoomDetail = ({ roomTypeId, open, onClose }) => {
 
             <Divider />
 
-            {/* Description */}
+            {/* 📝 Description */}
             <section>
               <div className="flex items-center gap-2 mb-4">
                 <Grid3x3 className="w-5 h-5 text-blue-600" />
@@ -199,7 +198,186 @@ const RoomDetail = ({ roomTypeId, open, onClose }) => {
 
             <Divider />
 
-            {/* Utilities */}
+            {/* 💰 Detailed Pricing */}
+            <section>
+              <div className="flex items-center gap-2 mb-4">
+                <DollarSign className="w-5 h-5 text-blue-600" />
+                <h3 className="text-lg font-semibold text-gray-900">
+                  Detailed Pricing
+                </h3>
+              </div>
+
+              <div className="space-y-6">
+                {/* --- Thuê theo giờ --- */}
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <h4 className="text-md font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                    🕒 Hourly Rental
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <InfoRow
+                      label="Base Hourly Price"
+                      value={
+                        details.baseHourlyPrice
+                          ? `${details.baseHourlyPrice.toLocaleString(
+                              "vi-VN"
+                            )}₫`
+                          : "N/A"
+                      }
+                      strong
+                    />
+                    <InfoRow
+                      label="Extra Hour Price"
+                      value={
+                        details.extraHourPrice
+                          ? `${details.extraHourPrice.toLocaleString("vi-VN")}₫`
+                          : "N/A"
+                      }
+                    />
+                    <InfoRow
+                      label="Base Hours"
+                      value={details.baseHours ?? "N/A"}
+                    />
+                    <InfoRow
+                      label="Max Hours"
+                      value={details.maxHours ?? "N/A"}
+                    />
+                  </div>
+                </div>
+
+                {/* --- Thuê qua đêm --- */}
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <h4 className="text-md font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                    🌙 Overnight Rental
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <InfoRow
+                      label="Overnight Price"
+                      value={
+                        details.overnightPrice
+                          ? `${details.overnightPrice.toLocaleString("vi-VN")}₫`
+                          : "N/A"
+                      }
+                      strong
+                    />
+                    <InfoRow
+                      label="Overnight Time"
+                      value={
+                        details.overnightStartTime && details.overnightEndTime
+                          ? `${details.overnightStartTime} → ${details.overnightEndTime}`
+                          : "N/A"
+                      }
+                    />
+                  </div>
+                </div>
+
+                {/* --- Thuê theo ngày --- */}
+                <div className="bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  <h4 className="text-md font-semibold text-gray-800 mb-3 flex items-center gap-2">
+                    ☀️ Daily Rental
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <InfoRow
+                      label="Daily Price"
+                      value={
+                        details.dailyPrice
+                          ? `${details.dailyPrice.toLocaleString("vi-VN")}₫`
+                          : "N/A"
+                      }
+                      strong
+                    />
+                    <InfoRow
+                      label="Daily Time"
+                      value={
+                        details.dailyStartTime && details.dailyEndTime
+                          ? `${details.dailyStartTime} → ${details.dailyEndTime}`
+                          : "N/A"
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <Divider />
+
+            {/* 🛏️ Bed & Guest Info */}
+            <section>
+              <div className="flex items-center gap-2 mb-4">
+                <Users className="w-5 h-5 text-blue-600" />
+                <h3 className="text-lg font-semibold text-gray-900">
+                  Bed & Guest Info
+                </h3>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-gray-50 rounded-lg p-4 border border-gray-200">
+                {details.bedType ? (
+                  <>
+                    <InfoRow
+                      label="Bed Type"
+                      value={details.bedType.name}
+                      strong
+                    />
+                    <InfoRow
+                      label="Description"
+                      value={details.bedType.description}
+                    />
+                    <InfoRow
+                      label="Dimensions"
+                      value={details.bedType.dimensions}
+                    />
+                    <InfoRow
+                      label="Capacity"
+                      value={details.bedType.capacity}
+                    />
+                    <InfoRow
+                      label="Shared"
+                      value={details.bedType.isShared ? "Yes" : "No"}
+                    />
+                  </>
+                ) : (
+                  <p className="text-gray-500">No bed type information.</p>
+                )}
+
+                {details.quantityGuest ? (
+                  <>
+                    <InfoRow
+                      label="Guest Type"
+                      value={details.quantityGuest.name}
+                      strong
+                    />
+                    <InfoRow
+                      label="Standard Guests"
+                      value={details.quantityGuest.standardGuests}
+                    />
+                    <InfoRow
+                      label="Max Guests"
+                      value={details.quantityGuest.maxGuests}
+                    />
+                    <InfoRow
+                      label="Extra Guest Charge"
+                      value={`${details.quantityGuest.extraGuestCharge.toLocaleString(
+                        "vi-VN"
+                      )}₫`}
+                    />
+                    <InfoRow
+                      label="Children Allowed"
+                      value={
+                        details.quantityGuest.childrenAllowed ? "Yes" : "No"
+                      }
+                    />
+                    <InfoRow
+                      label="Max Children"
+                      value={details.quantityGuest.maxChildren}
+                    />
+                  </>
+                ) : (
+                  <p className="text-gray-500">No guest limit information.</p>
+                )}
+              </div>
+            </section>
+
+            <Divider />
+
+            {/* ⚙️ Utilities */}
             <section>
               <div className="flex items-center gap-2 mb-4">
                 <Grid3x3 className="w-5 h-5 text-blue-600" />
@@ -259,7 +437,7 @@ const RoomDetail = ({ roomTypeId, open, onClose }) => {
 
             <Divider />
 
-            {/* ✅ Room Purpose */}
+            {/* 🎯 Room Purpose */}
             <section>
               <div className="flex items-center gap-2 mb-4">
                 <Users className="w-5 h-5 text-blue-600" />
@@ -285,7 +463,7 @@ const RoomDetail = ({ roomTypeId, open, onClose }) => {
 
             <Divider />
 
-            {/* Price Info */}
+            {/* 💵 Price Info */}
             <section>
               <div className="flex items-center gap-2 mb-4">
                 <DollarSign className="w-5 h-5 text-blue-600" />
@@ -293,19 +471,65 @@ const RoomDetail = ({ roomTypeId, open, onClose }) => {
                   Price Info
                 </h3>
               </div>
+
               {details.roomTypePrice ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-gray-50 rounded-lg p-4 border border-gray-200">
+                  {/* Price Type */}
                   <InfoRow
                     label="Price Type"
                     value={details.roomTypePrice.priceType}
                   />
+
+                  {/* Base Hourly Price */}
                   <InfoRow
-                    label="Price"
-                    value={`${details.roomTypePrice.price.toLocaleString(
-                      "vi-VN"
-                    )}₫`}
+                    label="Base Hourly Price"
+                    value={
+                      details.roomTypePrice.baseHourlyPrice
+                        ? `${details.roomTypePrice.baseHourlyPrice.toLocaleString(
+                            "vi-VN"
+                          )}₫`
+                        : "N/A"
+                    }
                     strong
                   />
+
+                  {/* Extra Hour Price */}
+                  <InfoRow
+                    label="Extra Hour Price"
+                    value={
+                      details.roomTypePrice.extraHourPrice
+                        ? `${details.roomTypePrice.extraHourPrice.toLocaleString(
+                            "vi-VN"
+                          )}₫`
+                        : "N/A"
+                    }
+                  />
+
+                  {/* Overnight Price */}
+                  <InfoRow
+                    label="Overnight Price"
+                    value={
+                      details.roomTypePrice.overnightPrice
+                        ? `${details.roomTypePrice.overnightPrice.toLocaleString(
+                            "vi-VN"
+                          )}₫`
+                        : "N/A"
+                    }
+                  />
+
+                  {/* Daily Price */}
+                  <InfoRow
+                    label="Daily Price"
+                    value={
+                      details.roomTypePrice.dailyPrice
+                        ? `${details.roomTypePrice.dailyPrice.toLocaleString(
+                            "vi-VN"
+                          )}₫`
+                        : "N/A"
+                    }
+                  />
+
+                  {/* Start & End Dates */}
                   <InfoRow
                     label="Start Date"
                     value={new Date(
@@ -318,6 +542,8 @@ const RoomDetail = ({ roomTypeId, open, onClose }) => {
                       details.roomTypePrice.endDate
                     ).toLocaleDateString("vi-VN")}
                   />
+
+                  {/* Active status */}
                   <InfoRow
                     label="Active"
                     value={
@@ -337,7 +563,7 @@ const RoomDetail = ({ roomTypeId, open, onClose }) => {
         )}
       </Modal>
 
-      {/* Modals */}
+      {/* 🪟 Modals */}
       {isModalOpen && (
         <RoomImageUpsertModal
           open={isModalOpen}
@@ -370,6 +596,7 @@ const RoomDetail = ({ roomTypeId, open, onClose }) => {
   );
 };
 
+// 🔹 InfoRow Subcomponent
 const InfoRow = ({ label, value, strong = false }) => (
   <div className="flex justify-between">
     <span className="font-medium text-gray-700">{label}:</span>

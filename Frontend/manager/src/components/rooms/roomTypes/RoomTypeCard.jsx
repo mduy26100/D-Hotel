@@ -50,7 +50,7 @@ const RoomTypeCard = ({ roomType, onEdit, onDelete, onShowDetails }) => {
       <div className="grid grid-cols-2 gap-3 mb-4">
         <div className="flex items-center gap-2 text-sm">
           <BedDouble className="w-4 h-4 text-gray-400" />
-          <span className="text-gray-600">{roomType.area}</span>
+          <span className="text-gray-600">{roomType.area}m2</span>
         </div>
 
         <div className="flex items-center gap-2 text-sm">
@@ -63,7 +63,10 @@ const RoomTypeCard = ({ roomType, onEdit, onDelete, onShowDetails }) => {
         <div className="flex items-center gap-2 text-sm">
           <DollarSign className="w-4 h-4 text-gray-400" />
           <span className="text-gray-900 font-medium">
-            {roomType.basePrice.toLocaleString("vi-VN")}₫ / night
+            {roomType.overnightPrice != null
+              ? Number(roomType.overnightPrice).toLocaleString("vi-VN")
+              : "0"}
+            ₫ / night
           </span>
         </div>
 
