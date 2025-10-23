@@ -35,33 +35,6 @@ const Header = () => {
 
   return (
     <>
-      {/* 🟦 Top Bar */}
-      <div className="bg-[#233E8F] text-white text-sm">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center py-2 px-4 space-y-2 md:space-y-0">
-          <div className="flex flex-col sm:flex-row sm:space-x-6 space-y-1 sm:space-y-0 items-center">
-            <div className="flex items-center space-x-1">
-              <Phone className="w-4 h-4" />
-              <span>+84 123 456 789</span>
-            </div>
-            <div className="flex items-center space-x-1">
-              <Mail className="w-4 h-4" />
-              <span>info@d-hotel.com</span>
-            </div>
-          </div>
-          <div className="flex items-center space-x-4">
-            <div className="flex items-center space-x-1 cursor-pointer hover:underline">
-              <Globe size={14} />
-              <span>EN</span>
-              <ChevronDown size={14} />
-            </div>
-            <div className="flex items-center space-x-1 cursor-pointer hover:underline">
-              <span>VNĐ</span>
-              <ChevronDown size={14} />
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* 🧭 Main Header */}
       <header className="bg-white shadow-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto flex items-center justify-between py-3 px-4 md:py-4">
