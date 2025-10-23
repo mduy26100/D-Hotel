@@ -43,7 +43,54 @@ namespace Application.Features.Rooms.Services.Query.RoomType.GetRoomsByHotelId
                     PriceType.Daily => CalculateDailyPrice(dto, startDate, endDate),
                     _ => dto.DailyPrice ?? 0
                 };
+
+                switch (priceType?.ToLower())
+                {
+                    case PriceType.Hourly:
+                        dto.DisplayType = "Hourly";
+                        if (checkInTime.HasValue && usageHours.HasValue)
+                        {
+                            dto.DisplayStartTime = checkInTime;
+
+                            // Tính DisplayEndTime theo vòng 24h
+                            var totalHours = checkInTime.Value.TotalHours + usageHours.Value;
+                            var endHour = totalHours % 24; // vòng 24h
+                            dto.DisplayEndTime = TimeSpan.FromHours(endHour);
+
+                            // Tính DisplayEndDate nếu vượt qua nửa đêm
+                            dto.DisplayStartDate = startDate;
+                            dto.DisplayEndDate = totalHours > 24
+                                ? startDate?.AddDays(1)
+                                : startDate;
+                        }
+                        else
+                        {
+                            dto.DisplayStartTime = TimeSpan.Zero;
+                            dto.DisplayEndTime = TimeSpan.Zero;
+                            dto.DisplayStartDate = startDate ?? DateTime.Today;
+                            dto.DisplayEndDate = dto.DisplayStartDate;
+                        }
+                        break;
+
+                    case PriceType.Overnight:
+                        dto.DisplayType = "Overnight";
+                        dto.DisplayStartTime = dto.OvernightStartTime;
+                        dto.DisplayEndTime = dto.OvernightEndTime;
+                        dto.DisplayStartDate = startDate ?? DateTime.Today;
+                        dto.DisplayEndDate = (startDate ?? DateTime.Today).AddDays(1);
+                        break;
+
+                    case PriceType.Daily:
+                    default:
+                        dto.DisplayType = "Daily";
+                        dto.DisplayStartTime = dto.DailyStartTime;
+                        dto.DisplayEndTime = dto.DailyEndTime;
+                        dto.DisplayStartDate = startDate ?? DateTime.Today;
+                        dto.DisplayEndDate = endDate ?? dto.DisplayStartDate;
+                        break;
+                }
             }
+
 
             return roomTypeDtos;
         }
