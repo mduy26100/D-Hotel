@@ -1,4 +1,5 @@
-﻿using Application.Features.Rooms.DTOs;
+﻿using Application.Features.Bookings.Repositories;
+using Application.Features.Rooms.DTOs;
 using Application.Features.Rooms.Interfaces.Services.Query.RoomType.GetRoomsByHotelId;
 using Application.Features.Rooms.Interfaces.Services.Query.RoomTypeImage.GetRoomImagesByRoomTypeId;
 using Application.Features.Rooms.Repositories;
@@ -10,15 +11,18 @@ namespace Application.Features.Rooms.Services.Query.RoomType.GetRoomsByHotelId
     public class GetRoomsByHotelIdService : IGetRoomsByHotelIdService
     {
         private readonly IRoomTypeRepository _roomTypeRepository;
+        private readonly IBookingRepository _bookingRepository;
         private readonly IGetRoomImagesByRoomTypeIdService _roomImagesByRoomTypeIdService;
         private readonly IMapper _mapper;
 
         public GetRoomsByHotelIdService(
             IRoomTypeRepository roomTypeRepository,
+            IBookingRepository bookingRepository,
             IGetRoomImagesByRoomTypeIdService roomImagesByRoomTypeIdService,
             IMapper mapper)
         {
             _roomTypeRepository = roomTypeRepository;
+            _bookingRepository = bookingRepository;
             _roomImagesByRoomTypeIdService = roomImagesByRoomTypeIdService;
             _mapper = mapper;
         }
@@ -50,6 +54,9 @@ namespace Application.Features.Rooms.Services.Query.RoomType.GetRoomsByHotelId
                     PriceType.Daily => CalculateDailyPrice(dto, startDate, endDate),
                     _ => dto.DailyPrice ?? 0
                 };
+
+                var totalActiveBookings = await _bookingRepository.CountActiveBookingsAsync(dto.Id, cancellationToken);
+                dto.Quantity = Math.Max(dto.Quantity - totalActiveBookings, 0);
 
                 switch (priceType?.ToLower())
                 {

@@ -35,18 +35,20 @@ namespace Application.Features.Bookings.Services.Command.UpdateBooking
 
             try
             {
+                // --- Lấy Booking ---
                 var bookingEntity = await _bookingRepository.GetByIdAsync(bookingId, cancellationToken)
                     ?? throw new Exception($"Booking {bookingId} not found");
 
+                // --- Cập nhật Booking ---
                 _mapper.Map(updatedBooking.Booking, bookingEntity);
                 _bookingRepository.Update(bookingEntity);
 
+                // --- Xóa BookingDetails cũ ---
                 var existingDetails = await _bookingDetailRepository.FindAsync(d => d.BookingId == bookingId, cancellationToken);
                 foreach (var detail in existingDetails)
-                {
                     _bookingDetailRepository.Remove(detail);
-                }
 
+                // --- Thêm BookingDetails mới ---
                 foreach (var newDetail in updatedBooking.Details)
                 {
                     var entity = _mapper.Map<BookingDetailEntity>(newDetail);
@@ -54,24 +56,32 @@ namespace Application.Features.Bookings.Services.Command.UpdateBooking
                     await _bookingDetailRepository.AddAsync(entity, cancellationToken);
                 }
 
+                await _context.SaveChangesAsync(cancellationToken);
+
+                // --- Tính lại Invoice ---
                 var existingInvoice = await _invoiceRepository.FindOneAsync(i => i.BookingId == bookingId, cancellationToken);
-                if (updatedBooking.Invoice != null)
+                var totalAmount = updatedBooking.Details.Sum(d => (d.UnitPrice ?? 0) * (d.Quantity ?? 0));
+
+                if (existingInvoice == null)
                 {
-                    if (existingInvoice == null)
+                    // Tạo Invoice mới
+                    var invoiceEntity = new InvoiceEntity
                     {
-                        var invoiceEntity = _mapper.Map<InvoiceEntity>(updatedBooking.Invoice);
-                        invoiceEntity.BookingId = bookingId;
-                        await _invoiceRepository.AddAsync(invoiceEntity, cancellationToken);
-                    }
-                    else
-                    {
-                        _mapper.Map(updatedBooking.Invoice, existingInvoice);
-                        _invoiceRepository.Update(existingInvoice);
-                    }
+                        BookingId = bookingId,
+                        InvoiceNumber = GenerateInvoiceNumber(),
+                        TotalAmount = totalAmount,
+                        PaymentMethod = null!, // gắn sau với Strategy
+                        IssuedDate = DateTime.UtcNow,
+                        Status = "Pending"
+                    };
+                    await _invoiceRepository.AddAsync(invoiceEntity, cancellationToken);
                 }
-                else if (existingInvoice != null)
+                else
                 {
-                    _invoiceRepository.Remove(existingInvoice);
+                    // Cập nhật Invoice hiện tại
+                    existingInvoice.TotalAmount = totalAmount;
+                    existingInvoice.IssuedDate = DateTime.UtcNow;
+                    _invoiceRepository.Update(existingInvoice);
                 }
 
                 await _context.SaveChangesAsync(cancellationToken);
@@ -82,6 +92,12 @@ namespace Application.Features.Bookings.Services.Command.UpdateBooking
                 await transaction.RollbackAsync(cancellationToken);
                 throw;
             }
+        }
+
+        // --- Helper tạo số Invoice ---
+        private string GenerateInvoiceNumber()
+        {
+            return $"INV-{DateTime.UtcNow:yyyyMMddHHmmss}-{Guid.NewGuid().ToString().Substring(0, 6).ToUpper()}";
         }
     }
 }

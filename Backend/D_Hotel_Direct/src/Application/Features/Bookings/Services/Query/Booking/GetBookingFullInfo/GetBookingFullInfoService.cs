@@ -35,7 +35,6 @@ namespace Application.Features.Bookings.Services.Query.Booking.GetBookingFullInf
             {
                 Booking = _mapper.Map<BookingDto>(booking),
                 Details = _mapper.Map<IEnumerable<BookingDetailDto>>(bookingDetails),
-                Invoice = _mapper.Map<InvoiceDto>(invoice)
             };
         }
     }

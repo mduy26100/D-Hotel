@@ -3,14 +3,14 @@
     public class BookingDetailDto
     {
         public int Id { get; set; }
-        public int BookingId { get; set; }
+        public int BookingId { get; set; }  // bắt buộc để biết thuộc booking nào
 
-        public required string ItemType { get; set; }
-        public int? ItemId { get; set; }
-        public required string ItemName { get; set; }
+        public string? ItemType { get; set; }    // loại dịch vụ, nullable
+        public int? ItemId { get; set; }         // FK đến dịch vụ/food, nullable
+        public string? ItemName { get; set; }    // tên dịch vụ, nullable
 
-        public decimal UnitPrice { get; set; }
-        public int Quantity { get; set; }
-        public decimal TotalPrice { get; set; }
+        public decimal? UnitPrice { get; set; }  // giá 1 đơn vị, nullable
+        public int? Quantity { get; set; }       // số lượng, nullable
+        public decimal? TotalPrice { get; set; } // tổng giá, nullable
     }
 }

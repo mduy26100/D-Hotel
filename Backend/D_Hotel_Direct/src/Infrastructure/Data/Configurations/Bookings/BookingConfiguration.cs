@@ -6,8 +6,10 @@
         {
             builder.ToTable("Bookings");
 
+            // Key
             builder.HasKey(b => b.Id);
 
+            // Properties
             builder.Property(b => b.UserId)
                 .IsRequired(false);
 
@@ -18,24 +20,40 @@
                 .IsRequired();
 
             builder.Property(b => b.CheckInDate)
-                .IsRequired();
+                .IsRequired(false);
 
             builder.Property(b => b.CheckOutDate)
+                .IsRequired(false);
+
+            builder.Property(b => b.StartTime)
+                .IsRequired(false);
+
+            builder.Property(b => b.EndTime)
+                .IsRequired(false);
+
+            builder.Property(b => b.RentalPrice)
+                .HasColumnType("decimal(18,2)")
                 .IsRequired();
 
+            builder.Property(b => b.RentalType)
+                .HasMaxLength(64)
+                .IsRequired(false);
+
             builder.Property(b => b.GuestName)
-                .IsRequired()
-                .HasMaxLength(256);
+                .HasMaxLength(256)
+                .IsRequired();
 
             builder.Property(b => b.GuestPhone)
-                .IsRequired()
-                .HasMaxLength(64);
+                .HasMaxLength(64)
+                .IsRequired();
 
             builder.Property(b => b.GuestEmail)
-                .HasMaxLength(256);
+                .HasMaxLength(256)
+                .IsRequired(false);
 
             builder.Property(b => b.Note)
-                .HasMaxLength(1024);
+                .HasMaxLength(1024)
+                .IsRequired(false);
 
             builder.Property(b => b.CreatedByStaffId)
                 .IsRequired(false);
@@ -44,11 +62,14 @@
                 .IsRequired();
 
             builder.Property(b => b.Status)
-                .IsRequired()
-                .HasMaxLength(64);
+                .HasMaxLength(64)
+                .IsRequired();
 
             builder.Property(b => b.BookingDate)
                 .IsRequired();
+
+            builder.Property(b => b.RowVersion)
+                .IsRowVersion();
         }
     }
 }
