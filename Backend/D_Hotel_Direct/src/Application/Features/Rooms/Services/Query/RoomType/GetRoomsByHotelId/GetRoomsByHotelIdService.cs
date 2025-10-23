@@ -1,5 +1,6 @@
 ﻿using Application.Features.Rooms.DTOs;
 using Application.Features.Rooms.Interfaces.Services.Query.RoomType.GetRoomsByHotelId;
+using Application.Features.Rooms.Interfaces.Services.Query.RoomTypeImage.GetRoomImagesByRoomTypeId;
 using Application.Features.Rooms.Repositories;
 using AutoMapper;
 using Domain.Consts;
@@ -9,13 +10,16 @@ namespace Application.Features.Rooms.Services.Query.RoomType.GetRoomsByHotelId
     public class GetRoomsByHotelIdService : IGetRoomsByHotelIdService
     {
         private readonly IRoomTypeRepository _roomTypeRepository;
+        private readonly IGetRoomImagesByRoomTypeIdService _roomImagesByRoomTypeIdService;
         private readonly IMapper _mapper;
 
         public GetRoomsByHotelIdService(
             IRoomTypeRepository roomTypeRepository,
+            IGetRoomImagesByRoomTypeIdService roomImagesByRoomTypeIdService,
             IMapper mapper)
         {
             _roomTypeRepository = roomTypeRepository;
+            _roomImagesByRoomTypeIdService = roomImagesByRoomTypeIdService;
             _mapper = mapper;
         }
 
@@ -36,6 +40,9 @@ namespace Application.Features.Rooms.Services.Query.RoomType.GetRoomsByHotelId
 
             foreach (var dto in roomTypeDtos)
             {
+                var roomImages = await _roomImagesByRoomTypeIdService.GetByRoomTypeIdAsync(dto.Id, cancellationToken);
+                dto.Images = roomImages?.ToList() ?? new List<RoomTypeImageDto>();
+
                 dto.DisplayPrice = priceType?.ToLower() switch
                 {
                     PriceType.Hourly => CalculateHourlyPrice(dto, usageHours),

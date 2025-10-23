@@ -35,7 +35,8 @@
         public int Quantity { get; set; }
 
         public bool IsActive { get; set; }
- // ✅ Thêm thuộc tính hiển thị giá cuối cùng
+
+        // ✅ Thêm thuộc tính hiển thị giá cuối cùng
         public decimal DisplayPrice { get; set; }
 
         public string? DisplayType { get; set; }
@@ -45,6 +46,9 @@
 
         public DateTime? DisplayStartDate { get; set; }
         public DateTime? DisplayEndDate { get; set; }
+
+        //Hiển thị ảnh
+        public IEnumerable<RoomTypeImageDto>? Images { get; set; } = new List<RoomTypeImageDto>();
        
     }
 }
