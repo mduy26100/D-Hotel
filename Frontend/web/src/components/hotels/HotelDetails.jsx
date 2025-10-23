@@ -1,7 +1,7 @@
 "use client";
 
 import { useHotelDetails } from "../../hooks/hotels/hotels/useHotelDetails";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRoomsByHotelId } from "../../hooks/rooms/roomTypes/useRoomsByHotelId";
 import RoomCard from "../rooms/RoomCard";
 import dayjs from "dayjs";
@@ -37,6 +37,28 @@ const HotelDetails = ({ hotelId }) => {
   const [checkOutDate, setCheckOutDate] = useState(null);
   const [hotelCheckInTime, setHotelCheckInTime] = useState(null);
   const [usageHours, setUsageHours] = useState(null);
+
+  const [activeSection, setActiveSection] = useState("overview");
+
+  useEffect(() => {
+    const sections = document.querySelectorAll(
+      "#overview, #rooms, #amenities, #policies"
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.3 } // cuộn qua 30% section là active
+    );
+
+    sections.forEach((sec) => observer.observe(sec));
+    return () => sections.forEach((sec) => observer.unobserve(sec));
+  }, []);
 
   // State lưu param để hook gọi
   const [filterParams, setFilterParams] = useState({ hotelId });
@@ -124,7 +146,11 @@ const HotelDetails = ({ hotelId }) => {
       </div>
 
       {/* === FILTER BAR === */}
-      <div className="sticky top-[64px] z-40 border-t border-gray-100">
+      <div
+        className={`sticky top-[64px] border-t border-gray-100 transition-[z-index] duration-200 ${
+          isFilterOpen ? "z-50" : "z-30"
+        }`}
+      >
         <div className="max-w-6xl mx-auto px-4 py-4">
           {/* Overview bar */}
           <button
@@ -167,7 +193,7 @@ const HotelDetails = ({ hotelId }) => {
 
           {/* Filter Form */}
           <div
-            className={`overflow-hidden transition-all duration-500 ${
+            className={`overflow-hidden transition-[max-height,opacity] duration-300 ease-in-out ${
               isFilterOpen
                 ? "max-h-[1000px] mt-5 opacity-100"
                 : "max-h-0 opacity-0"
@@ -305,8 +331,52 @@ const HotelDetails = ({ hotelId }) => {
         </div>
       </div>
 
+      {/* === SECTION NAVIGATION BAR === */}
+      <div className="sticky top-[160px] bg-white shadow-sm border-b border-gray-200 z-40">
+        <div className="max-w-6xl mx-auto px-4">
+          <nav className="flex items-center justify-start space-x-6 text-sm md:text-base">
+            {[
+              { id: "overview", label: "Tổng quan" },
+              { id: "rooms", label: "Danh sách phòng" },
+              { id: "amenities", label: "Tiện ích" },
+              { id: "policies", label: "Chính sách khách sạn" },
+            ].map((section) => (
+              <button
+                key={section.id}
+                onClick={() => {
+                  const el = document.getElementById(section.id);
+                  if (el) {
+                    const yOffset = -180; // điều chỉnh để không bị che
+                    const y =
+                      el.getBoundingClientRect().top +
+                      window.pageYOffset +
+                      yOffset;
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                    setActiveSection(section.id); // click cũng set active
+                  }
+                }}
+                className={`relative py-4 font-medium transition group ${
+                  activeSection === section.id
+                    ? "text-[#003B95]" // màu active
+                    : "text-gray-500 hover:text-[#003B95]"
+                }`}
+              >
+                {section.label}
+                <span
+                  className={`absolute left-0 -bottom-[2px] h-[2px] bg-orange-500 transition-all duration-300 ${
+                    activeSection === section.id
+                      ? "w-full"
+                      : "w-0 group-hover:w-full"
+                  }`}
+                ></span>
+              </button>
+            ))}
+          </nav>
+        </div>
+      </div>
+
       {/* === MAIN CONTENT === */}
-      <div className="max-w-7xl mx-auto px-6 py-12 space-y-12">
+      <div id="overview" className="max-w-7xl mx-auto px-6 py-12 space-y-12">
         {/* Description */}
         <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 hover:shadow-md transition-shadow">
           <h2 className="text-3xl font-bold text-gray-900 mb-5">
@@ -329,16 +399,18 @@ const HotelDetails = ({ hotelId }) => {
         </div>
 
         {/* Rooms */}
-        {!roomsLoading && !roomsError && rooms?.length > 0 && (
-          <>
-            <h2 className="text-3xl font-bold text-gray-900">Room list</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {rooms.map((room) => (
-                <RoomCard key={room.id} room={room} />
-              ))}
-            </div>
-          </>
-        )}
+        <div id="rooms" className="max-w-7xl mx-auto px-6 py-12 space-y-12">
+          {!roomsLoading && !roomsError && rooms?.length > 0 && (
+            <>
+              <h2 className="text-3xl font-bold text-gray-900">Room list</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {rooms.map((room) => (
+                  <RoomCard key={room.id} room={room} />
+                ))}
+              </div>
+            </>
+          )}
+        </div>
 
         {/* Info Cards */}
         <div className="mb-8">
@@ -384,7 +456,7 @@ const HotelDetails = ({ hotelId }) => {
         </div>
 
         {/* Amenities */}
-        <div>
+        <div id="amenities">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
             Featured Amenities
           </h2>
