@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react";
 
 const blogs = [
   {
@@ -11,7 +11,7 @@ const blogs = [
     id: 2,
     title: "Top 10 địa điểm nghỉ dưỡng cho gia đình",
     date: "02/10/2025",
-    image: "https://images.unsplash.com/photo-1519821172141-b5d8e77b5f2d",
+    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
   },
   {
     id: 3,
@@ -19,7 +19,7 @@ const blogs = [
     date: "28/09/2025",
     image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
   },
-]
+];
 
 export default function BlogSection() {
   return (
@@ -36,7 +36,7 @@ export default function BlogSection() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {blogs.map(blog => (
+          {blogs.map((blog) => (
             <div
               key={blog.id}
               className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition cursor-pointer"
@@ -57,5 +57,5 @@ export default function BlogSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

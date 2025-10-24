@@ -1,10 +1,10 @@
-import { ArrowRight } from "lucide-react"
+import { ArrowRight } from "lucide-react";
 
 const featuredDeals = [
   {
     id: 1,
     title: "Giảm 30% tại Vinpearl Resort",
-    image: "https://images.unsplash.com/photo-1501117716987-c8e1ecb210e8",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
     price: "2.500.000đ/đêm",
   },
   {
@@ -19,7 +19,7 @@ const featuredDeals = [
     image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
     price: "2.200.000đ/đêm",
   },
-]
+];
 
 export default function FeaturedDeals() {
   return (
@@ -36,7 +36,7 @@ export default function FeaturedDeals() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featuredDeals.map(deal => (
+          {featuredDeals.map((deal) => (
             <div
               key={deal.id}
               className="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition"
@@ -47,7 +47,9 @@ export default function FeaturedDeals() {
                 className="h-48 w-full object-cover"
               />
               <div className="p-4">
-                <h3 className="text-lg font-semibold text-gray-800 mb-1">{deal.title}</h3>
+                <h3 className="text-lg font-semibold text-gray-800 mb-1">
+                  {deal.title}
+                </h3>
                 <p className="text-[#233E8F] font-bold">{deal.price}</p>
               </div>
             </div>
@@ -55,5 +57,5 @@ export default function FeaturedDeals() {
         </div>
       </div>
     </section>
-  )
+  );
 }

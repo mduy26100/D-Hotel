@@ -11,26 +11,6 @@ const HotelDetails = ({ hotelId }) => {
   const { hotel, loading, error } = useHotelDetails(hotelId);
   const [isFilterOpen, setIsFilterOpen] = useState(false);
 
-  // const [filterType, setFilterType] = useState("night");
-  // const [checkInDate, setCheckInDate] = useState("2025-10-23");
-  // const [checkOutDate, setCheckOutDate] = useState("2025-10-25");
-  // const [hotelCheckInTime, setHotelCheckInTime] = useState("22:00");
-  // const [usageHours, setUsageHours] = useState(4);
-
-  // const {
-  //   rooms,
-  //   loading: roomsLoading,
-  //   error: roomsError,
-  //   refetch,
-  // } = useRoomsByHotelId({
-  //   hotelId: hotelId,
-  //   priceType: "hourly",
-  //   startDate: checkInDate || null,
-  //   // endDate: checkOutDate || null,
-  //   checkInTime: hotelCheckInTime || null,
-  //   usageHours: 9,
-  // });
-
   // Khởi tạo null, user sẽ set từ input
   const [filterType, setFilterType] = useState("day");
   const [checkInDate, setCheckInDate] = useState(null);

@@ -1,14 +1,54 @@
 import { useEffect, useRef } from "react";
 
 const destinations = [
-  { id: 1, name: "Hà Nội", image: "https://images.unsplash.com/photo-1552634971-9f30eecd01e8" },
-  { id: 2, name: "Đà Nẵng", image: "https://images.unsplash.com/photo-1542038784456-1ea8e935640e" },
-  { id: 3, name: "Đà Lạt", image: "https://images.unsplash.com/photo-1600210491894-4c5d30c101d7" },
-  { id: 4, name: "Phú Quốc", image: "https://images.unsplash.com/photo-1589308078050-106c9e5b6c84" },
-  { id: 5, name: "Nha Trang", image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e" },
-  { id: 6, name: "Hội An", image: "https://images.unsplash.com/photo-1590362891991-f776e747a2b9" },
-  { id: 7, name: "Sapa", image: "https://images.unsplash.com/photo-1518684079-3c830dcef090" },
-  { id: 8, name: "TP. Hồ Chí Minh", image: "https://images.unsplash.com/photo-1583394838336-acd977736f90" },
+  {
+    id: 1,
+    name: "Hà Nội",
+    image:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=800&fit=crop",
+  },
+  {
+    id: 2,
+    name: "Đà Nẵng",
+    image:
+      "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=600&h=800&fit=crop",
+  },
+  {
+    id: 3,
+    name: "Đà Lạt",
+    image:
+      "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=600&h=800&fit=crop",
+  },
+  {
+    id: 4,
+    name: "Phú Quốc",
+    image:
+      "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&h=800&fit=crop",
+  },
+  {
+    id: 5,
+    name: "Nha Trang",
+    image:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=800&fit=crop",
+  },
+  {
+    id: 6,
+    name: "Hội An",
+    image:
+      "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&h=800&fit=crop",
+  },
+  {
+    id: 7,
+    name: "Sapa",
+    image:
+      "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=600&h=800&fit=crop",
+  },
+  {
+    id: 8,
+    name: "TP. Hồ Chí Minh",
+    image:
+      "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&h=800&fit=crop",
+  },
 ];
 
 export default function ExploreDestinations() {
@@ -75,7 +115,10 @@ export default function ExploreDestinations() {
     container.addEventListener("mousemove", handleMouseMove);
 
     // hỗ trợ mobile
-    container.addEventListener("touchstart", () => (isUserInteracting.current = true));
+    container.addEventListener(
+      "touchstart",
+      () => (isUserInteracting.current = true)
+    );
     container.addEventListener("touchend", () => {
       setTimeout(() => (isUserInteracting.current = false), 2000);
     });
@@ -104,12 +147,13 @@ export default function ExploreDestinations() {
           {infiniteList.map((dest, idx) => (
             <div
               key={`${dest.id}-${idx}`}
-              className="relative min-w-[220px] md:min-w-[280px] h-48 md:h-64 rounded-2xl overflow-hidden flex-shrink-0 group"
+              className="relative w-[200px] h-[280px] md:w-[240px] md:h-[320px] rounded-2xl overflow-hidden flex-shrink-0 group"
             >
               <img
                 src={dest.image}
                 alt={dest.name}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/0 flex items-end p-4">
                 <span className="text-white text-lg font-semibold group-hover:text-yellow-300 transition-colors">
