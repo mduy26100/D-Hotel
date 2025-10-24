@@ -6,6 +6,8 @@ const RoomCard = ({ room }) => {
   const {
     name,
     description,
+    quantity,
+    isActive,
     displayPrice,
     originalPrice,
     displayType,
@@ -106,6 +108,28 @@ const RoomCard = ({ room }) => {
             </span>
           </p>
 
+          {/* === Số lượng phòng còn lại === */}
+          <p className="text-gray-700 font-semibold mb-1">
+            🛏 <span className="font-semibold text-gray-700">Available:</span>{" "}
+            {quantity > 0 ? (
+              <span className="text-green-600 font-medium">
+                {quantity} room{quantity > 1 ? "s" : ""}
+              </span>
+            ) : (
+              <span className="text-red-500 font-medium">Sold Out</span>
+            )}
+          </p>
+
+          {/* === Trạng thái phòng === */}
+          <p className="text-gray-700 font-semibold mb-1">
+            ⚡ <span className="font-semibold text-gray-700">Status:</span>{" "}
+            {isActive ? (
+              <span className="text-green-600 font-medium">Active</span>
+            ) : (
+              <span className="text-gray-500 font-medium">Inactive</span>
+            )}
+          </p>
+
           <p className="text-gray-600">
             🗓 <strong>From:</strong> {formatDate(displayStartDate)} –{" "}
             {formatTime(displayStartTime)}
@@ -118,7 +142,14 @@ const RoomCard = ({ room }) => {
         </div>
 
         {/* === Action button === */}
-        <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-4 rounded-lg transition mb-3">
+        <button
+          className={`w-full font-semibold py-2 px-4 rounded-lg transition mb-3 ${
+            quantity > 0 && isActive
+              ? "bg-orange-500 hover:bg-orange-600 text-white"
+              : "bg-gray-300 text-gray-500 cursor-not-allowed"
+          }`}
+          disabled={quantity <= 0 || !isActive}
+        >
           Book Now
         </button>
 
