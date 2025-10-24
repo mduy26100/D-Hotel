@@ -37,7 +37,7 @@ namespace Application.Features.Rooms.Services.Query.RoomType.GetRoomsByHotelId
             CancellationToken cancellationToken = default)
         {
             var roomTypes = await _roomTypeRepository.FindAsync(
-                rt => rt.HotelId == hotelId && rt.IsActive,
+                rt => rt.HotelId == hotelId,
                 cancellationToken);
 
             var roomTypeDtos = _mapper.Map<IEnumerable<RoomTypeDto>>(roomTypes);
