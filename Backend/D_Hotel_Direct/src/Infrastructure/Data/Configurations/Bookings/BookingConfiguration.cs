@@ -67,9 +67,6 @@
 
             builder.Property(b => b.BookingDate)
                 .IsRequired();
-
-            builder.Property(b => b.RowVersion)
-                .IsRowVersion();
         }
     }
 }

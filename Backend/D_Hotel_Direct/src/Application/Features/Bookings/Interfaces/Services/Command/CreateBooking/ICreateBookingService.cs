@@ -4,6 +4,6 @@ namespace Application.Features.Bookings.Interfaces.Services.Command.CreateBookin
 {
     public interface ICreateBookingService
     {
-        Task<int> CreateAsync(BookingAggregateDto bookingAggregateDto, CancellationToken cancellationToken = default);
+        Task<BookingDto> CreateAsync(BookingAggregateDto bookingAggregateDto, CancellationToken cancellationToken = default);
     }
 }

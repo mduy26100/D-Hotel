@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Application.Features.Bookings.Commands.CreateBooking
 {
-    public record CreateBookingCommand(BookingAggregateDto bookingAggregateDto) : IRequest<int>
+    public record CreateBookingCommand(BookingAggregateDto bookingAggregateDto) : IRequest<BookingDto>
     {
     }
 }

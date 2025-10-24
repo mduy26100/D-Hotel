@@ -36,6 +36,5 @@
         public required string Status { get; set; }           // Pending / Confirmed / Cancelled
         public DateTime BookingDate { get; set; }
 
-        public byte[] RowVersion { get; set; } = default!;
     }
 }

@@ -32,7 +32,9 @@ namespace Application.Features.Bookings.Services.Command.CreateBooking
             _mapper = mapper;
         }
 
-        public async Task<int> CreateAsync(BookingAggregateDto bookingAggregateDto, CancellationToken cancellationToken = default)
+        public async Task<BookingDto> CreateAsync(
+            BookingAggregateDto bookingAggregateDto,
+            CancellationToken cancellationToken = default)
         {
             await using var transaction = await _context.Database.BeginTransactionAsync(cancellationToken);
 
@@ -49,8 +51,11 @@ namespace Application.Features.Bookings.Services.Command.CreateBooking
                 var remainingQuantity = roomType.Quantity - totalActiveBookings;
 
                 if (remainingQuantity <= 0)
+                {
+                    // Trả về FE thông báo còn 0 phòng
                     throw new InvalidOperationException(
                         $"No available rooms for the type '{roomType.Name}' during the selected period.");
+                }
 
                 // --- Thêm Booking ---
                 var bookingEntity = _mapper.Map<Booking>(bookingAggregateDto.Booking);
@@ -58,45 +63,45 @@ namespace Application.Features.Bookings.Services.Command.CreateBooking
                 await _context.SaveChangesAsync(cancellationToken);
 
                 // --- Thêm BookingDetails ---
-                decimal detailsTotal = 0; // tính tổng chi tiết luôn ở đây
+                decimal detailsTotal = 0;
                 foreach (var detailDto in bookingAggregateDto.Details)
                 {
                     var detailEntity = _mapper.Map<BookingDetail>(detailDto);
                     detailEntity.BookingId = bookingEntity.Id;
 
-                    // đảm bảo không null
                     decimal unitPrice = detailEntity.UnitPrice ?? 0;
                     int quantity = detailEntity.Quantity ?? 0;
-
-                    // tính totalPrice
                     detailEntity.TotalPrice = unitPrice * quantity;
 
-                    // cộng dồn, ép nullable về 0 nếu null
                     detailsTotal += detailEntity.TotalPrice ?? 0;
-
                     await _bookingDetailRepository.AddAsync(detailEntity, cancellationToken);
                 }
                 await _context.SaveChangesAsync(cancellationToken);
 
-
-                // --- Tạo Invoice tự động ---
+                // --- Tạo Invoice ---
                 var totalAmount = bookingAggregateDto.Booking.RentalPrice + detailsTotal;
-
                 var invoiceEntity = new Invoice
                 {
                     BookingId = bookingEntity.Id,
                     InvoiceNumber = GenerateInvoiceNumber(),
                     TotalAmount = totalAmount,
-                    PaymentMethod = "Pending", // gắn sau với Strategy
+                    PaymentMethod = "Pending",
                     IssuedDate = DateTime.UtcNow,
                     Status = "Pending"
                 };
-
                 await _invoiceRepository.AddAsync(invoiceEntity, cancellationToken);
                 await _context.SaveChangesAsync(cancellationToken);
 
                 await transaction.CommitAsync(cancellationToken);
-                return bookingEntity.Id;
+
+                var bookingDto = _mapper.Map<BookingDto>(bookingEntity);
+                return bookingDto;
+            }
+            catch (InvalidOperationException ex)
+            {
+                await transaction.RollbackAsync(cancellationToken);
+                // FE sẽ nhận HTTP 400/409 + message để hiển thị alert
+                throw new ApplicationException(ex.Message);
             }
             catch
             {
@@ -104,7 +109,6 @@ namespace Application.Features.Bookings.Services.Command.CreateBooking
                 throw;
             }
         }
-
         // --- Helper: Tạo số Invoice ---
         private string GenerateInvoiceNumber()
         {

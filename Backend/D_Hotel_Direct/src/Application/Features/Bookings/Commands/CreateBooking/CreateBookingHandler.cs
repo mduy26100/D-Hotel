@@ -1,9 +1,10 @@
-﻿using Application.Features.Bookings.Interfaces.Services.Command.CreateBooking;
+﻿using Application.Features.Bookings.DTOs;
+using Application.Features.Bookings.Interfaces.Services.Command.CreateBooking;
 using MediatR;
 
 namespace Application.Features.Bookings.Commands.CreateBooking
 {
-    public class CreateBookingHandler : IRequestHandler<CreateBookingCommand, int>
+    public class CreateBookingHandler : IRequestHandler<CreateBookingCommand, BookingDto>
     {
         private readonly ICreateBookingService _createBookingService;
 
@@ -12,7 +13,7 @@ namespace Application.Features.Bookings.Commands.CreateBooking
             _createBookingService = createBookingService;
         }
 
-        public async Task<int> Handle(CreateBookingCommand request, CancellationToken cancellationToken)
+        public async Task<BookingDto> Handle(CreateBookingCommand request, CancellationToken cancellationToken)
         {
             var createBooking = await _createBookingService.CreateAsync(request.bookingAggregateDto, cancellationToken);
             return createBooking;
