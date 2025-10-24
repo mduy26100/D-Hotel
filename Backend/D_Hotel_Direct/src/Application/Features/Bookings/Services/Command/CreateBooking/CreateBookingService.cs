@@ -3,6 +3,7 @@ using Application.Features.Bookings.Interfaces.Services.Command.CreateBooking;
 using Application.Features.Bookings.Repositories;
 using Application.Features.Rooms.Repositories;
 using AutoMapper;
+using Domain.Consts;
 using Domain.Models.Bookings;
 
 namespace Application.Features.Bookings.Services.Command.CreateBooking
@@ -59,6 +60,10 @@ namespace Application.Features.Bookings.Services.Command.CreateBooking
 
                 // --- Thêm Booking ---
                 var bookingEntity = _mapper.Map<Booking>(bookingAggregateDto.Booking);
+                if (string.IsNullOrEmpty(bookingEntity.Status))
+                {
+                    bookingEntity.Status = BookingStatus.Pending;
+                }
                 await _bookingRepository.AddAsync(bookingEntity, cancellationToken);
                 await _context.SaveChangesAsync(cancellationToken);
 
