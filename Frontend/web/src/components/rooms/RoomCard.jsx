@@ -1,6 +1,7 @@
 import dayjs from "dayjs";
 import { Carousel, Image } from "antd";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const RoomCard = ({ room }) => {
   const {
@@ -34,6 +35,28 @@ const RoomCard = ({ room }) => {
   const handlePreview = (imgUrl) => {
     setPreviewImage(imgUrl);
     setPreviewVisible(true);
+  };
+
+  const navigate = useNavigate();
+
+  const handleBookNow = () => {
+    const mainImageUrl =
+      images && images.length > 0 ? images[0].imgUrl : "/default-room.jpg";
+    const params = new URLSearchParams({
+      hotelSn: room.hotelId,
+      roomTypeSn: room.id,
+      checkInDatePlan: dayjs(room.displayStartDate).format("YYYY-MM-DD"),
+      startDate: dayjs(room.displayStartDate).format("YYYY-MM-DD"),
+      startTime: room.displayStartTime,
+      endDate: dayjs(room.displayEndDate).format("YYYY-MM-DD"),
+      endTime: room.displayEndTime,
+      rentalPrice: room.displayPrice,
+      rentalType: room.displayType,
+      roomName: room.name,
+      imageUrl: mainImageUrl,
+    });
+
+    navigate(`/checkout/${encodeURIComponent(room.name)}?${params.toString()}`);
   };
 
   return (
@@ -149,6 +172,7 @@ const RoomCard = ({ room }) => {
               : "bg-gray-300 text-gray-500 cursor-not-allowed"
           }`}
           disabled={quantity <= 0 || !isActive}
+          onClick={handleBookNow}
         >
           Book Now
         </button>

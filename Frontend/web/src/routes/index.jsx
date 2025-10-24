@@ -12,26 +12,48 @@ import { PrivateRoute } from "./PrivateRoute";
 import Profile from "../pages/auth/Profile";
 import Toast from "../components/ui/Toast";
 import { useState } from "react";
+import CheckoutPage from "../pages/bookings/CheckoutPage";
 
 export function AppRoutes() {
-    const [toast, setToast] = useState(null);
-    return (
+  const [toast, setToast] = useState(null);
+  return (
     <>
       <Routes>
-        <Route path="/"
-        element={
-          <MainLayout/>
-        }>
-
-          <Route path="/login" element={<PublicRoute><Login setToast={setToast} /></PublicRoute>} />
-          <Route path="/register" element={<PublicRoute><Register setToast={setToast}/></PublicRoute>}/>
-          <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>}/>
+        <Route path="/" element={<MainLayout />}>
+          <Route
+            path="/login"
+            element={
+              <PublicRoute>
+                <Login setToast={setToast} />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <PublicRoute>
+                <Register setToast={setToast} />
+              </PublicRoute>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <PrivateRoute>
+                <Profile />
+              </PrivateRoute>
+            }
+          />
 
           <Route path="/" element={<HomePage />} />
           <Route path="/hotels" element={<Hotels />} />
-          <Route path="/hotels/:id" element={<HotelDetailsWrapper/>} />
-          <Route path="/hotels/category/:categoryId" element={<HotelsByCategoryPage />} />
-          </Route>
+          <Route path="/hotels/:id" element={<HotelDetailsWrapper />} />
+          <Route
+            path="/hotels/category/:categoryId"
+            element={<HotelsByCategoryPage />}
+          />
+          <Route path="/checkout/:roomName" element={<CheckoutPage />} />
+        </Route>
       </Routes>
 
       {toast && (
@@ -45,5 +67,5 @@ export function AppRoutes() {
 
       <ChatWidget />
     </>
-    )
+  );
 }

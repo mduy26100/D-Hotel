@@ -32,7 +32,7 @@ const HotelDetails = ({ hotelId }) => {
   // });
 
   // Khởi tạo null, user sẽ set từ input
-  const [filterType, setFilterType] = useState(null);
+  const [filterType, setFilterType] = useState("day");
   const [checkInDate, setCheckInDate] = useState(null);
   const [checkOutDate, setCheckOutDate] = useState(null);
   const [hotelCheckInTime, setHotelCheckInTime] = useState(null);
@@ -332,7 +332,7 @@ const HotelDetails = ({ hotelId }) => {
       </div>
 
       {/* === SECTION NAVIGATION BAR === */}
-      <div className="sticky top-[160px] bg-white shadow-sm border-b border-gray-200 z-40">
+      <div className="sticky top-[160px] bg-white shadow-sm border-b border-gray-200 z-40 hidden md:block">
         <div className="max-w-6xl mx-auto px-4">
           <nav className="flex items-center justify-start space-x-6 text-sm md:text-base">
             {[
