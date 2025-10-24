@@ -10,7 +10,7 @@ export const loginAPI = async (email, password) => {
       },
     });
 
-    return response; // axiosClient đã trả sẵn response.data
+    return response.data; // axiosClient đã trả sẵn response.data
   } catch (error) {
     console.error("Login error:", error);
     throw error;

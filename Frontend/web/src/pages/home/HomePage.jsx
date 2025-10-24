@@ -1,6 +1,5 @@
 "use client";
 
-import HotelCard from "../../components/hotels/HotelCard";
 import BannerCarousel from "../../components/ui/BannerCarousel";
 import HeroSearchBar from "../../components/ui/HeroSearchBar";
 import HomeFeatures from "../../components/ui/HomeFeatures";
@@ -9,12 +8,9 @@ import ExploreDestinations from "../../components/ui/ExploreDestinations";
 import BlogSection from "../../components/ui/BlogSection";
 import { useHotels } from "../../hooks/hotels/hotels/useHotels";
 import HotelList from "../../components/hotels/HotelList";
-import { hotelDetailsAPI } from "../../api/hotels/hotels";
 
 const HomePage = () => {
   const { hotels, loading, error } = useHotels();
-
-  console.log(hotels);
 
   return (
     <div className="w-full">

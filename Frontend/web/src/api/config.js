@@ -6,30 +6,28 @@ const axiosClient = axios.create({
   baseURL: API_URL,
 });
 
-// instance.defaults.headers.common["Authorization"] = AUTH_TOKEN;
-
+// Interceptor để tự động gắn token nếu có
 axiosClient.interceptors.request.use(
   function (config) {
-    // Do something before request is sent
+    const token = localStorage.getItem("token"); // lấy token từ localStorage
+    if (token) {
+      config.headers["Authorization"] = `Bearer ${token}`;
+    }
     return config;
   },
   function (error) {
-    // Do something with request error
     return Promise.reject(error);
   }
 );
 
-// Add a response interceptor
+// Interceptor response
 axiosClient.interceptors.response.use(
   function (response) {
-    // Any status code that lie within the range of 2xx cause this function to trigger
-    // Do something with response data
+    // Nếu response có data.data thì trả về luôn data
     if (response.data && response.data.data) return response.data;
     return response;
   },
   function (error) {
-    // Any status codes that falls outside the range of 2xx cause this function to trigger
-    // Do something with response error
     if (error.response && error.response.data) return error.response.data;
     return Promise.reject(error);
   }
