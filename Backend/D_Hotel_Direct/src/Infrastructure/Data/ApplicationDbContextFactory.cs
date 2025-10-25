@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.Extensions.Configuration;
 
 namespace Infrastructure.Data
 {
@@ -6,8 +7,17 @@ namespace Infrastructure.Data
     {
         public ApplicationDbContext CreateDbContext(string[] args)
         {
+            // Build configuration
+            IConfigurationRoot configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            var connectionString = configuration.GetConnectionString("DefaultConnection");
+
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            optionsBuilder.UseSqlServer("Server=DESKTOP-JCPUVOM;Database=HotelDirect;Trusted_Connection=True;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer(connectionString);
+
             return new ApplicationDbContext(optionsBuilder.Options);
         }
     }

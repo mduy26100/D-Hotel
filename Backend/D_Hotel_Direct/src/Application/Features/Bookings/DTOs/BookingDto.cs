@@ -36,5 +36,6 @@
         public required string Status { get; set; }           // Pending / Confirmed / Cancelled
         public DateTime BookingDate { get; set; }
 
+        public string? InvoiceNumber { get; set; }
     }
 }

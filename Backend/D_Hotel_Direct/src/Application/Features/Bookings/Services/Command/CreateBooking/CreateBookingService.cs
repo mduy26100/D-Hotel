@@ -35,6 +35,7 @@ namespace Application.Features.Bookings.Services.Command.CreateBooking
 
         public async Task<BookingDto> CreateAsync(
             BookingAggregateDto bookingAggregateDto,
+            Guid? userId,
             CancellationToken cancellationToken = default)
         {
             await using var transaction = await _context.Database.BeginTransactionAsync(cancellationToken);
@@ -60,6 +61,10 @@ namespace Application.Features.Bookings.Services.Command.CreateBooking
 
                 // --- Thêm Booking ---
                 var bookingEntity = _mapper.Map<Booking>(bookingAggregateDto.Booking);
+
+                if (userId.HasValue)
+                    bookingEntity.UserId = userId;
+
                 if (string.IsNullOrEmpty(bookingEntity.Status))
                 {
                     bookingEntity.Status = BookingStatus.Pending;
@@ -100,6 +105,9 @@ namespace Application.Features.Bookings.Services.Command.CreateBooking
                 await transaction.CommitAsync(cancellationToken);
 
                 var bookingDto = _mapper.Map<BookingDto>(bookingEntity);
+
+                bookingDto.InvoiceNumber = invoiceEntity.InvoiceNumber;
+
                 return bookingDto;
             }
             catch (InvalidOperationException ex)
