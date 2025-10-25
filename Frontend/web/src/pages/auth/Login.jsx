@@ -6,10 +6,12 @@ import { useLogin } from "../../hooks/auth/useLogin";
 import Input from "../../components/ui/Input";
 import Button from "../../components/ui/Button";
 import FacebookLogin from "@greatsumini/react-facebook-login";
+import { GoogleLogin } from "@react-oauth/google";
 
 export default function Login({ setToast }) {
   const [form, setForm] = useState({ email: "", password: "" });
-  const { loginWithEmail, loginWithFacebook, loading, error } = useLogin();
+  const { loginWithEmail, loginWithFacebook, loginWithGoogle, loading, error } =
+    useLogin();
 
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -76,6 +78,23 @@ export default function Login({ setToast }) {
       message: "Facebook login cancelled or failed",
       type: "error",
     });
+  };
+
+  const handleGoogleSuccess = async (credentialResponse) => {
+    const idToken = credentialResponse?.credential;
+    if (!idToken) {
+      setToast?.({ message: "Google login failed", type: "error" });
+      return;
+    }
+    try {
+      await loginWithGoogle(idToken);
+      setToast?.({ message: "Login with Google successful!", type: "success" });
+    } catch (err) {
+      setToast?.({
+        message: err?.message || "Google login failed",
+        type: "error",
+      });
+    }
   };
 
   return (
@@ -159,6 +178,22 @@ export default function Login({ setToast }) {
             )}
           />
         </div>
+
+        <GoogleLogin
+          onSuccess={handleGoogleSuccess}
+          onError={() =>
+            setToast?.({ message: "Google login failed", type: "error" })
+          }
+          useOneTap
+          render={({ onClick }) => (
+            <button
+              onClick={onClick}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg border hover:shadow-sm"
+            >
+              Google
+            </button>
+          )}
+        />
 
         {/* REGISTER LINK */}
         <p className="text-center text-sm text-gray-600">

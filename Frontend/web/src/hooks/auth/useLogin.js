@@ -1,3 +1,4 @@
+// hooks/auth/useLogin.js
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginAPI } from "../../api/auth/auth";
@@ -11,27 +12,19 @@ export function useLogin() {
   const navigate = useNavigate();
   const { setUser } = useAuthContext();
 
-  // Login with email/password
+  // -------------------------------
+  // Email login
+  // -------------------------------
   const loginWithEmail = async (email, password) => {
     setLoading(true);
     setError("");
     try {
-      const payload = {
-        dto: {
-          email,
-          password,
-          provider: "EmailPassword",
-        },
-      };
-
+      const payload = { dto: { email, password, provider: "EmailPassword" } };
       const res = await loginAPI(payload);
-      console.log("Email login response:", res);
-
       const accessToken = res?.accessToken;
       if (!accessToken) throw new Error("No access token returned from API");
 
       setToken(accessToken);
-
       const userInfo = await getUserInfoAPI(accessToken);
       const userWithToken = { ...userInfo, token: accessToken };
 
@@ -40,7 +33,6 @@ export function useLogin() {
       navigate("/");
       return userWithToken;
     } catch (err) {
-      console.error("Email login error:", err);
       setError(err?.message || JSON.stringify(err) || "Login failed");
       throw err;
     } finally {
@@ -48,7 +40,9 @@ export function useLogin() {
     }
   };
 
-  // Login via Facebook access token
+  // -------------------------------
+  // Facebook login
+  // -------------------------------
   const loginWithFacebook = async (fbAccessToken, fbEmail) => {
     setLoading(true);
     setError("");
@@ -58,14 +52,15 @@ export function useLogin() {
           provider: "Facebook",
           accessToken: fbAccessToken,
           email: fbEmail || "noemail@facebook.com",
-          password: "facebook_login", // dummy password
+          password: "facebook_login",
         },
       };
 
-      const { accessToken, refreshToken } = await loginAPI(payload);
+      const { accessToken } = await loginAPI(payload);
       setToken(accessToken);
       const userInfo = await getUserInfoAPI(accessToken);
       const userWithToken = { ...userInfo, token: accessToken };
+
       setUserLocal(userWithToken);
       setUser(userWithToken);
       navigate("/");
@@ -78,5 +73,39 @@ export function useLogin() {
     }
   };
 
-  return { loginWithEmail, loginWithFacebook, loading, error };
+  // -------------------------------
+  // Google login
+  // -------------------------------
+  const loginWithGoogle = async (googleIdToken, googleEmail) => {
+    setLoading(true);
+    setError("");
+    try {
+      const payload = {
+        dto: {
+          provider: "Google",
+          accessToken: googleIdToken,
+          email: googleEmail || "noemail@gmail.com",
+          password: "google_login", // dummy password
+        },
+      };
+
+      const { accessToken } = await loginAPI(payload);
+      setToken(accessToken);
+
+      const userInfo = await getUserInfoAPI(accessToken);
+      const userWithToken = { ...userInfo, token: accessToken };
+
+      setUserLocal(userWithToken);
+      setUser(userWithToken);
+      navigate("/");
+      return userWithToken;
+    } catch (err) {
+      setError(err?.message || JSON.stringify(err) || "Google login failed");
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return { loginWithEmail, loginWithFacebook, loginWithGoogle, loading, error };
 }
