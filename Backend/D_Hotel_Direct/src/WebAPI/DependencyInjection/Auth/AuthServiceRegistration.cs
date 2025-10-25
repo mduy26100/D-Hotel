@@ -71,6 +71,7 @@ namespace WebAPI.DependencyInjection.Auth
             services.AddScoped<ILoginStrategyFactory, LoginStrategyFactory>();
             services.AddScoped<ILoginStrategy, EmailPasswordLoginStrategy>();
             services.AddScoped<ILoginStrategy, FacebookLoginStrategy>();
+            services.AddScoped<ILoginStrategy, GoogleLoginStrategy>();
             services.AddScoped<ILoginService, LoginService>();
 
             // ===== Logout =====
@@ -99,6 +100,10 @@ namespace WebAPI.DependencyInjection.Auth
             // ✅ Bind Facebook settings
             services.Configure<FacebookAuthSettings>(
                 configuration.GetSection("FacebookAuth"));
+
+            // ✅ Bind Facebook settings
+            services.Configure<GoogleAuthSettings>(
+                configuration.GetSection("GoogleAuth"));
 
             return services;
         }

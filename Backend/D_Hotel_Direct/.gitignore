@@ -63,3 +63,4 @@ build/
 
 # Optional: ignore local config files
 appsettings.Development.json
+appsettings.json
