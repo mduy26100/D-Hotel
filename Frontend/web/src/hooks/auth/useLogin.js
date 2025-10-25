@@ -11,30 +11,72 @@ export function useLogin() {
   const navigate = useNavigate();
   const { setUser } = useAuthContext();
 
-  const login = async (email, password) => {
+  // Login with email/password
+  const loginWithEmail = async (email, password) => {
     setLoading(true);
     setError("");
     try {
-      // 1️⃣ Gọi API login và lấy token
-      const { accessToken } = await loginAPI(email, password);
+      const payload = {
+        dto: {
+          email,
+          password,
+          provider: "EmailPassword",
+        },
+      };
+
+      const res = await loginAPI(payload);
+      console.log("Email login response:", res);
+
+      const accessToken = res?.accessToken;
+      if (!accessToken) throw new Error("No access token returned from API");
+
       setToken(accessToken);
 
-      // 2️⃣ Lấy thông tin user
       const userInfo = await getUserInfoAPI(accessToken);
-
-      // 3️⃣ Lưu user + token vào localStorage + context
       const userWithToken = { ...userInfo, token: accessToken };
+
       setUserLocal(userWithToken);
       setUser(userWithToken);
-
-      // 4️⃣ Điều hướng về home
       navigate("/");
+      return userWithToken;
     } catch (err) {
-      setError(err.message || "Login failed");
+      console.error("Email login error:", err);
+      setError(err?.message || JSON.stringify(err) || "Login failed");
+      throw err;
     } finally {
       setLoading(false);
     }
   };
 
-  return { login, loading, error };
+  // Login via Facebook access token
+  const loginWithFacebook = async (fbAccessToken, fbEmail) => {
+    setLoading(true);
+    setError("");
+    try {
+      const payload = {
+        dto: {
+          provider: "Facebook",
+          accessToken: fbAccessToken,
+          email: fbEmail || "noemail@facebook.com",
+          password: "facebook_login", // dummy password
+        },
+      };
+
+      const { accessToken, refreshToken } = await loginAPI(payload);
+      setToken(accessToken);
+      const userInfo = await getUserInfoAPI(accessToken);
+      const userWithToken = { ...userInfo, token: accessToken };
+      setUserLocal(userWithToken);
+      setUser(userWithToken);
+      navigate("/");
+      return userWithToken;
+    } catch (err) {
+      setError(err?.message || JSON.stringify(err) || "Facebook login failed");
+      throw err;
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return { loginWithEmail, loginWithFacebook, loading, error };
 }

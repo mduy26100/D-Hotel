@@ -1,18 +1,15 @@
 import axiosClient from "../config"; // ✅ đường dẫn đến file axiosClient.js
 
 // 🧠 Hàm login
-export const loginAPI = async (email, password) => {
+export const loginAPI = async (payload) => {
   try {
-    const response = await axiosClient.post("/Authentication/login", {
-      dto: {
-        email,
-        password,
-      },
-    });
-
-    return response.data; // axiosClient đã trả sẵn response.data
+    const response = await axiosClient.post("/Authentication/login", payload);
+    return response.data;
   } catch (error) {
-    console.error("Login error:", error);
+    // normalize error message if needed
+    if (error.response && error.response.data) {
+      throw error.response.data;
+    }
     throw error;
   }
 };
