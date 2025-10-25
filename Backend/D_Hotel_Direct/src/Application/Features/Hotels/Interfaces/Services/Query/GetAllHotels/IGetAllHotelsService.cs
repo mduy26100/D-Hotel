@@ -4,6 +4,6 @@ namespace Application.Features.Hotels.Interfaces.Services.Query.GetAllHotels
 {
     public interface IGetAllHotelsService
     {
-        Task<IEnumerable<HotelDto>> GetAllAsync(CancellationToken cancellationToken = default);
+        Task<IEnumerable<HotelDetailDto>> GetAllAsync(CancellationToken cancellationToken = default);
     }
 }

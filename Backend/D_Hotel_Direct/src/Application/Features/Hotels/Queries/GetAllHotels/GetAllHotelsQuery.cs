@@ -3,5 +3,5 @@ using MediatR;
 
 namespace Application.Features.Hotels.Queries.GetAllHotels
 {
-    public record GetAllHotelsQuery() : IRequest<IEnumerable<HotelDto>>;
+    public record GetAllHotelsQuery() : IRequest<IEnumerable<HotelDetailDto>>;
 }

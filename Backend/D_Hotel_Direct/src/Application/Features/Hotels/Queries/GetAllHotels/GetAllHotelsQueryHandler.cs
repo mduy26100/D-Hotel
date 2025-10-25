@@ -5,7 +5,7 @@ using MediatR;
 
 namespace Application.Features.Hotels.Queries.GetAllHotels
 {
-    public class GetAllHotelsQueryHandler : IRequestHandler<GetAllHotelsQuery, IEnumerable<HotelDto>>
+    public class GetAllHotelsQueryHandler : IRequestHandler<GetAllHotelsQuery, IEnumerable<HotelDetailDto>>
     {
         private readonly IGetAllHotelsService _getAllHotelsService;
         private readonly ILoggingService<GetAllHotelsQueryHandler> _logger;
@@ -18,7 +18,7 @@ namespace Application.Features.Hotels.Queries.GetAllHotels
             _logger = logger;
         }
 
-        public async Task<IEnumerable<HotelDto>> Handle(GetAllHotelsQuery request, CancellationToken cancellationToken)
+        public async Task<IEnumerable<HotelDetailDto>> Handle(GetAllHotelsQuery request, CancellationToken cancellationToken)
         {
             try
             {
