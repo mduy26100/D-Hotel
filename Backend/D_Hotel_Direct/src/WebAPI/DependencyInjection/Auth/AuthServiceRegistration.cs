@@ -1,5 +1,6 @@
 ﻿using Application.Common.Interfaces.Services.User;
 using Application.Common.Interfaces.Shared;
+using Application.Features.Auth.Configurations;
 using Infrastructure.Common.Shared;
 using Infrastructure.Services.User;
 
@@ -69,6 +70,7 @@ namespace WebAPI.DependencyInjection.Auth
             // ===== Login =====
             services.AddScoped<ILoginStrategyFactory, LoginStrategyFactory>();
             services.AddScoped<ILoginStrategy, EmailPasswordLoginStrategy>();
+            services.AddScoped<ILoginStrategy, FacebookLoginStrategy>();
             services.AddScoped<ILoginService, LoginService>();
 
             // ===== Logout =====
@@ -93,6 +95,10 @@ namespace WebAPI.DependencyInjection.Auth
             // Strategies (direct resolve)
             services.AddScoped<ManagerUpdateProfileStrategy>();
             services.AddScoped<SelfUpdateProfileStrategy>();
+
+            // ✅ Bind Facebook settings
+            services.Configure<FacebookAuthSettings>(
+                configuration.GetSection("FacebookAuth"));
 
             return services;
         }
