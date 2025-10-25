@@ -9,7 +9,7 @@ const HotelList = ({ hotels, loading, error }) => {
   const navigate = useNavigate();
   const scrollRef = useRef(null);
 
-  const featuredHotels = hotels?.slice(0, 8) || []; // 👉 Lấy 8 khách sạn nổi bật
+  const featuredHotels = hotels?.slice(0, 2) || []; // 👉 Lấy 8 khách sạn nổi bật
 
   // ⚙️ Xử lý cuộn trái/phải
   const scroll = (direction) => {
@@ -63,14 +63,13 @@ const HotelList = ({ hotels, loading, error }) => {
             {/* Container cuộn ngang */}
             <div
               ref={scrollRef}
-              className="flex overflow-x-auto scrollbar-hide gap-6 scroll-smooth px-2"
+              className="flex overflow-x-auto scrollbar-hide gap-6 scroll-smooth px-2 py-2"
             >
               {featuredHotels.map((hotel) => (
-                <div
-                  key={hotel.id}
-                  className="flex-shrink-0 w-80 transform hover:scale-105 transition-transform duration-300"
-                >
-                  <HotelCard hotel={hotel} />
+                <div key={hotel.id} className="flex-shrink-0 w-80 h-full">
+                  <div className="h-full flex">
+                    <HotelCard hotel={hotel} />
+                  </div>
                 </div>
               ))}
             </div>

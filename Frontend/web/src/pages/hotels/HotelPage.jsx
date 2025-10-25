@@ -17,9 +17,8 @@ function HotelsPage() {
     rating: 0,
   });
 
-  const [showFilter, setShowFilter] = useState(false); // điều khiển off-canvas trên mobile
+  const [showFilter, setShowFilter] = useState(false);
 
-  // khóa body scroll khi filter mở (ngăn layout bị dịch chuyển)
   useEffect(() => {
     if (showFilter) {
       document.body.style.overflow = "hidden";
@@ -59,7 +58,7 @@ function HotelsPage() {
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-50">
         <div className="text-center">
           <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-[#003B95]"></div>
-          <p className="mt-4 text-[#003B95] font-semibold">Đang tải...</p>
+          <p className="mt-4 text-[#003B95] font-semibold">Loading...</p>
         </div>
       </div>
     );
@@ -78,14 +77,13 @@ function HotelsPage() {
         <div className="mb-8 md:mb-12 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold text-[#003B95] mb-2">
-              🏨 Khách sạn
+              🏨 Hotels
             </h1>
             <p className="text-gray-600 text-lg">
-              Khám phá những khách sạn tuyệt vời
+              Explore amazing hotels worldwide
             </p>
           </div>
 
-          {/* Nút mở bộ lọc - chỉ hiện trên mobile */}
           <div className="flex items-center gap-3">
             <button
               onClick={() => setShowFilter(true)}
@@ -93,16 +91,15 @@ function HotelsPage() {
               aria-expanded={showFilter}
               aria-controls="mobile-filter-panel"
             >
-              <span>🔍</span> Bộ lọc
+              <span>🔍</span> Filters
             </button>
-
-            {/* (Optional) bạn có thể thêm nút sắp xếp / view toggle ở đây */}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 lg:gap-8">
-          {/* Sidebar - hiển thị trên desktop (md+) */}
-          <aside className="hidden md:block md:col-span-1 sticky top-24 h-fit">
+        {/* Layout grid 3/7 */}
+        <div className="grid grid-cols-1 md:grid-cols-10 gap-8">
+          {/* Filter section (3/10) */}
+          <aside className="hidden md:block md:col-span-3 sticky top-24 h-fit">
             <FilterPanel
               filter={filter}
               setFilter={setFilter}
@@ -111,12 +108,12 @@ function HotelsPage() {
             />
           </aside>
 
-          {/* Main content */}
-          <main className="md:col-span-2 lg:col-span-2">
+          {/* Hotel cards (7/10) */}
+          <main className="md:col-span-7">
             {filteredHotels.length === 0 ? (
               <div className="bg-white rounded-2xl shadow-lg border border-blue-100 p-12 text-center">
                 <p className="text-gray-500 text-lg font-medium">
-                  Không có khách sạn nào phù hợp với bộ lọc của bạn.
+                  No hotels match your current filters.
                 </p>
               </div>
             ) : (
@@ -127,35 +124,10 @@ function HotelsPage() {
               </div>
             )}
           </main>
-
-          {/* Right sidebar / map - ẩn trên mobile */}
-          <aside className="hidden md:block md:col-span-1 lg:col-span-1 sticky top-24 h-fit">
-            <div className="bg-white rounded-2xl shadow-lg border border-blue-100 overflow-hidden">
-              <div className="bg-gradient-to-r from-[#003B95] to-blue-700 px-6 py-4">
-                <h2 className="text-xl font-bold text-white flex items-center gap-2">
-                  <span>🗺️</span> Bản đồ
-                </h2>
-              </div>
-
-              <div className="p-6">
-                <div className="h-96 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-xl flex items-center justify-center border-2 border-blue-200">
-                  <div className="text-center">
-                    <p className="text-gray-600 font-semibold">
-                      Bản đồ khách sạn
-                    </p>
-                    <p className="text-gray-500 text-sm mt-2">
-                      Sắp có cập nhật
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </aside>
         </div>
       </div>
 
-      {/* Mobile Off-canvas Filter Panel + Overlay */}
-      {/* Overlay */}
+      {/* Mobile Filter Overlay */}
       <div
         className={`fixed inset-0 z-40 transition-opacity duration-200 ${
           showFilter
@@ -166,7 +138,7 @@ function HotelsPage() {
         onClick={() => setShowFilter(false)}
       />
 
-      {/* Panel */}
+      {/* Mobile Filter Panel */}
       <div
         id="mobile-filter-panel"
         className={`fixed top-0 left-0 z-50 h-full w-full md:hidden transform transition-transform duration-300 ${
@@ -188,13 +160,6 @@ function HotelsPage() {
   );
 }
 
-/**
- * FilterPanel component - chứa toàn bộ nội dung filter của bạn
- * Props:
- *  - filter, setFilter
- *  - showClose: nếu true thì hiện nút đóng (dùng cho mobile)
- *  - onClose: callback đóng panel (mobile)
- */
 function FilterPanel({
   filter,
   setFilter,
@@ -206,12 +171,12 @@ function FilterPanel({
       {/* Header */}
       <div className="bg-gradient-to-r from-[#003B95] to-blue-700 px-6 py-4 flex items-center justify-between rounded-t-2xl shadow-sm">
         <h2 className="text-lg md:text-xl font-bold text-white flex items-center gap-2 tracking-wide">
-          <span>🔍</span> Bộ lọc
+          <span>🔍</span> Filters
         </h2>
         {showClose && (
           <button
             onClick={onClose}
-            aria-label="Đóng bộ lọc"
+            aria-label="Close filters"
             className="bg-white bg-opacity-20 text-white px-3 py-1 rounded-lg hover:bg-opacity-30 transition-all duration-200 shadow-sm"
           >
             ✕
@@ -219,25 +184,25 @@ function FilterPanel({
         )}
       </div>
 
-      {/* Scrollable content */}
+      {/* Content */}
       <div
         className="flex-1 px-6 py-6 space-y-6 overflow-y-auto"
         style={{
-          maxHeight: "calc(100vh - 120px)", // trừ thêm phần header và footer
-          scrollbarGutter: "stable", // tránh layout shift khi có thanh cuộn
+          maxHeight: "calc(100vh - 120px)",
+          scrollbarGutter: "stable",
         }}
       >
         {/* Category */}
         <div>
           <label className="block text-sm font-semibold text-[#003B95] mb-2">
-            Danh mục
+            Category
           </label>
           <select
             className="w-full border-2 border-blue-200 rounded-lg p-3 text-gray-700 focus:outline-none focus:border-[#003B95] focus:ring-2 focus:ring-blue-200 transition"
             value={filter.category}
             onChange={(e) => setFilter({ ...filter, category: e.target.value })}
           >
-            <option value="">Tất cả</option>
+            <option value="">All</option>
             <option value="Luxury">Luxury</option>
             <option value="Budget">Budget</option>
             <option value="Resort">Resort</option>
@@ -247,29 +212,29 @@ function FilterPanel({
         {/* Location */}
         <div>
           <label className="block text-sm font-semibold text-[#003B95] mb-2">
-            Vị trí
+            Location
           </label>
           <select
             className="w-full border-2 border-blue-200 rounded-lg p-3 text-gray-700 focus:outline-none focus:border-[#003B95] focus:ring-2 focus:ring-blue-200 transition"
             value={filter.location}
             onChange={(e) => setFilter({ ...filter, location: e.target.value })}
           >
-            <option value="">Tất cả</option>
-            <option value="Hà Nội">Hà Nội</option>
-            <option value="Hồ Chí Minh">Hồ Chí Minh</option>
-            <option value="Đà Nẵng">Đà Nẵng</option>
+            <option value="">All</option>
+            <option value="Hà Nội">Hanoi</option>
+            <option value="Hồ Chí Minh">Ho Chi Minh City</option>
+            <option value="Đà Nẵng">Da Nang</option>
           </select>
         </div>
 
         {/* Price */}
         <div>
           <label className="block text-sm font-semibold text-[#003B95] mb-2">
-            Giá (VNĐ)
+            Price (VND)
           </label>
           <div className="flex gap-3">
             <input
               type="number"
-              placeholder="Tối thiểu"
+              placeholder="Min"
               className="w-1/2 border-2 border-blue-200 rounded-lg p-3 text-gray-700 focus:outline-none focus:border-[#003B95] focus:ring-2 focus:ring-blue-200 transition"
               value={filter.minPrice}
               onChange={(e) =>
@@ -281,7 +246,7 @@ function FilterPanel({
             />
             <input
               type="number"
-              placeholder="Tối đa"
+              placeholder="Max"
               className="w-1/2 border-2 border-blue-200 rounded-lg p-3 text-gray-700 focus:outline-none focus:border-[#003B95] focus:ring-2 focus:ring-blue-200 transition"
               value={filter.maxPrice}
               onChange={(e) =>
@@ -297,26 +262,26 @@ function FilterPanel({
         {/* Status */}
         <div>
           <label className="block text-sm font-semibold text-[#003B95] mb-2">
-            Trạng thái
+            Status
           </label>
           <select
             className="w-full border-2 border-blue-200 rounded-lg p-3 text-gray-700 focus:outline-none focus:border-[#003B95] focus:ring-2 focus:ring-blue-200 transition"
             value={filter.isActive}
             onChange={(e) => setFilter({ ...filter, isActive: e.target.value })}
           >
-            <option value="">Tất cả</option>
-            <option value="active">Đang hoạt động</option>
-            <option value="inactive">Tạm ngưng</option>
+            <option value="">All</option>
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
           </select>
         </div>
 
         {/* Utilities */}
         <div>
           <label className="block text-sm font-semibold text-[#003B95] mb-3">
-            Tiện ích
+            Utilities
           </label>
           <div className="space-y-2">
-            {["Wifi", "Bể bơi", "Gym", "Spa"].map((u) => (
+            {["Wifi", "Pool", "Gym", "Spa"].map((u) => (
               <label
                 key={u}
                 className="flex items-center gap-3 p-2 rounded-lg hover:bg-blue-50 cursor-pointer transition"
@@ -341,7 +306,7 @@ function FilterPanel({
         {/* Rating */}
         <div>
           <label className="block text-sm font-semibold text-[#003B95] mb-2">
-            Đánh giá tối thiểu
+            Minimum rating
           </label>
           <select
             className="w-full border-2 border-blue-200 rounded-lg p-3 text-gray-700 focus:outline-none focus:border-[#003B95] focus:ring-2 focus:ring-blue-200 transition"
@@ -353,16 +318,16 @@ function FilterPanel({
               })
             }
           >
-            <option value={0}>Tất cả</option>
-            <option value={1}>⭐ trở lên</option>
-            <option value={2}>⭐⭐ trở lên</option>
-            <option value={3}>⭐⭐⭐ trở lên</option>
-            <option value={4}>⭐⭐⭐⭐ trở lên</option>
+            <option value={0}>All</option>
+            <option value={1}>⭐ & up</option>
+            <option value={2}>⭐⭐ & up</option>
+            <option value={3}>⭐⭐⭐ & up</option>
+            <option value={4}>⭐⭐⭐⭐ & up</option>
             <option value={5}>⭐⭐⭐⭐⭐</option>
           </select>
         </div>
 
-        {/* Footer buttons: Reset / Áp dụng (nếu muốn) */}
+        {/* Buttons */}
         <div className="pt-2 pb-8">
           <div className="flex gap-3">
             <button
@@ -379,20 +344,14 @@ function FilterPanel({
               }
               className="flex-1 border-2 border-blue-200 text-[#003B95] rounded-lg px-4 py-3 font-medium hover:bg-blue-50 transition"
             >
-              Đặt lại
+              Reset
             </button>
 
-            {/* Nếu muốn có nút Áp dụng (apply) để đóng panel trên mobile */}
             <button
-              onClick={() => {
-                // chỉ cần đóng panel, filter đã áp dụng realtime
-                if (typeof window !== "undefined") {
-                  // nếu panel đang được dùng trong mobile, gọi onClose nếu truyền
-                }
-              }}
+              onClick={() => onClose()}
               className="flex-1 bg-[#003B95] text-white rounded-lg px-4 py-3 font-medium hover:bg-blue-800 transition"
             >
-              Áp dụng
+              Apply
             </button>
           </div>
         </div>
