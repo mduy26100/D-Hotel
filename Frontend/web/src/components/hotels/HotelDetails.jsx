@@ -316,28 +316,28 @@ const HotelDetails = ({ hotelId }) => {
         <div className="max-w-6xl mx-auto px-4">
           <nav className="flex items-center justify-start space-x-6 text-sm md:text-base">
             {[
-              { id: "overview", label: "Tổng quan" },
-              { id: "rooms", label: "Danh sách phòng" },
-              { id: "amenities", label: "Tiện ích" },
-              { id: "policies", label: "Chính sách khách sạn" },
+              { id: "overview", label: "Overview" },
+              { id: "rooms", label: "Room List" },
+              { id: "amenities", label: "Amenities" },
+              { id: "policies", label: "Hotel Policies" },
             ].map((section) => (
               <button
                 key={section.id}
                 onClick={() => {
                   const el = document.getElementById(section.id);
                   if (el) {
-                    const yOffset = -180; // điều chỉnh để không bị che
+                    const yOffset = -180; // adjust so section is not hidden
                     const y =
                       el.getBoundingClientRect().top +
                       window.pageYOffset +
                       yOffset;
                     window.scrollTo({ top: y, behavior: "smooth" });
-                    setActiveSection(section.id); // click cũng set active
+                    setActiveSection(section.id); // also set active on click
                   }
                 }}
                 className={`relative py-4 font-medium transition group ${
                   activeSection === section.id
-                    ? "text-[#003B95]" // màu active
+                    ? "text-[#003B95]" // active color
                     : "text-gray-500 hover:text-[#003B95]"
                 }`}
               >

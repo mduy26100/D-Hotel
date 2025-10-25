@@ -30,7 +30,6 @@ const Profile = () => {
 
   const [loading, setLoading] = useState(true);
 
-  // Khi user được fetch xong, fill form
   useEffect(() => {
     if (!user) {
       setLoading(false);
@@ -44,11 +43,10 @@ const Profile = () => {
       avatarImage: null,
     });
 
-    setAvatarPreview([]); // preview chỉ để show file mới trong form
+    setAvatarPreview([]);
     setLoading(false);
   }, [user]);
 
-  // Xử lý Upload avatar trong form
   const handleUploadChange = ({ fileList }) => {
     const latestFile = fileList.slice(-1);
     setAvatarPreview(latestFile);
@@ -67,7 +65,7 @@ const Profile = () => {
     e.preventDefault();
     try {
       await updateUser(profileForm, () => refetch());
-      setAvatarPreview([]); // xóa preview sau khi submit thành công
+      setAvatarPreview([]);
     } catch (error) {
       console.error("Update profile failed", error);
     }
@@ -79,7 +77,7 @@ const Profile = () => {
       alert("Password confirmation does not match");
       return;
     }
-    alert("Password changed (static demo)");
+    alert("Password changed (demo)");
     setPasswordForm({
       currentPassword: "",
       newPassword: "",
@@ -104,59 +102,53 @@ const Profile = () => {
   }
 
   return (
-    <div className="max-w-5xl mx-auto p-6 space-y-8">
+    <div className="max-w-6xl mx-auto p-6 md:p-12 bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 rounded-3xl shadow-xl">
       {/* Header */}
-      <div className="space-y-2 text-center">
-        <h2 className="text-3xl font-bold text-gray-800">Profile</h2>
-        <p className="text-gray-500">Manage your account information</p>
+      <div className="space-y-2 text-center mb-10">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-[#003B95] drop-shadow-lg">
+          Profile
+        </h2>
+        <p className="text-gray-600 md:text-lg">
+          Manage your account information with royal elegance
+        </p>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-6">
+      <div className="grid md:grid-cols-2 gap-8">
         {/* Personal Information */}
-        <div className="bg-white shadow-md rounded-lg p-6 flex flex-col items-center space-y-4">
-          <h3 className="text-xl font-semibold text-gray-700">
+        <div className="bg-white shadow-2xl rounded-2xl p-8 flex flex-col items-center space-y-6 border border-[#003B95]/30 hover:shadow-[#003B95]/40 transition-all duration-500">
+          <h3 className="text-2xl font-semibold text-[#003B95]">
             Personal Information
           </h3>
           <img
             src={user.avatarUrl || "/placeholder.svg"}
             alt="Avatar"
-            className="w-28 h-28 rounded-full border-2 border-gray-200 object-cover"
+            className="w-32 h-32 rounded-full border-4 border-[#003B95] object-cover shadow-lg"
           />
-          <div className="w-full space-y-2 mt-2">
-            <div className="flex justify-between">
-              <span className="font-medium text-gray-600">First Name:</span>
-              <span className="text-gray-800">{user.firstName}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="font-medium text-gray-600">Last Name:</span>
-              <span className="text-gray-800">{user.lastName}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="font-medium text-gray-600">Username:</span>
-              <span className="text-gray-800">{user.userName}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="font-medium text-gray-600">Email:</span>
-              <span className="text-gray-800">{user.email}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="font-medium text-gray-600">Phone:</span>
-              <span className="text-gray-800">
-                {user.phoneNumber || "Not updated"}
-              </span>
-            </div>
+          <div className="w-full space-y-3 mt-4">
+            {[
+              ["First Name", user.firstName],
+              ["Last Name", user.lastName],
+              ["Username", user.userName],
+              ["Email", user.email],
+              ["Phone", user.phoneNumber || "Not updated"],
+            ].map(([label, value]) => (
+              <div key={label} className="flex justify-between">
+                <span className="font-medium text-gray-600">{label}:</span>
+                <span className="text-gray-800 font-semibold">{value}</span>
+              </div>
+            ))}
           </div>
         </div>
 
         {/* Update Forms */}
         <div className="space-y-6">
           {/* Update Profile Form */}
-          <div className="bg-white shadow-md rounded-lg p-6 space-y-4">
-            <h3 className="text-xl font-semibold text-gray-700">
+          <div className="bg-white shadow-2xl rounded-2xl p-8 space-y-6 border border-[#003B95]/30 hover:shadow-[#003B95]/40 transition-all duration-500">
+            <h3 className="text-2xl font-semibold text-[#003B95]">
               Update Information
             </h3>
-            <form onSubmit={handleProfileSubmit} className="space-y-4">
-              <div className="flex gap-4">
+            <form onSubmit={handleProfileSubmit} className="space-y-5">
+              <div className="flex flex-col md:flex-row gap-4">
                 <Input
                   label="First Name"
                   name="firstName"
@@ -199,7 +191,7 @@ const Profile = () => {
 
               {/* Antd Upload */}
               <div>
-                <span className="block mb-1 font-medium text-gray-600">
+                <span className="block mb-2 font-medium text-gray-600">
                   Avatar
                 </span>
                 <Upload
@@ -211,16 +203,22 @@ const Profile = () => {
                     setProfileForm((prev) => ({ ...prev, avatarImage: null }));
                     setAvatarPreview([]);
                   }}
-                  beforeUpload={() => false} // prevent auto upload
+                  beforeUpload={() => false}
+                  className="hover:border-[#003B95]"
                 >
-                  {avatarPreview.length >= 1 ? null : <PlusOutlined />}
+                  {avatarPreview.length >= 1 ? null : (
+                    <div className="flex flex-col items-center justify-center text-[#003B95]">
+                      <PlusOutlined />
+                      <span className="mt-1 text-sm">Upload</span>
+                    </div>
+                  )}
                 </Upload>
               </div>
 
               <Button
                 type="submit"
                 variant="primary"
-                className="w-full"
+                className="w-full bg-[#003B95] hover:bg-[#002a70] text-white font-semibold shadow-lg"
                 loading={updateLoading}
               >
                 Save Changes
@@ -229,11 +227,11 @@ const Profile = () => {
           </div>
 
           {/* Change Password Form */}
-          <div className="bg-white shadow-md rounded-lg p-6 space-y-4">
-            <h3 className="text-xl font-semibold text-gray-700">
+          <div className="bg-white shadow-2xl rounded-2xl p-8 space-y-6 border border-[#003B95]/30 hover:shadow-[#003B95]/40 transition-all duration-500">
+            <h3 className="text-2xl font-semibold text-[#003B95]">
               Change Password
             </h3>
-            <form onSubmit={handlePasswordSubmit} className="space-y-4">
+            <form onSubmit={handlePasswordSubmit} className="space-y-5">
               <Input
                 label="Current Password"
                 type="password"
@@ -270,7 +268,11 @@ const Profile = () => {
                   }))
                 }
               />
-              <Button type="submit" variant="primary" className="w-full">
+              <Button
+                type="submit"
+                variant="primary"
+                className="w-full bg-[#003B95] hover:bg-[#002a70] text-white font-semibold shadow-lg"
+              >
                 Change Password
               </Button>
             </form>
@@ -278,8 +280,11 @@ const Profile = () => {
         </div>
       </div>
 
-      <div className="mt-6 text-center">
-        <Link to="/" className="text-blue-600 hover:underline font-medium">
+      <div className="mt-10 text-center">
+        <Link
+          to="/"
+          className="text-[#003B95] hover:underline font-semibold text-lg"
+        >
           Back to Home
         </Link>
       </div>

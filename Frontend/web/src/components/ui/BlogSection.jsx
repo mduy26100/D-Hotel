@@ -3,19 +3,19 @@ import { ArrowRight } from "lucide-react";
 const blogs = [
   {
     id: 1,
-    title: "5 mẹo đặt phòng khách sạn tiết kiệm mùa cao điểm",
+    title: "5 Tips to Book Hotels Economically During Peak Season",
     date: "05/10/2025",
     image: "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba",
   },
   {
     id: 2,
-    title: "Top 10 địa điểm nghỉ dưỡng cho gia đình",
+    title: "Top 10 Family-Friendly Resorts",
     date: "02/10/2025",
     image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
   },
   {
     id: 3,
-    title: "Du lịch xanh - Xu hướng 2025",
+    title: "Green Travel – Trend of 2025",
     date: "28/09/2025",
     image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
   },
@@ -27,10 +27,10 @@ export default function BlogSection() {
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-[#233E8F]">
-            📝 Blog du lịch
+            📝 Travel Blog
           </h2>
           <button className="flex items-center text-[#233E8F] font-medium hover:underline">
-            Xem tất cả
+            View All
             <ArrowRight className="ml-1 h-4 w-4" />
           </button>
         </div>

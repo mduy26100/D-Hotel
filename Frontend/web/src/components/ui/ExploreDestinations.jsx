@@ -3,51 +3,27 @@ import { useEffect, useRef } from "react";
 const destinations = [
   {
     id: 1,
-    name: "Hà Nội",
+    name: "Hoan Kiem Lake",
     image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=800&fit=crop",
+      "https://images.pexels.com/photos/12635055/pexels-photo-12635055.jpeg",
   },
   {
     id: 2,
-    name: "Đà Nẵng",
+    name: "Old Quarter",
     image:
-      "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=600&h=800&fit=crop",
+      "https://media.istockphoto.com/id/520741570/vi/anh/g%C3%B3c-ph%E1%BB%91-s%E1%BA%A7m-u%E1%BA%A5t-trong-ph%E1%BB%91-c%E1%BB%95-h%C3%A0-n%E1%BB%99i-vi%E1%BB%87t-nam.jpg?b=1&s=612x612&w=0&k=20&c=EoCbNB4zSKCJJNcB_hSAeWuZCYqBMeTyVe84UsmqXJo=",
   },
   {
     id: 3,
-    name: "Đà Lạt",
+    name: "West Lake",
     image:
-      "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=600&h=800&fit=crop",
+      "https://images.pexels.com/photos/34405373/pexels-photo-34405373.jpeg",
   },
   {
     id: 4,
-    name: "Phú Quốc",
+    name: "Temple of Literature",
     image:
-      "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&h=800&fit=crop",
-  },
-  {
-    id: 5,
-    name: "Nha Trang",
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=800&fit=crop",
-  },
-  {
-    id: 6,
-    name: "Hội An",
-    image:
-      "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&h=800&fit=crop",
-  },
-  {
-    id: 7,
-    name: "Sapa",
-    image:
-      "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=600&h=800&fit=crop",
-  },
-  {
-    id: 8,
-    name: "TP. Hồ Chí Minh",
-    image:
-      "https://images.unsplash.com/photo-1583394838336-acd977736f90?w=600&h=800&fit=crop",
+      "https://media.istockphoto.com/id/160179168/vi/anh/c%E1%BA%A3nh-quan-th%C3%A0nh-ph%E1%BB%91-h%C3%A0-n%E1%BB%99i.jpg?b=1&s=612x612&w=0&k=20&c=fLJ5CRj_3RrxcjmrMF3EHCqDzBySf0o_DZ8yKQ6GWeE=",
   },
 ];
 
@@ -58,12 +34,12 @@ export default function ExploreDestinations() {
   const scrollLeft = useRef(0);
   const isUserInteracting = useRef(false);
 
-  // Tự động cuộn khi không tương tác
+  // Auto scroll when not interacting
   useEffect(() => {
     const container = scrollRef.current;
     let frame;
-
     const speed = 0.5;
+
     const autoScroll = () => {
       if (!isUserInteracting.current && container) {
         container.scrollLeft += speed;
@@ -78,7 +54,7 @@ export default function ExploreDestinations() {
     return () => cancelAnimationFrame(frame);
   }, []);
 
-  // Xử lý kéo chuột để cuộn
+  // Handle dragging
   useEffect(() => {
     const container = scrollRef.current;
     if (!container) return;
@@ -97,7 +73,6 @@ export default function ExploreDestinations() {
 
     const handleMouseUp = () => {
       isDragging.current = false;
-      // sau 2s không tương tác thì tự động cuộn lại
       setTimeout(() => (isUserInteracting.current = false), 2000);
     };
 
@@ -114,7 +89,7 @@ export default function ExploreDestinations() {
     container.addEventListener("mouseup", handleMouseUp);
     container.addEventListener("mousemove", handleMouseMove);
 
-    // hỗ trợ mobile
+    // Mobile touch support
     container.addEventListener(
       "touchstart",
       () => (isUserInteracting.current = true)
@@ -135,9 +110,9 @@ export default function ExploreDestinations() {
 
   return (
     <section className="bg-white py-12 px-4">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-bold text-[#233E8F] mb-8 text-center">
-          🧭 Điểm đến nổi bật
+          🧭 Explore Hanoi
         </h2>
 
         <div
@@ -147,7 +122,7 @@ export default function ExploreDestinations() {
           {infiniteList.map((dest, idx) => (
             <div
               key={`${dest.id}-${idx}`}
-              className="relative w-[200px] h-[280px] md:w-[240px] md:h-[320px] rounded-2xl overflow-hidden flex-shrink-0 group"
+              className="relative w-[220px] h-[320px] md:w-[260px] md:h-[360px] rounded-2xl overflow-hidden flex-shrink-0 group"
             >
               <img
                 src={dest.image}

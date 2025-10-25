@@ -13,6 +13,7 @@ import Profile from "../pages/auth/Profile";
 import Toast from "../components/ui/Toast";
 import { useState } from "react";
 import CheckoutPage from "../pages/bookings/CheckoutPage";
+import BookingSuccess from "../pages/bookings/BookingSuccess";
 
 export function AppRoutes() {
   const [toast, setToast] = useState(null);
@@ -52,7 +53,9 @@ export function AppRoutes() {
             path="/hotels/category/:categoryId"
             element={<HotelsByCategoryPage />}
           />
+
           <Route path="/checkout/:roomName" element={<CheckoutPage />} />
+          <Route path="/booking-success" element={<BookingSuccess />} />
         </Route>
       </Routes>
 

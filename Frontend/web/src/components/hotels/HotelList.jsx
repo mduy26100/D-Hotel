@@ -1,7 +1,7 @@
 "use client";
 import React, { useRef } from "react";
 import { Spin, Empty } from "antd";
-import { ChevronLeft, ChevronRight } from "lucide-react"; // ✅ Dùng icon từ lucide-react
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import HotelCard from "./HotelCard";
 
@@ -9,9 +9,9 @@ const HotelList = ({ hotels, loading, error }) => {
   const navigate = useNavigate();
   const scrollRef = useRef(null);
 
-  const featuredHotels = hotels?.slice(0, 2) || []; // 👉 Lấy 8 khách sạn nổi bật
+  const featuredHotels = hotels?.slice(0, 4) || []; // 👉 Take 4 featured hotels
 
-  // ⚙️ Xử lý cuộn trái/phải
+  // ⚙️ Handle horizontal scroll
   const scroll = (direction) => {
     if (scrollRef.current) {
       const scrollAmount =
@@ -25,34 +25,35 @@ const HotelList = ({ hotels, loading, error }) => {
   return (
     <section className="bg-gray-50 py-16 px-4 relative">
       <div className="max-w-7xl mx-auto">
-        {/* 🏨 Tiêu đề */}
+        {/* 🏨 Title */}
         <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
-          🌟 Khách sạn nổi bật
+          🌟 Featured Hotels
         </h2>
 
-        {/* ⏳ Trạng thái Loading */}
+        {/* ⏳ Loading state */}
         {loading && (
           <div className="flex flex-col items-center justify-center py-20 space-y-4">
             <Spin size="large" />
-            <p className="text-gray-600 font-medium">Đang tải dữ liệu...</p>
+            <p className="text-gray-600 font-medium">Loading data...</p>
           </div>
         )}
 
-        {/* ❌ Lỗi hoặc không có dữ liệu */}
+        {/* ❌ Error */}
         {!loading && error && (
           <div className="text-center text-red-500 py-10">{error}</div>
         )}
 
+        {/* ❌ No data */}
         {!loading && !error && featuredHotels.length === 0 && (
           <div className="flex flex-col items-center justify-center py-20">
-            <Empty description="Không có khách sạn nào" />
+            <Empty description="No hotels available" />
           </div>
         )}
 
-        {/* ✅ Danh sách khách sạn ngang */}
+        {/* ✅ Horizontal hotel list */}
         {!loading && !error && featuredHotels.length > 0 && (
           <div className="relative">
-            {/* Nút trái */}
+            {/* Left button */}
             <button
               onClick={() => scroll("left")}
               className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2 hover:bg-gray-100 transition"
@@ -60,7 +61,7 @@ const HotelList = ({ hotels, loading, error }) => {
               <ChevronLeft className="text-icon-xxl w-7 h-7 text-gray-700" />
             </button>
 
-            {/* Container cuộn ngang */}
+            {/* Scroll container */}
             <div
               ref={scrollRef}
               className="flex overflow-x-auto scrollbar-hide gap-6 scroll-smooth px-2 py-2"
@@ -74,7 +75,7 @@ const HotelList = ({ hotels, loading, error }) => {
               ))}
             </div>
 
-            {/* Nút phải */}
+            {/* Right button */}
             <button
               onClick={() => scroll("right")}
               className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2 hover:bg-gray-100 transition"
@@ -84,12 +85,12 @@ const HotelList = ({ hotels, loading, error }) => {
           </div>
         )}
 
-        {/* 👇 Nút xem tất cả */}
+        {/* 👇 View All button */}
         {!loading && !error && featuredHotels.length > 0 && (
           <div className="text-center mt-12">
             <Link to="/hotels">
               <button className="bg-[#233E8F] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#1d3272] transition">
-                Xem tất cả khách sạn →
+                View All Hotels →
               </button>
             </Link>
           </div>

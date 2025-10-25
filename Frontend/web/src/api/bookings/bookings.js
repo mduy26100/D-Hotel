@@ -38,14 +38,17 @@ export const createBookingAPI = async (data) => {
     };
 
     const response = await axiosClient.post(URL_BASE, payload, {
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
     });
+
+    // ✅ Nếu backend trả lỗi trong payload
+    if (response.data?.success === false) {
+      throw new Error(response.data?.message || "Booking failed");
+    }
 
     return response.data;
   } catch (error) {
     console.error("Create booking error:", error);
-    throw error;
+    throw error; // ném ra FE bắt được
   }
 };

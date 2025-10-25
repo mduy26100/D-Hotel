@@ -15,16 +15,11 @@ export const useCreateBooking = () => {
       return response;
     } catch (err) {
       setError(err);
-      throw err;
+      throw err; // ✅ bắt FE có thể dùng try/catch
     } finally {
       setLoading(false);
     }
   };
 
-  return {
-    createBooking,
-    loading,
-    error,
-    data,
-  };
+  return { createBooking, loading, error, data };
 };

@@ -1,14 +1,19 @@
-import { useLocation, useParams } from "react-router-dom";
+// src/pages/booking/CheckoutPage.jsx
+import { useLocation, useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import dayjs from "dayjs";
 import { useCreateBooking } from "../../hooks/bookings/useCreateBooking";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import { notification } from "antd";
 
 const CheckoutPage = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const { roomName } = useParams();
   const query = new URLSearchParams(location.search);
 
-  const { createBooking, loading, error, data } = useCreateBooking();
+  const { createBooking, loading } = useCreateBooking();
 
   const room = {
     name: roomName,
@@ -35,6 +40,15 @@ const CheckoutPage = () => {
     date ? dayjs(date).format("DD/MM/YYYY") : "--/--/----";
 
   const handleCheckout = async () => {
+    if (!guestName || !guestPhone) {
+      notification.warning({
+        message: "Missing information",
+        description: "Please enter your full name and phone number.",
+        placement: "topRight",
+      });
+      return;
+    }
+
     const bookingData = {
       hotelId: room.hotelId,
       roomTypeId: room.id,
@@ -48,170 +62,168 @@ const CheckoutPage = () => {
       guestPhone,
       guestEmail,
       note,
+      paymentMethod,
       status: "Pending",
     };
-    console.log(bookingData);
 
     try {
       const response = await createBooking(bookingData);
-      alert("Booking successfully created!");
-      console.log("Booking response:", response);
+
+      if (response) {
+        notification.success({
+          message: "Booking successfully created!",
+          description: `Room ${room.name} has been booked successfully.`,
+          placement: "topRight",
+        });
+
+        navigate("/booking-success", {
+          state: {
+            ...bookingData,
+            roomName: room.name,
+            imageUrl: room.imageUrl,
+            invoiceNumber: response.invoiceNumber,
+          },
+        });
+      } else {
+        notification.error({
+          message: "Booking failed!",
+          description: "Unable to create booking. Please try again.",
+          placement: "topRight",
+        });
+      }
     } catch (err) {
       console.error("Booking error:", err);
-      alert("Booking failed, please try again!");
+      notification.error({
+        message: "Booking failed!",
+        description: err.message || "Please try again later.",
+        placement: "topRight",
+      });
     }
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
-      {/* === Left: Room info + check-in/out === */}
+    <div className="max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {/* Left: Room info + policy */}
       <div className="space-y-6">
-        <div className="flex gap-4 bg-white p-4 rounded-xl shadow hover:shadow-lg transition-shadow duration-300">
+        <div className="flex flex-col md:flex-row gap-4 bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
           <img
             src={room.imageUrl || "/default-room.jpg"}
             alt={room.name}
-            className="w-36 h-36 object-cover rounded-lg border border-gray-200"
+            className="w-full md:w-40 h-40 object-cover rounded-lg border border-gray-200"
           />
-          <div className="flex flex-col justify-between">
-            <div>
-              <h2 className="text-2xl font-semibold text-gray-800">
-                {room.name}
-              </h2>
-              <p className="text-gray-600 mt-2 text-sm">
-                <span className="font-medium">Thể loại:</span>{" "}
-                {room.displayType}
-              </p>
-            </div>
+          <div className="flex flex-col justify-between mt-4 md:mt-0">
+            <h2 className="text-2xl font-semibold text-gray-800">
+              {room.name}
+            </h2>
+            <p className="text-gray-600 mt-2 text-sm">
+              <span className="font-medium">Type:</span> {room.displayType}
+            </p>
+            <p className="text-gray-600 mt-1 text-sm">
+              <span className="font-medium">Price:</span>{" "}
+              {room.displayPrice.toLocaleString("en-US")} VND
+            </p>
           </div>
         </div>
 
-        <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-lg shadow-sm space-y-3">
-          <div className="flex items-center gap-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-blue-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M8 7V3m8 4V3M3 11h18M5 19h14a2 2 0 002-2v-7H3v7a2 2 0 002 2z"
-              />
-            </svg>
-            <p className="text-gray-700 text-sm">
-              <span className="font-medium">Nhận phòng:</span>{" "}
-              {formatDate(room.displayStartDate)} – {room.displayStartTime}
-            </p>
-          </div>
-          <div className="flex items-center gap-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6 text-green-500"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
-            <p className="text-gray-700 text-sm">
-              <span className="font-medium">Trả phòng:</span>{" "}
-              {formatDate(room.displayEndDate)} – {room.displayEndTime}
-            </p>
-          </div>
+        <div className="bg-blue-50 border-l-4 border-blue-400 p-4 rounded-lg shadow-sm space-y-2">
+          <p className="text-gray-700 text-sm">
+            <span className="font-medium">Check-in:</span>{" "}
+            {formatDate(room.displayStartDate)} – {room.displayStartTime}
+          </p>
+          <p className="text-gray-700 text-sm">
+            <span className="font-medium">Check-out:</span>{" "}
+            {formatDate(room.displayEndDate)} – {room.displayEndTime}
+          </p>
         </div>
-        <div className="bg-white p-4 rounded-lg shadow space-y-2">
-          <h3 className="font-semibold">Chi tiết thanh toán</h3>
-          <div className="flex justify-between">
-            <span>Tiền phòng</span>
-            <span className="font-medium">
-              {room.displayPrice.toLocaleString("vi-VN")}₫
-            </span>
-          </div>
-          <hr />
-          <div className="flex justify-between font-bold text-lg">
-            <span>Tổng thanh toán</span>
-            <span>{room.displayPrice.toLocaleString("vi-VN")}₫</span>
-          </div>
+
+        {/* Policy Card */}
+        <div className="bg-white p-4 rounded-lg shadow border-l-4 border-red-400 space-y-2">
+          <h3 className="text-red-600 font-semibold text-lg">Room Policies</h3>
+          <ul className="list-disc list-inside text-gray-700 text-sm space-y-1">
+            <li>No cancellations allowed within 24 hours of check-in.</li>
+            <li>Late check-out may incur extra charges.</li>
+            <li>Guests must present valid ID at check-in.</li>
+            <li>Pets are not allowed unless specified.</li>
+          </ul>
         </div>
       </div>
 
-      {/* === Right: Payment info + form === */}
-      <div className="space-y-4">
-        <div className="bg-white p-4 rounded-lg shadow space-y-2">
-          <h3 className="font-semibold">Chọn phương thức thanh toán</h3>
-          <div className="flex flex-col gap-2">
-            <label className="flex items-center gap-2">
+      {/* Right: Guest info + payment */}
+      <div className="space-y-6">
+        <div className="bg-white p-6 rounded-lg shadow space-y-4">
+          <h3 className="font-semibold text-lg">Select Payment Method</h3>
+          <div className="flex flex-col gap-3">
+            <label className="flex items-center gap-3">
               <input
                 type="radio"
                 name="payment"
                 value="momo"
                 checked={paymentMethod === "momo"}
                 onChange={() => setPaymentMethod("momo")}
+                className="accent-blue-500"
               />
-              Ví MoMo
+              MoMo Wallet
             </label>
-            <label className="flex items-center gap-2">
+            <label className="flex items-center gap-3">
               <input
                 type="radio"
                 name="payment"
                 value="zalopay"
                 checked={paymentMethod === "zalopay"}
                 onChange={() => setPaymentMethod("zalopay")}
+                className="accent-blue-500"
               />
-              Ví ZaloPay
+              ZaloPay Wallet
             </label>
-            <label className="flex items-center gap-2 text-gray-400">
-              <input type="radio" disabled /> Trả tại khách sạn
+            <label className="flex items-center gap-3 text-gray-400">
+              <input type="radio" disabled /> Pay at Hotel
             </label>
           </div>
         </div>
 
-        {/* === Guest form === */}
-        <div className="bg-white p-4 rounded-lg shadow space-y-2">
-          <h3 className="font-semibold">Thông tin khách</h3>
+        <div className="bg-white p-6 rounded-lg shadow space-y-4">
+          <h3 className="font-semibold text-lg">Guest Information</h3>
           <input
             type="text"
-            placeholder="Họ và tên"
+            placeholder="Full Name"
             value={guestName}
             onChange={(e) => setGuestName(e.target.value)}
-            className="w-full border p-2 rounded"
+            className="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400"
           />
-          <input
-            type="text"
-            placeholder="Số điện thoại"
+          <PhoneInput
+            country="vn"
             value={guestPhone}
-            onChange={(e) => setGuestPhone(e.target.value)}
-            className="w-full border p-2 rounded"
+            onChange={(phone) => setGuestPhone(phone)}
+            inputClass="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400"
+            dropdownClass="rounded-lg"
+            placeholder="Phone Number"
           />
           <input
             type="email"
-            placeholder="Email (tùy chọn)"
+            placeholder="Email (optional)"
             value={guestEmail}
             onChange={(e) => setGuestEmail(e.target.value)}
-            className="w-full border p-2 rounded"
+            className="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400"
           />
           <textarea
-            placeholder="Ghi chú (tùy chọn)"
+            placeholder="Note (optional)"
             value={note}
             onChange={(e) => setNote(e.target.value)}
-            className="w-full border p-2 rounded"
-            rows={3}
+            rows={4}
+            className="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400"
           />
         </div>
 
         <button
-          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition"
           onClick={handleCheckout}
+          disabled={loading}
+          className={`w-full py-3 text-white font-semibold rounded-lg transition duration-300 ${
+            loading
+              ? "bg-gray-400 cursor-not-allowed"
+              : "bg-blue-600 hover:bg-blue-700"
+          }`}
         >
-          Thanh toán
+          {loading ? "Processing..." : "Checkout"}
         </button>
       </div>
     </div>

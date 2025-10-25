@@ -3,21 +3,22 @@ import { ArrowRight } from "lucide-react";
 const featuredDeals = [
   {
     id: 1,
-    title: "Giảm 30% tại Vinpearl Resort",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-    price: "2.500.000đ/đêm",
+    title: "20% Off at Sofitel Legend Metropole Hanoi",
+    image:
+      "https://media.istockphoto.com/id/2147497907/vi/anh/n%E1%BB%AF-du-kh%C3%A1ch-tr%E1%BA%BB-th%C6%B0-gi%C3%A3n-v%C3%A0-t%E1%BA%ADn-h%C6%B0%E1%BB%9Fng-bi%E1%BB%83n-nhi%E1%BB%87t-%C4%91%E1%BB%9Bi-khi-%C4%91i-du-l%E1%BB%8Bch-cho-k%E1%BB%B3-ngh%E1%BB%89-h%C3%A8-kh%C3%A1i-ni%E1%BB%87m.jpg?b=1&s=612x612&w=0&k=20&c=NUksq1ERF9t6R24VyWXb0fvRr9yyVdJcl_bXtg1bTiE=",
+    price: "4,500,000 VND/night",
   },
   {
     id: 2,
-    title: "Combo 3N2Đ Đà Lạt chỉ từ",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-    price: "1.800.000đ",
+    title: "Weekend Staycation at InterContinental Hanoi Westlake",
+    image: "https://images.pexels.com/photos/2174656/pexels-photo-2174656.jpeg",
+    price: "3,200,000 VND/night",
   },
   {
     id: 3,
-    title: "Ưu đãi cuối tuần - Flamingo",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-    price: "2.200.000đ/đêm",
+    title: "Hanoi Old Quarter Hotel Special Combo",
+    image: "https://images.pexels.com/photos/346529/pexels-photo-346529.jpeg",
+    price: "2,000,000 VND/night",
   },
 ];
 
@@ -27,10 +28,10 @@ export default function FeaturedDeals() {
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-[#233E8F]">
-            🌟 Ưu đãi nổi bật
+            🌟 Featured Deals
           </h2>
           <button className="flex items-center text-[#233E8F] font-medium hover:underline">
-            Xem tất cả
+            View All
             <ArrowRight className="ml-1 h-4 w-4" />
           </button>
         </div>
