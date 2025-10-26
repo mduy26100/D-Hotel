@@ -1,4 +1,4 @@
-// src/pages/booking/BookingSuccess.jsx
+import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import dayjs from "dayjs";
 
@@ -6,15 +6,41 @@ const BookingSuccess = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const booking = location.state;
+  const [booking, setBooking] = useState(location.state || null);
 
-  if (!booking) {
-    navigate("/");
-    return null;
-  }
+  useEffect(() => {
+    if (!booking) {
+      const query = new URLSearchParams(location.search);
+
+      const fallbackBooking = {
+        invoiceNumber: query.get("invoiceNumber"),
+        roomName: query.get("roomName"),
+        rentalType: query.get("rentalType"),
+        rentalPrice: query.get("rentalPrice"),
+        guestName: query.get("guestName"),
+        guestPhone: query.get("guestPhone"),
+        guestEmail: query.get("guestEmail"),
+        checkInDate: query.get("checkInDate"),
+        startTime: query.get("startTime"),
+        checkOutDate: query.get("checkOutDate"),
+        endTime: query.get("endTime"),
+        note: query.get("note"),
+        paymentMethod: query.get("paymentMethod"),
+        status: query.get("status"),
+      };
+
+      if (!fallbackBooking.guestName) {
+        navigate("/"); // không có data → quay về home
+      } else {
+        setBooking(fallbackBooking);
+      }
+    }
+  }, [booking, location.search, navigate]);
 
   const formatDate = (date) =>
     date ? dayjs(date).format("DD/MM/YYYY") : "--/--/----";
+
+  if (!booking) return null;
 
   return (
     <div className="max-w-4xl mx-auto p-6 space-y-6">
@@ -56,6 +82,23 @@ const BookingSuccess = () => {
             {booking.invoiceNumber || "--"}
           </p>
           <p>
+            <span className="font-medium">Room Name:</span>{" "}
+            {booking.roomName || "--"}
+          </p>
+          <p>
+            <span className="font-medium">Room Type:</span>{" "}
+            {booking.rentalType || "--"}
+          </p>
+          <p>
+            <span className="font-medium">Price:</span>{" "}
+            {booking.rentalPrice != null
+              ? new Intl.NumberFormat("vi-VN", {
+                  style: "currency",
+                  currency: "VND",
+                }).format(booking.rentalPrice)
+              : "--"}
+          </p>
+          <p>
             <span className="font-medium">Check-in:</span>{" "}
             {formatDate(booking.checkInDate)} – {booking.startTime}
           </p>
@@ -73,6 +116,7 @@ const BookingSuccess = () => {
             <span className="font-medium">Email:</span>{" "}
             {booking.guestEmail || "--"}
           </p>
+
           <p>
             <span className="font-medium">Note:</span> {booking.note || "--"}
           </p>

@@ -34,7 +34,7 @@ const CheckoutPage = () => {
   );
   const [guestEmail, setGuestEmail] = useState("");
   const [note, setNote] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState("momo");
+  const [paymentMethod, setPaymentMethod] = useState("OnSite");
 
   const formatDate = (date) =>
     date ? dayjs(date).format("DD/MM/YYYY") : "--/--/----";
@@ -63,6 +63,7 @@ const CheckoutPage = () => {
       guestEmail,
       note,
       paymentMethod,
+      paymentProvider: paymentMethod === "Stripe" ? "Stripe" : "OnSite",
       status: "Pending",
     };
 
@@ -70,6 +71,11 @@ const CheckoutPage = () => {
       const response = await createBooking(bookingData);
 
       if (response) {
+        if (paymentMethod === "Stripe" && response.paymentUrl) {
+          window.location.href = response.paymentUrl;
+          return;
+        }
+
         notification.success({
           message: "Booking successfully created!",
           description: `Room ${room.name} has been booked successfully.`,
@@ -80,6 +86,8 @@ const CheckoutPage = () => {
           state: {
             ...bookingData,
             roomName: room.name,
+            rentalType: room.displayType,
+            rentalPrice: room.displayPrice,
             imageUrl: room.imageUrl,
             invoiceNumber: response.invoiceNumber,
           },
@@ -101,6 +109,7 @@ const CheckoutPage = () => {
     }
   };
 
+  // -------------------- JSX --------------------
   return (
     <div className="max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-2 gap-8">
       {/* Left: Room info + policy */}
@@ -136,7 +145,6 @@ const CheckoutPage = () => {
           </p>
         </div>
 
-        {/* Policy Card */}
         <div className="bg-white p-4 rounded-lg shadow border-l-4 border-red-400 space-y-2">
           <h3 className="text-red-600 font-semibold text-lg">Room Policies</h3>
           <ul className="list-disc list-inside text-gray-700 text-sm space-y-1">
@@ -150,37 +158,6 @@ const CheckoutPage = () => {
 
       {/* Right: Guest info + payment */}
       <div className="space-y-6">
-        <div className="bg-white p-6 rounded-lg shadow space-y-4">
-          <h3 className="font-semibold text-lg">Select Payment Method</h3>
-          <div className="flex flex-col gap-3">
-            <label className="flex items-center gap-3">
-              <input
-                type="radio"
-                name="payment"
-                value="momo"
-                checked={paymentMethod === "momo"}
-                onChange={() => setPaymentMethod("momo")}
-                className="accent-blue-500"
-              />
-              MoMo Wallet
-            </label>
-            <label className="flex items-center gap-3">
-              <input
-                type="radio"
-                name="payment"
-                value="zalopay"
-                checked={paymentMethod === "zalopay"}
-                onChange={() => setPaymentMethod("zalopay")}
-                className="accent-blue-500"
-              />
-              ZaloPay Wallet
-            </label>
-            <label className="flex items-center gap-3 text-gray-400">
-              <input type="radio" disabled /> Pay at Hotel
-            </label>
-          </div>
-        </div>
-
         <div className="bg-white p-6 rounded-lg shadow space-y-4">
           <h3 className="font-semibold text-lg">Guest Information</h3>
           <input
@@ -212,6 +189,75 @@ const CheckoutPage = () => {
             rows={4}
             className="w-full border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-400"
           />
+
+          {/* Payment Method Select - Styled */}
+          <div className="w-full">
+            <label className="block text-gray-700 font-medium mb-3 text-lg">
+              Payment Method
+            </label>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* OnSite Option */}
+              <div
+                onClick={() => setPaymentMethod("OnSite")}
+                className={`flex items-center gap-3 p-4 border rounded-2xl cursor-pointer transition-all duration-300 shadow-sm hover:shadow-md ${
+                  paymentMethod === "OnSite"
+                    ? "border-blue-600 bg-blue-50"
+                    : "border-gray-300 bg-white"
+                }`}
+              >
+                <div
+                  className={`w-5 h-5 flex-shrink-0 rounded-full border-2 ${
+                    paymentMethod === "OnSite"
+                      ? "border-blue-600 bg-blue-600"
+                      : "border-gray-400"
+                  }`}
+                ></div>
+                <div className="flex flex-col">
+                  <span className="font-semibold text-gray-800">
+                    Pay On Site
+                  </span>
+                  <span className="text-gray-500 text-sm">
+                    Pay directly at the hotel
+                  </span>
+                </div>
+                <img
+                  src="https://www.citypng.com/public/uploads/preview/hd-black-hand-to-hand-money-cash-payment-icon-transparent-png-701751694974663tfjsmuftvt.png"
+                  alt="OnSite"
+                  className="w-8 h-8 ml-auto opacity-80"
+                />
+              </div>
+
+              {/* Stripe Option */}
+              <div
+                onClick={() => setPaymentMethod("Stripe")}
+                className={`flex items-center gap-3 p-4 border rounded-2xl cursor-pointer transition-all duration-300 shadow-sm hover:shadow-md ${
+                  paymentMethod === "Stripe"
+                    ? "border-blue-600 bg-blue-50"
+                    : "border-gray-300 bg-white"
+                }`}
+              >
+                <div
+                  className={`w-5 h-5 flex-shrink-0 rounded-full border-2 ${
+                    paymentMethod === "Stripe"
+                      ? "border-blue-600 bg-blue-600"
+                      : "border-gray-400"
+                  }`}
+                ></div>
+                <div className="flex flex-col">
+                  <span className="font-semibold text-gray-800">Stripe</span>
+                  <span className="text-gray-500 text-sm">
+                    Pay securely online with card
+                  </span>
+                </div>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg"
+                  alt="Stripe"
+                  className="w-12 h-8 ml-auto object-contain opacity-80"
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
         <button

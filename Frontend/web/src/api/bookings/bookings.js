@@ -22,6 +22,7 @@ export const createBookingAPI = async (data) => {
           note: data.note || null,
           bookingDate: data.bookingDate,
           status: data.status,
+          paymentProvider: data.paymentProvider,
         },
         details: data.details?.length
           ? data.details.map((d) => ({
