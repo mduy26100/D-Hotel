@@ -10,5 +10,7 @@
         public required string PaymentMethod { get; set; }
         public DateTime IssuedDate { get; set; }
         public required string Status { get; set; }
+
+        public string? PaymentIntentId { get; set; }
     }
 }

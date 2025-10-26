@@ -1,4 +1,7 @@
-﻿namespace Application.Features.Bookings.DTOs
+﻿using Domain.Enums.Auth;
+using Domain.Enums.Bookings;
+
+namespace Application.Features.Bookings.DTOs
 {
     public class BookingAggregateDto
     {

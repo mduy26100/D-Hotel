@@ -30,6 +30,10 @@
                 .IsRequired()
                 .HasMaxLength(32);
 
+            builder.Property(i => i.PaymentIntentId)
+                .HasMaxLength(128)
+                .IsRequired(false);
+
             builder.HasOne<Booking>()
                 .WithMany()
                 .HasForeignKey(i => i.BookingId)

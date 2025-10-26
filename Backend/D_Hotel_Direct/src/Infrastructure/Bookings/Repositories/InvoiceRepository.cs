@@ -8,6 +8,13 @@ namespace Infrastructure.Bookings.Repositories
     {
         public InvoiceRepository(ApplicationDbContext context) : base(context)
         {
+
+        }
+
+        public async Task<Invoice?> GetByPaymentIntentIdAsync(string paymentIntentId)
+        {
+            return await _context.Invoices
+               .FirstOrDefaultAsync(i => i.PaymentIntentId == paymentIntentId);
         }
     }
 }

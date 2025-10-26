@@ -26,7 +26,7 @@ namespace WebAPI.DependencyInjection
             services.AddPlaceServices();
             services.AddPurposeService();
             services.AddRoomService();
-            services.AddBookingServices();
+            services.AddBookingServices(configuration);
 
             //Shared
             services.AddSharedServices();

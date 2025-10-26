@@ -1,4 +1,6 @@
-﻿namespace Application.Features.Bookings.DTOs
+﻿using Domain.Enums.Bookings;
+
+namespace Application.Features.Bookings.DTOs
 {
     public class BookingDto
     {
@@ -37,5 +39,10 @@
         public DateTime BookingDate { get; set; }
 
         public string? InvoiceNumber { get; set; }
+        public string? PaymentMethod { get; set; }
+
+        public string? PaymentUrl { get; set; }
+
+        public PaymentProvider PaymentProvider { get; set; } = PaymentProvider.OnSite;
     }
 }
