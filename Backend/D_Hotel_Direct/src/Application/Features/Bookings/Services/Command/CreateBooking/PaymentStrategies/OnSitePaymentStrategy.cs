@@ -1,4 +1,5 @@
-﻿using Application.Features.Bookings.DTOs;
+﻿using Application.Common.Interfaces.Services.Email;
+using Application.Features.Bookings.DTOs;
 using Application.Features.Bookings.Interfaces.Services.Command.CreateBooking.PaymentStrategies;
 using Application.Features.Bookings.Repositories;
 using Application.Features.Rooms.Repositories;
@@ -19,6 +20,7 @@ namespace Application.Features.Bookings.Services.Command.CreateBooking.PaymentSt
         private readonly IRoomTypeRepository _roomTypeRepository;
         private readonly IApplicationDbContext _context;
         private readonly IMapper _mapper;
+        private readonly IEmailService _emailService;
 
         public OnSitePaymentStrategy(
             IBookingRepository bookingRepository,
@@ -26,6 +28,7 @@ namespace Application.Features.Bookings.Services.Command.CreateBooking.PaymentSt
             IInvoiceRepository invoiceRepository,
             IRoomTypeRepository roomTypeRepository,
             IApplicationDbContext context,
+            IEmailService emailService,
             IMapper mapper)
         {
             _bookingRepository = bookingRepository;
@@ -34,6 +37,7 @@ namespace Application.Features.Bookings.Services.Command.CreateBooking.PaymentSt
             _roomTypeRepository = roomTypeRepository;
             _context = context;
             _mapper = mapper;
+            _emailService = emailService;
         }
 
         public async Task<InvoiceDto> HandleBookingAsync(BookingAggregateDto bookingAggregateDto, Guid? userId)
@@ -80,6 +84,85 @@ namespace Application.Features.Bookings.Services.Command.CreateBooking.PaymentSt
                     IssuedDate = DateTime.UtcNow,
                     Status = "Pending"
                 };
+
+                var queryParams = new Dictionary<string, string>
+                {
+                    ["invoiceNumber"] = invoice.InvoiceNumber,
+                    ["roomName"] = roomType.Name,
+                    ["rentalType"] = bookingEntity.RentalType ?? "",
+                    ["rentalPrice"] = bookingEntity.RentalPrice.ToString(),
+                    ["invoiceNumber"] = invoice.InvoiceNumber,
+                    ["guestName"] = bookingEntity.GuestName,
+                    ["guestPhone"] = bookingEntity.GuestPhone,
+                    ["guestEmail"] = bookingEntity.GuestEmail ?? "",
+                    ["checkInDate"] = bookingEntity.CheckInDate?.ToString("yyyy-MM-dd") ?? "",
+                    ["startTime"] = bookingEntity.StartTime.HasValue ? bookingEntity.StartTime.Value.ToString(@"hh\:mm") : "",
+                    ["checkOutDate"] = bookingEntity.CheckOutDate?.ToString("yyyy-MM-dd") ?? "",
+                    ["endTime"] = bookingEntity.EndTime.HasValue ? bookingEntity.EndTime.Value.ToString(@"hh\:mm") : "",
+                    ["note"] = bookingEntity.Note ?? "",
+                    ["paymentMethod"] = invoice.PaymentMethod,
+                    ["status"] = invoice.Status
+                };
+
+                // Build query string
+                var queryString = string.Join("&", queryParams.Select(kvp =>
+                    $"{Uri.EscapeDataString(kvp.Key)}={Uri.EscapeDataString(kvp.Value)}"
+                ));
+
+                // --- Gửi email xác nhận booking ---
+                if (!string.IsNullOrEmpty(bookingEntity.GuestEmail))
+                {
+                    var urlDetail = $"https://localhost:5173/booking-success?{queryString}";
+                    var emailSubject = $"[Booking Confirmation] Invoice #{invoice.InvoiceNumber}";
+                    var emailBody = $@"
+                        <html>
+                          <body>
+                            <h2>Hello {bookingEntity.GuestName},</h2>
+                            <p>Thank you for booking with <strong>D-Hotel</strong>! 
+                            Your reservation has been successfully confirmed with invoice number 
+                            <strong>{invoice.InvoiceNumber}</strong>.</p>
+
+                            <table border='1' cellspacing='0' cellpadding='6' width='100%'>
+                              <tr>
+                                <th align='left'>Room</th>
+                                <td>{roomType.Name} ({bookingEntity.RentalType})</td>
+                              </tr>
+                              <tr>
+                                <th align='left'>Check-in Date</th>
+                                <td>{bookingEntity.CheckInDate:dd/MM/yyyy} {(bookingEntity.StartTime.HasValue ? bookingEntity.StartTime.Value.ToString("hh\\:mm") : "")}</td>
+                              </tr>
+                              <tr>
+                                <th align='left'>Check-out Date</th>
+                                <td>{bookingEntity.CheckOutDate:dd/MM/yyyy} {(bookingEntity.EndTime.HasValue ? bookingEntity.EndTime.Value.ToString("hh\\:mm") : "")}</td>
+                              </tr>
+                              <tr>
+                                <th align='left'>Total Amount</th>
+                                <td><strong>{invoice.TotalAmount:N0} VND</strong></td>
+                              </tr>
+                            </table>
+
+                            <p>We’re delighted to have you as our guest and hope you have a comfortable and enjoyable stay.</p>
+
+                            <p>If you have any questions or need assistance, please don’t hesitate to contact us via our hotline or email support.</p>
+
+                            <p>
+                              Hotline: <strong>0384 111 516</strong><br>
+                              Email: <a href='mailto:manhduy261000@gmail.com'>manhduy261000@gmail.com</a>
+                            </p>
+                            <br>
+
+                            <a href=""{urlDetail}""
+                               style=""background-color:#007bff;color:white;padding:10px 20px;text-decoration:none;border-radius:5px;"">
+                               View booking details
+                            </a>
+
+                            <br>
+                            <p>Best regards,<br><strong>The D-Hotel Booking Team</strong></p>
+                          </body>
+                        </html>";
+
+                    await _emailService.SendEmailAsync(bookingEntity.GuestEmail, emailSubject, emailBody);
+                }
 
                 await _invoiceRepository.AddAsync(invoice);
                 await _context.SaveChangesAsync();

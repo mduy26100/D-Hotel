@@ -1,4 +1,6 @@
-﻿using WebAPI.DependencyInjection;
+﻿using Application.Common.Interfaces.Services.Email;
+using Infrastructure.Services.Email;
+using WebAPI.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +19,8 @@ builder.Services.AddHttpClient();
 
 // Add services
 builder.Services.AddApplicationServices(builder.Configuration);
+
+builder.Services.AddScoped<IEmailService, ResendEmailService>();
 
 var app = builder.Build();
 
