@@ -35,7 +35,7 @@ const Sidebar = ({ isOpen, onClose, user }) => {
       submenu: [
         { name: "Hotels", path: "/hotels" },
         { name: "Hotel Categories", path: "/hotel-categories" },
-        { name: "Hotel Staffs", path: "/hotel-staffs" },
+        { name: "Hotel Staffs", path: "/hotel-staffs", disabled: true },
       ],
     },
     {
@@ -43,7 +43,7 @@ const Sidebar = ({ isOpen, onClose, user }) => {
       icon: MapPinIcon,
       submenu: [
         { name: "Locations", path: "/locations" },
-        { name: "Hotel Locations", path: "/hotel-locations" },
+        { name: "Hotel Locations", path: "/hotel-locations", disabled: true },
       ],
     },
     {
@@ -51,9 +51,18 @@ const Sidebar = ({ isOpen, onClose, user }) => {
       icon: BriefcaseIcon,
       submenu: [
         { name: "Travel Purposes", path: "/travel-purposes" },
-        { name: "Room Type Purposes", path: "/room-type-purposes" },
         { name: "Room Purposes", path: "/room-purposes" },
-        { name: "Hotel Travel Purposes", path: "/hotel-travel-purposes" },
+        {
+          name: "Room Type Purposes",
+          path: "/room-type-purposes",
+          disabled: true,
+        },
+
+        {
+          name: "Hotel Travel Purposes",
+          path: "/hotel-travel-purposes",
+          disabled: true,
+        },
       ],
     },
     {
@@ -61,10 +70,10 @@ const Sidebar = ({ isOpen, onClose, user }) => {
       icon: CubeIcon,
       submenu: [
         { name: "Room Types", path: "/room-types" },
-        { name: "Room Type Images", path: "/room-type-images" },
         { name: "Bed Types", path: "/bed-types" },
         { name: "Quantity Guests", path: "/quantity-guests" },
         { name: "Room Type Prices", path: "/room-type-prices" },
+        { name: "Room Type Images", path: "/room-type-images", disabled: true },
       ],
     },
     {
@@ -72,17 +81,17 @@ const Sidebar = ({ isOpen, onClose, user }) => {
       icon: WrenchScrewdriverIcon,
       submenu: [
         { name: "Utilities", path: "/utilities" },
-        { name: "Utility Items", path: "/utility-items" },
-        { name: "Hotel Utilities", path: "/hotel-utilities" },
+        { name: "Utility Items", path: "/utility-items", disabled: true },
+        { name: "Hotel Utilities", path: "/hotel-utilities", disabled: true },
       ],
     },
     {
       name: "Revernue",
       icon: ChartBarIcon,
       submenu: [
-        { name: "Discounts", path: "/discounts" },
-        { name: "Invoices", path: "/invoices" },
-        { name: "Payments", path: "/payments" },
+        { name: "Bookings", path: "/bookings" },
+        { name: "Discounts", path: "/discounts", disabled: true },
+        { name: "Payments", path: "/payments", disabled: true },
       ],
     },
     {
@@ -90,9 +99,9 @@ const Sidebar = ({ isOpen, onClose, user }) => {
       icon: UsersIcon,
       submenu: [
         { name: "Users", path: "/users" },
-        { name: "Departments", path: "/departments" },
-        { name: "Employees", path: "/employees" },
-        { name: "Shifts", path: "/shifts" },
+        { name: "Departments", path: "/departments", disabled: true },
+        { name: "Employees", path: "/employees", disabled: true },
+        { name: "Shifts", path: "/shifts", disabled: true },
       ],
     },
     { name: "Reports", path: "/reports", icon: ChartBarIcon, comingSoon: true },
@@ -217,11 +226,16 @@ const Sidebar = ({ isOpen, onClose, user }) => {
                               to={subItem.path}
                               className={({ isActive }) =>
                                 `flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-200 text-sm ${
-                                  isActive
+                                  subItem.disabled
+                                    ? "text-gray-400 cursor-not-allowed opacity-50" // mờ + không click
+                                    : isActive
                                     ? "bg-primary/10 text-primary font-medium"
                                     : "text-gray-600 hover:bg-gray-50"
                                 }`
                               }
+                              onClick={(e) => {
+                                if (subItem.disabled) e.preventDefault(); // ngăn click
+                              }}
                             >
                               <span className="w-2 h-2 rounded-full bg-gray-400" />
                               {subItem.name}

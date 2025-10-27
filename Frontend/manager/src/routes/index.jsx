@@ -32,16 +32,16 @@ import Utilities from "../pages/Utilities/Utilities";
 import UtilityItems from "../pages/Utilities/UtilityItems";
 import HotelUtilities from "../pages/Utilities/HotelUtilities";
 
-import Discounts from "../pages/Revenue/Discounts";
-import Invoices from "../pages/Revenue/Invoices";
-import Payments from "../pages/Revenue/Payments";
-
 import Departments from "../pages/Users/Departments";
 import Employees from "../pages/Users/Employees";
 import Shifts from "../pages/Users/Shifts";
 import ErrorPage from "../pages/Error/ErrorPage";
 import Users from "../pages/Users/Users";
 import RoomTypePrices from "../pages/Room/RoomTypePrices";
+
+import Bookings from "../pages/Bookings/Bookings";
+import Payments from "../pages/Bookings/Payments";
+import Discounts from "../pages/Bookings/Discounts";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -94,8 +94,8 @@ const router = createBrowserRouter(
         <Route path="hotel-utilities" element={<HotelUtilities />} />
 
         {/* Discount & Payment */}
+        <Route path="bookings" element={<Bookings />} />
         <Route path="discounts" element={<Discounts />} />
-        <Route path="invoices" element={<Invoices />} />
         <Route path="payments" element={<Payments />} />
 
         {/* User */}
