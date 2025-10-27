@@ -168,8 +168,8 @@ namespace Application.Features.Bookings.PaymentStrategies
                     PaymentMethodTypes = new List<string> { "card" },
                     LineItems = lineItems,
                     Mode = "payment",
-                    SuccessUrl = $"https://localhost:5173/booking-success?{queryString}",
-                    CancelUrl = "https://localhost:5173/payment-cancel"
+                    SuccessUrl = $"https://d-hotel-booking.vercel.app/booking-success?{queryString}",
+                    CancelUrl = "https://d-hotel-booking.vercel.app/payment-cancel"
                 };
 
                 var service = new SessionService();
@@ -196,7 +196,7 @@ namespace Application.Features.Bookings.PaymentStrategies
                 // --- Gửi email xác nhận booking ---
                 if (!string.IsNullOrEmpty(bookingEntity.GuestEmail))
                 {
-                    var urlDetail = $"https://localhost:5173/booking-success?{queryString}";
+                    var urlDetail = $"https://d-hotel-booking.vercel.app/booking-success?{queryString}";
                     var emailSubject = $"[Booking Confirmation] Invoice #{invoice.InvoiceNumber}";
                     var emailBody = $@"
                         <html>

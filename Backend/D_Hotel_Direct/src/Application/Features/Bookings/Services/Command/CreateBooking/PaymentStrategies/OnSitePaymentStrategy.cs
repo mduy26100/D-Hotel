@@ -112,7 +112,7 @@ namespace Application.Features.Bookings.Services.Command.CreateBooking.PaymentSt
                 // --- Gửi email xác nhận booking ---
                 if (!string.IsNullOrEmpty(bookingEntity.GuestEmail))
                 {
-                    var urlDetail = $"https://localhost:5173/booking-success?{queryString}";
+                    var urlDetail = $"https://d-hotel-booking.vercel.app/booking-success?{queryString}";
                     var emailSubject = $"[Booking Confirmation] Invoice #{invoice.InvoiceNumber}";
                     var emailBody = $@"
                         <html>
