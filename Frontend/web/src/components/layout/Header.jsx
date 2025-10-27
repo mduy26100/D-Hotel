@@ -127,6 +127,12 @@ const Header = () => {
                 >
                   Profile
                 </Link>
+                <Link
+                  to="/my-bookings"
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                >
+                  My Bookings
+                </Link>
                 <button
                   onClick={logout}
                   className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100"
@@ -202,6 +208,13 @@ const Header = () => {
                     className="text-white font-medium hover:text-gray-200 transition"
                   >
                     Profile
+                  </Link>
+                  <Link
+                    to="/my-bookings"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-white font-medium hover:text-gray-200 transition"
+                  >
+                    My Bookings
                   </Link>
                   <button
                     onClick={() => {

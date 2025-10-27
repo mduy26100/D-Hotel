@@ -20,7 +20,6 @@ export const createBookingAPI = async (data) => {
           guestPhone: data.guestPhone,
           guestEmail: data.guestEmail || null,
           note: data.note || null,
-          bookingDate: data.bookingDate,
           status: data.status,
           paymentProvider: data.paymentProvider,
         },
@@ -51,5 +50,36 @@ export const createBookingAPI = async (data) => {
   } catch (error) {
     console.error("Create booking error:", error);
     throw error; // ném ra FE bắt được
+  }
+};
+
+export const getBookingsByUserIdAPI = async () => {
+  try {
+    // Gọi API backend, backend sẽ lấy user từ token trong header
+    const response = await axiosClient.get(`${URL_BASE}/by-user`);
+
+    if (response.data?.success === false) {
+      throw new Error(response.data?.message || "Failed to fetch bookings");
+    }
+
+    return response.data;
+  } catch (error) {
+    console.error("Get bookings error:", error);
+    throw error;
+  }
+};
+
+export const getBookingFullAPI = async (bookingId) => {
+  try {
+    const response = await axiosClient.get(`${URL_BASE}/${bookingId}/full`);
+
+    if (response.data?.success === false) {
+      throw new Error(response.data?.message || "Failed to fetch bookings");
+    }
+
+    return response.data;
+  } catch (error) {
+    console.error("Get bookings error:", error);
+    throw error;
   }
 };

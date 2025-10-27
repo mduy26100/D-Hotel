@@ -14,6 +14,7 @@ import Toast from "../components/ui/Toast";
 import { useState } from "react";
 import CheckoutPage from "../pages/bookings/CheckoutPage";
 import BookingSuccess from "../pages/bookings/BookingSuccess";
+import MyBookingsPage from "../pages/bookings/MyBookingsPage";
 
 export function AppRoutes() {
   const [toast, setToast] = useState(null);
@@ -42,6 +43,15 @@ export function AppRoutes() {
             element={
               <PrivateRoute>
                 <Profile />
+              </PrivateRoute>
+            }
+          />
+
+          <Route
+            path="/my-bookings"
+            element={
+              <PrivateRoute>
+                <MyBookingsPage />
               </PrivateRoute>
             }
           />
