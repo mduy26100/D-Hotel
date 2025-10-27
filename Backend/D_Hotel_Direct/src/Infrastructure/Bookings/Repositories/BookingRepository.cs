@@ -11,15 +11,37 @@ namespace Infrastructure.Bookings.Repositories
         }
 
         public async Task<int> CountActiveBookingsAsync(
-            int roomTypeId,
-            CancellationToken cancellationToken = default)
+    int roomTypeId,
+    DateTime? startDate = null,
+    DateTime? endDate = null,
+    TimeSpan? checkInTime = null,
+    CancellationToken cancellationToken = default)
         {
-            var activeStatuses = new[] { BookingStatus.Pending, BookingStatus.Confirmed, BookingStatus.CheckedIn };
+            var activeStatuses = new[]
+            {
+        BookingStatus.Pending,
+        BookingStatus.Confirmed,
+        BookingStatus.CheckedIn
+    };
 
-            return await _context.Bookings
+            // Lọc booking cơ bản trong DB
+            var bookings = await _context.Bookings
                 .Where(b => b.RoomTypeId == roomTypeId && activeStatuses.Contains(b.Status))
-                .CountAsync(cancellationToken);
-        }
+                .ToListAsync(cancellationToken); // ⚠️ Dừng LINQ to SQL ở đây
 
+            // Nếu chưa có ngày => không lọc theo thời gian
+            if (!startDate.HasValue || !endDate.HasValue)
+                return bookings.Count;
+
+            var startDateTime = startDate.Value.Add(checkInTime ?? TimeSpan.Zero);
+            var endDateTime = endDate.Value;
+
+            // Lọc trong bộ nhớ (LINQ to Objects)
+            var totalActive = bookings.Count(b =>
+                ((b.CheckInDate ?? DateTime.MinValue).Add(b.StartTime ?? TimeSpan.Zero)) < endDateTime &&
+                ((b.CheckOutDate ?? DateTime.MinValue).Add(b.EndTime ?? TimeSpan.Zero)) > startDateTime);
+
+            return totalActive;
+        }
     }
 }

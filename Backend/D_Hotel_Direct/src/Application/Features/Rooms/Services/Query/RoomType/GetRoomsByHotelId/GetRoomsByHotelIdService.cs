@@ -55,7 +55,7 @@ namespace Application.Features.Rooms.Services.Query.RoomType.GetRoomsByHotelId
                     _ => dto.DailyPrice ?? 0
                 };
 
-                var totalActiveBookings = await _bookingRepository.CountActiveBookingsAsync(dto.Id, cancellationToken);
+                var totalActiveBookings = await _bookingRepository.CountActiveBookingsAsync(dto.Id, startDate, endDate, checkInTime,  cancellationToken);
                 dto.Quantity = Math.Max(dto.Quantity - totalActiveBookings, 0);
 
                 switch (priceType?.ToLower())
