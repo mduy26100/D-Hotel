@@ -7,15 +7,18 @@ namespace Application.Features.Bookings.Queries.Booking.GetBookingsByUserId
     public class GetBookingsByUserIdHandler : IRequestHandler<GetBookingsByUserIdQuery, IEnumerable<BookingDto>>
     {
         private readonly IGetBookingsByUserIdService _getBookingsByUserIdService;
+        private readonly ICurrentUserContext _currentUserContext;
 
-        public GetBookingsByUserIdHandler(IGetBookingsByUserIdService getBookingsByUserIdService)
+        public GetBookingsByUserIdHandler(IGetBookingsByUserIdService getBookingsByUserIdService, ICurrentUserContext currentUserContext)
         {
             _getBookingsByUserIdService = getBookingsByUserIdService;
+            _currentUserContext = currentUserContext;
         }
 
         public async Task<IEnumerable<BookingDto>> Handle(GetBookingsByUserIdQuery request, CancellationToken cancellationToken)
         {
-            return await _getBookingsByUserIdService.GetByUserIdAsync(request.userId, cancellationToken);
+            var userId = _currentUserContext.UserId;
+            return await _getBookingsByUserIdService.GetByUserIdAsync(userId, cancellationToken);
         }
     }
 }

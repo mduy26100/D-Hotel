@@ -84,9 +84,9 @@ namespace WebAPI.Controllers.Bookings
         }
 
         [HttpGet("by-user")]
-        public async Task<IActionResult> GetByUserId([FromQuery] Guid userId, CancellationToken cancellationToken)
+        public async Task<IActionResult> GetByUserId(CancellationToken cancellationToken)
         {
-            var query = new GetBookingsByUserIdQuery(userId);
+            var query = new GetBookingsByUserIdQuery();
             var result = await _mediator.Send(query, cancellationToken);
             return Ok(result);
         }

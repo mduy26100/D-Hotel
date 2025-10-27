@@ -12,6 +12,10 @@ namespace Application.Features.Bookings.DTOs
         // 🔗 Liên kết tới loại phòng
         public int RoomTypeId { get; set; }
 
+        // 🏨 Thông tin hiển thị thêm
+        public string? HotelName { get; set; }
+        public string? RoomTypeName { get; set; }
+
         // 🕓 Thông tin thời gian thuê
         public DateTime? CheckInDate { get; set; }
         public DateTime? CheckOutDate { get; set; }

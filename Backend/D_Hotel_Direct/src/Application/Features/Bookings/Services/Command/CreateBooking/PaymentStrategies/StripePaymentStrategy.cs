@@ -64,6 +64,7 @@ namespace Application.Features.Bookings.PaymentStrategies
                 var bookingEntity = _mapper.Map<Domain.Models.Bookings.Booking>(bookingAggregateDto.Booking);
                 if (userId.HasValue) bookingEntity.UserId = userId;
                 bookingEntity.Status = BookingStatus.Pending;
+                bookingEntity.BookingDate = DateTimeOffset.UtcNow.ToOffset(TimeSpan.FromHours(7)).DateTime;
                 await _bookingRepository.AddAsync(bookingEntity);
                 await _context.SaveChangesAsync();
 
