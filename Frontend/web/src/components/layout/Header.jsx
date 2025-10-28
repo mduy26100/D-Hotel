@@ -12,25 +12,11 @@ const Header = () => {
     { label: "Home", path: "/" },
     {
       label: "Hotels",
-      dropdown: [
-        { label: "All Hotels", path: "/hotels" },
-        { label: "Luxury Hotels", path: "/hotels/luxury" },
-        { label: "Resorts", path: "/hotels/resorts" },
-        { label: "Budget Stays", path: "/hotels/budget" },
-      ],
+      path: "/hotels",
     },
-    {
-      label: "Destinations",
-      dropdown: [
-        { label: "Hà Nội", path: "/destinations/ha-noi" },
-        { label: "Đà Nẵng", path: "/destinations/da-nang" },
-        { label: "Phú Quốc", path: "/destinations/phu-quoc" },
-        { label: "Đà Lạt", path: "/destinations/da-lat" },
-      ],
-    },
-    { label: "Deals", path: "/deals" },
-    { label: "Blog", path: "/blog" },
-    { label: "Contact", path: "/contact" },
+    { label: "Deals", path: "/#" },
+    { label: "Blog", path: "/#" },
+    { label: "Contact", path: "/#" },
   ];
 
   return (
