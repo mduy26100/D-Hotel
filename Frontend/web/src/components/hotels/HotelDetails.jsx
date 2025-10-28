@@ -5,11 +5,19 @@ import { useEffect, useState } from "react";
 import { useRoomsByHotelId } from "../../hooks/rooms/roomTypes/useRoomsByHotelId";
 import RoomCard from "../rooms/RoomCard";
 import dayjs from "dayjs";
-import { Form, TimePicker } from "antd";
+import { TimePicker, Modal } from "antd";
+import { useRatingsByHotelId } from "../../hooks/bookings/ratings/useRatingsByHotelId";
 
 const HotelDetails = ({ hotelId }) => {
   const { hotel, loading, error } = useHotelDetails(hotelId);
+  const {
+    ratings,
+    loading: ratingsLoading,
+    error: ratingsError,
+  } = useRatingsByHotelId(hotelId);
+
   const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   // Khởi tạo null, user sẽ set từ input
   const [filterType, setFilterType] = useState("day");
@@ -17,28 +25,6 @@ const HotelDetails = ({ hotelId }) => {
   const [checkOutDate, setCheckOutDate] = useState(null);
   const [hotelCheckInTime, setHotelCheckInTime] = useState(null);
   const [usageHours, setUsageHours] = useState(null);
-
-  const [activeSection, setActiveSection] = useState("overview");
-
-  useEffect(() => {
-    const sections = document.querySelectorAll(
-      "#overview, #rooms, #amenities, #policies"
-    );
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.3 } // cuộn qua 30% section là active
-    );
-
-    sections.forEach((sec) => observer.observe(sec));
-    return () => sections.forEach((sec) => observer.unobserve(sec));
-  }, []);
 
   // State lưu param để hook gọi
   const [filterParams, setFilterParams] = useState({ hotelId });
@@ -311,50 +297,6 @@ const HotelDetails = ({ hotelId }) => {
         </div>
       </div>
 
-      {/* === SECTION NAVIGATION BAR === */}
-      <div className="sticky top-[160px] bg-white shadow-sm border-b border-gray-200 z-40 hidden md:block">
-        <div className="max-w-6xl mx-auto px-4">
-          <nav className="flex items-center justify-start space-x-6 text-sm md:text-base">
-            {[
-              { id: "overview", label: "Overview" },
-              { id: "rooms", label: "Room List" },
-              { id: "amenities", label: "Amenities" },
-              { id: "policies", label: "Hotel Policies" },
-            ].map((section) => (
-              <button
-                key={section.id}
-                onClick={() => {
-                  const el = document.getElementById(section.id);
-                  if (el) {
-                    const yOffset = -180; // adjust so section is not hidden
-                    const y =
-                      el.getBoundingClientRect().top +
-                      window.pageYOffset +
-                      yOffset;
-                    window.scrollTo({ top: y, behavior: "smooth" });
-                    setActiveSection(section.id); // also set active on click
-                  }
-                }}
-                className={`relative py-4 font-medium transition group ${
-                  activeSection === section.id
-                    ? "text-[#003B95]" // active color
-                    : "text-gray-500 hover:text-[#003B95]"
-                }`}
-              >
-                {section.label}
-                <span
-                  className={`absolute left-0 -bottom-[2px] h-[2px] bg-orange-500 transition-all duration-300 ${
-                    activeSection === section.id
-                      ? "w-full"
-                      : "w-0 group-hover:w-full"
-                  }`}
-                ></span>
-              </button>
-            ))}
-          </nav>
-        </div>
-      </div>
-
       {/* === MAIN CONTENT === */}
       <div id="overview" className="max-w-7xl mx-auto px-6 py-12 space-y-12">
         {/* Description */}
@@ -388,6 +330,83 @@ const HotelDetails = ({ hotelId }) => {
                   <RoomCard key={room.id} room={room} />
                 ))}
               </div>
+            </>
+          )}
+        </div>
+
+        {/* Ratings */}
+        <div id="ratings" className="max-w-7xl mx-auto px-6 py-12 space-y-6">
+          <h2 className="text-3xl font-bold text-gray-900">Guest Reviews</h2>
+          {ratingsLoading ? (
+            <p className="text-gray-600">Loading ratings...</p>
+          ) : ratingsError ? (
+            <p className="text-red-500">{ratingsError.message}</p>
+          ) : ratings?.length === 0 ? (
+            <p className="text-gray-500">No reviews yet.</p>
+          ) : (
+            <>
+              <div className="space-y-4">
+                {ratings.slice(0, 3).map((r, idx) => (
+                  <div
+                    key={idx}
+                    className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all"
+                  >
+                    <div className="flex justify-between items-center mb-2">
+                      <h3 className="font-semibold text-gray-900">
+                        {r.nameUser}
+                      </h3>
+                      <span className="text-yellow-500 font-bold">
+                        {r.ratingValue} ⭐
+                      </span>
+                    </div>
+                    <p className="text-gray-700">{r.comment}</p>
+                    <p className="text-gray-400 text-sm mt-1">
+                      {dayjs(r.createdAt).format("DD/MM/YYYY HH:mm")}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              {ratings.length > 3 && (
+                <div className="flex justify-center mt-4">
+                  <button
+                    onClick={() => setIsModalOpen(true)}
+                    className="px-6 py-2 bg-[#003B95] hover:bg-[#002A70] text-white rounded-lg font-semibold transition-all"
+                  >
+                    View All Reviews
+                  </button>
+                </div>
+              )}
+
+              <Modal
+                title="All Guest Reviews"
+                open={isModalOpen}
+                onCancel={() => setIsModalOpen(false)}
+                footer={null}
+                width={800}
+              >
+                <div className="space-y-4">
+                  {ratings.map((r, idx) => (
+                    <div
+                      key={idx}
+                      className="bg-white p-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all"
+                    >
+                      <div className="flex justify-between items-center mb-2">
+                        <h3 className="font-semibold text-gray-900">
+                          {r.nameUser}
+                        </h3>
+                        <span className="text-yellow-500 font-bold">
+                          {r.ratingValue} ⭐
+                        </span>
+                      </div>
+                      <p className="text-gray-700">{r.comment}</p>
+                      <p className="text-gray-400 text-sm mt-1">
+                        {dayjs(r.createdAt).format("DD/MM/YYYY HH:mm")}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </Modal>
             </>
           )}
         </div>

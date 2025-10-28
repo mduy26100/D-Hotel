@@ -3,7 +3,7 @@ import { useUserBookings } from "../../hooks/bookings/useUserBookings";
 import BookingList from "../../components/bookings/BookingList";
 
 const MyBookingsPage = () => {
-  const { bookings, loading, error } = useUserBookings();
+  const { bookings, loading, error, refetch } = useUserBookings();
 
   return (
     <div className="p-4 sm:p-8 bg-gradient-to-b from-purple-50 to-purple-100 min-h-screen">
@@ -20,7 +20,7 @@ const MyBookingsPage = () => {
       )}
 
       {!loading && !error && bookings.length > 0 && (
-        <BookingList bookings={bookings} />
+        <BookingList bookings={bookings} refetch={refetch} />
       )}
     </div>
   );

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { getBookingsByUserIdAPI } from "../../api/bookings/bookings";
 
 export const useUserBookings = () => {
@@ -6,25 +6,25 @@ export const useUserBookings = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchBookings = async () => {
-      setLoading(true);
-      setError(null);
+  const fetchBookings = useCallback(async () => {
+    setLoading(true);
+    setError(null);
 
-      try {
-        // Gọi API mà không cần truyền userId
-        const data = await getBookingsByUserIdAPI();
-        setBookings(data);
-      } catch (err) {
-        console.error("Error fetching bookings:", err);
-        setError(err.message || "Failed to fetch bookings");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchBookings();
+    try {
+      const data = await getBookingsByUserIdAPI();
+      setBookings(data);
+    } catch (err) {
+      console.error("Error fetching bookings:", err);
+      setError(err.message || "Failed to fetch bookings");
+    } finally {
+      setLoading(false);
+    }
   }, []);
 
-  return { bookings, loading, error };
+  useEffect(() => {
+    fetchBookings();
+  }, [fetchBookings]);
+
+  // Trả về cả dữ liệu và hàm refetch
+  return { bookings, loading, error, refetch: fetchBookings };
 };

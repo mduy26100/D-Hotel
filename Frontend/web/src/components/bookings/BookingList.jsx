@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import BookingTable from "./BookingTable";
 import BookingDetailModal from "./BookingDetailModal";
 
-const BookingList = ({ bookings }) => {
+const BookingList = ({ bookings, refetch }) => {
   const [selectedBookingId, setSelectedBookingId] = useState(null);
 
   const handleRowClick = (bookingId) => {
@@ -24,6 +24,7 @@ const BookingList = ({ bookings }) => {
       {selectedBookingId && (
         <BookingDetailModal
           id={selectedBookingId}
+          refetch={refetch}
           isOpen={!!selectedBookingId}
           onClose={handleCloseModal}
         />

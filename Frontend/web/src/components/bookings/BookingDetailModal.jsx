@@ -1,28 +1,171 @@
-import React from "react";
-import { Modal, Descriptions, Spin } from "antd";
+import React, { useState, useEffect } from "react";
+import {
+  Modal,
+  Descriptions,
+  Spin,
+  Button,
+  Rate,
+  Input,
+  notification,
+} from "antd";
 import { useBookingFull } from "../../hooks/bookings/useBookingFull";
+import { useRatingsByUser } from "../../hooks/bookings/ratings/useRatingsByUser";
+import { useCreateRating } from "../../hooks/bookings/ratings/useCreateRating";
+import { useUpdateBooking } from "../../hooks/bookings/useUpdateBooking";
 
-const BookingDetailModal = ({ id, isOpen, onClose }) => {
-  const { data: bookingDetail, loading } = useBookingFull(id);
+const BookingDetailModal = ({ id, isOpen, onClose, refetch }) => {
+  const {
+    data: bookingDetail,
+    loading: bookingLoading,
+    refetch: refetchBooking,
+  } = useBookingFull(id);
 
-  if (!id) return null;
+  const {
+    ratings: userRatings,
+    loading: ratingsLoading,
+    refetch: refetchRatings,
+  } = useRatingsByUser();
+
+  const { createRating, loading: creatingRating } = useCreateRating();
+  const { updateBooking, loading: updatingBooking } = useUpdateBooking();
+
+  const [isRatingModalOpen, setIsRatingModalOpen] = useState(false);
+  const [ratingValue, setRatingValue] = useState(5);
+  const [comment, setComment] = useState("");
+  const [hasRated, setHasRated] = useState(false);
 
   const booking = bookingDetail?.booking;
 
-  return (
-    <Modal
-      title="Booking Details"
-      open={isOpen}
-      onCancel={onClose}
-      footer={null}
-      width="90%"
-      bodyStyle={{ padding: "1.5rem" }}
-    >
-      {loading ? (
+  // Kiểm tra xem booking đã được đánh giá chưa
+  useEffect(() => {
+    if (booking && userRatings) {
+      const rated = userRatings.some((r) => r.bookingId === booking.id);
+      setHasRated(rated);
+    }
+  }, [booking, userRatings]);
+
+  if (!id) return null;
+
+  const handleSubmitRating = async () => {
+    if (!booking) return;
+
+    try {
+      await createRating({
+        bookingId: booking.id,
+        hotelId: booking.hotelId,
+        ratingValue,
+        comment,
+      });
+
+      notification.success({
+        message: "Rating submitted successfully!",
+        description: `You rated ${booking.hotelName} with ${ratingValue} stars.`,
+        placement: "topRight",
+      });
+
+      setIsRatingModalOpen(false);
+      setHasRated(true);
+      setComment("");
+      setRatingValue(5);
+
+      refetchRatings?.();
+      refetchBooking?.();
+      await refetch?.(); // cập nhật lại bảng ngoài
+    } catch (err) {
+      notification.error({
+        message: "Failed to submit rating",
+        description: err?.message || "Something went wrong!",
+        placement: "topRight",
+      });
+    }
+  };
+
+  const handleCancelBooking = async () => {
+    if (!booking) return;
+
+    try {
+      await updateBooking({
+        id: booking.id,
+        userId: booking.userId,
+        hotelId: booking.hotelId,
+        roomTypeId: booking.roomTypeId,
+        hotelName: booking.hotelName || null,
+        roomTypeName: booking.roomTypeName || null,
+        checkInDate: booking.checkInDate || null,
+        checkOutDate: booking.checkOutDate || null,
+        startTime: booking.startTime || null,
+        endTime: booking.endTime || null,
+        rentalPrice: booking.rentalPrice,
+        rentalType: booking.rentalType || null,
+        guestName: booking.guestName,
+        guestPhone: booking.guestPhone,
+        guestEmail: booking.guestEmail || "",
+        note: booking.note || "",
+        status: "Cancelled",
+      });
+
+      notification.success({
+        message: "Booking Cancelled",
+        description: `Booking at ${booking.hotelName} has been cancelled.`,
+        placement: "topRight",
+      });
+
+      // Cập nhật lại booking & bảng
+      await refetchBooking?.();
+      await refetchRatings?.();
+      await refetch?.();
+    } catch (err) {
+      notification.error({
+        message: "Failed to cancel booking",
+        description: err?.message || "Something went wrong!",
+        placement: "topRight",
+      });
+    }
+  };
+
+  // Nếu booking chưa load xong
+  if (!booking && bookingLoading) {
+    return (
+      <Modal
+        open={isOpen}
+        onCancel={onClose}
+        footer={null}
+        width="90%"
+        bodyStyle={{ padding: "1.5rem" }}
+      >
         <div className="flex justify-center py-10">
           <Spin tip="Loading..." size="large" />
         </div>
-      ) : booking ? (
+      </Modal>
+    );
+  }
+
+  // Nếu booking không tồn tại
+  if (!booking) {
+    return (
+      <Modal
+        open={isOpen}
+        onCancel={onClose}
+        footer={null}
+        width="90%"
+        bodyStyle={{ padding: "1.5rem" }}
+      >
+        <p className="text-center text-gray-500">No booking details found.</p>
+      </Modal>
+    );
+  }
+
+  return (
+    <>
+      {/* Modal chi tiết booking */}
+      <Modal
+        title="Booking Details"
+        open={isOpen}
+        onCancel={onClose}
+        footer={null}
+        width="90%"
+        bodyStyle={{ padding: "1.5rem" }}
+      >
         <Descriptions
           bordered
           column={1}
@@ -79,10 +222,56 @@ const BookingDetailModal = ({ id, isOpen, onClose }) => {
             {booking.paymentMethod}
           </Descriptions.Item>
         </Descriptions>
-      ) : (
-        <p className="text-center text-gray-500">No booking details found.</p>
-      )}
-    </Modal>
+
+        <div className="mt-5 flex justify-end gap-2">
+          {/* Chỉ Pending mới có thể hủy */}
+          {booking.status === "Pending" && (
+            <Button
+              danger
+              onClick={handleCancelBooking}
+              loading={updatingBooking}
+            >
+              Cancel Booking
+            </Button>
+          )}
+
+          {/* Chỉ CheckedOut mới được đánh giá */}
+          {booking.status === "CheckedOut" && (
+            <Button
+              type="primary"
+              onClick={() => setIsRatingModalOpen(true)}
+              disabled={hasRated || ratingsLoading || updatingBooking}
+            >
+              {hasRated
+                ? "Already Rated"
+                : creatingRating
+                ? "Submitting..."
+                : "Rate Booking"}
+            </Button>
+          )}
+        </div>
+      </Modal>
+
+      {/* Modal đánh giá */}
+      <Modal
+        title={`Rate Booking - ${booking.hotelName}`}
+        open={isRatingModalOpen}
+        onCancel={() => setIsRatingModalOpen(false)}
+        onOk={handleSubmitRating}
+        okText="Submit"
+        confirmLoading={creatingRating}
+      >
+        <div className="flex flex-col gap-4">
+          <Rate value={ratingValue} onChange={(val) => setRatingValue(val)} />
+          <Input.TextArea
+            rows={4}
+            placeholder="Leave a comment..."
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
+          />
+        </div>
+      </Modal>
+    </>
   );
 };
 
