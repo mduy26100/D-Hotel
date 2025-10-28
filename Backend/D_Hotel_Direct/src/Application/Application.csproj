@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Features\Assistants\DTOs\" />
     <Folder Include="Features\Purposes\Queries\RoomTypePurpose\GetRoomsByRoomPurposeId\" />
   </ItemGroup>
 
