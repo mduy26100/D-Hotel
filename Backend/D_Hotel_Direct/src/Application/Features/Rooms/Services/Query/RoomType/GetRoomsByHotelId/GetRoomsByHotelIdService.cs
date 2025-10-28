@@ -100,7 +100,7 @@ namespace Application.Features.Rooms.Services.Query.RoomType.GetRoomsByHotelId
                         dto.DisplayStartTime = dto.DailyStartTime;
                         dto.DisplayEndTime = dto.DailyEndTime;
                         dto.DisplayStartDate = startDate ?? DateTime.Today;
-                        dto.DisplayEndDate = endDate ?? dto.DisplayStartDate;
+                        dto.DisplayEndDate = endDate ?? (dto.DisplayStartDate?.AddDays(1) ?? DateTime.Today.AddDays(1));
                         break;
                 }
             }
