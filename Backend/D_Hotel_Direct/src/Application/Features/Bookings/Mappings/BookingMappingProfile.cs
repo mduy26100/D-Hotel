@@ -11,6 +11,7 @@ namespace Application.Features.Bookings.Mappings
             CreateMap<Booking, BookingDto>().ReverseMap();
             CreateMap<BookingDetail, BookingDetailDto>().ReverseMap();
             CreateMap<Invoice, InvoiceDto>().ReverseMap();
+            CreateMap<Rating, RatingDto>().ReverseMap();
         }
     }
 }

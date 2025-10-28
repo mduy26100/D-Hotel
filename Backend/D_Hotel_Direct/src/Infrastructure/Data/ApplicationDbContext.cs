@@ -31,6 +31,7 @@ namespace Infrastructure.Data
             builder.ApplyConfiguration(new BookingConfiguration());
             builder.ApplyConfiguration(new BookingDetailConfiguration());
             builder.ApplyConfiguration(new InvoiceConfiguration());
+            builder.ApplyConfiguration(new RatingConfiguration());
 
             // Hotels
             builder.ApplyConfiguration(new HotelConfiguration());
@@ -73,6 +74,7 @@ namespace Infrastructure.Data
         public DbSet<Booking> Bookings { get; set; }
         public DbSet<BookingDetail> BookingDetails { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
+        public DbSet<Rating> Ratings { get; set; }
 
         //Hotels
         public DbSet<Hotel> Hotels { get; set; }
