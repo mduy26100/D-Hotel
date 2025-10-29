@@ -1,0 +1,35 @@
+name: Deploy DLLs via FTP (genietim/ftp-action)
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: Production
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build & Publish (Release)
+        run: |
+          dotnet restore Backend/D_Hotel_Direct/src/WebAPI/WebAPI.csproj
+          dotnet build Backend/D_Hotel_Direct/src/WebAPI/WebAPI.csproj --configuration Release --no-restore
+          dotnet publish Backend/D_Hotel_Direct/src/WebAPI/WebAPI.csproj --configuration Release --output ./publish --no-build
+
+      - name: Prepare DLLs for upload
+        run: |
+          mkdir upload-dlls
+          cp ./publish/WebAPI.dll upload-dlls/ || true
+          cp ./publish/Infrastructure.dll upload-dlls/ || true
+          cp ./publish/Domain.dll upload-dlls/ || true
+          cp ./publish/Application.dll upload-dlls/ || true
+
+      - name: Upload DLLs via FTP
+        uses: genietim/ftp-action@releases/v4
+        with:
+          host: ${{ secrets.FTP_HOST }}
+          user: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          localDir: "upload-dlls"
+          remoteDir: "/"
+          forceSsl: false
