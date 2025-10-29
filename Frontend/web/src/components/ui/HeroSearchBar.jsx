@@ -19,7 +19,6 @@ const HeroSearchBar = () => {
     e.preventDefault();
     if (!searchData.destination) return;
 
-    // Chỉ submit category thôi
     const query = new URLSearchParams();
     query.set("category", searchData.destination);
     window.location.href = `/hotels?${query.toString()}`;
@@ -31,13 +30,11 @@ const HeroSearchBar = () => {
     window.location.href = `/hotels?${query.toString()}`;
   };
 
-  // Helper để validate ngày
   const handleCheckInChange = (e) => {
     const value = e.target.value;
-    if (value < todayStr) return; // ko cho chọn ngày trước hôm nay
+    if (value < todayStr) return;
     setSearchData((prev) => {
       let newCheckOut = prev.checkOut;
-      // nếu check-out <= checkIn thì reset check-out
       if (prev.checkOut && prev.checkOut <= value) newCheckOut = "";
       return { ...prev, checkIn: value, checkOut: newCheckOut };
     });
@@ -45,10 +42,13 @@ const HeroSearchBar = () => {
 
   const handleCheckOutChange = (e) => {
     const value = e.target.value;
-    if (!searchData.checkIn) return; // chưa chọn check-in
-    if (value <= searchData.checkIn) return; // check-out phải > check-in
+    if (!searchData.checkIn) return;
+    if (value <= searchData.checkIn) return;
     setSearchData((prev) => ({ ...prev, checkOut: value }));
   };
+
+  // ✅ Đảm bảo categories luôn là mảng an toàn
+  const safeCategories = Array.isArray(categories) ? categories : [];
 
   return (
     <section className="relative bg-[#233E8F] text-white py-16 px-4 overflow-hidden">
@@ -89,7 +89,7 @@ const HeroSearchBar = () => {
                 className="w-full outline-none bg-transparent text-sm"
               />
               <datalist id="categories">
-                {categories.map((c) => (
+                {safeCategories.map((c) => (
                   <option key={c.id} value={c.name} />
                 ))}
               </datalist>
@@ -158,7 +158,7 @@ const HeroSearchBar = () => {
             {error && <p className="text-red-400">{error}</p>}
             {!loading &&
               !error &&
-              categories.map((c) => (
+              safeCategories.map((c) => (
                 <button
                   key={c.id}
                   onClick={() => handleQuickFilter(c.name)}

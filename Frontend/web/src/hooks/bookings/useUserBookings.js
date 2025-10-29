@@ -5,11 +5,13 @@ import * as signalR from "@microsoft/signalr";
 
 let bookingHub = null;
 
+const URL_BASE = import.meta.env.VITE_API_URL;
+
 const initializeHub = () => {
   if (bookingHub) return bookingHub;
 
   bookingHub = new signalR.HubConnectionBuilder()
-    .withUrl("https://localhost:7146/hubs/bookings") // bỏ /api
+    .withUrl(`${URL_BASE}/hubs/bookings`) // bỏ /api
     .withAutomaticReconnect()
     .configureLogging(signalR.LogLevel.Information)
     .build();
