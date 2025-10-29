@@ -49,11 +49,12 @@ namespace Application.Features.Hotels.Services.Query.GetAllHotels
         {
             var hotels = await _hotelRepository.GetAllAsync(cancellationToken);
 
-            var activeHotels = hotels.Where(h => h.IsActive).ToList();
+            // Bỏ filter IsActive để lấy tất cả hotel
+            // var activeHotels = hotels.Where(h => h.IsActive).ToList();
 
             var hotelDetails = new List<HotelDetailDto>();
 
-            foreach (var hotel in activeHotels)
+            foreach (var hotel in hotels) // duyệt tất cả hotel
             {
                 var category = await _getHotelCategoryByIdService.GetByIdAsync(hotel.CategoryId, cancellationToken);
                 var categoryDto = category != null
@@ -85,7 +86,7 @@ namespace Application.Features.Hotels.Services.Query.GetAllHotels
                     Address = hotel.Address,
                     Description = hotel.Description,
                     ImgUrl = hotel.ImgUrl,
-                    IsActive = hotel.IsActive,
+                    IsActive = hotel.IsActive, // vẫn giữ trạng thái active/inactive
                     HotelManagerName = managerName,
                     Category = categoryDto,
                     Location = location == null

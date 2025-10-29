@@ -91,6 +91,7 @@ export const updateBookingAPI = async (data) => {
       guestEmail: data.guestEmail || "",
       note: data.note || "",
       status: data.status,
+      invoiceNumber: data.invoiceNumber,
     },
     details: Array.isArray(data.details)
       ? data.details.map((d) => ({

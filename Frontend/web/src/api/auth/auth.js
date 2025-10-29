@@ -26,7 +26,6 @@ export const registerAPI = async (user) => {
       "phoneNumber",
       "password",
       "confirmPassword",
-      "role",
     ];
 
     for (const field of requiredFields) {

@@ -17,18 +17,79 @@ const Register = ({ setToast }) => {
     confirmPassword: "",
   });
 
+  const [errors, setErrors] = useState({});
   const { register, loading, error } = useRegister();
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setErrors((prev) => ({ ...prev, [e.target.name]: "" })); // clear error on typing
+  };
+
+  const validate = () => {
+    const newErrors = {};
+    let valid = true;
+
+    // First name
+    if (!formData.firstName.trim()) {
+      newErrors.firstName = "First name is required";
+      valid = false;
+    }
+
+    // Last name
+    if (!formData.lastName.trim()) {
+      newErrors.lastName = "Last name is required";
+      valid = false;
+    }
+
+    // Username
+    if (!formData.userName.trim()) {
+      newErrors.userName = "Username is required";
+      valid = false;
+    } else if (formData.userName.length < 3) {
+      newErrors.userName = "Username must be at least 3 characters";
+      valid = false;
+    }
+
+    // Email
+    if (!formData.email) {
+      newErrors.email = "Email is required";
+      valid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Email format is invalid";
+      valid = false;
+    }
+
+    // Phone number
+    if (!formData.phoneNumber) {
+      newErrors.phoneNumber = "Phone number is required";
+      valid = false;
+    } else if (!/^\+?\d{9,15}$/.test(formData.phoneNumber)) {
+      newErrors.phoneNumber = "Phone number is invalid";
+      valid = false;
+    }
+
+    // Password
+    if (!formData.password) {
+      newErrors.password = "Password is required";
+      valid = false;
+    } else if (formData.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters";
+      valid = false;
+    }
+
+    // Confirm password
+    if (formData.confirmPassword !== formData.password) {
+      newErrors.confirmPassword = "Passwords do not match";
+      valid = false;
+    }
+
+    setErrors(newErrors);
+    return valid;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.password !== formData.confirmPassword) {
-      alert("Password confirmation does not match.");
-      return;
-    }
+    if (!validate()) return; // Stop if form is invalid
 
     try {
       await register(formData);
@@ -41,7 +102,6 @@ const Register = ({ setToast }) => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 via-gray-200 to-gray-300 p-6">
       <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl p-10 space-y-8 animate-fadeIn">
-        {/* Header */}
         <h2 className="text-4xl font-extrabold text-[#003B95] text-center tracking-wide">
           Create Account
         </h2>
@@ -49,7 +109,6 @@ const Register = ({ setToast }) => {
           Sign up to continue your journey
         </p>
 
-        {/* Form */}
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="flex gap-4">
             <Input
@@ -61,6 +120,10 @@ const Register = ({ setToast }) => {
               required
               className="rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#003B95] focus:border-[#003B95] transition"
             />
+            {errors.firstName && (
+              <p className="text-red-500 text-sm">{errors.firstName}</p>
+            )}
+
             <Input
               label="Last Name"
               name="lastName"
@@ -70,6 +133,9 @@ const Register = ({ setToast }) => {
               required
               className="rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#003B95] focus:border-[#003B95] transition"
             />
+            {errors.lastName && (
+              <p className="text-red-500 text-sm">{errors.lastName}</p>
+            )}
           </div>
 
           <Input
@@ -81,6 +147,9 @@ const Register = ({ setToast }) => {
             required
             className="rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#003B95] focus:border-[#003B95] transition"
           />
+          {errors.userName && (
+            <p className="text-red-500 text-sm">{errors.userName}</p>
+          )}
 
           <Input
             label="Email"
@@ -92,6 +161,9 @@ const Register = ({ setToast }) => {
             required
             className="rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#003B95] focus:border-[#003B95] transition"
           />
+          {errors.email && (
+            <p className="text-red-500 text-sm">{errors.email}</p>
+          )}
 
           <Input
             label="Phone Number"
@@ -102,6 +174,9 @@ const Register = ({ setToast }) => {
             required
             className="rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#003B95] focus:border-[#003B95] transition"
           />
+          {errors.phoneNumber && (
+            <p className="text-red-500 text-sm">{errors.phoneNumber}</p>
+          )}
 
           <div className="flex gap-4">
             <Input
@@ -114,6 +189,10 @@ const Register = ({ setToast }) => {
               required
               className="rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#003B95] focus:border-[#003B95] transition"
             />
+            {errors.password && (
+              <p className="text-red-500 text-sm">{errors.password}</p>
+            )}
+
             <Input
               label="Confirm Password"
               type="password"
@@ -124,6 +203,9 @@ const Register = ({ setToast }) => {
               required
               className="rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#003B95] focus:border-[#003B95] transition"
             />
+            {errors.confirmPassword && (
+              <p className="text-red-500 text-sm">{errors.confirmPassword}</p>
+            )}
           </div>
 
           {error && <p className="text-red-500 text-sm">{error}</p>}
@@ -142,7 +224,6 @@ const Register = ({ setToast }) => {
           </Button>
         </form>
 
-        {/* Footer */}
         <p className="text-center text-gray-500 mt-6">
           Already have an account?{" "}
           <Link

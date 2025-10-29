@@ -23,3 +23,13 @@ export const roomsByHotelIdAPI = async (data) => {
     throw error;
   }
 };
+
+export const roomsTypeDetailAPI = async (roomTypeId) => {
+  try {
+    const response = await axiosClient.get(`${URL_BASE}/${roomTypeId}/details`);
+    return response.data;
+  } catch (error) {
+    console.error("Get rooms by hotel id error:", error);
+    throw error;
+  }
+};

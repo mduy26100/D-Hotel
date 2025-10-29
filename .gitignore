@@ -1,0 +1,3 @@
+# Ignore appsettings files
+Backend/D_Hotel_Direct/src/WebAPI/appsettings.json
+Backend/D_Hotel_Direct/src/WebAPI/appsettings.Production.json

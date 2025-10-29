@@ -2,7 +2,6 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import Hotels from "../pages/hotels/HotelPage";
 import ChatWidget from "../components/ui/ChatWidget";
 import HotelDetailsWrapper from "../pages/hotels/HotelDetailsWrapper";
-import HotelsByCategoryPage from "../pages/hotels/HotelsByCategoryPage";
 import MainLayout from "../components/layout/MainLayout";
 import HomePage from "../pages/home/HomePage";
 import Login from "../pages/auth/Login";
@@ -59,10 +58,6 @@ export function AppRoutes() {
           <Route path="/" element={<HomePage />} />
           <Route path="/hotels" element={<Hotels />} />
           <Route path="/hotels/:id" element={<HotelDetailsWrapper />} />
-          <Route
-            path="/hotels/category/:categoryId"
-            element={<HotelsByCategoryPage />}
-          />
 
           <Route path="/checkout/:roomName" element={<CheckoutPage />} />
           <Route path="/booking-success" element={<BookingSuccess />} />

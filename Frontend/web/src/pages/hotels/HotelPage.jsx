@@ -1,41 +1,87 @@
 "use client";
-
 import { useEffect, useState } from "react";
 import HotelCard from "../../components/hotels/HotelCard";
 import { useHotels } from "../../hooks/hotels/hotels/useHotels";
 
+// Helper parse query string
+const parseQuery = () => {
+  const params = new URLSearchParams(window.location.search);
+  const obj = {};
+  for (const [key, value] of params.entries()) {
+    if (value.includes(",")) obj[key] = value.split(",");
+    else obj[key] = value;
+  }
+  return obj;
+};
+
+// Helper update query string
+const updateQuery = (filter) => {
+  const query = new URLSearchParams();
+  Object.entries(filter).forEach(([key, value]) => {
+    if (value && (!Array.isArray(value) || value.length > 0)) {
+      query.set(key, Array.isArray(value) ? value.join(",") : value);
+    }
+  });
+  window.history.replaceState(null, "", `?${query.toString()}`);
+};
+
 function HotelsPage() {
   const { hotels = [], loading, error } = useHotels();
 
-  const [filter, setFilter] = useState({
+  const defaultFilter = {
     category: "",
+    location: "",
+    utilities: [],
     minPrice: 0,
     maxPrice: 0,
-    location: "",
     isActive: "",
-    utilities: [],
     rating: 0,
-  });
+  };
+
+  // Filter thực sự dùng để lọc
+  const [filter, setFilter] = useState(defaultFilter);
+
+  // Filter tạm dùng trong form
+  const [tempFilter, setTempFilter] = useState(defaultFilter);
 
   const [showFilter, setShowFilter] = useState(false);
 
+  // Load filter từ URL khi mount
   useEffect(() => {
-    if (showFilter) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
+    const queryFilter = parseQuery();
+    const newFilter = { ...defaultFilter, ...queryFilter };
+    // Chuyển param utilities về mảng nếu là string
+    if (typeof newFilter.utilities === "string") {
+      newFilter.utilities = newFilter.utilities.split(",");
     }
+    setFilter(newFilter);
+    setTempFilter(newFilter);
+  }, []);
+
+  // Update body overflow khi mở filter
+  useEffect(() => {
+    document.body.style.overflow = showFilter ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
   }, [showFilter]);
 
-  const filteredHotels = (hotels || []).filter((hotel) => {
+  // Danh sách duy nhất
+  const categoryList = Array.from(
+    new Set(hotels.map((h) => h.category?.name).filter(Boolean))
+  );
+  const locationList = Array.from(
+    new Set(hotels.map((h) => h.location?.name).filter(Boolean))
+  );
+  const utilitiesList = Array.from(
+    new Set(hotels.flatMap((h) => h.utilities?.map((u) => u.name) || []))
+  );
+
+  // Lọc hotels dựa trên filter thực sự
+  const filteredHotels = hotels.filter((hotel) => {
     let pass = true;
     if (filter.category)
       pass = pass && hotel.category?.name === filter.category;
-    if (filter.minPrice) pass = pass && hotel.price >= filter.minPrice;
-    if (filter.maxPrice) pass = pass && hotel.price <= filter.maxPrice;
     if (filter.location)
       pass = pass && hotel.location?.name === filter.location;
     if (filter.isActive)
@@ -49,9 +95,26 @@ function HotelsPage() {
         filter.utilities.every((u) =>
           hotel.utilities?.some((util) => util.name === u)
         );
+    if (filter.minPrice) pass = pass && hotel.price >= filter.minPrice;
+    if (filter.maxPrice) pass = pass && hotel.price <= filter.maxPrice;
     if (filter.rating) pass = pass && hotel.rating >= filter.rating;
     return pass;
   });
+
+  // Apply filter
+  const handleApply = () => {
+    setFilter(tempFilter);
+    updateQuery(tempFilter);
+    setShowFilter(false);
+  };
+
+  // Reset filter
+  const handleReset = () => {
+    setTempFilter(defaultFilter);
+    setFilter(defaultFilter);
+    // Xóa query string trên URL, redirect về /hotels
+    window.history.replaceState(null, "", "/hotels");
+  };
 
   if (loading)
     return (
@@ -83,7 +146,6 @@ function HotelsPage() {
               Explore amazing hotels worldwide
             </p>
           </div>
-
           <div className="flex items-center gap-3">
             <button
               onClick={() => setShowFilter(true)}
@@ -96,19 +158,23 @@ function HotelsPage() {
           </div>
         </div>
 
-        {/* Layout grid 3/7 */}
+        {/* Layout grid */}
         <div className="grid grid-cols-1 md:grid-cols-10 gap-8">
-          {/* Filter section (3/10) */}
+          {/* Filter section */}
           <aside className="hidden md:block md:col-span-3 sticky top-24 h-fit">
             <FilterPanel
-              filter={filter}
-              setFilter={setFilter}
+              filter={tempFilter}
+              setFilter={setTempFilter}
               showClose={false}
-              onClose={() => {}}
+              onApply={handleApply}
+              onReset={handleReset}
+              categoryList={categoryList}
+              locationList={locationList}
+              utilitiesList={utilitiesList}
             />
           </aside>
 
-          {/* Hotel cards (7/10) */}
+          {/* Hotel cards */}
           <main className="md:col-span-7">
             {filteredHotels.length === 0 ? (
               <div className="bg-white rounded-2xl shadow-lg border border-blue-100 p-12 text-center">
@@ -149,10 +215,15 @@ function HotelsPage() {
       >
         <div className="h-full max-w-[92%] w-full sm:max-w-sm bg-white shadow-2xl rounded-r-2xl overflow-hidden">
           <FilterPanel
-            filter={filter}
-            setFilter={setFilter}
+            filter={tempFilter}
+            setFilter={setTempFilter}
             showClose={true}
+            onApply={handleApply}
+            onReset={handleReset}
             onClose={() => setShowFilter(false)}
+            categoryList={categoryList}
+            locationList={locationList}
+            utilitiesList={utilitiesList}
           />
         </div>
       </div>
@@ -160,11 +231,17 @@ function HotelsPage() {
   );
 }
 
+// ---------------- FilterPanel ----------------
 function FilterPanel({
   filter,
   setFilter,
   showClose = false,
+  onApply = () => {},
+  onReset = () => {},
   onClose = () => {},
+  categoryList = [],
+  locationList = [],
+  utilitiesList = [],
 }) {
   return (
     <div className="h-full flex flex-col bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-blue-100 overflow-hidden">
@@ -187,10 +264,7 @@ function FilterPanel({
       {/* Content */}
       <div
         className="flex-1 px-6 py-6 space-y-6 overflow-y-auto"
-        style={{
-          maxHeight: "calc(100vh - 120px)",
-          scrollbarGutter: "stable",
-        }}
+        style={{ maxHeight: "calc(100vh - 120px)", scrollbarGutter: "stable" }}
       >
         {/* Category */}
         <div>
@@ -203,9 +277,11 @@ function FilterPanel({
             onChange={(e) => setFilter({ ...filter, category: e.target.value })}
           >
             <option value="">All</option>
-            <option value="Luxury">Luxury</option>
-            <option value="Budget">Budget</option>
-            <option value="Resort">Resort</option>
+            {categoryList.map((c) => (
+              <option key={c} value={c}>
+                {c}
+              </option>
+            ))}
           </select>
         </div>
 
@@ -220,58 +296,11 @@ function FilterPanel({
             onChange={(e) => setFilter({ ...filter, location: e.target.value })}
           >
             <option value="">All</option>
-            <option value="Hà Nội">Hanoi</option>
-            <option value="Hồ Chí Minh">Ho Chi Minh City</option>
-            <option value="Đà Nẵng">Da Nang</option>
-          </select>
-        </div>
-
-        {/* Price */}
-        <div>
-          <label className="block text-sm font-semibold text-[#003B95] mb-2">
-            Price (VND)
-          </label>
-          <div className="flex gap-3">
-            <input
-              type="number"
-              placeholder="Min"
-              className="w-1/2 border-2 border-blue-200 rounded-lg p-3 text-gray-700 focus:outline-none focus:border-[#003B95] focus:ring-2 focus:ring-blue-200 transition"
-              value={filter.minPrice}
-              onChange={(e) =>
-                setFilter({
-                  ...filter,
-                  minPrice: Number.parseInt(e.target.value) || 0,
-                })
-              }
-            />
-            <input
-              type="number"
-              placeholder="Max"
-              className="w-1/2 border-2 border-blue-200 rounded-lg p-3 text-gray-700 focus:outline-none focus:border-[#003B95] focus:ring-2 focus:ring-blue-200 transition"
-              value={filter.maxPrice}
-              onChange={(e) =>
-                setFilter({
-                  ...filter,
-                  maxPrice: Number.parseInt(e.target.value) || 0,
-                })
-              }
-            />
-          </div>
-        </div>
-
-        {/* Status */}
-        <div>
-          <label className="block text-sm font-semibold text-[#003B95] mb-2">
-            Status
-          </label>
-          <select
-            className="w-full border-2 border-blue-200 rounded-lg p-3 text-gray-700 focus:outline-none focus:border-[#003B95] focus:ring-2 focus:ring-blue-200 transition"
-            value={filter.isActive}
-            onChange={(e) => setFilter({ ...filter, isActive: e.target.value })}
-          >
-            <option value="">All</option>
-            <option value="active">Active</option>
-            <option value="inactive">Inactive</option>
+            {locationList.map((l) => (
+              <option key={l} value={l}>
+                {l}
+              </option>
+            ))}
           </select>
         </div>
 
@@ -281,79 +310,46 @@ function FilterPanel({
             Utilities
           </label>
           <div className="space-y-2">
-            {["Wifi", "Pool", "Gym", "Spa"].map((u) => (
-              <label
-                key={u}
-                className="flex items-center gap-3 p-2 rounded-lg hover:bg-blue-50 cursor-pointer transition"
-              >
-                <input
-                  type="checkbox"
-                  checked={filter.utilities.includes(u)}
-                  onChange={(e) => {
-                    const updated = e.target.checked
-                      ? [...filter.utilities, u]
-                      : filter.utilities.filter((x) => x !== u);
-                    setFilter({ ...filter, utilities: updated });
-                  }}
-                  className="w-4 h-4 accent-[#003B95] cursor-pointer"
-                />
-                <span className="text-gray-700 font-medium">{u}</span>
-              </label>
-            ))}
+            {utilitiesList.length === 0 ? (
+              <p className="text-gray-400 italic">No utilities available</p>
+            ) : (
+              utilitiesList.map((u) => (
+                <label
+                  key={u}
+                  className="flex items-center gap-3 p-2 rounded-lg hover:bg-blue-50 cursor-pointer transition"
+                >
+                  <input
+                    type="checkbox"
+                    checked={filter.utilities.includes(u)}
+                    onChange={(e) => {
+                      const updated = e.target.checked
+                        ? [...filter.utilities, u]
+                        : filter.utilities.filter((x) => x !== u);
+                      setFilter({ ...filter, utilities: updated });
+                    }}
+                    className="w-4 h-4 accent-[#003B95] cursor-pointer"
+                  />
+                  <span className="text-gray-700 font-medium">{u}</span>
+                </label>
+              ))
+            )}
           </div>
-        </div>
-
-        {/* Rating */}
-        <div>
-          <label className="block text-sm font-semibold text-[#003B95] mb-2">
-            Minimum rating
-          </label>
-          <select
-            className="w-full border-2 border-blue-200 rounded-lg p-3 text-gray-700 focus:outline-none focus:border-[#003B95] focus:ring-2 focus:ring-blue-200 transition"
-            value={filter.rating}
-            onChange={(e) =>
-              setFilter({
-                ...filter,
-                rating: Number.parseInt(e.target.value) || 0,
-              })
-            }
-          >
-            <option value={0}>All</option>
-            <option value={1}>⭐ & up</option>
-            <option value={2}>⭐⭐ & up</option>
-            <option value={3}>⭐⭐⭐ & up</option>
-            <option value={4}>⭐⭐⭐⭐ & up</option>
-            <option value={5}>⭐⭐⭐⭐⭐</option>
-          </select>
         </div>
 
         {/* Buttons */}
-        <div className="pt-2 pb-8">
-          <div className="flex gap-3">
-            <button
-              onClick={() =>
-                setFilter({
-                  category: "",
-                  minPrice: 0,
-                  maxPrice: 0,
-                  location: "",
-                  isActive: "",
-                  utilities: [],
-                  rating: 0,
-                })
-              }
-              className="flex-1 border-2 border-blue-200 text-[#003B95] rounded-lg px-4 py-3 font-medium hover:bg-blue-50 transition"
-            >
-              Reset
-            </button>
-
-            <button
-              onClick={() => onClose()}
-              className="flex-1 bg-[#003B95] text-white rounded-lg px-4 py-3 font-medium hover:bg-blue-800 transition"
-            >
-              Apply
-            </button>
-          </div>
+        <div className="pt-2 pb-8 flex gap-3">
+          <button
+            onClick={onReset}
+            className="flex-1 border-2 border-blue-200 text-[#003B95] rounded-lg px-4 py-3 font-medium hover:bg-blue-50 transition"
+          >
+            Reset
+          </button>
+          <button
+            onClick={onApply}
+            className="flex-1 bg-[#003B95] text-white rounded-lg px-4 py-3 font-medium hover:bg-blue-800 transition"
+          >
+            Apply
+          </button>
         </div>
       </div>
     </div>

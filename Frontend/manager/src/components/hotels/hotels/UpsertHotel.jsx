@@ -5,7 +5,6 @@ import {
   Modal,
   Form,
   Input,
-  InputNumber,
   Switch,
   Upload,
   Button,
@@ -19,6 +18,10 @@ import { useCreateHotel } from "../../../hooks/hotels/hotels/useCreateHotel";
 import { useUpdateHotel } from "../../../hooks/hotels/hotels/useUpdateHotel";
 import { useGetHotelCategories } from "../../../hooks/hotels/hotelCategories/useGetHotelCategories";
 
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css"; // theme
+import { useGetHotelManagers } from "../../../hooks/auth/managers/useGetHotelManagers";
+
 const UpsertHotel = ({ isOpen, onClose, hotel, refetch }) => {
   const [form] = Form.useForm();
   const [fileList, setFileList] = useState([]);
@@ -28,6 +31,7 @@ const UpsertHotel = ({ isOpen, onClose, hotel, refetch }) => {
   const { createHotel, loading: creating } = useCreateHotel();
   const { updateHotel, loading: updating } = useUpdateHotel();
   const { categories, loading: loadingCategories } = useGetHotelCategories();
+  const { managers, loading: loadingManagers } = useGetHotelManagers();
 
   const { Option } = Select;
 
@@ -90,7 +94,7 @@ const UpsertHotel = ({ isOpen, onClose, hotel, refetch }) => {
       const payload = {
         name: values.name,
         categoryId: values.categoryId,
-        hotelManagerId: values.hotelManagerId,
+        hotelManagerId: values.hotelManagerId, // đây là id của manager
         address: values.address,
         description: values.description,
         isActive: values.isActive,
@@ -160,7 +164,7 @@ const UpsertHotel = ({ isOpen, onClose, hotel, refetch }) => {
             ) : (
               <Select
                 placeholder="Select a category"
-                dropdownStyle={{ maxHeight: 120, overflow: "auto" }} // 3 items ~ 120px
+                dropdownStyle={{ maxHeight: 120, overflow: "auto" }}
               >
                 {categories.map((cat) => (
                   <Option key={cat.id} value={cat.id}>
@@ -172,21 +176,52 @@ const UpsertHotel = ({ isOpen, onClose, hotel, refetch }) => {
           </Form.Item>
 
           <Form.Item
-            label="Hotel Manager ID"
+            label="Hotel Manager"
             name="hotelManagerId"
             rules={[
-              { required: true, message: "Please enter hotel manager ID!" },
+              { required: true, message: "Please select a hotel manager!" },
             ]}
           >
-            <Input />
+            {loadingManagers ? (
+              <Spin />
+            ) : (
+              <Select
+                placeholder="Select a manager"
+                value={form.getFieldValue("hotelManagerId")} // đảm bảo controlled
+                onChange={(value) =>
+                  form.setFieldsValue({ hotelManagerId: value })
+                }
+              >
+                {managers.map((mgr) => (
+                  <Option key={mgr.id} value={mgr.id}>
+                    {mgr.lastName} {mgr.firstName} {/* hiển thị full name */}
+                  </Option>
+                ))}
+              </Select>
+            )}
           </Form.Item>
 
           <Form.Item label="Address" name="address">
             <Input />
           </Form.Item>
 
-          <Form.Item label="Description" name="description">
-            <Input.TextArea rows={3} />
+          <Form.Item
+            label="Description"
+            name="description"
+            rules={[{ required: true, message: "Please enter description!" }]}
+          >
+            <ReactQuill
+              theme="snow"
+              modules={{
+                toolbar: [
+                  [{ header: [1, 2, false] }],
+                  ["bold", "italic", "underline", "strike"],
+                  [{ list: "ordered" }, { list: "bullet" }],
+                  ["link", "image"],
+                  ["clean"],
+                ],
+              }}
+            />
           </Form.Item>
 
           <Form.Item label="Active" name="isActive" valuePropName="checked">

@@ -1,30 +1,63 @@
-"use client"
-
-import { useState } from "react"
-import { Search, MapPin, Calendar, Users } from "lucide-react"
+"use client";
+import { useState } from "react";
+import { Search, MapPin, Calendar } from "lucide-react";
+import { useHotelCategories } from "../../hooks/hotels/hotelCategories/useHotelCategories";
 
 const HeroSearchBar = () => {
+  const { categories, loading, error } = useHotelCategories();
+
+  const todayStr = new Date().toISOString().split("T")[0]; // YYYY-MM-DD
+
   const [searchData, setSearchData] = useState({
     destination: "",
-    checkIn: "",
+    checkIn: todayStr,
     checkOut: "",
     guests: "2 adults · 0 children · 1 room",
-  })
+  });
 
   const handleSearch = (e) => {
-    e.preventDefault()
-    console.log("Searching:", searchData)
-  }
+    e.preventDefault();
+    if (!searchData.destination) return;
+
+    const query = new URLSearchParams();
+    query.set("category", searchData.destination);
+    window.location.href = `/hotels?${query.toString()}`;
+  };
+
+  const handleQuickFilter = (categoryName) => {
+    const query = new URLSearchParams();
+    query.set("category", categoryName);
+    window.location.href = `/hotels?${query.toString()}`;
+  };
+
+  const handleCheckInChange = (e) => {
+    const value = e.target.value;
+    if (value < todayStr) return;
+    setSearchData((prev) => {
+      let newCheckOut = prev.checkOut;
+      if (prev.checkOut && prev.checkOut <= value) newCheckOut = "";
+      return { ...prev, checkIn: value, checkOut: newCheckOut };
+    });
+  };
+
+  const handleCheckOutChange = (e) => {
+    const value = e.target.value;
+    if (!searchData.checkIn) return;
+    if (value <= searchData.checkIn) return;
+    setSearchData((prev) => ({ ...prev, checkOut: value }));
+  };
+
+  // ✅ Đảm bảo categories luôn là mảng an toàn
+  const safeCategories = Array.isArray(categories) ? categories : [];
 
   return (
     <section className="relative bg-[#233E8F] text-white py-16 px-4 overflow-hidden">
-      {/* 🌟 Background decorative gradient circles */}
+      {/* Background gradient circles */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-10 -left-10 w-40 h-40 bg-white/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
       </div>
 
-      {/* 📝 Content */}
       <div className="relative max-w-7xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-3">
           Find Your Next Stay in Hanoi
@@ -34,7 +67,7 @@ const HeroSearchBar = () => {
           Hanoi's iconic destinations.
         </p>
 
-        {/* 🔍 Search Form */}
+        {/* Search Form */}
         <form
           onSubmit={handleSearch}
           className="bg-white rounded-2xl shadow-xl p-4 md:p-6 flex flex-col md:flex-row md:items-end gap-4 text-gray-800"
@@ -47,14 +80,19 @@ const HeroSearchBar = () => {
             <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2 focus-within:ring-2 focus-within:ring-[#233E8F]">
               <MapPin className="w-5 h-5 mr-2 text-gray-500" />
               <input
-                type="text"
-                placeholder="Your destination?"
+                list="categories"
+                placeholder="Select a category"
                 value={searchData.destination}
                 onChange={(e) =>
                   setSearchData({ ...searchData, destination: e.target.value })
                 }
                 className="w-full outline-none bg-transparent text-sm"
               />
+              <datalist id="categories">
+                {safeCategories.map((c) => (
+                  <option key={c.id} value={c.name} />
+                ))}
+              </datalist>
             </div>
           </div>
 
@@ -68,9 +106,8 @@ const HeroSearchBar = () => {
               <input
                 type="date"
                 value={searchData.checkIn}
-                onChange={(e) =>
-                  setSearchData({ ...searchData, checkIn: e.target.value })
-                }
+                min={todayStr}
+                onChange={handleCheckInChange}
                 className="w-full outline-none bg-transparent text-sm"
               />
             </div>
@@ -86,35 +123,18 @@ const HeroSearchBar = () => {
               <input
                 type="date"
                 value={searchData.checkOut}
-                onChange={(e) =>
-                  setSearchData({ ...searchData, checkOut: e.target.value })
+                min={
+                  searchData.checkIn
+                    ? new Date(
+                        new Date(searchData.checkIn).getTime() + 86400000
+                      )
+                        .toISOString()
+                        .split("T")[0]
+                    : todayStr
                 }
+                onChange={handleCheckOutChange}
                 className="w-full outline-none bg-transparent text-sm"
               />
-            </div>
-          </div>
-
-          {/* Guests */}
-          <div className="flex flex-col">
-            <label className="text-sm font-semibold mb-1 text-gray-600">
-              Guests
-            </label>
-            <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2 focus-within:ring-2 focus-within:ring-[#233E8F]">
-              <Users className="w-5 h-5 mr-2 text-gray-500" />
-              <select
-                value={searchData.guests}
-                onChange={(e) =>
-                  setSearchData({ ...searchData, guests: e.target.value })
-                }
-                className="w-full bg-transparent outline-none text-sm"
-              >
-                <option>1 adult · 0 children · 1 room</option>
-                <option>2 adults · 0 children · 1 room</option>
-                <option>2 adults · 1 child · 1 room</option>
-                <option>2 adults · 2 children · 1 room</option>
-                <option>3 adults · 0 children · 2 rooms</option>
-                <option>4 adults · 0 children · 2 rooms</option>
-              </select>
             </div>
           </div>
 
@@ -130,32 +150,28 @@ const HeroSearchBar = () => {
           </div>
         </form>
 
-        {/* 🏙️ Quick Filters */}
+        {/* Quick Filters */}
         <div className="mt-8">
-          <p className="text-white/90 font-medium mb-3">
-            Popular in Hanoi:
-          </p>
+          <p className="text-white/90 font-medium mb-3">Popular Categories:</p>
           <div className="flex flex-wrap justify-center gap-2">
-            {[
-              "Hoan Kiem Lake",
-              "Old Quarter",
-              "West Lake",
-              "Temple of Literature",
-              "Ho Chi Minh Mausoleum",
-              "Hanoi Opera House",
-            ].map((place) => (
-              <button
-                key={place}
-                className="bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-full px-4 py-1.5 text-sm hover:bg-white/20 transition"
-              >
-                {place}
-              </button>
-            ))}
+            {loading && <p className="text-white">Loading...</p>}
+            {error && <p className="text-red-400">{error}</p>}
+            {!loading &&
+              !error &&
+              safeCategories.map((c) => (
+                <button
+                  key={c.id}
+                  onClick={() => handleQuickFilter(c.name)}
+                  className="bg-white/10 backdrop-blur-md text-white border border-white/20 rounded-full px-4 py-1.5 text-sm hover:bg-white/20 transition"
+                >
+                  {c.name}
+                </button>
+              ))}
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default HeroSearchBar
+export default HeroSearchBar;

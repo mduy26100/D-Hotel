@@ -8,6 +8,8 @@ using Application.Features.Bookings.Queries.Booking.GetBookingFullInfo;
 using Application.Features.Bookings.Queries.Booking.GetBookingsByDateRange;
 using Application.Features.Bookings.Queries.Booking.GetBookingsByUserId;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
+using WebAPI.Hubs;
 
 namespace WebAPI.Controllers.Bookings
 {
@@ -16,16 +18,19 @@ namespace WebAPI.Controllers.Bookings
     public class BookingsController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private readonly IHubContext<BookingHub> _hubContext;
 
-        public BookingsController(IMediator mediator)
+        public BookingsController(IMediator mediator, IHubContext<BookingHub> hubContext)
         {
             _mediator = mediator;
+            _hubContext = hubContext;
         }
 
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CreateBookingCommand command, CancellationToken cancellationToken)
         {
             var result = await _mediator.Send(command, cancellationToken);
+            await _hubContext.Clients.All.SendAsync("BookingCreated", result, cancellationToken);
             return Ok(result);
         }
 
@@ -33,6 +38,7 @@ namespace WebAPI.Controllers.Bookings
         public async Task<IActionResult> Delete([FromBody] DeleteBookingCommand command, CancellationToken cancellationToken)
         {
             var result = await _mediator.Send(command, cancellationToken);
+            await _hubContext.Clients.All.SendAsync("BookingDeleted", command.bookingId, cancellationToken);
             return NoContent();
         }
 
@@ -43,10 +49,11 @@ namespace WebAPI.Controllers.Bookings
                 return BadRequest("Booking data is required.");
 
             dto.Booking.Id = bookingId;
-
             var command = new UpdateBookingCommand(bookingId, dto);
-
             await _mediator.Send(command, cancellationToken);
+
+            // Gửi chỉ Booking object (không gửi cả DTO)
+            await _hubContext.Clients.All.SendAsync("BookingUpdated", dto.Booking, cancellationToken);
 
             return NoContent();
         }

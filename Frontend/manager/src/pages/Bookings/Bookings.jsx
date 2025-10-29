@@ -5,6 +5,7 @@ import { Plus, DollarSign, Calendar, CreditCard } from "lucide-react";
 import BookingList from "../../components/bookings/BookingList";
 import { useBookings } from "../../hooks/bookings/useBookings";
 import UpsertBooking from "../../components/bookings/UpsertBooking";
+import ExportRevenue from "../../components/bookings/ExportRevenue";
 
 export default function Bookings() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -42,6 +43,10 @@ export default function Bookings() {
           <Plus size={20} />
           Create Invoice
         </button>
+      </div>
+
+      <div className="mb-6">
+        <ExportRevenue bookings={bookings} />
       </div>
 
       {/* Statistics */}

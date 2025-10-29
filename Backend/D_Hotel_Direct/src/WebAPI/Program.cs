@@ -5,6 +5,7 @@ using Application.Features.Assistants.Services.GuestPromt;
 using Infrastructure.Services.AI;
 using Infrastructure.Services.Email;
 using WebAPI.DependencyInjection;
+using WebAPI.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +21,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddHttpClient();
+
+builder.Services.AddSignalR();
 
 // Add services
 builder.Services.AddApplicationServices(builder.Configuration);
@@ -50,6 +53,9 @@ app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.UseAuthorization();
 
 app.MapControllers();
+
+//Hubs
+app.MapHub<BookingHub>("/hubs/bookings");
 
 
 //Data Seed

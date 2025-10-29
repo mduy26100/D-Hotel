@@ -2,8 +2,10 @@ import dayjs from "dayjs";
 import { Carousel, Image } from "antd";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import RoomTypeDetailModal from "./RoomTypeDetailModal";
+import { useRoomsTypeDetail } from "../../hooks/rooms/roomTypes/useRoomsTypeDetail";
 
-const RoomCard = ({ room }) => {
+const RoomCard = ({ room, hotelIsActive }) => {
   const {
     name,
     description,
@@ -17,27 +19,26 @@ const RoomCard = ({ room }) => {
     displayStartDate,
     displayEndDate,
     images,
+    id: roomTypeId,
   } = room;
 
   const [previewVisible, setPreviewVisible] = useState(false);
   const [previewImage, setPreviewImage] = useState("");
+  const [detailModalVisible, setDetailModalVisible] = useState(false);
 
-  // === Format helpers ===
-  const formatTime = (time) => {
-    if (!time) return "--:--";
-    return time.slice(0, 5);
-  };
+  // === Fetch room detail here and pass down to modal ===
+  const { data: roomDetail, loading, error } = useRoomsTypeDetail(roomTypeId);
 
+  const navigate = useNavigate();
+
+  const formatTime = (time) => (time ? time.slice(0, 5) : "--:--");
   const formatDate = (date) =>
     date ? dayjs(date).format("DD/MM/YYYY") : "--/--/----";
 
-  // === Handle preview click ===
   const handlePreview = (imgUrl) => {
     setPreviewImage(imgUrl);
     setPreviewVisible(true);
   };
-
-  const navigate = useNavigate();
 
   const handleBookNow = () => {
     const mainImageUrl =
@@ -61,7 +62,7 @@ const RoomCard = ({ room }) => {
 
   return (
     <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow hover:shadow-lg transition flex flex-col">
-      {/* === Room images carousel === */}
+      {/* Images Carousel */}
       <div className="relative w-full h-56 overflow-hidden">
         {images && images.length > 0 ? (
           <Carousel dots autoplay className="h-full" arrows adaptiveHeight>
@@ -85,7 +86,6 @@ const RoomCard = ({ room }) => {
         )}
       </div>
 
-      {/* Preview modal (Ant Design) */}
       <Image
         src={previewImage}
         preview={{
@@ -95,19 +95,18 @@ const RoomCard = ({ room }) => {
         style={{ display: "none" }}
       />
 
-      {/* === Room info === */}
+      {/* Room Info */}
       <div className="p-5 flex flex-col flex-1">
         <h3 className="text-lg font-semibold text-gray-900 mb-1 truncate">
           {name}
         </h3>
-
         {description && (
           <p className="text-gray-600 text-sm mb-3 line-clamp-3 flex-1">
             {description}
           </p>
         )}
 
-        {/* === Price === */}
+        {/* Price */}
         <div className="flex items-baseline gap-2 mb-4">
           {originalPrice && displayPrice < originalPrice && (
             <span className="text-gray-400 line-through text-sm">
@@ -122,18 +121,16 @@ const RoomCard = ({ room }) => {
           </span>
         </div>
 
-        {/* === Booking Info === */}
+        {/* Booking Info */}
         <div className="bg-gray-50 rounded-xl p-3 mb-4 text-sm leading-relaxed space-y-1">
           <p className="text-gray-700 font-semibold mb-1">
-            🏷 <span className="font-semibold text-gray-700">Room Type:</span>{" "}
+            🏷 Room Type:{" "}
             <span className="text-orange-600 font-medium">
               {displayType || "Not specified"}
             </span>
           </p>
-
-          {/* === Số lượng phòng còn lại === */}
           <p className="text-gray-700 font-semibold mb-1">
-            🛏 <span className="font-semibold text-gray-700">Available:</span>{" "}
+            🛏 Available:{" "}
             {quantity > 0 ? (
               <span className="text-green-600 font-medium">
                 {quantity} room{quantity > 1 ? "s" : ""}
@@ -142,50 +139,54 @@ const RoomCard = ({ room }) => {
               <span className="text-red-500 font-medium">Sold Out</span>
             )}
           </p>
-
-          {/* === Trạng thái phòng === */}
           <p className="text-gray-700 font-semibold mb-1">
-            ⚡ <span className="font-semibold text-gray-700">Status:</span>{" "}
+            ⚡ Status:{" "}
             {isActive ? (
               <span className="text-green-600 font-medium">Active</span>
             ) : (
               <span className="text-gray-500 font-medium">Inactive</span>
             )}
           </p>
-
           <p className="text-gray-600">
-            🗓 <strong>From:</strong> {formatDate(displayStartDate)} –{" "}
+            🗓 From: {formatDate(displayStartDate)} –{" "}
             {formatTime(displayStartTime)}
           </p>
-
           <p className="text-gray-600">
-            🕓 <strong>To:</strong> {formatDate(displayEndDate)} –{" "}
-            {formatTime(displayEndTime)}
+            🕓 To: {formatDate(displayEndDate)} – {formatTime(displayEndTime)}
           </p>
         </div>
 
-        {/* === Action button === */}
-        <button
-          className={`w-full font-semibold py-2 px-4 rounded-lg transition mb-3 ${
-            quantity > 0 && isActive
-              ? "bg-orange-500 hover:bg-orange-600 text-white"
-              : "bg-gray-300 text-gray-500 cursor-not-allowed"
-          }`}
-          disabled={quantity <= 0 || !isActive}
-          onClick={handleBookNow}
-        >
-          Book Now
-        </button>
+        {/* Action Buttons */}
+        <div className="flex flex-col gap-2">
+          <button
+            className={`w-full font-semibold py-2 px-4 rounded-lg transition ${
+              quantity > 0 && isActive && hotelIsActive
+                ? "bg-orange-500 hover:bg-orange-600 text-white"
+                : "bg-gray-300 text-gray-500 cursor-not-allowed"
+            }`}
+            disabled={quantity <= 0 || !isActive || !hotelIsActive}
+            onClick={handleBookNow}
+          >
+            Book Now
+          </button>
 
-        {/* === Extra info === */}
-        <div className="text-gray-500 text-xs space-y-1">
-          <p>💳 All payment methods supported</p>
-          <p>ℹ Free cancellation policy</p>
-          <p className="text-orange-500 cursor-pointer hover:underline">
-            View room details &rarr;
-          </p>
+          <button
+            className="w-full font-semibold py-2 px-4 rounded-lg border border-gray-300 hover:bg-gray-100 transition"
+            onClick={() => setDetailModalVisible(true)}
+          >
+            View Room Details
+          </button>
         </div>
       </div>
+
+      {/* Room Detail Modal */}
+      <RoomTypeDetailModal
+        visible={detailModalVisible}
+        onClose={() => setDetailModalVisible(false)}
+        roomDetail={roomDetail}
+        loading={loading}
+        error={error}
+      />
     </div>
   );
 };
