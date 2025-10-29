@@ -28,7 +28,7 @@ jobs:
           cp ./publish/Application.dll upload-dlls/ || true
 
       - name: Upload DLLs via FTP
-        uses: genietim/ftp-action@releases/v4
+        uses: genietim/ftp-action@v4
         with:
           host: ${{ secrets.FTP_HOST }}
           user: ${{ secrets.FTP_USER }}
