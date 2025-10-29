@@ -7,19 +7,49 @@ import Input from "../../components/ui/Input";
 import Button from "../../components/ui/Button";
 import FacebookLogin from "@greatsumini/react-facebook-login";
 import { GoogleLogin } from "@react-oauth/google";
-import { notification } from "antd"; // ✅ import notification
+import { notification } from "antd";
 
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
+  const [errors, setErrors] = useState({ email: "", password: "" });
   const { loginWithEmail, loginWithFacebook, loginWithGoogle, loading, error } =
     useLogin();
 
+  const validate = () => {
+    let valid = true;
+    const newErrors = { email: "", password: "" };
+
+    // Email validation
+    if (!form.email) {
+      newErrors.email = "Email is required";
+      valid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      newErrors.email = "Email format is invalid";
+      valid = false;
+    }
+
+    // Password validation
+    if (!form.password) {
+      newErrors.password = "Password is required";
+      valid = false;
+    } else if (form.password.length < 6) {
+      newErrors.password = "Password must be at least 6 characters";
+      valid = false;
+    }
+
+    setErrors(newErrors);
+    return valid;
+  };
+
   const handleChange = (e) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    setErrors((prev) => ({ ...prev, [e.target.name]: "" })); // clear error on typing
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validate()) return; // stop if invalid
+
     try {
       await loginWithEmail(form.email, form.password);
       notification.success({
@@ -97,7 +127,6 @@ export default function Login() {
           Sign in to continue your journey
         </p>
 
-        {/* EMAIL LOGIN */}
         <form onSubmit={handleSubmit} className="space-y-6">
           <Input
             label="Email"
@@ -109,6 +138,10 @@ export default function Login() {
             required
             className="rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#003B95] focus:border-[#003B95] transition"
           />
+          {errors.email && (
+            <p className="text-red-500 text-sm">{errors.email}</p>
+          )}
+
           <Input
             label="Password"
             type="password"
@@ -119,6 +152,10 @@ export default function Login() {
             required
             className="rounded-xl border border-gray-300 focus:ring-2 focus:ring-[#003B95] focus:border-[#003B95] transition"
           />
+          {errors.password && (
+            <p className="text-red-500 text-sm">{errors.password}</p>
+          )}
+
           {error && <p className="text-red-500 text-sm">{error}</p>}
 
           <Button
@@ -152,12 +189,6 @@ export default function Login() {
                 onClick={onClick}
                 className="flex items-center justify-center gap-3 px-5 py-3 rounded-xl border border-gray-300 shadow-md hover:shadow-lg transition bg-white font-semibold w-full sm:w-auto"
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07C2 17.09 5.66 21.22 10.44 22v-6.99H7.9v-2.94h2.54V9.84c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.76-1.61 1.54v1.85h2.74l-.44 2.94h-2.3V22C18.34 21.22 22 17.09 22 12.07z"
-                    fill="#1877F2"
-                  />
-                </svg>
                 <span className="text-[#1877F2]">Facebook</span>
               </button>
             )}
@@ -179,28 +210,6 @@ export default function Login() {
                 disabled={disabled}
                 className="flex items-center justify-center gap-3 px-5 py-3 rounded-xl border border-gray-300 shadow-md hover:shadow-lg transition bg-white font-semibold w-full sm:w-auto"
               >
-                <svg
-                  className="w-5 h-5"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 48 48"
-                >
-                  <path
-                    fill="#EA4335"
-                    d="M24 9.5c3.54 0 6.7 1.22 9.19 3.6l6.85-6.85C35.85 2.88 30.3 0.5 24 0.5 14.9 0.5 7.1 5.9 3.43 13.25l7.99 6.22C12.73 13.38 17.9 9.5 24 9.5z"
-                  />
-                  <path
-                    fill="#34A853"
-                    d="M46.5 24.5c0-1.63-.15-3.2-.43-4.72H24v9.45h12.65c-.55 2.96-2.18 5.47-4.64 7.17l7.23 5.61C43.56 38.27 46.5 31.94 46.5 24.5z"
-                  />
-                  <path
-                    fill="#FBBC05"
-                    d="M11.42 28.03a14.45 14.45 0 010-8.06l-7.99-6.22A23.47 23.47 0 000 24.5c0 3.81.9 7.42 2.48 10.61l8.94-7.08z"
-                  />
-                  <path
-                    fill="#4285F4"
-                    d="M24 47.5c6.3 0 11.6-2.08 15.47-5.68l-7.23-5.61c-2.01 1.35-4.58 2.14-8.24 2.14-6.1 0-11.27-3.88-13.14-9.31l-8.94 7.08C7.1 42.1 14.9 47.5 24 47.5z"
-                  />
-                </svg>
                 <span className="text-gray-700">Google</span>
               </button>
             )}
