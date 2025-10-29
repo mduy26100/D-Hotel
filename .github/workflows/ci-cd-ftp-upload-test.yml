@@ -2,6 +2,9 @@
 name: CI/CD - FTP Upload Test
 
 on:
+  push:
+    branches:
+      - production
   workflow_dispatch:
 
 jobs:
