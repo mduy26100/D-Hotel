@@ -2,14 +2,15 @@
 import React, { useRef } from "react";
 import { Spin, Empty } from "antd";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import HotelCard from "./HotelCard";
 
-const HotelList = ({ hotels, loading, error }) => {
-  const navigate = useNavigate();
+const HotelList = ({ hotels = [], loading = false, error = null }) => {
   const scrollRef = useRef(null);
 
-  const featuredHotels = hotels?.slice(0, 4) || []; // 👉 Take 4 featured hotels
+  // ✅ Đảm bảo hotels luôn là array
+  const safeHotels = Array.isArray(hotels) ? hotels : [];
+  const featuredHotels = safeHotels.slice(0, 4);
 
   // ⚙️ Handle horizontal scroll
   const scroll = (direction) => {
@@ -58,7 +59,7 @@ const HotelList = ({ hotels, loading, error }) => {
               onClick={() => scroll("left")}
               className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2 hover:bg-gray-100 transition"
             >
-              <ChevronLeft className="text-icon-xxl w-7 h-7 text-gray-700" />
+              <ChevronLeft className="w-7 h-7 text-gray-700" />
             </button>
 
             {/* Scroll container */}
@@ -80,7 +81,7 @@ const HotelList = ({ hotels, loading, error }) => {
               onClick={() => scroll("right")}
               className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 bg-white shadow-md rounded-full p-2 hover:bg-gray-100 transition"
             >
-              <ChevronRight className="text-icon-xxl w-7 h-7 text-gray-700" />
+              <ChevronRight className="w-7 h-7 text-gray-700" />
             </button>
           </div>
         )}
