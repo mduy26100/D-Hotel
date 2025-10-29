@@ -33,30 +33,21 @@ jobs:
       - name: Publish
         run: dotnet publish Backend/D_Hotel_Direct/src/WebAPI/WebAPI.csproj --configuration Release --output ./publish --no-build
 
-      - name: Copy DLLs to upload folder
-        run: |
-          mkdir upload-dlls
-          cp ./publish/WebAPI.dll upload-dlls/ || true
-          cp ./publish/Infrastructure.dll upload-dlls/ || true
-          cp ./publish/Domain.dll upload-dlls/ || true
-          cp ./publish/Application.dll upload-dlls/ || true
-
-      - name: Upload only DLLs via FTP
+      - name: Upload via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USER }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./upload-dlls/
+          local-dir: ./publish/
           server-dir: /
-          timeout: 190000
           protocol: ftp
           security: loose
           exclude: |
-            !WebAPI.dll
-            !Infrastructure.dll
-            !Domain.dll
-            !Application.dll
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/publish/wwwroot/appsettings.*.json
 
       - name: Done
         run: echo "Deployment complete."
