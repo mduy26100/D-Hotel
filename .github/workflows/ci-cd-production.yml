@@ -19,16 +19,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-        # Manual approval before deployment
-      - name: Wait for approval
-        uses: trstringer/manual-approval@v1
-        with:
-          secret: ${{ secrets.GITHUB_TOKEN }}
-          approvers: mduy26100, tunglvt
-          minimum-approvals: 1
-          issue-title: 'Production Deployment Approval'
-          issue-body: 'Please approve this deployment to production.'
-
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
