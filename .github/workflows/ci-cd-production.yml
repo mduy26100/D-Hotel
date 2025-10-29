@@ -41,6 +41,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./publish/
           server-dir: /
+          timeout: 190000
           protocol: ftp
           security: loose
           exclude: |

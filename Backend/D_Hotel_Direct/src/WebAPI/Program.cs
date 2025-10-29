@@ -6,8 +6,25 @@ using Infrastructure.Services.AI;
 using Infrastructure.Services.Email;
 using WebAPI.DependencyInjection;
 using WebAPI.Hubs;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
+// Configure CORS to allow only the specified frontend origins from appsettings
+var allowedDomains = builder.Configuration.GetSection("AllowedDomains").Get<string[]>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigins",
+        policy =>
+        {
+            if (allowedDomains != null && allowedDomains.Length > 0)
+            {
+                policy.WithOrigins(allowedDomains)
+                    .AllowAnyHeader()
+                    .AllowAnyMethod()
+                    .AllowCredentials();
+            }
+        });
+});
 
 // Add services to the container.
 
@@ -44,7 +61,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors("AllowAll");
+app.UseCors("AllowSpecificOrigins");
 
 app.UseHttpsRedirection();
 
