@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import RoomTypeDetailModal from "./RoomTypeDetailModal";
 import { useRoomsTypeDetail } from "../../hooks/rooms/roomTypes/useRoomsTypeDetail";
 
-const RoomCard = ({ room }) => {
+const RoomCard = ({ room, hotelIsActive }) => {
   const {
     name,
     description,
@@ -160,11 +160,11 @@ const RoomCard = ({ room }) => {
         <div className="flex flex-col gap-2">
           <button
             className={`w-full font-semibold py-2 px-4 rounded-lg transition ${
-              quantity > 0 && isActive
+              quantity > 0 && isActive && hotelIsActive
                 ? "bg-orange-500 hover:bg-orange-600 text-white"
                 : "bg-gray-300 text-gray-500 cursor-not-allowed"
             }`}
-            disabled={quantity <= 0 || !isActive}
+            disabled={quantity <= 0 || !isActive || !hotelIsActive}
             onClick={handleBookNow}
           >
             Book Now

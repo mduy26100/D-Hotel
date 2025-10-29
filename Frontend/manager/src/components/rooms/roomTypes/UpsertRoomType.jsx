@@ -19,6 +19,8 @@ import { useUpdateRoomType } from "../../../hooks/rooms/roomTypes/useUpdateRoomT
 import { useGetHotels } from "../../../hooks/hotels/hotels/useGetHotels";
 import { useGetBedTypes } from "../../../hooks/rooms/bedTypes/useGetBedTypes";
 import { useGetQuantityGuests } from "../../../hooks/rooms/quantityGuests/useGetQuantityGuests";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css"; // theme
 
 const { Title } = Typography;
 
@@ -195,7 +197,19 @@ const UpsertRoomType = ({ open, onClose, refetch, editingRoomType }) => {
           name="description"
           rules={[{ required: true, message: "Please enter a description" }]}
         >
-          <Input.TextArea rows={3} placeholder="Enter room description..." />
+          <ReactQuill
+            theme="snow"
+            modules={{
+              toolbar: [
+                [{ header: [1, 2, false] }],
+                ["bold", "italic", "underline", "strike"],
+                [{ list: "ordered" }, { list: "bullet" }],
+                ["link", "image"],
+                ["clean"],
+              ],
+            }}
+            placeholder="Enter room description..."
+          />
         </Form.Item>
 
         <Divider />

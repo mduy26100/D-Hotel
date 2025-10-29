@@ -191,9 +191,12 @@ const RoomDetail = ({ roomTypeId, open, onClose }) => {
                   Description
                 </h3>
               </div>
-              <p className="text-gray-700 leading-relaxed bg-gray-50 rounded-lg p-4 border border-gray-200">
-                {details.description || "No description provided."}
-              </p>
+              <p
+                className="text-gray-700 leading-relaxed bg-gray-50 rounded-lg p-4 border border-gray-200"
+                dangerouslySetInnerHTML={{
+                  __html: details.description || "No description provided.",
+                }}
+              />
             </section>
 
             <Divider />

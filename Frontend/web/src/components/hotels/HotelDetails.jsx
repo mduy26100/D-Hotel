@@ -304,9 +304,11 @@ const HotelDetails = ({ hotelId }) => {
           <h2 className="text-3xl font-bold text-gray-900 mb-5">
             About the Hotel
           </h2>
-          <p className="text-gray-700 leading-relaxed text-lg">
-            {hotel.description}
-          </p>
+          <p
+            className="text-gray-700 leading-relaxed text-lg"
+            dangerouslySetInnerHTML={{ __html: hotel.description }}
+          />
+
           <div className="mt-6">
             <span
               className={`inline-block px-6 py-2 rounded-full text-sm font-semibold ${
@@ -327,7 +329,11 @@ const HotelDetails = ({ hotelId }) => {
               <h2 className="text-3xl font-bold text-gray-900">Room list</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {rooms.map((room) => (
-                  <RoomCard key={room.id} room={room} />
+                  <RoomCard
+                    key={room.id}
+                    room={room}
+                    hotelIsActive={hotel.isActive}
+                  />
                 ))}
               </div>
             </>

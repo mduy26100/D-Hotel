@@ -54,9 +54,12 @@ const RoomTypeDetailModal = ({
 
           {/* Description */}
           <div className="p-4 bg-white rounded-lg shadow-sm">
-            <p className="text-gray-700 text-base">
-              {roomDetail?.description || "No description available."}
-            </p>
+            <p
+              className="text-gray-700 text-base"
+              dangerouslySetInnerHTML={{
+                __html: roomDetail?.description || "No description available.",
+              }}
+            />
           </div>
 
           {/* Pricing */}

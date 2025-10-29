@@ -93,9 +93,10 @@ const HotelCard = ({ hotel }) => {
 
           {/* Description */}
           {description && (
-            <p className="text-sm text-gray-500 line-clamp-2 mb-4 leading-relaxed min-h-[2.5rem]">
-              {description}
-            </p>
+            <p
+              className="text-sm text-gray-500 line-clamp-2 mb-4 leading-relaxed min-h-[2.5rem]"
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
           )}
 
           {/* Utilities */}
