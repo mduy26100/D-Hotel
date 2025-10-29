@@ -228,6 +228,7 @@ const UpsertBooking = ({ isOpen, onClose, refetch, bookingData }) => {
           endTime: bookingData.endTime || null,
           rentalPrice: bookingData.rentalPrice,
           rentalType: bookingData.rentalType || null,
+          bookingDate: bookingData.bookingDate,
           guestName: values.guestName,
           guestPhone: values.guestPhone,
           guestEmail: values.guestEmail || "",

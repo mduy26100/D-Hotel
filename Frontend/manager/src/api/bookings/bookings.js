@@ -80,6 +80,7 @@ export const updateBookingAPI = async (data) => {
       endTime: data.endTime || null,
       rentalPrice: data.rentalPrice,
       rentalType: data.rentalType || null,
+      bookingDate: data.bookingDate,
       guestName: data.guestName,
       guestPhone: data.guestPhone,
       guestEmail: data.guestEmail || "",
