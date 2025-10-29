@@ -10,6 +10,7 @@ on:
 jobs:
   ftp-upload-test:
     runs-on: ubuntu-latest
+    environment: Production
     steps:
       - name: Create test file
         run: echo "This is a test file for FTP upload." > test-upload.txt
