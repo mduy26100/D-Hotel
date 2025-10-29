@@ -1,5 +1,8 @@
 name: Deploy DLLs via FTP (genietim/ftp-action)
 on:
+  push:
+    branches:
+      - production
   workflow_dispatch:
 
 jobs:
