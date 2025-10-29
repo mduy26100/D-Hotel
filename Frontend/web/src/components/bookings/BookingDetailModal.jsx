@@ -102,6 +102,7 @@ const BookingDetailModal = ({ id, isOpen, onClose, refetch }) => {
         guestEmail: booking.guestEmail || "",
         note: booking.note || "",
         status: "Cancelled",
+        invoiceNumber: booking.invoiceNumber,
       });
 
       notification.success({

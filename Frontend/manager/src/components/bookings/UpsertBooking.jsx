@@ -235,22 +235,24 @@ const UpsertBooking = ({ isOpen, onClose, refetch, bookingData }) => {
           status: values.status,
         });
 
-        if (response) {
-          notification.success({
-            message: "Booking updated successfully",
-            description: `Booking for ${values.guestName} has been updated.`,
-            placement: "topRight",
-          });
+        await refetch?.();
+        handleCancel();
 
-          await refetch?.();
-          handleCancel();
-        } else {
-          notification.error({
-            message: "Update failed",
-            description: "Unable to update booking. Please try again.",
-            placement: "topRight",
-          });
-        }
+        notification.success({
+          message: "Booking updated successfully",
+          description: `Booking for ${values.guestName} has been updated.`,
+          placement: "topRight",
+        });
+
+        // if (response) {
+
+        // } else {
+        //   notification.error({
+        //     message: "Update failed",
+        //     description: "Unable to update booking. Please try again.",
+        //     placement: "topRight",
+        //   });
+        // }
       } else {
         // Create new booking
         if (!selectedRoom) {
