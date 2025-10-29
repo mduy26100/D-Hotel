@@ -1,0 +1,28 @@
+# Simple CI/CD workflow to upload a test file via FTP
+name: CI/CD - FTP Upload Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  ftp-upload-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create test file
+        run: echo "This is a test file for FTP upload." > test-upload.txt
+
+      - name: Upload test file via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          server-dir: /
+          protocol: ftp
+          security: loose
+          exclude: |
+            !test-upload.txt
+
+      - name: Done
+        run: echo "Test file uploaded."
