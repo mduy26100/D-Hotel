@@ -1,0 +1,34 @@
+# GitHub Actions workflow to build on PRs targeting main branch
+
+name: PR Build - Main Branch
+
+on:
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore Backend/D_Hotel_Direct/src/WebAPI/WebAPI.csproj
+
+      - name: Build
+        run: dotnet build Backend/D_Hotel_Direct/src/WebAPI/WebAPI.csproj --configuration Release --no-restore
+
+      - name: Test (if any)
+        run: |
+          if dotnet test --list-tests Backend/D_Hotel_Direct/src/WebAPI/WebAPI.csproj | grep -q .; then
+            dotnet test Backend/D_Hotel_Direct/src/WebAPI/WebAPI.csproj --configuration Release --no-build
+          else
+            echo "No tests found."
+          fi
