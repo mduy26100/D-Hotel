@@ -42,7 +42,7 @@ jobs:
           local-dir: ./publish/
           server-dir: /
           protocol: ftps
-          security: strict
+          security: no_check
           exclude: |
             **/.git*
             **/.git*/**
