@@ -101,9 +101,10 @@ const RoomCard = ({ room, hotelIsActive }) => {
           {name}
         </h3>
         {description && (
-          <p className="text-gray-600 text-sm mb-3 line-clamp-3 flex-1">
-            {description}
-          </p>
+          <p
+            className="text-gray-600 text-sm mb-3 line-clamp-3 flex-1"
+            dangerouslySetInnerHTML={{ __html: description }}
+          ></p>
         )}
 
         {/* Price */}

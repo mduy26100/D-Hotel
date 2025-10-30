@@ -11,7 +11,7 @@ const initializeHub = () => {
   if (bookingHub) return bookingHub;
 
   bookingHub = new signalR.HubConnectionBuilder()
-    .withUrl(`${URL_BASE}/hubs/bookings`) // bỏ /api
+    .withUrl(`${URL_BASE}/hubs/bookings`)
     .withAutomaticReconnect()
     .configureLogging(signalR.LogLevel.Information)
     .build();
