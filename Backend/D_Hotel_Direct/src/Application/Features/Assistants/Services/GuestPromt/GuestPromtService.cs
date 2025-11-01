@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Application.Features.Assistants.Services.GuestPromt
 {
-    public class GuestPromtService : IPromtService
+    public class GuestPromptService : IPromptService
     {
         private readonly IOpenAIService _openAIService;
         private readonly IHotelRepository _hotelRepository;
@@ -17,7 +17,7 @@ namespace Application.Features.Assistants.Services.GuestPromt
 
         private readonly Random _random = new Random();
 
-        public GuestPromtService(
+        public GuestPromptService(
             IOpenAIService openAIService,
             IHotelRepository hotelRepository,
             IGetRoomsByHotelIdService roomsService,
@@ -39,45 +39,40 @@ namespace Application.Features.Assistants.Services.GuestPromt
             if (accountId != null && accountId != Guid.Empty)
                 return null!;
 
-            // Lấy danh sách khách sạn
             var hotels = await _hotelRepository.GetAllAsync(cancellationToken);
             if (hotels == null || !hotels.Any())
-                return "Hiện không có thông tin khách sạn.";
+                return "Currently, there is no hotel information available.";
 
             var sb = new StringBuilder();
-            sb.AppendLine("Tôi là một người dùng chưa đăng nhập. Dưới đây là thông tin khách sạn, phòng trống, giá phòng và link đặt phòng:");
+            sb.AppendLine("I am a guest user. Below is the list of hotels, available rooms, room prices, and booking links:");
 
             foreach (var hotel in hotels)
             {
-                sb.AppendLine($"\n- {hotel.Name} (Địa chỉ: {hotel.Address})");
+                sb.AppendLine($"\n- {hotel.Name} (Address: {hotel.Address})");
 
-                // Lấy phòng còn trống qua service GetRoomsByHotelIdService
                 var rooms = await _roomsService.GetRoomsByHotelId(
                     hotel.Id,
-                    priceType: "Daily", // default Daily, AI có thể hỏi sau
+                    priceType: "Daily",
                     startDate: DateTime.Today,
                     endDate: DateTime.Today.AddDays(1),
                     cancellationToken: cancellationToken);
 
                 if (rooms == null || !rooms.Any())
                 {
-                    sb.AppendLine("  Hiện không có phòng nào.");
+                    sb.AppendLine("  No available rooms at the moment.");
                     continue;
                 }
 
                 foreach (var room in rooms)
                 {
-                    // Lấy 1 ảnh ngẫu nhiên
-                    // Lấy 1 ảnh đầu tiên
                     var images = await _roomImagesService.GetByRoomTypeIdAsync(room.Id, cancellationToken);
                     var imageUrl = images != null && images.Any()
                         ? images.First().ImgUrl
                         : "https://via.placeholder.com/400x300?text=No+Image";
 
-                    sb.AppendLine($"  - {room.Name} (Còn {room.Quantity} phòng):");
-                    sb.AppendLine($"    Giá: {room.DisplayPrice}đ / {room.DisplayType}");
+                    sb.AppendLine($"  - {room.Name} (Remaining: {room.Quantity} rooms):");
+                    sb.AppendLine($"    Price: {room.DisplayPrice}đ / {room.DisplayType}");
 
-                    // Tạo link checkout
                     var checkoutLink = GenerateCheckoutLink(
                         hotel.Id,
                         room.Id,
@@ -91,20 +86,20 @@ namespace Application.Features.Assistants.Services.GuestPromt
                         imageUrl
                     );
 
-                    sb.AppendLine($"    Link đặt phòng: {checkoutLink}");
+                    sb.AppendLine($"    Booking link: {checkoutLink}");
                 }
             }
 
             var guidePrompt = $"""
                 {sb}
 
-                Hướng dẫn:
-                - Hãy hỏi khách hàng muốn đặt khách sạn khu vực nào.
-                - Giới thiệu giá cả về phòng còn trống của khách sạn.
-                - Tư vấn phù hợp với nhu cầu của khách hàng.
-                - Cung cấp link đặt phòng trực tiếp.
+                Instructions:
+                - Ask the customer which area they want to book a hotel in.
+                - Introduce the available rooms and their prices.
+                - Suggest the most suitable options based on the customer's needs.
+                - Provide the direct booking link.
 
-                Câu hỏi của tôi là: {prompt}
+                My question is: {prompt}
                 """;
 
             return await _openAIService.AskChatAsync(guidePrompt);
