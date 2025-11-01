@@ -46,16 +46,13 @@ namespace Application.Features.Bookings.Services.Command.CreateBooking.PaymentSt
 
             try
             {
-                // --- Lấy RoomType ---
                 var roomType = await _roomTypeRepository.GetByIdAsync(bookingAggregateDto.Booking.RoomTypeId)
                     ?? throw new InvalidOperationException("RoomType không tồn tại.");
 
-                // --- Kiểm tra số phòng ---
                 var totalActiveBookings = await _bookingRepository.CountActiveBookingsAsync(roomType.Id);
                 if (roomType.Quantity - totalActiveBookings <= 0)
                     throw new InvalidOperationException("No available rooms.");
 
-                // --- Thêm Booking ---
                 var bookingEntity = _mapper.Map<Booking>(bookingAggregateDto.Booking);
                 if (userId.HasValue) bookingEntity.UserId = userId;
                 bookingEntity.Status ??= BookingStatus.Pending;
@@ -63,7 +60,6 @@ namespace Application.Features.Bookings.Services.Command.CreateBooking.PaymentSt
                 await _bookingRepository.AddAsync(bookingEntity);
                 await _context.SaveChangesAsync();
 
-                // --- Thêm BookingDetails ---
                 decimal detailsTotal = 0;
                 foreach (var detailDto in bookingAggregateDto.Details)
                 {
@@ -75,7 +71,6 @@ namespace Application.Features.Bookings.Services.Command.CreateBooking.PaymentSt
                 }
                 await _context.SaveChangesAsync();
 
-                // --- Tạo Invoice ---
                 var invoice = new Invoice
                 {
                     BookingId = bookingEntity.Id,
@@ -105,12 +100,10 @@ namespace Application.Features.Bookings.Services.Command.CreateBooking.PaymentSt
                     ["status"] = invoice.Status
                 };
 
-                // Build query string
                 var queryString = string.Join("&", queryParams.Select(kvp =>
                     $"{Uri.EscapeDataString(kvp.Key)}={Uri.EscapeDataString(kvp.Value)}"
                 ));
 
-                // --- Gửi email xác nhận booking ---
                 if (!string.IsNullOrEmpty(bookingEntity.GuestEmail))
                 {
                     var urlDetail = $"https://d-hotel-booking.vercel.app/booking-success?{queryString}";

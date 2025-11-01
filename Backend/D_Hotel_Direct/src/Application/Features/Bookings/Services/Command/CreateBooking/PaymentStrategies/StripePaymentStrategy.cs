@@ -43,7 +43,7 @@ namespace Application.Features.Bookings.PaymentStrategies
             _roomTypeRepository = roomTypeRepository;
             _context = context;
             _mapper = mapper;
-            _emailService = emailService; // 👈 gán
+            _emailService = emailService;
         }
 
         public async Task<InvoiceDto> HandleBookingAsync(BookingAggregateDto bookingAggregateDto, Guid? userId)
@@ -52,7 +52,6 @@ namespace Application.Features.Bookings.PaymentStrategies
 
             try
             {
-                // --- Lấy RoomType ---
                 var roomType = await _roomTypeRepository.GetByIdAsync(bookingAggregateDto.Booking.RoomTypeId)
                     ?? throw new InvalidOperationException("RoomType không tồn tại.");
 
@@ -60,7 +59,6 @@ namespace Application.Features.Bookings.PaymentStrategies
                 if (roomType.Quantity - totalActiveBookings <= 0)
                     throw new InvalidOperationException("No available rooms.");
 
-                // --- Tạo Booking Pending ---
                 var bookingEntity = _mapper.Map<Domain.Models.Bookings.Booking>(bookingAggregateDto.Booking);
                 if (userId.HasValue) bookingEntity.UserId = userId;
                 bookingEntity.Status = BookingStatus.Pending;
@@ -68,7 +66,6 @@ namespace Application.Features.Bookings.PaymentStrategies
                 await _bookingRepository.AddAsync(bookingEntity);
                 await _context.SaveChangesAsync();
 
-                // --- Thêm BookingDetails ---
                 decimal detailsTotal = 0;
                 foreach (var detailDto in bookingAggregateDto.Details)
                 {
@@ -80,7 +77,6 @@ namespace Application.Features.Bookings.PaymentStrategies
                 }
                 await _context.SaveChangesAsync();
 
-                // --- Tạo Invoice Pending ---
                 var invoice = new InvoiceEntity
                 {
                     BookingId = bookingEntity.Id,
@@ -93,13 +89,11 @@ namespace Application.Features.Bookings.PaymentStrategies
                 await _invoiceRepository.AddAsync(invoice);
                 await _context.SaveChangesAsync();
 
-                // --- Stripe Checkout Session ---
                 Stripe.StripeConfiguration.ApiKey = _stripeSettings.SecretKey;
 
                 var lineItems = bookingAggregateDto.Details?.Any() == true
                     ? bookingAggregateDto.Details.Select(d =>
                     {
-                        // Build tên hiển thị chi tiết phòng
                         string productName = $"Room Name: {roomType.Name} - Room Type: {bookingAggregateDto.Booking.RentalType}";
 
 
@@ -155,13 +149,9 @@ namespace Application.Features.Bookings.PaymentStrategies
                     ["status"] = invoice.Status
                 };
 
-                // Build query string
                 var queryString = string.Join("&", queryParams.Select(kvp =>
                     $"{Uri.EscapeDataString(kvp.Key)}={Uri.EscapeDataString(kvp.Value)}"
                 ));
-
-                //// Tạo URL frontend
-                //invoiceDto.PaymentUrl = $"https://localhost:5173/booking-success?{queryString}";
 
 
                 var options = new SessionCreateOptions
@@ -176,11 +166,9 @@ namespace Application.Features.Bookings.PaymentStrategies
                 var service = new SessionService();
                 var session = service.Create(options);
 
-                // --- Lưu PaymentIntentId ---
                 invoice.PaymentIntentId = session.Id;
                 await _context.SaveChangesAsync();
 
-                // --- DTO trả về ---
                 var invoiceDto = new InvoiceDto
                 {
                     Id = invoice.Id,
@@ -194,7 +182,6 @@ namespace Application.Features.Bookings.PaymentStrategies
                     PaymentUrl = session.Url
                 };
 
-                // --- Gửi email xác nhận booking ---
                 if (!string.IsNullOrEmpty(bookingEntity.GuestEmail))
                 {
                     var urlDetail = $"https://d-hotel-booking.vercel.app/booking-success?{queryString}";
