@@ -1,38 +1,38 @@
 ﻿using Application.Features.Utilities.DTOs;
-using Application.Features.Utilities.Interfaces.Services.Command.CreateUtilityItem;
-using Application.Common.Interfaces.Logging;
 using MediatR;
+using AutoMapper;
+using Application.Features.Utilities.Repositories;
+using Domain.Models.Utilities;
 
 namespace Application.Features.Utilities.Commands.CreateUtilityItem
 {
     public class CreateUtilityItemCommandHandler : IRequestHandler<CreateUtilityItemCommand, UtilityItemDto>
     {
-        private readonly ICreateUtilityItemService _createUtilityItemService;
-        private readonly ILoggingService<CreateUtilityItemCommandHandler> _logger;
+        private readonly IUtilityItemRepository _utilityItemRepository;
+        private readonly IApplicationDbContext _context;
+        private readonly IMapper _mapper;
 
-        public CreateUtilityItemCommandHandler(
-            ICreateUtilityItemService createUtilityItemService,
-            ILoggingService<CreateUtilityItemCommandHandler> logger)
+        public CreateUtilityItemCommandHandler(IUtilityItemRepository utilityItemRepository
+            , IApplicationDbContext context
+            , IMapper mapper)
         {
-            _createUtilityItemService = createUtilityItemService;
-            _logger = logger;
+            _utilityItemRepository = utilityItemRepository;
+            _context = context;
+            _mapper = mapper;
         }
 
         public async Task<UtilityItemDto> Handle(CreateUtilityItemCommand request, CancellationToken cancellationToken)
         {
             try
             {
-                _logger.LogInformation($"[CreateUtilityItem] Start creating utility item with Name: {request.Dto.Name}");
-
-                var result = await _createUtilityItemService.CreateAsync(request.Dto, cancellationToken);
-
-                _logger.LogInformation($"[CreateUtilityItem] Successfully created utility item with Id: {result.Id}, Name: {result.Name}");
-
-                return result;
+                var entity = _mapper.Map<UtilityItem>(request.Dto);
+                await _utilityItemRepository.AddAsync(entity, cancellationToken);
+                await _context.SaveChangesAsync(cancellationToken);
+                return _mapper.Map<UtilityItemDto>(entity);
             }
             catch (Exception ex)
             {
-                _logger.LogError($"[CreateUtilityItem] Error creating utility item with Name: {request.Dto.Name}", ex);
+                throw new Exception($"Error creating UtilityItem: {ex.Message}", ex);
                 throw;
             }
         }

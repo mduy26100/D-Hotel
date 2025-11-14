@@ -33,7 +33,7 @@ builder.Services.AddScoped<IEmailService, ResendEmailService>();
 //HTTP_ChatBot
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpClient<IOpenAIService, OpenAIService>();
-builder.Services.AddScoped<IPromtService, GuestPromtService>();
+builder.Services.AddScoped<IPromptService, GuestPromptService>();
 
 var app = builder.Build();
 

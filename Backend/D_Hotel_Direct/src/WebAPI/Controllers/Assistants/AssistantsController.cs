@@ -8,9 +8,9 @@ namespace WebAPI.Controllers.Assistants
     [ApiController]
     public class AssistantsController : ControllerBase
     {
-        private readonly IPromtService _promtService;
+        private readonly IPromptService _promtService;
 
-        public AssistantsController(IPromtService promtService)
+        public AssistantsController(IPromptService promtService)
         {
             _promtService = promtService;
         }
